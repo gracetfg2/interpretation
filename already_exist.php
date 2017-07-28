@@ -1,0 +1,1 @@
+You have already completed the maximum number of HITs allowed in this batch. If you submit multiple HITs, you will get rejected and not be paid.

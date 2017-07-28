@@ -1,0 +1,152 @@
+[14-Jul-2016 15:16:47 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/designcomparison.php on line 24
+[14-Jul-2016 15:48:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/crowdsight/public_html/reflection/expertstask/designcomparison.php on line 94
+[14-Jul-2016 15:49:44 America/Chicago] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/crowdsight/public_html/reflection/expertstask/designcomparison.php on line 94
+[14-Jul-2016 18:01:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'Flower' (T_STRING), expecting ',' or ';' in /home/crowdsight/public_html/reflection/expertstask/designcomparison.php on line 114
+[18-Jul-2016 16:09:04 America/Chicago] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 44
+[18-Jul-2016 16:09:43 America/Chicago] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 44
+[18-Jul-2016 16:11:26 America/Chicago] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 44
+[18-Jul-2016 17:04:26 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 50
+[18-Jul-2016 17:05:20 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 50
+[18-Jul-2016 17:05:46 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 50
+[18-Jul-2016 17:06:10 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 50
+[18-Jul-2016 17:06:35 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 50
+[18-Jul-2016 17:06:58 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 50
+[18-Jul-2016 17:08:56 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 50
+[18-Jul-2016 17:38:17 America/Chicago] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 58
+[19-Jul-2016 00:59:15 America/Chicago] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 16
+[19-Jul-2016 13:45:23 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 82
+[19-Jul-2016 13:47:08 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:26 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:32 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:37 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:40 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:45 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:47 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:49 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:50:57 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:59:36 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:59:42 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 13:59:44 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 14:24:40 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 14:25:13 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 14:25:20 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 15:23:11 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 15:53:21 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 15:54:38 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 15:54:41 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 15:55:51 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:00:11 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:01:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:02:06 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:04:01 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:05:20 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:09:34 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:10:15 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:12:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:15:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:17:38 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:28:45 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:29:23 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:30:35 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:31:52 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:32:43 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:32:58 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:33:41 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:35:25 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:37:06 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:38:12 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:39:18 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:40:48 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:46:08 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:47:50 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:49:13 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:50:23 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:57:09 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 16:59:26 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 17:01:45 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 17:11:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 17:11:42 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 17:57:59 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 17:58:05 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 17:58:09 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[19-Jul-2016 17:58:16 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 11:41:20 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 11:41:25 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 11:42:08 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 11:42:10 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 11:42:11 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:05:43 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:05:44 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:06:51 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:06:53 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:06:55 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:23:24 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:23:30 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:23:33 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:23:37 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:23:38 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:23:47 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:23:52 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:24:32 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:24:34 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:24:41 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:24:42 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:24:48 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:24:54 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:24:56 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:34:08 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:46:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:48:20 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:49:45 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:49:47 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:49:49 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:49:51 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:50:48 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:50:52 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:51:11 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:51:13 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:52:42 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:52:45 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[20-Jul-2016 14:54:38 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting '(' in /home/crowdsight/public_html/reflection/expertstask/get_project.php on line 22
+[28-Jul-2016 16:09:07 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 44
+[28-Jul-2016 16:09:07 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 49
+[28-Jul-2016 16:09:07 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 102
+[28-Jul-2016 16:09:07 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 191
+[28-Jul-2016 16:10:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 46
+[28-Jul-2016 16:10:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 51
+[28-Jul-2016 16:10:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 104
+[28-Jul-2016 16:10:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 193
+[28-Jul-2016 16:12:09 America/Chicago] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 126
+[28-Jul-2016 16:13:18 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 46
+[28-Jul-2016 16:13:18 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 51
+[28-Jul-2016 16:13:18 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 104
+[28-Jul-2016 16:13:18 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 193
+[28-Jul-2016 16:16:06 America/Chicago] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 127
+[28-Jul-2016 16:16:46 America/Chicago] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 126
+[28-Jul-2016 16:18:47 America/Chicago] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 117
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 90
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 90
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 90
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 90
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 90
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 90
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[28-Jul-2016 23:23:37 America/Chicago] PHP Warning:  Illegal string offset 'DesignID' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 178
+[31-Jul-2016 13:46:32 America/Chicago] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 103
+[31-Jul-2016 13:57:02 America/Chicago] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /home/crowdsight/public_html/reflection/expertstask/rate_design.php on line 103

@@ -1,0 +1,53 @@
+[27-Jun-2016 16:36:06 America/Chicago] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 176
+[27-Jun-2016 16:36:06 America/Chicago] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 176
+[27-Jun-2016 16:36:06 America/Chicago] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 176
+[27-Jun-2016 16:36:06 America/Chicago] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 176
+[27-Jun-2016 16:36:06 America/Chicago] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 176
+[27-Jun-2016 16:37:04 America/Chicago] PHP Warning:  mysqli_stmt_bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 151
+[27-Jun-2016 16:37:04 America/Chicago] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 154
+[27-Jun-2016 16:49:53 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 235
+[27-Jun-2016 20:16:17 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 64
+[27-Jun-2016 20:16:19 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 64
+[27-Jun-2016 20:16:21 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 64
+[27-Jun-2016 20:16:24 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 64
+[30-Jun-2016 04:17:40 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 31
+[30-Jun-2016 04:18:17 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 31
+[30-Jun-2016 04:18:31 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 31
+[30-Jun-2016 04:20:55 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 32
+[30-Jun-2016 04:29:42 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/crowdsight/public_html/reflection/admin76321/set_feedback_script.php:25) in /home/crowdsight/public_html/reflection/admin76321/set_feedback_script.php on line 32
+[30-Jun-2016 05:29:28 America/Chicago] PHP Warning:  include_once(webpage-utility/db_utility.php): failed to open stream: No such file or directory in /home/crowdsight/public_html/reflection/admin76321/send_email198713.php on line 6
+[30-Jun-2016 05:29:28 America/Chicago] PHP Warning:  include_once(): Failed opening 'webpage-utility/db_utility.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/crowdsight/public_html/reflection/admin76321/send_email198713.php on line 6
+[30-Jun-2016 05:29:28 America/Chicago] PHP Fatal error:  Call to undefined function connect_to_db() in /home/crowdsight/public_html/reflection/admin76321/send_email198713.php on line 7
+[30-Jun-2016 05:41:05 America/Chicago] PHP Parse error:  syntax error, unexpected '.' in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 255
+[30-Jun-2016 05:41:08 America/Chicago] PHP Parse error:  syntax error, unexpected '.' in /home/crowdsight/public_html/reflection/admin76321/control_panel.php on line 255
+[30-Jun-2016 15:54:07 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/crowdsight/public_html/reflection/admin76321/set_feedback_script.php:32) in /home/crowdsight/public_html/reflection/admin76321/set_feedback_script.php on line 39
+[01-Jul-2016 00:44:20 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 98
+[01-Jul-2016 04:07:16 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[01-Jul-2016 04:07:50 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[01-Jul-2016 04:07:59 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 98
+[01-Jul-2016 04:08:47 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 98
+[01-Jul-2016 07:30:45 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[01-Jul-2016 07:30:45 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 98
+[01-Jul-2016 07:30:45 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 129
+[01-Jul-2016 18:36:47 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[01-Jul-2016 18:37:08 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[01-Jul-2016 20:07:29 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[06-Jul-2016 12:56:45 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home/crowdsight/public_html/reflection/admin76321/reminder_first.php on line 25
+[06-Jul-2016 13:27:50 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/reminder_first.php on line 25
+[07-Jul-2016 16:39:34 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[07-Jul-2016 16:39:34 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 102
+[07-Jul-2016 16:39:34 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 139
+[07-Jul-2016 16:43:33 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[07-Jul-2016 16:43:33 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 102
+[07-Jul-2016 16:43:33 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 139
+[08-Jul-2016 13:58:01 America/Chicago] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in /home/crowdsight/public_html/reflection/admin76321/reflection.php on line 20
+[08-Jul-2016 22:34:09 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[08-Jul-2016 22:34:28 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[08-Jul-2016 22:40:20 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[08-Jul-2016 22:41:34 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[08-Jul-2016 22:41:39 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/set_feedback.php on line 65
+[12-Jul-2016 14:51:24 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/remind_second_July5.php on line 28
+[12-Jul-2016 14:52:02 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/remind_second_July5.php on line 28
+[12-Jul-2016 14:52:06 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/remind_second_July5.php on line 28
+[12-Jul-2016 15:07:50 America/Chicago] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/crowdsight/public_html/reflection/admin76321/remind_second_July5.php on line 48
+[29-Jul-2016 15:09:52 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/reflection/admin76321/reminder_first.php on line 27
