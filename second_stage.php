@@ -134,7 +134,7 @@ Please <strong>invest 15 to 30 minutes </strong>revising your design. This revis
 
 <div class="container" style="text-align:center; padding-bottom:20px;">		 	
  	<!-- <button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('save')"> Save and Return Later</button>&nbsp-->
-	<button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('submit')"> Submit </button>&nbsp</div>
+	<button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('submit')" disabled> Submit [ now disabled ]</button>&nbsp</div>
 
 	</div>
 
