@@ -108,7 +108,7 @@ em{
 Please <strong>invest 15 to 30 minutes </strong>revising your design. This revision will be considered in the competition, and the top five designs will win an additional $20. Please upload the design image that you are satisfied with. Once you click Submit, no further changes are possible. The revision and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoy the design task and look forward to your submission!
  </p>
 	<p style="font-size:16px"><br>
-	<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
+	<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
 	</p>
  </span>
 
