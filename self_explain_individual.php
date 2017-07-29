@@ -24,7 +24,7 @@
                <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below you can see your initial design on the left and feedback on the right. For each piece of feedback, we want you to <b>review</b> the content, <b>paraphrase</b> it, and <b>rate</b> its quality. When paraphrasing the feedback, you might read the content until you understand it, then imagine explaining it to your classmates or co-workers. We want you to write your explanation in the textbox below the feedback. After that, double check your response to make sure it covers all the main points in the feedback. </li>
                 </p>
                 <hr>
-                <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Submit" to go to the next step. 
+                <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Save and Go to Next Step". 
                 </p>
          </div><!--End alert section for instruction-->
 
@@ -48,12 +48,12 @@
             <div style="display:none;" id="p1">
                 <feedback><h3>Feedback 1/3: </h3>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
                 <hr>
-                <h4>Please restate the feedback using your own words:</h4><textarea rows="4"></textarea>
+                <h4>Please explain the feedback to us using your own words:</h4><textarea rows="4"></textarea>
             </div>
             <div style="display:none;" id="p2">
                 <feedback><h3>Feedback 1/3: </h3>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
                 <hr>
-                <h4>Please rate the usefulness of the feedback you just restated:</h4>
+                <h4>Please rate the usefulness of the feedback:</h4>
                 <br>
 
                 <table border='0' cellpadding='5' cellspacing='0' width="60%">
@@ -88,7 +88,7 @@
             <div style="display:none;" id="p3">
                 <feedback><h3>Feedback 2/3: </h3>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
                 <hr>
-                <h4>Please restate the feedback using your own words:</h4><textarea rows="4"></textarea>
+                <h4>Please explain the feedback to us using your own words:</h4><textarea rows="4"></textarea>
             </div>
 
             <div style="display:none;" id="p4">
@@ -127,7 +127,7 @@
             <div style="display:none" id="p5">
                 <feedback><h3>Feedback 3/3: </h3>I like that it gets the point across well. But the color palette is weak in my opinion. I would change the silhouette, as well as change the color of the background to something lighter (maybe pastels?)</feedback>
                 <hr>
-                <h4>Please restate the feedback using your own words:</h4><textarea rows="4"></textarea>
+                <h4>Please explain the feedback to us using your own words:</h4><textarea rows="4"></textarea>
             </div>
 
             <div style="display:none;" id="p6">
@@ -170,7 +170,7 @@
               <ul class="pager" >
                 <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous</a></li>
                 <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next</a></li>
-                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="onClickSubmit(3);" >Finish and Go to Next Step </a></li>
+                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="onClickSubmit(3);" >Save and Go to Next Step </a></li>
               </ul>
             </nav>
 
