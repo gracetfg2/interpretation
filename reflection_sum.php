@@ -92,7 +92,7 @@ function onClickSubmit(buttonNum) {
         //document.getElementById("area2").disabled = true;
     }
     else if(buttonNum == "3") {
-        window.location.href = "second_stage.php";
+        window.location.href = "sum_rate.php";
     }
 }
 
