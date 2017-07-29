@@ -21,7 +21,7 @@
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-               <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below we present your initial design on the left and feedback on the right. For each piece of feedback, we want you to <b>review</b> the content, <b>paraphrase</b> it, and <b>rate</b> its quality. When paraphrasing the feedback, you might read the content until you understand it, then imagine explaining it to your classmates or co-workers. We want you to write your explanation in the textbox below the feedback. After that, double check your response to make sure it covers all the main points in the feedback. </li>
+               <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below we present your initial design on the left and feedback on the right. For each piece of feedback, we want you to <b>review</b> the content, <b>paraphrase</b> it, and <b>rate</b> its quality. When paraphrasing the feedback, you should read the content until you understand it, and then imagine explaining it to your classmates or co-workers. We want you to write your explanation in the textbox below the feedback. After that, double check your response to make sure it covers all the main points in the feedback. </li>
                 </p>
                 <hr>
                 <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Save and Go to Next Step". 
