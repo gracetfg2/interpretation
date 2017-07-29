@@ -21,7 +21,7 @@
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-               <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below you can see your initial design on the left and feedback on the right. For each piece of feedback, we want you to <b>review</b> the content, <b>reflect</b> on it, and <b>rate</b> its quality. </li>
+               <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below we present your initial design on the left and feedback on the right. For each piece of feedback, we want you to <b>review</b> the content, <b>reflect</b> on it, and <b>rate</b> its quality. </li>
                 </p>
                 <hr>
                 <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Go to Next Step" to go to the next step. 

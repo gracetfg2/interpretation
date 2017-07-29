@@ -20,7 +20,7 @@
     <div class="alert alert-info" id="instruction">
     
        <h3>Review Feedback</h3>
-          <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below you can see your initial design on the left and feedback on the right. Please review the feedback rate its quality. You may want to consider the degree to which the feedback is helpful for improving the design or gaining insight. Also, you may disregard any feedback that is outside the scope of the design brief.</li>
+          <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below we present your initial design on the left and feedback on the right. Please review the feedback rate its quality. You may want to consider the degree to which the feedback is helpful for improving the design or gaining insight. Also, you may disregard any feedback that is outside the scope of the design brief.</li>
         </p>
         <hr>
          After that, please click "Submit" to go to the next step. 

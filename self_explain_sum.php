@@ -20,7 +20,7 @@
     <div class="alert alert-info" id="instruction">
     
        <h3>Review Feedback</h3>
-          <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below you can see your initial design on the left and feedback on the right. We want you to read the set of feedback until you understand it, then imagine explaining it to your classmates or co-workers. You need to write your explanation in the textbox. After that, double check your response to make sure it covers all the main points in the feedback. </li>
+          <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. Below we present your initial design on the left and feedback on the right. We want you to read the set of feedback until you understand it, then imagine explaining it to your classmates or co-workers. You need to write your explanation in the textbox. After that, double check your response to make sure it covers all the main points in the feedback. </li>
         </p>
         <hr>
         <p>Please spend about<strong> 15 minutes reviewing and completing the task for the set of feedback. </strong> After that, please click "Save and Go to Next Step". 
