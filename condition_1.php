@@ -9,185 +9,52 @@
     <!---->
     <title>Prototype</title>
     <!-- Custom styles for this template -->
-     <link rel="stylesheet" href="css/feedback.css">
+    <link rel="stylesheet" href="css/feedback.css">
+
 </head>
 
 
 <body>
+    <?php include('webpage-utility/ele_nav.php');?>
 
     <div class="container">
 
-    <div class="alert alert-info">
+        <div class="alert alert-info" id="instruction">
+            <h3>Review Feedback</h3>
+               <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. For each piece of feedback, please <b>review</b> the content, <b>paraphrase</b> it, and <b>rate</b> its quality. When paraphrasing the feedback, please read the content until you understand it, then imagine explaining the feedback to your classmates or co-workers. Please write your explanation in the textbox below the feedback. After that, please double check your response to make sure it covers all the main points in the feedback. </li>
+                </p>
+                <hr>
+                <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Submit" to go to the next step. 
+                </p>
+         </div><!--End alert section for instruction-->
+
+    <!--<div class="alert alert-info">
         <h3>Review Feedback</h3>
-        <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. For each piece of feedback, please review the content, paraphrase it, and rate its quality. When paraphrasing the feedback content, you may want to: 
-        </p>
-        <p>
-            <li style="text-indent:20px"><b>Read </b> the feedback until you understand the meaning.</li>
-            <li style="text-indent:20px"><b>Look Away</b> from the feedback to write the main points for what you read. </li>
-            <li style="text-indent:20px"><b>Imagine</b> explaining those main points to your classmates or co-workers. </li>
-            <li style="text-indent:20px"><b>Write</b> your explanation in the textbox below the feedback. </li>
-            <li style="text-indent:20px"><b>Double check</b> your response to make sure it covers all the main points. </li>
+        <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. For each piece of feedback, please <b>review</b> the content, <b>paraphrase</b> it, and <b>rate</b> its quality. When paraphrasing the feedback, please read the content until you understand it, then imagine explaining the feedback to your classmates or co-workers. We want you to write your explanation in the textbox. You should double check your response to make sure it covers all the main points in the feedback. </li>
         </p>
         <hr>
-        <p>You should spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Submit" to go to the next step. 
+        <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Submit" to go to the next step. 
         </p>
      </div><!--End alert section for instruction-->
 
 
     <div class="row" id="task">
-            <div class='panel-body'>
-                <table class='table table-hover table-nonfluid'> 
-                <thead>
-                    <td width='10%' ></td>
-                    <td width='60%' align='center'><strong></strong></td>
-                    <td width='30%' align='center'><strong>Perceived Quality</strong></td>
-                </thead> 
-
-                <tbody>
-
-                <tr id='feedback1'>
-                <td><strong>#1</strong></td>
-
-                <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>
-                    The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see
-                    <hr>
-                    <p><strong>Please describe the main points in this feedback using your own words:</strong></p>
-                    <textarea></textarea>
-                    <br><br><button type="button" class="btn btn-info" onclick="onClickSubmit(1);">Save and Review the Next Piece of Feedback</button>
-                   
-                </td> 
+        <div class="col-md-5 col-sm-5" style="padding-top:10px">
             
-                <td>
-                    <table border='0' cellpadding='5' cellspacing='0' width="100%">
-                        <tr aria-hidden='true'>
-                            <td  class='radio-label'></td>
-                            <td><label class='radio-cell'>1</label></td> 
-                            <td><label class='radio-cell'>2</label></td> 
-                            <td><label class='radio-cell'>3</label></td> 
-                            <td><label class='radio-cell'>4</label></td>
-                            <td><label class='radio-cell'>5</label></td> 
-                            <td><label class='radio-cell'>6</label></td>
-                            <td><label class='radio-cell'>7</label></td> 
-                            <td  class='radio-label' ></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class='radio-label' ><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10584'  value='4' onclick='rate(this.name,4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
-                            <td class='radio-label'><strong>High</strong></td>      
-                        </tr>                       
-                        </table>
-                        
-                </td>
+            <img style="border: 1px solid #A4A4A4; width:800px;"  src="test/exampledesign.jpg">
+        </div><!--End Design Image-->
 
-                </tr>
+        <div class="col-md-7 col-sm-7">   
 
-                <tr id='feedback2' style="display:none;">
-                <td><strong>#2</strong></td>
-
-                <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>
-                    The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see
-                    <hr>
-                    <p><strong>Please describe main points in this feedback using your own words:</strong></p>
-                    <textarea></textarea>
-                    <br><br><button type="button" class="btn btn-info" onclick="onClickSubmit(2);">Save and Review the Next Piece of Feedback</button>
-                   
-                </td> 
-            
-                <td>
-                    <table border='0' cellpadding='5' cellspacing='0' width="100%">
-                        <tr aria-hidden='true'>
-                            <td  class='radio-label'></td>
-                            <td><label class='radio-cell'>1</label></td> 
-                            <td><label class='radio-cell'>2</label></td> 
-                            <td><label class='radio-cell'>3</label></td> 
-                            <td><label class='radio-cell'>4</label></td>
-                            <td><label class='radio-cell'>5</label></td> 
-                            <td><label class='radio-cell'>6</label></td>
-                            <td><label class='radio-cell'>7</label></td> 
-                            <td  class='radio-label' ></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class='radio-label' ><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10584'  value='4' onclick='rate(this.name,4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
-                            <td class='radio-label'><strong>High</strong></td>      
-                        </tr>                       
-                        </table>
-                        
-                </td>
-
-        </tr>
-
-
-        
-        <tr id='feedback3' style="display:none;">
-                <td><strong>#3</strong></td>
-
-                <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>
-                    The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see
-                    <hr>
-                    <p><strong>Please describe main points in this feedback using your own words:</strong></p>
-                    <textarea></textarea>
-                    <br><br><button type="button" class="btn btn-success" onclick="onClickSubmit(3);">Submit</button>
-                   
-                </td> 
-            
-                <td>
-                    <table border='0' cellpadding='5' cellspacing='0' width="100%">
-                        <tr aria-hidden='true'>
-                            <td  class='radio-label'></td>
-                            <td><label class='radio-cell'>1</label></td> 
-                            <td><label class='radio-cell'>2</label></td> 
-                            <td><label class='radio-cell'>3</label></td> 
-                            <td><label class='radio-cell'>4</label></td>
-                            <td><label class='radio-cell'>5</label></td> 
-                            <td><label class='radio-cell'>6</label></td>
-                            <td><label class='radio-cell'>7</label></td> 
-                            <td  class='radio-label' ></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class='radio-label' ><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10584'  value='4' onclick='rate(this.name,4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
-                            <td class='radio-label'><strong>High</strong></td>      
-                        </tr>                       
-                        </table>
-                        
-                </td>
-
-        </tr>
-
-
-
-                </tbody>
-                </table>
-
-
-
-
-
+                <feedback><h3>Feedback 1: </h3>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
+                <hr>
+                <h4>Please restate the feedback using your own words:</h4><textarea rows="4"></textarea>
+                <input type="button" class="btn btn-primary", value="Review Next" id="submit1", onclick="onClickSubmit('1')">
 
         </div><!--End Feedback Section-->
 
+    </div><!--End Task Section-->
+    
     </div><!--End Container-->
 
 <!--Begin Script-->       

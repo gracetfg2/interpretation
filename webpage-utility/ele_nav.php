@@ -7,7 +7,7 @@
             
         </div>
       
-  </nav>
+</nav>
 <script>
   $(document).ready(function(){
     $('#logout').click(function(){
