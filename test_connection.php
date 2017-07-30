@@ -6,8 +6,6 @@
    $SQL_ACC = "crowdsig_1";
    $SQL_PWD = "bpteam!";
 
-
-   require_once('webpage-utility/db_config.php');
    // Create connection
    $connection = mysqli_connect($DB_HOST,$SQL_ACC,$SQL_PWD,$DB);
 
