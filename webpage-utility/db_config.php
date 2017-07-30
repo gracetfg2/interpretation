@@ -1,7 +1,7 @@
 <?php
 
-   $DB_HOST = "crowdsight.web.engr.illinois.edu";
-   $DB = "crowdsig_reflection";
+   $DB_HOST = "crowdsight.webhost.engr.illinois.edu";
+   $DB = "crowdsight_interpretation";
    $SQL_ACC = "crowdsig_1";
    $SQL_PWD = "bpteam!";
 

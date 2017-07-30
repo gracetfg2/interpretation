@@ -8,8 +8,6 @@ session_start();
  if(!$_SERVER['HTTP_X_FORWARDED_FOR']){ $proxy="0";}
  else{  $proxy=$_SERVER['HTTP_X_FORWARDED_FOR'];}
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +19,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="Yu-Chun (Grace) Yen, UIUC">
     <link rel="icon" href="logo.png">
- <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
     <!-- Bootstrap core CSS and js -->
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
