@@ -9,30 +9,106 @@
     <!---->
     <title>Prototype</title>
     <!-- Custom styles for this template -->
-     <link rel="stylesheet" href="css/feedback.css">
+    <link rel="stylesheet" href="css/feedback.css">
+
 </head>
 
 
 <body>
-  <?php include('webpage-utility/ele_nav.php');?>
+    <?php include('webpage-utility/ele_nav.php');?>
+
     <div class="container">
 
-    <div class="alert alert-info" id="instruction">
-    
-       <h3>Rate Feedback</h3>
-          <p> Please rate the usefulness of each piece of the feedback. You may want to consider the degree to which the feedback is useful for improving the design or gaining insight.
+        <div class="alert alert-info" id="instruction">
+            <h3>Review Feedback</h3>
+               <p>We have collected feedback from three independent reviewers to help you revise your design. We want you to review the set of feedback and use your own words to restate its meaning. You may want to imagine explaning this set of feedback to your co-workers. After that, please click "Next" to go to the next step. </p>
+               <br>
+               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
+         </div><!--End alert section for instruction-->
+
+    <!--<div class="alert alert-info">
+        <h3>Review Feedback</h3>
+        <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. For each piece of feedback, please <b>review</b> the content, <b>paraphrase</b> it, and <b>rate</b> its quality. When paraphrasing the feedback, please read the content until you understand it, then imagine explaining the feedback to your classmates or co-workers. We want you to write your explanation in the textbox. You should double check your response to make sure it covers all the main points in the feedback. </li>
         </p>
-    </div><!--End alert section for instruction-->
+        <hr>
+        <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Submit" to go to the next step. 
+        </p>
+     </div><!--End alert section for instruction-->
 
 
-    <div class="row" id="task">
-  
+        <div id="task">
+ 
             <div id="p1">
-            
-               <feedback><h4>Feedback #1: </h4>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
+                <feedback><h4>Feedback #1: </h4>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
                 <hr>
+            </div>
 
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #1:</h5>
+
+            <div id="p3">
+                <feedback><h4>Feedback #2: </h4>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
+                <hr>
+            </div>
+           
+
+            <div id="p5">
+                <feedback><h4>Feedback #3: </h4>I like that it gets the point across well. But the color palette is weak in my opinion. I would change the silhouette, as well as change the color of the background to something lighter (maybe pastels?)</feedback>
+                <hr>
+            </div>
+
+            <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please use your own words to restate the meaning of this set of feedback: </h5><textarea rows="4"></textarea>
+
+            <br>
+            <button style="margin:0 auto;" type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" >Next</button>
+   
+
+
+
+             <div style="display:none;" id="p1">
+                <feedback><h4>Feedback #1: </h4>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
+                <hr>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate feedback #1 using your own words:</h5><textarea rows="4"></textarea>
+            </div>
+            <div style="display:none;" id="p2">
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #1:</h5>
+                <br>
+
+                <table border='0' cellpadding='5' cellspacing='0' width="60%">
+                        <tr aria-hidden='true'>
+                            <td  class='radio-label'></td>
+                            <td><label class='radio-cell'>1</label></td> 
+                            <td><label class='radio-cell'>2</label></td> 
+                            <td><label class='radio-cell'>3</label></td> 
+                            <td><label class='radio-cell'>4</label></td>
+                            <td><label class='radio-cell'>5</label></td> 
+                            <td><label class='radio-cell'>6</label></td>
+                            <td><label class='radio-cell'>7</label></td> 
+                            <td  class='radio-label' ></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class='radio-label' ><strong>Low</strong></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10584'  value='4' onclick='rate(this.name,4);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
+                            <td class='radio-label'><strong>High</strong></td>      
+                        </tr>                       
+                        </table>
+                     <hr>   
+            </div>
+
+            <div style="display:none;" id="rating">
+                <div id="p3">
+                    <feedback><h4>Feedback #2: </h4>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
+                    <hr>
+                     <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate feedback #2 using your own words:</h5><textarea rows="4"></textarea>
+                </div>
+
+            <div id="p4">
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #2:</h5>
                 <br>
                 <table border='0' cellpadding='5' cellspacing='0' width="60%">
                         <tr aria-hidden='true'>
@@ -59,57 +135,21 @@
                             <td class='radio-label'><strong>High</strong></td>      
                         </tr>                       
                         </table>
-             
+                        <hr>
             </div>
 
-            <hr>
-
-            <div id="p2">
-             
-               <feedback><h4>Feedback #2: </h4>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
-                    <hr>
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #2:</h5>
-                <br>
-                      <table border='0' cellpadding='5' cellspacing='0' width="60%">
-                        <tr aria-hidden='true'>
-                            <td  class='radio-label'></td>
-                            <td><label class='radio-cell'>1</label></td> 
-                            <td><label class='radio-cell'>2</label></td> 
-                            <td><label class='radio-cell'>3</label></td> 
-                            <td><label class='radio-cell'>4</label></td>
-                            <td><label class='radio-cell'>5</label></td> 
-                            <td><label class='radio-cell'>6</label></td>
-                            <td><label class='radio-cell'>7</label></td> 
-                            <td  class='radio-label' ></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class='radio-label' ><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10584'  value='4' onclick='rate(this.name,4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
-                            <td class='radio-label'><strong>High</strong></td>      
-                        </tr>                       
-                        </table>
-                         
-            </div>
-
-            <hr>
-
-
-             <div id="p3">
-               
+            <div id="p5">
                 <feedback><h4>Feedback #3: </h4>I like that it gets the point across well. But the color palette is weak in my opinion. I would change the silhouette, as well as change the color of the background to something lighter (maybe pastels?)</feedback>
                 <hr>
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate feedback #3 using your own words: </h5><textarea rows="4"></textarea>
+            </div>
 
-                  <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #3:</h5>
+            <div id="p6">
+        
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #3:</h5>
                 <br>
-          
-                    <table border='0' cellpadding='5' cellspacing='0' width="60%">
+
+                <table border='0' cellpadding='5' cellspacing='0' width="60%">
                         <tr aria-hidden='true'>
                             <td  class='radio-label'></td>
                             <td><label class='radio-cell'>1</label></td> 
@@ -134,34 +174,84 @@
                             <td class='radio-label'><strong>High</strong></td>      
                         </tr>                       
                         </table>
-                        
+                  <hr>      
             </div>
 
-            <div style="margin-top:20px;">
-             <button type="button" class="btn btn-success" id="btn_finish" onclick="onClickSubmit(3);" >Submit </button>
             </div>
 
 
-
-        </div><!--End Feedback Section-->
+           
 
     </div><!--End Task Section-->
-
-  <?php include("webpage-utility/footer.php") ?>
-
+    
     </div><!--End Container-->
 
 <!--Begin Script-->       
 <script>
-function toggleDelayed() {
-    var isDelayed = localStorage.getItem("isDelayed");
-    if(isDelayed == "1")
-        isDelayed = "0";
-    else
-        isDelayed = "1";
-    localStorage.setItem("isDelayed", isDelayed);
-    location.reload();
+var current_page = 1;
+
+function prevPage()
+{
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+    }
 }
+
+function nextPage()
+{
+    window.location.href = "sum_rate.php";
+}
+    
+function changePage(page)
+{
+    var btn_next = document.getElementById("btn_next");
+    var btn_prev = document.getElementById("btn_prev");
+    var btn_finish = document.getElementById("btn_finish");
+    // Validate page
+    if (page < 1) page = 1;
+    if (page > numPages()) page = numPages();
+
+ 
+  
+   for(var page_index=1; page_index<=numPages() ; page_index ++)
+    {
+        if(page_index == page)
+        {
+            $("#p"+page).show();
+        }//hide pages not selected
+        else
+        {
+           // $("#p"+page_index).hide();
+        }
+    
+    }
+
+
+    if (page == 1) {
+        btn_prev.style.display = "none";
+    } else {
+        //btn_prev.style.display = "inline";
+    }
+
+    if (page == numPages()) {
+        btn_next.style.display = "none";
+        btn_finish.style.display ="inline";
+
+    } else {
+        btn_next.style.display = "inline";
+        btn_finish.style.display ="none";
+    }
+}
+
+function numPages()
+{
+
+    /*to do: Count Number of feedback and multiply by 2*/
+    return 6;
+}
+
+
 
 function onClickSubmit(buttonNum) {
     if(buttonNum == "1") {
@@ -179,6 +269,9 @@ function onClickSubmit(buttonNum) {
 }
 
 $(document).ready(function(){
+
+    changePage(1);
+
     var isDelayed = localStorage.getItem("isDelayed");
     if(isDelayed != "1")
         //document.getElementById("reprint").innerHTML = "<br>Your design has been reprinted several times for your ease of reference.";
