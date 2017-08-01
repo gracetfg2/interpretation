@@ -41,7 +41,7 @@
             <div style="display:none;" id="p1">
                 <feedback><h4>Feedback #1: </h4>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
                 <hr>
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #1, what actions you could take to improve your design?</h5><textarea rows="4"></textarea>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #1, please describe what actions you could take to improve your design?</h5><textarea rows="4"></textarea>
             </div>
             <div style="display:none;" id="p2">
                  <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #1:</h5>
@@ -79,7 +79,7 @@
             <div style="display:none;" id="p3">
                 <feedback><h4>Feedback #2: </h4>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
                 <hr>
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #2, what actions you could take to improve your design?</h5><textarea rows="4"></textarea>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #2, please describe what actions you could take to improve your design?</h5><textarea rows="4"></textarea>
             </div>
 
             <div style="display:none;" id="p4">
@@ -116,7 +116,7 @@
             <div style="display:none" id="p5">
                 <feedback><h4>Feedback #3: </h4>I like that it gets the point across well. But the color palette is weak in my opinion. I would change the silhouette, as well as change the color of the background to something lighter (maybe pastels?)</feedback>
                 <hr>
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #3, what actions you could take to improve your design? </h5><textarea rows="4"></textarea>
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #3, please describe what actions you could take to improve your design? </h5><textarea rows="4"></textarea>
             </div>
 
             <div style="display:none;" id="p6">
