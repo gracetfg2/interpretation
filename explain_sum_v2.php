@@ -21,7 +21,7 @@
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-               <p>We have collected feedback from three independent reviewers to help you revise your design. We want you to review the set of feedback and use your own words to restate its meaning. You may want to imagine explaning this set of feedback to your co-workers. After that, please click "Next" to go to the next step. </p>
+               <p>We have collected feedback from three independent reviewers to help you revise your design. We want you to review all the feedback and use your own words to restate its meaning. You may want to imagine explaning this set of feedback to your co-workers. After that, please click "Next" to go to the next step. </p>
                <br>
                <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
