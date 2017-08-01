@@ -21,7 +21,7 @@
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-             <p>We have collected feedback from three independent reviewers to help you revise your design. The set of feedback is shown below. We want you to review the content and reflect on it by answering the question. After that, please click "Next" to go to the next step..</p>
+             <p>We have collected feedback from three independent reviewers to help you revise your design. Please review all the feedback and reflect on it by answering the question. After that, please click "Next" to go to the next step.</p>
             <br>
                <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
@@ -55,8 +55,7 @@
                 <hr>
             </div>
 
-            <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on the set of feedback, please describe what actions you could take to improve your design:: </h5><textarea rows="4"></textarea>
-
+            <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please describe what actions you could take to improve your design:: </h5><textarea rows="4"></textarea>
             <br>
             <button style="margin:0 auto;" type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" >Next</button>
    
