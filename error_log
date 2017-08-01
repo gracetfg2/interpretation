@@ -4756,3 +4756,71 @@
 [13-Aug-2016 19:53:09 America/Chicago] gmknjucser@gmail.com
 [13-Aug-2016 19:53:09 America/Chicago] prepared
 [13-Aug-2016 19:53:09 America/Chicago] 1
+[30-Jul-2017 21:21:54 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:21:54 UTC] prepared
+[30-Jul-2017 21:21:54 UTC] 1
+[30-Jul-2017 21:22:01 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:22:01 UTC] prepared
+[30-Jul-2017 21:22:01 UTC] 1
+[30-Jul-2017 21:22:19 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:22:19 UTC] prepared
+[30-Jul-2017 21:22:19 UTC] 1
+[30-Jul-2017 21:22:36 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:22:36 UTC] prepared
+[30-Jul-2017 21:22:36 UTC] 1
+[30-Jul-2017 21:23:15 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:23:15 UTC] prepared
+[30-Jul-2017 21:23:15 UTC] 1
+[30-Jul-2017 21:23:35 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:23:35 UTC] prepared
+[30-Jul-2017 21:23:35 UTC] 1
+[30-Jul-2017 21:24:55 UTC] yyen4@illinois.ed
+[30-Jul-2017 21:24:55 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:24:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:22 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:22 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:31 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:25:31 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:25:31 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:31 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:31 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:31 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:25:41 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:25:41 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:29:55 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:29:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/webpage-utility/db_utility.php on line 6
+[30-Jul-2017 21:30:03 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/test_connection.php on line 12
+[30-Jul-2017 21:30:03 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/test_connection.php on line 12
+[30-Jul-2017 21:32:35 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/test_connection.php on line 12
+[30-Jul-2017 21:32:35 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/test_connection.php on line 12
+[30-Jul-2017 21:32:39 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/test_connection.php on line 12
+[30-Jul-2017 21:32:39 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/crowdsight/public_html/interpretation/test_connection.php on line 12
+[30-Jul-2017 21:38:15 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:38:15 UTC] prepared
+[30-Jul-2017 21:38:15 UTC] 0
+[30-Jul-2017 21:38:25 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:38:25 UTC] prepared
+[30-Jul-2017 21:38:25 UTC] 0
+[30-Jul-2017 21:38:36 UTC] yyen4@illinois.edu
+[30-Jul-2017 21:38:36 UTC] prepared
+[30-Jul-2017 21:38:36 UTC] 0
