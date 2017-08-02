@@ -8,17 +8,17 @@
     <link rel="icon" href="logo.png">
 
  <!-- Bootstrap core CSS and js -->
-    <link rel="stylesheet" type="text/css" href="/reflection/dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="/reflection/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/interpretation/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="/interpretation/dist/js/bootstrap.min.js"></script>
 
 <!-- JQuery and Google font -->
     <link href='https://fonts.googleapis.com/css?family=Exo:100,400' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="/reflection/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/reflection/css/designer.css">
-    <link rel="stylesheet" type="text/css" href="/reflection/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="/interpretation/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/interpretation/css/designer.css">
+    <link rel="stylesheet" type="text/css" href="/interpretation/css/signup.css">
 
 
   
