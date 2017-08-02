@@ -8,9 +8,9 @@
 	
 	if(!$DESIGNER) { header("Location: ../index.php"); die(); }
 		
-	include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
 
-	include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
+	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
    	
 
@@ -59,7 +59,7 @@
 	<script src="../step-indicator/js/modernizr.js"></script> <!-- Modernizr -->
  </head>
  <body>
- <?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/ele_nav.php');?>
+ <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
 <div class="main-section">
 
 
@@ -202,7 +202,7 @@ switch ($stage){
 
 </div>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/footer.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/footer.php'); ?>
 
 </div>
 
