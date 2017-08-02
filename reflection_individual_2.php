@@ -21,9 +21,9 @@
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-               <p>We have collected feedback from three independent reviewers to help you revise your design. For each piece of feedback, we want you to review the content, reflect on it, and rate its usefulness. The reflection and rating task will be repeated for each of the three pieces of feedback.</p>
+               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of experience in design. We want you to restate the meaning of the feedback using your own words and rate the usefulness of the feedback for improving your design.</p>
                <br>
-               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
+               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck">  View my initial design and its description</a>
          </div><!--End alert section for instruction-->
 
     <!--<div class="alert alert-info">
@@ -41,13 +41,12 @@
             <div style="display:none;" id="p1">
                 <feedback><h4>Feedback #1: </h4>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
                 <hr>
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #1, please describe what actions you could take to improve your design?</h5><textarea rows="4"></textarea>
-            </div>
-            <div style="display:none;" id="p2">
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #1:</h5>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp  Please restate the meaning of feedback #1 using your own words:</h5><textarea rows="4"></textarea>
+           
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #1 for improving your design:</h5>
                 <br>
 
-                <table border='0' cellpadding='5' cellspacing='0' width="60%">
+                <table border='0' cellpadding='5' cellspacing='0' width="70%">
                         <tr aria-hidden='true'>
                             <td  class='radio-label'></td>
                             <td><label class='radio-cell'>1</label></td> 
@@ -61,7 +60,7 @@
                         </tr>
                         
                         <tr>
-                            <td class='radio-label' ><strong>Low</strong></td>
+                            <td class='radio-label' ><strong>Not Useful</strong></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
@@ -69,23 +68,21 @@
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
-                            <td class='radio-label'><strong>High</strong></td>      
+                            <td class='radio-label'><strong>Very Useful</strong></td>      
                         </tr>                       
                         </table>
                      <hr>   
             </div>
 
 
-            <div style="display:none;" id="p3">
+            <div style="display:none;" id="p2">
                 <feedback><h4>Feedback #2: </h4>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
                 <hr>
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #2, please describe what actions you could take to improve your design?</h5><textarea rows="4"></textarea>
-            </div>
-
-            <div style="display:none;" id="p4">
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #2:</h5>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate the meaning of feedback #2 using your own words:</h5><textarea rows="4"></textarea>
+         
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #2 for improving your design:</h5>
                 <br>
-                <table border='0' cellpadding='5' cellspacing='0' width="60%">
+                <table border='0' cellpadding='5' cellspacing='0' width="70%">
                         <tr aria-hidden='true'>
                             <td  class='radio-label'></td>
                             <td><label class='radio-cell'>1</label></td> 
@@ -99,7 +96,7 @@
                         </tr>
                         
                         <tr>
-                            <td class='radio-label' ><strong>Low</strong></td>
+                            <td class='radio-label' ><strong>Not Useful</strong></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
@@ -107,24 +104,22 @@
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
-                            <td class='radio-label'><strong>High</strong></td>      
+                            <td class='radio-label'><strong>Very Useful</strong></td>      
                         </tr>                       
                         </table>
                         <hr>
             </div>
 
-            <div style="display:none" id="p5">
+            <div style="display:none" id="p3">
                 <feedback><h4>Feedback #3: </h4>I like that it gets the point across well. But the color palette is weak in my opinion. I would change the silhouette, as well as change the color of the background to something lighter (maybe pastels?)</feedback>
                 <hr>
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #3, please describe what actions you could take to improve your design? </h5><textarea rows="4"></textarea>
-            </div>
-
-            <div style="display:none;" id="p6">
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate the meaning of feedback #3 using your own words:</h5><textarea rows="4"></textarea>
+          
         
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #3:</h5>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #3 for improving your design:</h5>
                 <br>
 
-                <table border='0' cellpadding='5' cellspacing='0' width="60%">
+                <table border='0' cellpadding='5' cellspacing='0' width="70%">
                         <tr aria-hidden='true'>
                             <td  class='radio-label'></td>
                             <td><label class='radio-cell'>1</label></td> 
@@ -138,7 +133,7 @@
                         </tr>
                         
                         <tr>
-                            <td class='radio-label' ><strong>Low</strong></td>
+                            <td class='radio-label' ><strong>Not Useful</strong></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
@@ -146,7 +141,7 @@
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
                             <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
-                            <td class='radio-label'><strong>High</strong></td>      
+                            <td class='radio-label'><strong>Very Useful</strong></td>      
                         </tr>                       
                         </table>
                   <hr>      
@@ -184,7 +179,7 @@ function nextPage()
         current_page++;
         changePage(current_page);
     }
-    window.scrollTo(0,document.body.scrollHeight);
+   // window.scrollTo(0,document.body.scrollHeight);
 }
     
 function changePage(page)
@@ -206,7 +201,7 @@ function changePage(page)
         }//hide pages not selected
         else
         {
-           // $("#p"+page_index).hide();
+            $("#p"+page_index).hide();
         }
     
     }
@@ -215,7 +210,7 @@ function changePage(page)
     if (page == 1) {
         btn_prev.style.display = "none";
     } else {
-        //btn_prev.style.display = "inline";
+        btn_prev.style.display = "inline";
     }
 
     if (page == numPages()) {
@@ -232,7 +227,7 @@ function numPages()
 {
 
     /*to do: Count Number of feedback and multiply by 2*/
-    return 6;
+    return 3;
 }
 
 

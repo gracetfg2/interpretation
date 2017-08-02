@@ -1,3 +1,106 @@
+<?php
+
+session_start();    
+// //************* Check Login ****************// 
+// $DESIGNER= $_SESSION['designer_id'];
+// $EXPERIMENT=$_SESSION["experimentID"]=1;
+// if(!$DESIGNER) { header("Location: ../index.php"); die(); }
+// //************* End Check Login ****************// 
+
+// include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
+// $conn = connect_to_db();
+
+// $filename="";   
+//     $sql="SELECT * FROM u_Designer WHERE DesignerID=?";
+//     if($stmt=mysqli_prepare($conn,$sql))
+//     {
+//         mysqli_stmt_bind_param($stmt,"i",$DESIGNER);
+//         mysqli_stmt_execute($stmt);
+//         $result = $stmt->get_result();
+//         $designer=$result->fetch_assoc() ;          
+//         mysqli_stmt_close($stmt);   
+
+//     }   
+
+
+//     if($designer['process']>5 ||$designer['process']<4)
+//     { header("Location: ../index.php"); die(); }
+
+
+//     $sql="SELECT * FROM Design WHERE f_designerID=? AND version=?";
+//     if($stmt=mysqli_prepare($conn,$sql))
+//     {
+//         $version=1;
+//         mysqli_stmt_bind_param($stmt,"ii",$DESIGNER,$version);
+//         mysqli_stmt_execute($stmt);
+//         $result = $stmt->get_result();
+//         $design=$result->fetch_assoc() ;            
+//         mysqli_stmt_close($stmt);   
+//     }
+// $design_id=$design['DesignID'];
+// $mid=$design['mid'];
+// $ok_to_use=1;
+//     if ($stmt1 = mysqli_prepare($conn, "SELECT file From Design WHERE  DesignID= ? AND f_DesignerID = ?")) {
+//         mysqli_stmt_bind_param($stmt1, "ii", $design_id,$DESIGNER);
+//         mysqli_stmt_execute($stmt1);
+//         $stmt1->store_result();
+//         if($stmt1->num_rows > 0) {
+//             mysqli_stmt_bind_result($stmt1, $filename);
+//             mysqli_stmt_fetch($stmt1);
+//             mysqli_stmt_close($stmt1);
+//             //**************** Get Feedback ****************//
+//             if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Feedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
+//                 mysqli_stmt_bind_param($stmt2, "ii", $design_id, $ok_to_use);
+//                 mysqli_stmt_execute($stmt2);
+//                 $result = $stmt2->get_result();
+//                 while ($myrow = $result->fetch_assoc()) {
+//                     $feedback[]=$myrow;
+//                     switch ($myrow['category']){
+//                         case "'overall'":
+//                             $fk_overall[]=$myrow;break;
+//                         case "layout":
+//                             $fk_layout[]=$myrow;break;
+//                         case "aes":
+//                             $fk_aes[]=$myrow;break;
+//                         default:
+//                             $fk_overall[]=$myrow;break;
+
+//                     }
+//                 }  
+//                 $feedback_text=json_encode($feedback);
+//                 mysqli_stmt_close($stmt2);  
+//             }
+//             else {
+//             //No Designs found
+//                 echo "Our system encounter some problems, please contact our staff Grace at yyen4@illinois.edu with error code: SHOWFEEDBACK";
+//                 mysqli_stmt_close($stmt2);
+//                 die();
+//             }
+            
+//         }
+//         else 
+//         {
+//             echo "You don't have the permission to view this page. If you have any questions, please contact Grace (design4uiuc@gmail.com) with error code: View-Feedback-GetDesign";die();
+//         }
+//     } 
+//     else
+//     {   
+//         //mysqli_stmt_close($stmt1);
+//         echo "Our system encounter some problems, please contact our staff Grace at yyen4@illinois.edu with error code: SHOWFEEDBACK";
+//         die();
+//     }
+
+
+//     mysqli_close($conn);
+
+    
+        $feedback[0] = "feedback 1";
+        $feedback[1] = "feedback 2";
+        $feedback[2] = "feedback 3";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +158,7 @@
                 <hr>
             </div>
 
-            <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please describe what actions you could take to improve your design:: </h5><textarea rows="4"></textarea>
+            <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on the set of feedback received, please describe what actions you could take to improve your design: </h5><textarea rows="4"></textarea>
             <br>
             <button style="margin:0 auto;" type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" >Next</button>
    
