@@ -94,9 +94,6 @@ session_start();
 //     mysqli_close($conn);
 
     
-        $feedback[0] = "feedback 1";
-        $feedback[1] = "feedback 2";
-        $feedback[2] = "feedback 3";
 
 ?>
 

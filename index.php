@@ -18,10 +18,10 @@
 <html lang="en">
   <head>
    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/ele_header.php');?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
    <title>Signin Page </title>
     <!-- Custom styles for this template -->
-    <link href="/reflection/css/signin.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
 
   </head>
 
@@ -30,7 +30,7 @@
 <nav class="navbar navbar-fixed-top navbar-inverse" style="background:#002058">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" style="color:#E87722" href="/reflection/index.php">CRAFT</a>
+                <a class="navbar-brand" style="color:#E87722" href="/interpretation/index.php">CRAFT</a>
             </div>
          
         </div>
