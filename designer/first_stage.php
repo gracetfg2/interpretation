@@ -9,8 +9,8 @@
 	//************* End Check Login ****************// 
 
 	//Get Designer's Project
-	include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
-	include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
+	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
 
    	$conn = connect_to_db();
 	
@@ -167,7 +167,7 @@ em{
  </head>
 
  <body>
- <?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/ele_nav.php');?>
+ <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
 
 
 
@@ -185,19 +185,18 @@ em{
   </div>
   <div class="panel-body">
    <span class="statement" style="text-align: justify;">
-   You need to design a flyer addressing the design brief and requirements below. Please upload the design image that you are satisfied with. Once you click Submit, you are not able to make further changes. Please retain a copy of the design for the next phase of the study. Now, be creative and have fun! </span>
+   You need to design a flyer addressing the design brief and requirements below. Please upload the design image that you are satisfied with. Once you click Submit, you are not able to make further changes. Please retain a copy of the design for the next phase of the study. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
    <h4 class="title">Rules / Requirements</h4>
     <span class="statement">
-    <ol>1) You need to invest 30 to 60 minutes designing the flyer.</ol>
-    <ol>2) You can use your favorite software to design the flyer. But no paper sketches allowed.</ol>
- <ol>3) The flyer size should be 8.5" x 11" (US Letter size) and in portrait orientation.</ol>
- <ol>4) The flyer must be created from scratch. No templates allowed.</ol>
- <ol>5) You may use images from the public domain, but not profanity, obscenity, or nudity.</ol>
-
+    <ol>1) You can use your favorite software to design the flyer. But no paper sketches allowed.</ol>
+ <ol>2) The flyer size should be 8.5" x 11" (US Letter size) and in portrait orientation.</ol>
+ <ol>3) The flyer must be created from scratch. No templates allowed.</ol>
+ <ol>4) You may use images from the public domain, but not profanity, obscenity, or nudity.</ol>
+ 
  </span>
     <h4 class="title">Design Brief</h4>
     <span class="statement" style="text-align: justify;">
-			    <ol>You have been hired to design a flyer for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen> ( not live yet). The top three runners will receive a $300 prize each. The goal of your flyer is to encourage participation, be visually appealing, and convey the event details.
+			    <ol>TO DO LIST
 </ol>
 	</span>
 	
@@ -239,7 +238,7 @@ em{
 	<?php echo $current_projectID;?>
 
 </div>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/footer.php');
+<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/footer.php');
 ?>
 
 

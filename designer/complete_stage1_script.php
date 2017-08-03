@@ -7,7 +7,7 @@ if(!$designer_id) { header("Location: ../index.php"); die(); }
 if(!$currentVersion) { header("Location: ../index.php"); die(); }
 //************* End Check Login ****************// 
 
-include_once('/webpage-utility/db_utility.php');
+include_once('../webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
 

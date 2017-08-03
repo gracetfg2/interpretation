@@ -437,7 +437,7 @@ function email_change() {
                     break;
                   default:
 
-                     alert("Oops, our website encounters some problems. Please contact the system administrator at yyen4@illinois.edu");
+                     alert("Oops, our website encounters some problems. Please contact the system administrator at design4uiuc@gmail.com");
                      alert(data);
                      isNewUser = 0;
                      isOkay = false;
@@ -490,7 +490,7 @@ function paypal_change() {
                     break;
                   default:
 
-                     alert("Oops, our website encounters some problems. Please contact the system administrator at yyen4@illinois.edu");
+                     alert("Oops, our website encounters some problems. Please contact the system administrator at design4uiuc@gmail.com");
                      alert(data);
                      ValidPaypal = 0;
                      isOkay = false;

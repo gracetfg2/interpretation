@@ -1,0 +1,3 @@
+
+ New Record
+[[1501706778044,"init"],[1501706784715,"blur"],[1501706797917,"focus"],[1501706798340,"start-upload-design"],[1501706801274,"submit"],[20297,"prepareTime"],[2937,"taskTime"]]

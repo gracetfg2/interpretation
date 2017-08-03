@@ -8,7 +8,7 @@
     
  	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
  	 
- 	<?php include('webpage-utility/ele_header.php');?>
+ 	<?php include('../webpage-utility/ele_header.php');?>
  	 <title>Home </title>
     <!-- Custom styles for this template -->
     <style>
@@ -86,7 +86,7 @@ em{
  </head>
 
  <body>
- <?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/ele_nav.php');?>
+ <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
 
 
 
@@ -142,7 +142,7 @@ Please <strong>invest 15 to 30 minutes </strong>revising your design. This revis
 </div>
 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/footer.php');
+<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/footer.php');
 ?>
 <script>
 isOkay = true;

@@ -1,4 +1,4 @@
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php'); ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php'); ?>
 	<footer  style="text-align: center;padding-top:20px">
 	<hr>
 			<span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>

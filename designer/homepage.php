@@ -106,14 +106,22 @@ switch ($stage){
 		
 		break;
 	case 3:
-		echo "<p style='text-align:center;font-weight:bold'>You have completed the first phase of the competition! </p>
-		<p> The compensation for the first phase of the study ($10) will be sent to your Paypal account (<span style='color:blue'>".$designer['paypal']."</span>) shortly. In the meantime, we will prepare the material for your next phase of the study. Once it is ready, we will notify you through your contact email. This will take around three days. </p>";
+		echo "
+			<p style='text-align:center;font-weight:bold'>You have completed the first phase of the competition! </p>
+	
+		<p> We will prepare the material for your next phase of the study. Once it is ready, we will notify you through your contact email. This will take around three days. </p>
+<p><hr>OR</p>
+
+		<p> The compensation for the first phase of the study ($10) will be sent to your Paypal account (<span style='color:blue'>".$designer['paypal']."</span>) shortly. In the meantime, we will prepare the material for your next phase of the study. Once it is ready, we will notify you through your contact email. This will take around three days. </p>
+
+
+		";
 		break;
 	case 4:
 		//$group="reflection-feedback";
-		$inst_design="Revise your initial design";
+		$inst_design="Revise your initial design.";
 		$inst_review="Review feedback that was provided for your initial design.";
-		$inst_reflect="Complete a reflection task on your initial design";
+		$inst_complete="Complete a survey asking about your design process.";
 		$next_page="";
 		
 		if ($group==NULL)
@@ -123,54 +131,31 @@ switch ($stage){
 			die();	
 		}
 		echo "<p style='text-align:center;font-weight:bold'>Hi ".$designer['name'].", Welcome back to the study!</p><p> In this phase, you need to complete the following steps by 
-			 <span style='color:red'>".$designer['second_deadline']."</span>. </p>  ";
-		switch ($group){
-			case 'feedback':
-				$next_page="feedback.php";
-				echo "
- 				 <p>
- 				 1) ".$inst_review." <br>
- 				 2) ".$inst_design." <br>
- 				</p>
- 				";
-	 			break;
-			case 'reflection':
-				$next_page="reflection.php";
-				echo "
- 				 <p>
- 				 1) ".$inst_reflect." <br>
- 				 2) ".$inst_design." <br>
- 				</p>";
-	 			break;
-			case 'reflection-feedback':
-				$next_page="reflection.php";
-					echo "
-	 				 <p>
-	 				 1) ".$inst_reflect."<br>
-	 				 2) ".$inst_review."<br>
-	 				 3) ".$inst_design."<br>
-	 				</p>
-	 			 	";
-	 				break;
-			case 'feedback-reflection':
-				$next_page="feedback.php";
-				echo "
-	 				 <p>
-	 				 1) ".$inst_review."<br>
-	 				 2) ".$inst_reflect."<br>
-	 				 3) ".$inst_design."<br>
+			 <span style='color:red'>".$designer['second_deadline']."</span>. </p>  
+	 			<p>
+	 				
+	 				 1) ".$inst_review." <br>
+	 				 2) ".$inst_design." <br>
+	 				 3) ".$inst_complete." <br>
 	 				</p>
 	 				";
-	 				break;
+	 
+		switch ($group){
+			case 'individual_explain':
+				$next_page="i_e.php";
+	 			break;
+			case 'sum_explain':
+				$next_page="s_e.php";
+				break;
+			case 'individual_reflection':
+				$next_page="i_r.php";
+				break;
+			case 'sum_reflection':
+				$next_page="s_r.php";
+				break;
 	 		case 'control':
 				$next_page="second_stage.php";
-				echo "
-	 				 <p>
-	 				 1) ".$inst_design." <br>
-	 				 2) Complete a survey asking about your design process<br>
-	 				</p>
-	 				";
-	 				break;
+ 				break;
 			default:
 				echo "Something Goes wrong";die();
 				break;

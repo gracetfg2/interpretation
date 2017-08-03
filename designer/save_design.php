@@ -26,7 +26,7 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 	
 $isOkay=true;

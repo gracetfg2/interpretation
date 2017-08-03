@@ -5,7 +5,7 @@ session_start();
 if(!$_GET['mid'] ){header('Location: ../feedback_error.php');}
 $mid =$_GET['mid'];
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
 if (!$conn) {

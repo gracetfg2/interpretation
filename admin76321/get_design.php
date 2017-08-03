@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
 if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `version`=1 ORDER BY f_DesignerID ASC")) {

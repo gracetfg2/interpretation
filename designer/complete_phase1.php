@@ -11,7 +11,7 @@
 	//if(!$stage) { header("Location: ../index.php"); die(); }
 
 	//Get Designer's Project
-	include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
+	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
 	
 $confidence="";

@@ -1,86 +1,6 @@
 <?php 
 	
-	session_start();	
-	//************* Check Login ****************// 
-	$DESIGNER= $_SESSION['designer_id'];
-	if(!$DESIGNER) { header("Location: ../index.php"); die(); }
-	//************* End Check Login ****************// 
 
-	//Get Designer's Project
-	include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
-   	$conn = connect_to_db();
-	include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
-
-	$filename1="";
-	
-//for current design
-	$filename="";	
-	$getProjectId=0;
-	$getDesignId=0;
-	$version=2;
-
-	$sql="SELECT * FROM u_Designer WHERE DesignerID=?";
-		if($stmt5=mysqli_prepare($conn,$sql))
-		{
-			mysqli_stmt_bind_param($stmt5,"i",$DESIGNER);
-			mysqli_stmt_execute($stmt5);
-			$result = $stmt5->get_result();
-			$designer=$result->fetch_assoc() ;		 	
-		 
-		}
-
-	if($designer['process']<4)
-	{
-		 header("Location: homepage.php"); die(); 
-	}	
-
-   	if ($stmt1 = mysqli_prepare($conn, "SELECT ProjectID From Project WHERE f_DesignerID = ?")) {
-	    mysqli_stmt_bind_param($stmt1, "i", $DESIGNER);
-	    mysqli_stmt_execute($stmt1);
-	    $stmt1->store_result();
-		if($stmt1->num_rows > 0) {
-		    mysqli_stmt_bind_result($stmt1, $getProjectId);
-		    mysqli_stmt_fetch($stmt1);
-		   
-		    if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `f_ProjectID`=?")) {
-	    		mysqli_stmt_bind_param($stmt2, "i", $getProjectId);
-	    		mysqli_stmt_execute($stmt2);
-	    		$result = $stmt2->get_result();
-	    		while ($row = $result->fetch_assoc()) {
-	    			$design[]=$row;
-	    		}  	
-	   		}
-		}
-		else
-		{
-
-			header("Location: ../index.php"); die();
-		}
-		
-	}
-
-	if (count($design)==0)
-	{
-		//something wrong
-		header("Location: ../index.php"); die();
-	}
-	else
-	{
-		foreach($design as $value)
-		if ($value['version']==1)
-		{
-			$filename1=$value['file'];
-			$initialID=$value['DesignID'];
-			$mid=$value['mid'];
-
-		}
-		else if ($value['version']==2)
-		{
-			$filename=$value['file'];
-			$getDesignId=$value['DesignID'];
-		}
-
-	}
 
  ?>
 <html lang="en">
@@ -166,7 +86,7 @@ em{
  </head>
 
  <body>
- <?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/ele_nav.php');?>
+ <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
 
 
 
@@ -184,11 +104,11 @@ em{
   </div>
   <div class="panel-body">
    <span class="statement" style="text-align: justify;"><p>
+Please <strong>invest 15 to 30 minutes </strong>revising your design based on the feedback and your own insights. The revised designs rated in the top five by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
 
-Please <strong>invest 15 to 30 minutes </strong>revising your design. This revision will be considered in the competition, and the top five designs will win an additional $20. Please upload the design image that you are satisfied with. Once you click Submit, no further changes are possible. The revision and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoy the design task and look forward to your submission!
  </p>
 	<p style="font-size:16px"><br>
-	<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
+	<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
 	</p>
  </span>
 
@@ -199,40 +119,30 @@ Please <strong>invest 15 to 30 minutes </strong>revising your design. This revis
 
 	<hr>
 	 <div class="form-group" id="form-group-file">
-	    <label for="fileToUpload" class="col-sm-4 col-md-4 control-label">Upload Revised Design<em>*</em></label>
+	    <label for="fileToUpload" class="col-sm-4 col-md-4 control-label">upload revised design<em>*</em></label>
 	    <div class="col-sm-8 col-md-8">
 		    <input class="input-file" id="fileToUpload" name="fileToUpload" type="file" onChange="fileUpdate(this);">
 		    <p class="help-block">Only JPG, JPEG, PNG, and GIF files are allowed, the image size should be less than 5MB</p>
-<img  id='current-img' name='current-img'  <?php if ($filename!="") { echo "width='80%'' height='auto' src='../design/".$filename."'";} ?> > 
+<img  id='current-img' name='current-img'  > 
 		    <input type="hidden" id="exist_file" name="exist_file" value=<?php if ($filename!="") { echo "'true'"; }else { echo "'false'";}  ?> >               
 		</div>
 	</div>
 
 
 
-<input type="hidden" id="update_file" name="update_file" value="false">
-<input type="hidden" id="project_id" name="project_id" value=<?php echo "'".$getProjectId."'"?>>
-<input type="hidden" id="action" name="action">
-<input type="hidden" id="version" name="version" value=<?php echo "'".$version."'"?>>
-<input type="hidden" id="design_id" name="design_id" value=<?php echo "'".$getDesignId."'"?>>
-
-<input type="hidden" id="prepareTime" name="prepareTime" value=""/>
-<input type="hidden" id="taskTime" name="taskTime" value=""/> 	
-<input type="hidden" id="_behavior" name="_behavior" value=""/>
-
 </form>
 
 <div class="container" style="text-align:center; padding-bottom:20px;">		 	
  	<!-- <button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('save')"> Save and Return Later</button>&nbsp-->
-	<button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('submit')"> Submit </button>&nbsp</div>
+	<button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('submit')" disabled> Submit [ now disabled ]</button>&nbsp</div>
 
 	</div>
-	<?php echo $current_projectID;?>
+
 
 </div>
 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/footer.php');
+<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/footer.php');
 ?>
 <script>
 isOkay = true;

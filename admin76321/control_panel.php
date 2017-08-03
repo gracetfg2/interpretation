@@ -118,51 +118,51 @@ else {
           //Select Group 
           echo "<td><select name='g".$value['DesignerID']."'>";
             switch ($value['group']) {
-              case 'reflection':
+              case 'sum_reflection':
 								echo "<option disabled value='NULL'>Null</option>";
                 echo "<option value ='control'>control</option>";
-                echo "<option selected value='reflection'>reflection</option>";
-                echo "<option value ='feedback'>feedback</option>";
+                echo "<option selected value='sum_reflection'>sum_reflection</option>";
+                echo "<option value ='individual_reflection'>individual_reflection</option>";
                 echo "<option value ='feedback-reflection'>feedback-reflection</option>";
                 echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
                 break;
-              case 'feedback':
+              case 'individual_reflection':
 								echo "<option disabled value='NULL'>Null</option>";
                 echo "<option value ='control'>control</option>";
-                echo "<option value='reflection'>reflection</option>";
-                echo "<option selected value ='feedback'>feedback</option>";
+                echo "<option value='sum_reflection'>sum_reflection</option>";
+                echo "<option selected value ='individual_reflection'>individual_reflection</option>";
                 echo "<option value ='feedback-reflection'>feedback-reflection</option>";
                 echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
                 break;
               case 'reflection-feedback':
 								echo "<option disabled value='NULL'>Null</option>";
                   echo "<option value ='control'>control</option>";
-                echo "<option value='reflection'>reflection</option>";
-                echo "<option value ='feedback'>feedback</option>";
+                echo "<option value='sum_reflection'>sum_reflection</option>";
+                echo "<option value ='individual_reflection'>individual_reflection</option>";
                 echo "<option value ='feedback-reflection'>feedback-reflection</option>";
                 echo "<option selected value = 'reflection-feedback'>reflection-feedback</option>";
                 break;
               case 'feedback-reflection':
 								echo "<option disabled value='NULL'>Null</option>";
                 echo "<option value ='control'>control</option>";
-                echo "<option value='reflection'>reflection</option>";
-                echo "<option value ='feedback'>feedback</option>";
+                echo "<option value='sum_reflection'>sum_reflection</option>";
+                echo "<option value ='individual_reflection'>individual_reflection</option>";
                 echo "<option selected value ='feedback-reflection'>feedback-reflection</option>";
                 echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
                 break;
               case 'control':
                 echo "<option disabled value='NULL'>Null</option>";
                 echo "<option selected value ='control'>control</option>";
-                echo "<option value='reflection'>reflection</option>";
-                echo "<option value ='feedback'>feedback</option>";
+                echo "<option value='sum_reflection'>sum_reflection</option>";
+                echo "<option value ='individual_reflection'>individual_reflection</option>";
                 echo "<option value ='feedback-reflection'>feedback-reflection</option>";
                 echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
                 break;
               default:
 								echo "<option selected disabled value='NULL'>Null</option>";
                 echo "<option value ='control'>control</option>";
-                echo "<option value='reflection'>reflection</option>";
-                echo "<option value ='feedback'>feedback</option>";
+                echo "<option value='sum_reflection'>sum_reflection</option>";
+                echo "<option value ='individual_reflection'>individual_reflection</option>";
                 echo "<option value ='feedback-reflection'>feedback-reflection</option>";
                 echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
                 break;
