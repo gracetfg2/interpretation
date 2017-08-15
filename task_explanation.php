@@ -125,7 +125,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 			<div class="col-md-3" id="image" style="margin-top:20px">		
 				 <div class="img-div" onmouseover="" style=" cursor: pointer; margin-right:20px; " >
 
-				 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="test/exampledesign.jpg" onClick="view('<?php echo $mid;?> ');" >
+				 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="test/exampledesign.jpg" onClick="view();" >
 				 <p><em style="color:grey">* Click on the image to enlarge </em></p>
 				</div>
 			</div>
@@ -271,7 +271,41 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 
              <div style="display:none" id="p4">
               <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on the set of feedback, please describe how you could improve the design:</h5><textarea name="action_plan" id="action_plan" onkeydown="onTextKeyDown(this.id,event)" onfocus="planAction()" monitorid="2" rows="4"></textarea>
-          
+          	
+           
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of the self-explanation process:</h5>
+                <br>
+
+                <table border='0' cellpadding='5' cellspacing='0' width="70%">
+                        <tr aria-hidden='true'>
+                            <td  class='radio-label'></td>
+                            <td><label class='radio-cell'>1</label></td> 
+                            <td><label class='radio-cell'>2</label></td> 
+                            <td><label class='radio-cell'>3</label></td> 
+                            <td><label class='radio-cell'>4</label></td>
+                            <td><label class='radio-cell'>5</label></td> 
+                            <td><label class='radio-cell'>6</label></td>
+                            <td><label class='radio-cell'>7</label></td> 
+                            <td  class='radio-label' ></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class='radio-label' ><strong>Not Useful</strong></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10581'  value='1' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10582'  value='2' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10583'  value='3' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10584'  value='4' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10585'  value='5' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10586'  value='6' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10587'  value='7' ></td>
+                            <td class='radio-label'><strong>Very Useful</strong></td>      
+                        </tr>                       
+                        </table>
+                     <hr>   
+            </div>
+
+
+
              </div>
 	
 
@@ -356,7 +390,12 @@ document.getElementById('turkerID').focusout = function(e){
 	}
 
 };
+function view() {
 
+window.open("pilot_view_pic.html");
+
+//viewwin = window.open(imgsrc.src,'viewwin', 'width=1000,height=auto'); 
+}
 
 function turkID() {
      
