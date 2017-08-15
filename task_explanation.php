@@ -725,7 +725,7 @@ function submitresult() {
 	}
 	else if( counting( $('#action_plan').val() )<=10 ) 
 	{
-	 	error_msg2+="Your action plan is too short.";
+	 	error_msg2+="Please provide your action plan in more detail.";
 	 	isOkay=false;
 
 	}
@@ -736,7 +736,7 @@ function submitresult() {
 	}
 	else if(counting( $('#explain_rating').val() )<=10)
 	{
-		error_msg2+="Please explain your rating given to question 2.";
+		error_msg2+="Please tell us more detail about your rating given to question 2";
 	 	isOkay=false;
 
 	}
