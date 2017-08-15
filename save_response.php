@@ -1,7 +1,7 @@
 <?php 
 //************ Save Reflection
 
-
+echo "action_plan_time=".$_POST['action_plan_time'];
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 	$conn = connect_to_db();
 	 	if (!$conn) {
@@ -23,6 +23,7 @@
 		 $f2_rating= $_POST['feedback2_rating'];	
 		 $f3_rating= $_POST['feedback3_rating'];	
 		 $action= $_POST['action_plan'];	
+
 		 $action_plan_time= $_POST['action_plan_time'];		
 		 $prepareTime=$_POST['prepareTime'];
 		 $taskTime=$_POST['taskTime'];
