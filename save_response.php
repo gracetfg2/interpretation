@@ -1,7 +1,8 @@
 <?php 
 //************ Save Reflection
+session_start();
 
-echo "action_plan_time=".$_POST['action_plan_time'];
+	
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 	$conn = connect_to_db();
 	 	if (!$conn) {
@@ -9,10 +10,10 @@ echo "action_plan_time=".$_POST['action_plan_time'];
 	 }
 
 	
-	$stmt = $conn->prepare("INSERT INTO PilotTest (mid, interprete1,interprete2,interprete3, actionplan, f1_rating, f2_rating, f3_rating, prepareTime, taskTime, numberOfPause, numberOfDel, action_plan_time, reviewDesignTime) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	$stmt = $conn->prepare("INSERT INTO PilotTest (mid, interprete1,interprete2,interprete3, actionplan, f1_rating, f2_rating, f3_rating, prepareTime, taskTime, numberOfPause, numberOfDel, action_plan_time, reviewDesignTime, task_useful, group_name, explain_rating, expertise, gender, age) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 
-	$stmt->bind_param("sssssiiiiiiiii", $mid, $f1, $f2, $f3, $action, $f1_rating, $f2_rating, $f3_rating, $prepareTime, $taskTime, $numberOfPause, $numberOfDel, $action_plan_time,$reviewDesignTime);
+	$stmt->bind_param("sssssiiiiiiiiiississ", $mid, $f1, $f2, $f3, $action, $f1_rating, $f2_rating, $f3_rating, $prepareTime, $taskTime, $numberOfPause, $numberOfDel, $action_plan_time,$reviewDesignTime , $task_useful, $group_name, $explain_rating, $expertise, $gender, $age);
 	
 
 		 $mid=  $_POST['_mid'];
@@ -32,7 +33,13 @@ echo "action_plan_time=".$_POST['action_plan_time'];
 		 $numberOfPause=$_POST['numberOfPause'];
 		 $numberOfDel=$_POST['numberOfDel'];
 
+		 $task_useful=$_POST['task_useful'];
+		 $group_name=$_POST['group_name'];
+		 $explain_rating=$_POST['explain_rating'];
 	
+		$expertise=$_POST['expertise'];
+		$gender=$_POST['gender'];
+		$age=$_POST['age'];
 	
 
 		

@@ -1,12 +1,8 @@
 <?php
  session_start();
-
-   $DB_HOST = "crowdsight.web.engr.illinois.edu";
-   $DB = "crowdsight_interpretation";
-   $SQL_ACC = "crowdsig_1";
-   $SQL_PWD = "bpteam!";
-
-   $conn = mysqli_connect($DB_HOST,$SQL_ACC,$SQL_PWD,$DB);
+	
+	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
+	$conn = connect_to_db();
 
    // Check connection
    if (!$conn) {
@@ -125,7 +121,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 			<div class="col-md-3" id="image" style="margin-top:20px">		
 				 <div class="img-div" onmouseover="" style=" cursor: pointer; margin-right:20px; " >
 
-				 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="test/exampledesign.jpg" onClick="view();" >
+				 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="test/initial_design.png" onClick="view();" >
 				 <p><em style="color:grey">* Click on the image to enlarge </em></p>
 				</div>
 			</div>
@@ -144,23 +140,21 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 	<hr>
 
 	<div id="task" style="display:none">
-
+		<!--Start Instruction-->
  		<div class="alert alert-info" id="instruction">
 			<h3>Now, please review the feedback.</h3> 
 			<p>
 					For each piece of feedback, we want you to read each sentence out loud and then explain what
-					it means to you. You may imagine that you are explaning the feedback to the designer. You need to restate the meaning of the content using your own words and rate the usefulness of the feedback for improving the design. Your response should cover all the points mentioned in the feedback whether you agree with it or not. 
+					it means to you using your own words. You may imagine that you are explaning the feedback to the designer. You need to write your explanation in the textbox. Your response should cover all the suggestions mentioned in the feedback whether you agree with them or not. After that, please rate the usefulness of the feedback for improving the design. 
 
 
-					<br><br>Responses that demonstrate insufficient effort will be rejected. 
-
-
+					<br><br>Responses that demonstrate insufficient effort will be rejected. Also, copy and paste functions are disabled in this task. 
 			</p>
 		</div>
-
+		<!--End Instruction-->
  
             <div id="p1" style="display:none;" >
-                <feedback><h4>Feedback #1: </h4>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
+                <feedback><h4>Feedback #1: </h4>I like the overall design it is easy to understand and the time and date of the run are all very clear and concise. The runner is a nice touch but a little choppy looking, but I do like the shadow part behind the figure. But I don't like the lack of color, it could use a pop of red or some other bright color somewhere on it.Perhaps the runner could be done in red or the shadow to give contrast behind it . Or even the font of the date in red, something to make the eye more drawn in and have it pop more in general.</feedback>
                 <hr>
                  <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp  Please restate the meaning of feedback #1 using your own words:</h5><textarea name="f1" id="f1" monitorid="0" rows="4"></textarea>
            
@@ -197,7 +191,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 
 
             <div style="display:none;" id="p2">
-                <feedback><h4>Feedback #2: </h4>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
+                <feedback><h4>Feedback #2: </h4>I think there might be more than two fonts used, and it is a little distracting. Also, not that it is really all that important, but I can't tell from the clip art if the runner is headed toward me or away from me...and (s)he looks a little blocky and unfinished, compared to the super-HQ city image up top. Also, is the half-marathon happening at night? because the city image is night-time so that makes me wonder if it is a night-time race.</feedback>
                 <hr>
                  <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate the meaning of feedback #2 using your own words:</h5><textarea name="f2" id="f2" monitorid="1" rows="4"></textarea>
          
@@ -232,7 +226,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
             </div>
 
             <div style="display:none" id="p3">
-                <feedback><h4>Feedback #3: </h4>I like that it gets the point across well. But the color palette is weak in my opinion. I would change the silhouette, as well as change the color of the background to something lighter (maybe pastels?)</feedback>
+                <feedback><h4>Feedback #3: </h4>* I like the top part (image, heading font and its qualities) and the runner figure. * I don't like the middle (starting from NYC Central Park to the URL). It looks clumsy. It feels like there is too much line-spacing here, and that makes the flyer harder to read. And the typeface could be wider and of lower height - then it would be a good contrast compared to the heading and date, and thus easier for the eyes. * I'm ok with the bottom, but it would be great if it was of more color contrast compared to the background, and with more letter-spacing - so that it was easy to read from a distance. Maybe make the runner grey and the ground (which is a background for "october 1" stuff) - black? Or at least increase letter-spacing.</feedback>
                 <hr>
                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate the meaning of feedback #3 using your own words:</h5><textarea name="f3" id="f3" monitorid="2" rows="4"></textarea>
           
@@ -268,15 +262,22 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
                   <hr>      
             </div>
 
-
+             <!--start p4-->
              <div style="display:none" id="p4">
-              <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on the set of feedback, please describe how you could improve the design:</h5><textarea name="action_plan" id="action_plan" onkeydown="onTextKeyDown(this.id,event)" onfocus="planAction()" monitorid="2" rows="4"></textarea>
-          	
+
+             <div style="border-radius:20px;background-color:#cceeff; padding:30px">
+             <h3> Final Survey</h3>
+
+			 <br>
+			<a href="#" data-toggle="modal" data-target="#feedbackModal" >view the feedback </a>
+              <h5> 1. Based on the set of feedback, please describe how you could improve the design:<em style="color:red;"> (required)</em></h5><textarea name="action_plan" id="action_plan" onkeydown="onTextKeyDown(this.id,event)" onfocus="planAction()" monitorid="2" rows="4"></textarea>          	
            
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of the self-explanation process:</h5>
+           
+
+                <h5> 2. How useful was performing self-explanation for improving the design? <em style="color:red;"> (required)</em></h5>
                 <br>
 
-                <table border='0' cellpadding='5' cellspacing='0' width="70%">
+                <table border='0' cellpadding='5' cellspacing='0' width="50%">
                         <tr aria-hidden='true'>
                             <td  class='radio-label'></td>
                             <td><label class='radio-cell'>1</label></td> 
@@ -290,24 +291,121 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
                         </tr>
                         
                         <tr>
-                            <td class='radio-label' ><strong>Not Useful</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10581'  value='1' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10582'  value='2' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10583'  value='3' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10584'  value='4' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10585'  value='5' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10586'  value='6' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10587'  value='7' ></td>
-                            <td class='radio-label'><strong>Very Useful</strong></td>      
+                            <td class='radio-label' >Not Useful</td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10581'  value='1'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10582'  value='2' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10583'  value='3' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10584'  value='4' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10585'  value='5' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10586'  value='6' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10587'  value='7'></td>
+                            <td class='radio-label'>Very Useful</td>      
                         </tr>                       
-                        </table>
-                     <hr>   
+                </table>
+  <br>  <br>
+                  <h5> 3. Please briefly explain your rating given to question 2: <em style="color:red;"> (required)</em></h5>
+	 			<textarea id="explain_rating" name="explain_rating" rows="4" cols="52" style="width:100%;"></textarea>	
+
+				<br>
+				<br>
+	 			<h5>4. How would you rate your level of design expertise? <em style="color:red;"> (required)</em></h5>				
+					<table border="0" cellpadding="5" cellspacing="0" style="text-align: center;width:50%;">
+							<td  class="radio-label" ></td>
+							<td><label class="radio-cell">1</label></td> 
+							<td><label class="radio-cell">2</label></td> 
+							<td><label class="radio-cell">3</label></td> 
+							<td><label class="radio-cell">4</label></td>
+							<td><label class="radio-cell">5</label></td>
+							<td><label class="radio-cell">6</label></td> 
+							<td><label class="radio-cell">7</label></td>   
+							<td  class="radio-label" ></td>
+						</tr>
+						
+						<tr>
+							<td class="radio-label" >Novice</td>
+							<td class="radio-cell"><input type="radio" class="radio-inline" name="expertise" id="expertiseRadios1" value="1"></td>
+						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertise" id="expertiseRadios2" value="2"></td>
+						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertise" id="expertiseRadios3" value="3"></td>
+						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertise" id="expertiseRadios4" value="4"></td>
+						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertise" id="expertiseRadios5" value="5"></td>
+						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertise" id="expertiseRadios5" value="6"></td>
+						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertise" id="expertiseRadios5" value="7"></td>
+						<td class="radio-label">Expert</td>		
+						</tr>
+					</table>
+					
+					<br>
+					<br>
+
+					<h5 >5. What gender do you identify with?</h5>
+					<label class="radio-inline">
+						<input type="radio" name="gender" id="gender1" value="male"> Male
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="gender" id="gender2" value="female"> Female
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="gender" id="gender3" value="other"> Other
+					</label>
+		
+					<br>
+					<br>
+
+					<h5 >6. What is your age range? </h5>
+					<label class="radio-inline">
+					  <input type="radio" name="age" id="age" value="under18"> under 18
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="age" id="age" value="18to25"> 18-25
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="age" id="age" value="26to35"> 26-35
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="age" id="age" value="36to45"> 36-45
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="age" id="age" value="46to55"> 46-55
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="age" id="age" value="56Older"> 56 or Older
+					</label>
+
+				</div>
+
+
             </div>
-
-
-
-             </div>
+            <!--end p4-->
 	
+
+<!-- Modal -->
+<div id="feedbackModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body">
+       
+ 		<h4>Feedback 1:</h4>
+ 			I like the overall design it is easy to understand and the time and date of the run are all very clear and concise. The runner is a nice touch but a little choppy looking, but I do like the shadow part behind the figure. But I don't like the lack of color, it could use a pop of red or some other bright color somewhere on it.Perhaps the runner could be done in red or the shadow to give contrast behind it . Or even the font of the date in red, something to make the eye more drawn in and have it pop more in general.
+
+ 		<h4>Feedback 2:</h4>
+ 		I think there might be more than two fonts used, and it is a little distracting. Also, not that it is really all that important, but I can't tell from the clip art if the runner is headed toward me or away from me...and (s)he looks a little blocky and unfinished, compared to the super-HQ city image up top. Also, is the half-marathon happening at night? because the city image is night-time so that makes me wonder if it is a night-time race...
+
+ 		<h4>Feedback 3:</h4>
+ 		* I like the top part (image, heading font and its qualities) and the runner figure. * I don't like the middle (starting from NYC Central Park to the URL). It looks clumsy. It feels like there is too much line-spacing here, and that makes the flyer harder to read. And the typeface could be wider and of lower height - then it would be a good contrast compared to the heading and date, and thus easier for the eyes. * I'm ok with the bottom, but it would be great if it was of more color contrast compared to the background, and with more letter-spacing - so that it was easy to read from a distance. Maybe make the runner grey and the ground (which is a background for "october 1" stuff) - black? Or at least increase letter-spacing.
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 
 
              <nav aria-label="...">
@@ -339,7 +437,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 		<input type="hidden" id="numberOfPause" name="numberOfPause" value=""/>
 		<input type="hidden" id="numberOfDel" name="numberOfDel" value=""/>
 
-
+		<input type="hidden" id="group_name" name="group_name" value="explanation"/>
 
 	</form>
 
@@ -390,11 +488,9 @@ document.getElementById('turkerID').focusout = function(e){
 	}
 
 };
+
 function view() {
-
-window.open("pilot_view_pic.html");
-
-//viewwin = window.open(imgsrc.src,'viewwin', 'width=1000,height=auto'); 
+	window.open("pilot_view_pic.html"); 
 }
 
 function turkID() {
@@ -434,21 +530,22 @@ function prevPage()
         changePage(current_page);
     }
 }
-var change_page = true;
+
 
 function nextPage()
 {
+	var change_page = true;
 	var error_msg= "";
 	
 
-	if( counting( $('#f'+current_page).val() )>2 &&  $("input[name='feedback"+current_page+"_rating']:checked").val()!=undefined){
+	if( counting( $('#f'+current_page).val() )>20 &&  $("input[name='feedback"+current_page+"_rating']:checked").val()!=undefined){
 		change_page=true;
 		if (current_page < numPages()) {
         current_page++;
         changePage(current_page);
     	}
 	}
-	else if( counting( $('#f'+current_page).val() )<=2) 
+	else if( counting( $('#f'+current_page).val() )<=20) 
 	{
 	 	error_msg+="Your response is too short, please check if you explain all the main points to the designer.";
 	 	change_page=false;
@@ -522,20 +619,14 @@ var review_flag=false;
 
 function startReview(){
 	review_start= (new Date()).getTime();
-	 $("#reviewbtn").hide();
-	 $("#task").show();
-	  changePage(1);
+	$("#reviewbtn").hide();
+	$("#task").show();
+	changePage(1);
 
 }
  
 $(document).ready(function(){
-
-   
-
-    hitStartTime = (new Date()).getTime();
-
-
-   
+	hitStartTime = (new Date()).getTime();   
   	logAction("init");
 
   $(window).focus(function() {
@@ -547,9 +638,9 @@ $(document).ready(function(){
   });
  
 
-$('textarea').bind('cut copy paste', function (e) {
-    e.preventDefault(); //disable cut,copy,paste
-});
+	$('textarea').bind('cut copy paste', function (e) {
+	    e.preventDefault(); //disable cut,copy,paste
+	});
 
 
 
@@ -576,6 +667,7 @@ function onTextKeyUp(name) {
   $('#word-'+name).html(counting(document.getElementById(name).value));
   logAction(name, document.getElementById(name).value);
 }
+
 var action_plan_start='';
 var action_plan_flag=false;
 
@@ -624,8 +716,31 @@ function getParameterByName(name) {
 
 
 function submitresult() {
+	
+	isOkay=true;
+	var error_msg2='';
+   	
+	if(counting( $('#action_plan').val() )>10 && counting( $('#explain_rating').val() )>10&& $("input[name='task_useful']:checked").val()!=undefined){
+		isOkay=true;
+	}
+	else if( counting( $('#action_plan').val() )<=10 ) 
+	{
+	 	error_msg2+="Your action plan is too short.";
+	 	isOkay=false;
 
-   isOkay=true;
+	}
+	else if ($("input[name='task_useful']:checked").val()==undefined)
+	{	
+		isOkay=false;
+      	error_msg2+="You should rate the usefulness of the task.";
+	}
+	else if(counting( $('#explain_rating').val() )<=10)
+	{
+		error_msg2+="Please explain your rating given to question 2.";
+	 	isOkay=false;
+
+	}
+
 
     if(isOkay==true){
       logAction("submit");
@@ -640,18 +755,18 @@ function submitresult() {
       $("#response-form [name=prepareTime]").val(( annoStartTime - hitStartTime)/1000);
       $("#response-form [name=taskTime]").val( ((new Date()).getTime() - hitStartTime)/1000 );
       $("#response-form [name=numberOfPause]").val(pauseCount);
-      $("#response-form [name=action_plan_time]").val( ((new Date()).getTime() - action_plan_start)/1000 );
+
+      $("#response-form [name=action_plan_time]").val( ( ( new Date() ).getTime() - action_plan_start)/1000 );
       $("#response-form [name=numberOfDel]").val(delCount);
       $("#response-form [name=startTime]").val( annoStartTime );
       $("#response-form [name=submitTime]").val((new Date()).getTime());
-      alert((review_start - hitStartTime)/1000);
-     
+      
      $("#response-form").submit();
       
     }
     else
     {
-       $("#error_alert").show();
+       alert(error_msg2);
     }
 
 
