@@ -94,10 +94,10 @@ session_start();
 //     mysqli_close($conn);
 
     
-        $feedback[0] = "feedback entry 1";
-        $feedback[1] = "feedback entry 2";
-        $feedback[2] = "feedback entry 3";
-        $feedback[3] = "feedback entry 4";
+    $feedback[0] = "feedback entry 1";
+    $feedback[1] = "feedback entry 2";
+    $feedback[2] = "feedback entry 3";
+    $feedback[3] = "feedback entry 4";
 
 ?>
 

@@ -4,7 +4,7 @@
 include_once('webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
-if($stmt = $conn->prepare('SELECT FeedbackID FROM Feedback WHERE turkerID = ?')){
+if($stmt = $conn->prepare('SELECT mid FROM PilotTest WHERE mid = ?')){
 
 	$stmt->bind_param('s', $_POST['turker']);
 }

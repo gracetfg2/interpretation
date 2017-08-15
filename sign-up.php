@@ -32,11 +32,9 @@ session_start();
    
 
     <style>
-
-        .centered-form{
-            margin-top: 60px;
+        .main-section{
+           margin-top: 60px;
         }
-
         .centered-form .panel{
             background: rgba(255, 255, 255, 0.8);
             box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
@@ -61,11 +59,8 @@ session_start();
     </nav>
 
 	<div class="main-section">
-		<div class="row centered-form">
-
-        <!--<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">-->
-        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-            <div class="panel panel-info">
+		<div class="row">
+               <div class="panel panel-info" style="width:60%; margin:0px auto;">
                 <div class="panel-heading">
                         <h3>Sign Up for the Online Design Study &nbsp <small><!--[<a href="ProjectDescription.pdf" target="blank">Project Description</a>]--></small></h3>
                 </div>
@@ -164,8 +159,9 @@ session_start();
          <div class="form-group required" id="form-group-expertise">
             <label for="expertise" class="col-sm-4 control-label">Design Expertise<em>*</em></label>
                 <div class="col-sm-8" >
-                    <label class="radio-inline" style="text-align: left">
-                      Novice
+                      To be considered as an expert, you should have more than five years of professional experience in design, have an davanced degree, and have received external awards. </p>
+                      <label class="radio-inline" style="text-align: left">
+                        Novice
                       </label>
                         <label class="radio-inline" >
                         <input type="radio" name="expertise" id="expertise1" value="1">&nbsp
@@ -180,9 +176,8 @@ session_start();
                         <input type="radio" name="expertise" id="expertise4" value="4"> &nbsp
                       </label>
                        <label class="radio-inline">
-                        <input type="radio" name="expertise" id="expertise5" value="5"> &nbspExperienced
+                        <input type="radio" name="expertise" id="expertise5" value="5"> &nbspExpert <small></small>
                       </label>
-                     <p name="email-text" id="email-text" class="help-block">Please self-report your design expertise.</p>
                 </div>
         </div>
   <hr>

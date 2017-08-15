@@ -9,14 +9,20 @@
     <!---->
     <title>Prototype</title>
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="css/feedback.css">
 
 </head>
 
 
 <body>
-    <?php include('../webpage-utility/ele_nav.php');?>
-
+    <?php
+        include('webpage-utility/ele_nav.php');
+        $feedback[0] = "feedback entry 1";
+        $feedback[1] = "feedback entry 2";
+        $feedback[2] = "feedback entry 3";
+        $feedback[3] = "feedback entry 4";
+    ?>
+    <script type="text/javascript" src="js/behavior_record_updated.js"></script>
     <div class="container">
 
         <div class="alert alert-info" id="instruction">
@@ -36,12 +42,54 @@
      </div><!--End alert section for instruction-->
 
 
-        <div id="task">
- 
-            <div style="display:none;" id="p1">
+    <div id="task">
+        <?php
+            $feedbackNum = 0;
+            foreach ($feedback as $indivFeedback)
+            {
+                $feedbackNum += 1;
+                echo"
+                    <div style=\"display:none;\" id=\"p".$feedbackNum."\">
+                        <feedback><h4>Feedback #".$feedbackNum.": </h4>".$indivFeedback."</feedback>
+                        <hr>
+                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea rows=\"4\" id=\"monitoredtext\" monitorid=\"".$feedbackNum."\"></textarea>
+
+                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp Please rate the usefulness of feedback #".$feedbackNum." for improving your design:</h5>
+                        <br>
+
+                        <table border='0' cellpadding='5' cellspacing='0' width=\"70%\">
+                            <tr aria-hidden='true'>
+                                <td  class='radio-label'></td>
+                                <td><label class='radio-cell'>1</label></td> 
+                                <td><label class='radio-cell'>2</label></td> 
+                                <td><label class='radio-cell'>3</label></td> 
+                                <td><label class='radio-cell'>4</label></td>
+                                <td><label class='radio-cell'>5</label></td> 
+                                <td><label class='radio-cell'>6</label></td>
+                                <td><label class='radio-cell'>7</label></td> 
+                                <td  class='radio-label' ></td>
+                            </tr>
+
+                            <tr>
+                                <td class='radio-label' ><strong>Not Useful</strong></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10581'  value='1' onclick='rate(this.name,1);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10582'  value='2' onclick='rate(this.name,2);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10583'  value='3' onclick='rate(this.name,3);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10584'  value='4' onclick='rate(this.name,4);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10585'  value='5' onclick='rate(this.name,5);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10586'  value='6' onclick='rate(this.name,6);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='1058' id='10587'  value='7' onclick='rate(this.name,7);'></td>
+                                <td class='radio-label'><strong>Very Useful</strong></td>      
+                            </tr>                       
+                        </table>
+                        <hr>   
+                    </div>";
+            }
+        ?>
+            <!--<div style="display:none;" id="p1">
                 <feedback><h4>Feedback #1: </h4>The flyer did not mention the 7 am start time. It also did not mention how entrants could win $300. As is, the reader could reasonably that everyone who runs wins the money. With the dominant dark grey background and black silhouettes the flyer's design is not very visually appealing. Also, the $300 on the flyer is being blocked somewhat by one of the runner's hand, making it somewhat difficult to see.</feedback>
                 <hr>
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp  Based on feedback #1, please describe what actions you could take to improve your design:</h5><textarea rows="4"></textarea>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp  Please restate the meaning of feedback #1 using your own words:</h5><textarea rows="4"></textarea>
            
                  <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #1 for improving your design:</h5>
                 <br>
@@ -78,7 +126,7 @@
             <div style="display:none;" id="p2">
                 <feedback><h4>Feedback #2: </h4>The design is very simple and the silhouette of the male and female runners is a nice touch showcasing a triumphant victory. The message is simple and straightforward, however the colors used are very dull and do not grab my attention. The only bright red ribbons around the torsos of the runners are not adequate to draw attention to the flyer. Also, it shows the male runner being further ahead than the female runner which might send an undesirable subliminal message. In addition, the $300 prize is stated in the description to go to the top 3 winners, but this is not mentioned on the flyer and the time of the event is not included either.</feedback>
                 <hr>
-                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #2, please describe what actions you could take to improve your design:</h5><textarea rows="4"></textarea>
+                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate the meaning of feedback #2 using your own words:</h5><textarea rows="4"></textarea>
          
                 <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #2 for improving your design:</h5>
                 <br>
@@ -113,7 +161,7 @@
             <div style="display:none" id="p3">
                 <feedback><h4>Feedback #3: </h4>I like that it gets the point across well. But the color palette is weak in my opinion. I would change the silhouette, as well as change the color of the background to something lighter (maybe pastels?)</feedback>
                 <hr>
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on feedback #3, please describe what actions you could take to improve your design:</h5><textarea rows="4"></textarea>
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please restate the meaning of feedback #3 using your own words:</h5><textarea rows="4"></textarea>
           
         
                  <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of feedback #3 for improving your design:</h5>
@@ -145,7 +193,7 @@
                         </tr>                       
                         </table>
                   <hr>      
-            </div>
+        </div>-->
 
 
 
@@ -153,12 +201,12 @@
               <ul class="pager" >
                 <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous</a></li>
                 <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next</a></li>
-                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="onClickSubmit(3);" >Go to Next Step </a></li>
+                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="onClickSubmit();" >Go to Next Step </a></li>
               </ul>
             </nav>
 
     </div><!--End Task Section-->
-      <?php include("../webpage-utility/footer.php") ?>
+      <?php include("webpage-utility/footer.php") ?>
     </div><!--End Container-->
 
 <!--Begin Script-->       
@@ -227,24 +275,53 @@ function numPages()
 {
 
     /*to do: Count Number of feedback and multiply by 2*/
-    return 3;
+    /*Victor's note: why multiply by 2?*/
+    var feedbackCount = <?php Print(count($feedback)); ?>;
+    return feedbackCount;
+    //return 3;
 }
 
 
 
 function onClickSubmit(buttonNum) {
-    if(buttonNum == "1") {
-        $("#feedback2").show();
-
-        //document.getElementById("area1").disabled = true;
-    }
-    else if(buttonNum == "2") {
-        $("#feedback3").show();
-        //document.getElementById("area2").disabled = true;
-    }
-    else if(buttonNum == "3") {
+    submitBehavior();
+    //window.location.href = "second_stage.php";
+    /*if(buttonNum == numPages().toString()) {
         window.location.href = "second_stage.php";
     }
+    else {
+        $("#feedback".concat(buttonNum)).show();
+    }*/
+}
+    
+function submitBehavior() {
+    var json = outputJSON();
+    post('/submit_behavior.php/', {jsonGlobals: json[0], jsonTextareas: json[1], redirect: "/second_stage.php/"});
+}
+
+    // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
+function post(path, params, method) {
+    method = method || "post"; // Set method to post by default if not specified.
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+         }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
 }
 
 $(document).ready(function(){

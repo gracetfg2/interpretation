@@ -36,7 +36,7 @@ function logAction(action, param) {
 
 $(document).ready(function() {
     openPageTimestamp = getCurTime();
-    //console.log("Open Page: " + openPageTimestamp);
+    console.log("Open Page: " + openPageTimestamp);
     logAction("Opened");
 
     $(window).focus(function() {
@@ -135,7 +135,7 @@ function extractMonitorID(textfield) {
 }
 
 function onTextKeyDown(e) {
-    //console.log(getCurTime());
+    console.log(getCurTime());
     var textfield = $( document.activeElement );
     var monitorID = extractMonitorID(textfield);
     arrayManager(monitorID);
@@ -229,8 +229,8 @@ function outputJSON() {
     prepParseStats();
     var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp});
     var textboxStr = JSON.stringify(textboxInfo);
-    //console.log(globalStr)
-    //console.log(textboxStr);
+    console.log(globalStr)
+    console.log(textboxStr);
     return [globalStr, textboxStr];
 }
 
