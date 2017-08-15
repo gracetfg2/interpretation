@@ -101,9 +101,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 		<p>
 			In this HIT, we want to learn more about how designers read and learn from feedback, as well as what makes some feedback better than others. Imagine yourself as a design consultant and do the following: 
 
-			<li> review a graphic design and its goals for at least one minute</li>
+			<li> review a graphic design and its goals for at least one minute.</li>
 			<li> review three pieces of feedback collected from the target audience of this poster. </li>
-			<li> recommend actions to improve the design</li>
+			<li> recommend actions to improve the design.</li>
 			</p>
 
 
