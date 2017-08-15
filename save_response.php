@@ -19,7 +19,7 @@
 		 $f1=  $_POST['f1'];
 		 $f2= $_POST['f2'];
 		 $f3= $_POST['f3'];	
-		 $task_useful= $_POST['task_useful'];
+		 
 		 $f1_rating= $_POST['feedback1_rating'];	
 		 $f2_rating= $_POST['feedback2_rating'];	
 		 $f3_rating= $_POST['feedback3_rating'];	
@@ -32,7 +32,7 @@
 		 $numberOfPause=$_POST['numberOfPause'];
 		 $numberOfDel=$_POST['numberOfDel'];
 
-	
+		$task_useful= $_POST['task_useful'];
 		$group_name= $_POST['group_name'];
 
 		

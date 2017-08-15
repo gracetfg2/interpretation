@@ -326,7 +326,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 		<input type="hidden" id="_f3" name="_f3" value=""/>
 
 		<input type="hidden" id="_mid" name="_mid" value=""/>
-		<input type="hidden" id="group_name" name="group_name" value="explanation"/>
+		<input type="hidden" id="group_name" name="group_name" value="explain"/>
 
 
 		<input type="hidden" id="startTime" name="startTime" value=""/>
