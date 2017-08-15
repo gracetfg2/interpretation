@@ -629,7 +629,7 @@ function submitresult() {
 
     if(isOkay==true){
       logAction("submit");
-
+ 
  
       $("#response-form [name=_f1]").val( $("#f1").val() );
       $("#response-form [name=_f2]").val( $("#f2").val() );
@@ -644,7 +644,7 @@ function submitresult() {
       $("#response-form [name=numberOfDel]").val(delCount);
       $("#response-form [name=startTime]").val( annoStartTime );
       $("#response-form [name=submitTime]").val((new Date()).getTime());
-      
+      alert((review_start - hitStartTime)/1000);
      
      $("#response-form").submit();
       
