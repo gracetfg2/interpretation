@@ -9,17 +9,16 @@
 	 }
 
 	
-	$stmt = $conn->prepare("INSERT INTO PilotTest (mid, interprete1,interprete2,interprete3, actionplan, f1_rating, f2_rating, f3_rating, prepareTime, taskTime, numberOfPause, numberOfDel, action_plan_time, reviewDesignTime, task_useful, group_name) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	$stmt = $conn->prepare("INSERT INTO PilotTest (mid, interprete1,interprete2,interprete3, actionplan, f1_rating, f2_rating, f3_rating, prepareTime, taskTime, numberOfPause, numberOfDel, action_plan_time, reviewDesignTime) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 
-	$stmt->bind_param("sssssiiiiiiiiiis", $mid, $f1, $f2, $f3, $action, $f1_rating, $f2_rating, $f3_rating, $prepareTime, $taskTime, $numberOfPause, $numberOfDel, $action_plan_time,$reviewDesignTime, $task_useful, $group_name);
+	$stmt->bind_param("sssssiiiiiiiii", $mid, $f1, $f2, $f3, $action, $f1_rating, $f2_rating, $f3_rating, $prepareTime, $taskTime, $numberOfPause, $numberOfDel, $action_plan_time,$reviewDesignTime);
 	
 
 		 $mid=  $_POST['_mid'];
 		 $f1=  $_POST['f1'];
 		 $f2= $_POST['f2'];
 		 $f3= $_POST['f3'];	
-		 
 		 $f1_rating= $_POST['feedback1_rating'];	
 		 $f2_rating= $_POST['feedback2_rating'];	
 		 $f3_rating= $_POST['feedback3_rating'];	
@@ -32,8 +31,8 @@
 		 $numberOfPause=$_POST['numberOfPause'];
 		 $numberOfDel=$_POST['numberOfDel'];
 
-		$task_useful= $_POST['task_useful'];
-		$group_name= $_POST['group_name'];
+	
+	
 
 		
 	$success = $stmt->execute();

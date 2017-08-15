@@ -273,7 +273,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
               <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Based on the set of feedback, please describe how you could improve the design:</h5><textarea name="action_plan" id="action_plan" onkeydown="onTextKeyDown(this.id,event)" onfocus="planAction()" monitorid="2" rows="4"></textarea>
           	
            
-                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp How useful was writing responses to the self-explanation task for interpreting the feedback?:</h5>
+                <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp Please rate the usefulness of the self-explanation process:</h5>
                 <br>
 
                 <table border='0' cellpadding='5' cellspacing='0' width="70%">
@@ -291,13 +291,13 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
                         
                         <tr>
                             <td class='radio-label' ><strong>Not Useful</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10581'  value='1' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10582'  value='2' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10583'  value='3' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10584'  value='4' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10585'  value='5' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10586'  value='6' ></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='task_useful' id='10587'  value='7' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10581'  value='1' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10582'  value='2' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10583'  value='3' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10584'  value='4' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10585'  value='5' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10586'  value='6' ></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='feedback1_rating' id='10587'  value='7' ></td>
                             <td class='radio-label'><strong>Very Useful</strong></td>      
                         </tr>                       
                         </table>
@@ -326,7 +326,6 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 		<input type="hidden" id="_f3" name="_f3" value=""/>
 
 		<input type="hidden" id="_mid" name="_mid" value=""/>
-		<input type="hidden" id="group_name" name="group_name" value="explain"/>
 
 
 		<input type="hidden" id="startTime" name="startTime" value=""/>
@@ -632,19 +631,19 @@ function submitresult() {
       logAction("submit");
 
  
-	  $("#response-form [name=_f1]").val( $("#f1").val() );
-	  $("#response-form [name=_f2]").val( $("#f2").val() );
-	  $("#response-form [name=_f3]").val( $("#f3").val() );
-	  $("#response-form [name=_mid]").val( $("#turkerID").val() );
-	  $("#response-form [name=reviewDesignTime]").val( (review_start - hitStartTime)/1000) ;   
-
-	  $("#response-form [name=prepareTime]").val(( annoStartTime - hitStartTime)/1000);
-	  $("#response-form [name=taskTime]").val( ((new Date()).getTime() - hitStartTime)/1000 );
-	  $("#response-form [name=numberOfPause]").val(pauseCount);
-	  $("#response-form [name=action_plan_time]").val( ((new Date()).getTime() - action_plan_start)/1000 );
-	  $("#response-form [name=numberOfDel]").val(delCount);
-	  $("#response-form [name=startTime]").val( annoStartTime );
-	  $("#response-form [name=submitTime]").val((new Date()).getTime());
+      $("#response-form [name=_f1]").val( $("#f1").val() );
+      $("#response-form [name=_f2]").val( $("#f2").val() );
+      $("#response-form [name=_f3]").val( $("#f3").val() );
+      $("#response-form [name=_mid]").val( $("#turkerID").val() );
+      $("#response-form [name=reviewDesignTime]").val( (review_start - hitStartTime)/1000) ;   
+ 
+      $("#response-form [name=prepareTime]").val(( annoStartTime - hitStartTime)/1000);
+      $("#response-form [name=taskTime]").val( ((new Date()).getTime() - hitStartTime)/1000 );
+      $("#response-form [name=numberOfPause]").val(pauseCount);
+      $("#response-form [name=action_plan_time]").val( ((new Date()).getTime() - action_plan_start)/1000 );
+      $("#response-form [name=numberOfDel]").val(delCount);
+      $("#response-form [name=startTime]").val( annoStartTime );
+      $("#response-form [name=submitTime]").val((new Date()).getTime());
       
      
      $("#response-form").submit();
