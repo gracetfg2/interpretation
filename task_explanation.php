@@ -1,12 +1,17 @@
 <?php
  session_start();
 
-	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
-	$conn = connect_to_db();
-	 	if (!$conn) {
-	     die("Connection failed: " . mysqli_connect_error());
-	 }
+   $DB_HOST = "crowdsight.web.engr.illinois.edu";
+   $DB = "crowdsight_interpretation";
+   $SQL_ACC = "crowdsig_1";
+   $SQL_PWD = "bpteam!";
 
+   $conn = mysqli_connect($DB_HOST,$SQL_ACC,$SQL_PWD,$DB);
+
+   // Check connection
+   if (!$conn) {
+       die("Connection failed: " . mysqli_connect_error());
+   }
 
  /************ Get Provider IP ****************/
  if(!$_SERVER['REMOTE_ADDR']){$ip="0";}
