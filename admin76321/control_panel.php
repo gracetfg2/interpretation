@@ -117,56 +117,14 @@ else {
           }
           //Select Group 
           echo "<td><select name='g".$value['DesignerID']."'>";
-            switch ($value['group']) {
-              case 'sum_reflection':
-								echo "<option disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option selected value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'individual_reflection':
-								echo "<option disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option selected value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'reflection-feedback':
-								echo "<option disabled value='NULL'>Null</option>";
-                  echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option selected value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'feedback-reflection':
-								echo "<option disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option selected value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'control':
+
                 echo "<option disabled value='NULL'>Null</option>";
-                echo "<option selected value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              default:
-								echo "<option selected disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-            }
+                echo "<option value ='control'"; ($value['group']=='control')? "selected":""; echo ">control</option>";
+                echo "<option value ='self_explain'"; ($value['group']=='self_explain')? "selected":""; echo ">self_explain</option>";
+                echo "<option value ='reflection'"; ($value['group']=='reflection')? "selected":""; echo ">reflection</option>";
+                
+               echo "<option value ='explain_reflect'"; ($value['group']=='explain_reflect')? "selected":""; echo ">explain_reflect</option>";
+                
           echo "</select></td>";
 
 

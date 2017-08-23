@@ -114,15 +114,6 @@ $ok_to_use=1;
                <a href= '../view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
 
-    <!--<div class="alert alert-info">
-        <h3>Review Feedback</h3>
-        <p>To help you revise your design, we have collected feedback from three independent reviewers on your initial design. For each piece of feedback, please <b>review</b> the content, <b>paraphrase</b> it, and <b>rate</b> its quality. When paraphrasing the feedback, please read the content until you understand it, then imagine explaining the feedback to your classmates or co-workers. We want you to write your explanation in the textbox. You should double check your response to make sure it covers all the main points in the feedback. </li>
-        </p>
-        <hr>
-        <p>Please spend about<strong> 5 minutes reviewing and completing the task for each piece of feedback. </strong> After that, please click "Submit" to go to the next step. 
-        </p>
-     </div><!--End alert section for instruction-->
-
 
         <div id="task">
             <?php
@@ -224,7 +215,7 @@ function nextPage()
     
 function printJSON() {
     var json = outputJSON();
-    post('submit_behavior.php', {jsonGlobals: json[0], jsonTextareas: json[1], jsonRating: json[2], redirect: "sum_rate.php"});
+    post('submit_behavior.php', {jsonGlobals: json[0], jsonTextareas: json[1], redirect: "sum_rate.php"});
 }
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit

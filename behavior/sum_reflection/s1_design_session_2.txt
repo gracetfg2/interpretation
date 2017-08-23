@@ -1,0 +1,15 @@
+
+ New Record
+[[1503458281400,"init"],[1503458285111,"blur"],[1503458288348,"focus"],[1503458288449,"start-upload-design"],[1503458290472,"submit"],[7049,"prepareTime"],[2024,"taskTime"]]
+
+ New Record
+[[1503458603549,"init"],[1503458609798,"blur"],[1503458611737,"focus"],[1503458611847,"start-upload-design"],[1503458615415,"blur"],[1503458620939,"focus"],[1503458621055,"re-uploade"],[1503458622711,"submit"],[8298,"prepareTime"],[10866,"taskTime"]]
+
+ New Record
+[[1503458637283,"init"],[1503458642516,"blur"],[1503458646646,"focus"],[1503458646753,"start-upload-design"],[1503458648348,"submit"],[9470,"prepareTime"],[1595,"taskTime"]]
+
+ New Record
+[[1503459041197,"init"],[1503459043615,"submit"],[null,"prepareTime"],[null,"taskTime"]]
+
+ New Record
+[[1503459068284,"init"],[1503459071362,"submit"],[null,"prepareTime"],[null,"taskTime"]]

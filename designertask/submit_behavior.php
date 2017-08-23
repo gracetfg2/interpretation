@@ -16,7 +16,7 @@ function CloseConnection($conn) {
     mysqli_close($conn);
 }
 
-function SendData($jsonGlobals, $jsonTextareas, $ratings ,$conn) {
+function SendData($jsonGlobals, $jsonTextareas, $ratings, $conn) {
     if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID) VALUES (?, ?, ?)"))) {
         echo "SendData prepare failed: (" . $conn->errno . ") " . $conn->error;
     }
@@ -50,16 +50,17 @@ function SendData($jsonGlobals, $jsonTextareas, $ratings ,$conn) {
     }
 }
 
-function CommitToDatabase($jsonGlobals, $jsonTextareas, $ratings) {
+function CommitToDatabase($jsonGlobals, $jsonTextareas) {
     $conn = Connect();
-    SendData($jsonGlobals, $jsonTextareas, $ratings,  $conn);
+    SendData($jsonGlobals, $jsonTextareas,  $conn);
     CloseConnection($conn);
     return true;
 }
 
-if (isset($_POST['jsonGlobals']) && isset($_POST['jsonTextareas'])) {
+if (isset($_POST['jsonGlobals']) && isset($_POST['jsonTextareas']) ) {
     CommitToDatabase($_POST['jsonGlobals'], $_POST['jsonTextareas']);
     if(isset($_POST['redirect'])) {
+
         header("Location: " . $_POST['redirect']);
     }
     else {

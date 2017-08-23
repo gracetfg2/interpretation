@@ -136,14 +136,14 @@ switch ($stage){
 	 				";
 	 
 		switch ($group){
-			case 'self-explanation':
-				$next_page="feedback.php";
+			case 'self-explain':
+				$next_page="explain.php";
 	 			break;
 			case 'sum_reflection':
 				$next_page="reflection.php";
 				break;
 			case 'explain-reflection':
-				$next_page="$feedback.php";
+				$next_page="$explain.php";
 				break;
 	 		case 'control':
 				$next_page="second_stage.php";
@@ -162,7 +162,7 @@ switch ($stage){
 		break;
 	case 6:
 		echo "<p style='text-align:center;font-weight:bold'>Thank you for participating! </p>
-		<p>The compensation for the second phase study ($20) will be sent to your Paypal account <span style='color:blue'>".$designer['paypal']."</span> shortly.";
+		<p>The compensation for the study ($25) will be sent to your Paypal account <span style='color:blue'>".$designer['paypal']."</span> shortly.";
 		echo "
 		If you do not receive the payment by ".$pay_deadline.", please contact Grace Yen at <span style='text-decoration:underline'> ".$admin_email." </span>. </p><p>The winners of the competition will receive a notification through the contact email by ".$contest_deadline.". Wish you the best luck ! </p><br>
 		<p style='font-size:16px'><span style='font-weight:bold'>Best Regards,</span><br> Grace Y. Yen, PhD Candidate<br>Department of Computer Sciecne<br>University of Illinois @ Urbana-Champaign</p>
@@ -171,7 +171,6 @@ switch ($stage){
 	default:
 		echo "Design Study ";
 		break;
-
 }
 
 ?>
