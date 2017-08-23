@@ -82,8 +82,10 @@ $ok_to_use=1;
     }
 
 
-    $next_page= ($designer['group'] == 'self_explain') ? "second_stage.php" : "reflection.php";
-   
+
+   // $next_page= ($designer['group'] == 'self_explain') ? "second_stage.php" : "reflection.php";
+   $next_page="second_stage.php";
+
     mysqli_close($conn);
 
 ?>
@@ -176,6 +178,8 @@ $ok_to_use=1;
             </nav>
    
 
+<input type="hidden" name="next_page" id="next_page" value="<?php echo $next_page;?>">
+
     </div><!--End Task Section-->
       <?php include("../webpage-utility/footer.php") ?>
     </div><!--End Container-->
@@ -254,10 +258,9 @@ function numPages()
 
 function onClickSubmit() {
 
-    var json = outputJSON();
-  
+    var json = outputJSON();  
+    post('submit_behavior.php', {jsonGlobals: json[0], jsonTextareas: json[1], redirect: $('#next_page').val()} );
 
-    post('submit_behavior.php', {jsonGlobals: json[0], jsonTextareas: json[1], redirect: "<?php echo $nextPage; ?>"} );
 }
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit

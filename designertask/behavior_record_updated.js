@@ -4,10 +4,10 @@ const PAUSE_TIME_PERIOD = 10000;
 var openPageTimestamp = INVALID_VALUE;
 var firstCharTimestamp = INVALID_VALUE;
 
-var textboxInfo = [];
+var textboxInfo = {};
 
 class TextboxData {
-    constructor(pCount, pTime, lastP, lastIn, delCount, wCount, senCount, isP, value) {
+    constructor(pCount, pTime, lastP, lastIn, delCount, wCount, senCount, isP, cont) {
         this.firstInputTimestamp = 0;
         this.pauseCount = pCount;
         this.pauseTime = pTime;
@@ -17,12 +17,12 @@ class TextboxData {
         this.wordCount = wCount;
         this.sentenceCount = senCount;
         this.isPauseActive = isP;
-        this.content = value;
+        this.content = cont;
     }
 }
 
 
-var pauseTimeouts = [];
+var pauseTimeouts = {};
 
 var eventLogs = [];
 
@@ -87,15 +87,15 @@ function getCurTime() {
 
 function onTextKeyUp(e) {
     var textfield = $( document.activeElement );
-    var monitorID = extractMonitorID(textfield);
+    var monitorLabel = extractMonitorLabel(textfield);
     
-    pauseDelegateUp(monitorID);
+    pauseDelegateUp(monitorLabel);
 }
 
-function pauseDelegateUp(monitorID) {
-    clearTimeout(pauseTimeouts[monitorID]);
-    pauseTimeouts[monitorID] = setTimeout(function(){
-            recordPause(monitorID)
+function pauseDelegateUp(monitorLabel) {
+    clearTimeout(pauseTimeouts[monitorLabel]);
+    pauseTimeouts[monitorLabel] = setTimeout(function(){
+            recordPause(monitorLabel)
         }, PAUSE_TIME_PERIOD);
 }
 
@@ -112,18 +112,12 @@ function onInitTextKeyDown(e) {
             onTextKeyUp(e);
         });
     });
-    /*$("#monitoredtext").unbind();
-    $("#monitoredtext").keydown(function(e) {
-        onTextKeyDown(e);
-    });
-    $("#monitoredtext").keyup(function(e) {
-        onTextKeyUp(e);
-    });*/
+    
     onTextKeyDown(e);
 }
 
     // Manage potential resizes to the textbox info array and timeout array
-function arrayManager(curTextboxID) {
+/*function arrayManager(curTextboxID) {
     var curLen = textboxInfo.length;
     
     var slotsToMake = (curTextboxID - curLen) + 1;
@@ -131,23 +125,34 @@ function arrayManager(curTextboxID) {
         textboxInfo.push(new TextboxData(0, 0.0, 0.0, 0.0, 0, 0, 0, false , null));
         pauseTimeouts.push();
     }
+}*/
+
+function arrayManager(curTextboxLabel) {
+    if(!hasMonitorLabelBeenInitd(curTextboxLabel)) {
+        textboxInfo[curTextboxLabel] = new TextboxData(0, 0.0, 0.0, 0.0, 0, 0, 0, false, null);
+        pauseTimeouts[curTextboxLabel] = INVALID_VALUE;  // This will get overridden when we set timeouts
+    }
 }
 
 
-
-function extractMonitorID(textfield) {
+/*function extractMonitorID(textfield) {
     return parseInt(textfield.attr("monitorid"));
+}*/
+
+function extractMonitorLabel(textfield) {
+    return textfield.attr("monitorlabel");
 }
 
 function onTextKeyDown(e) {
     //console.log(getCurTime());
     var textfield = $( document.activeElement );
-    var monitorID = extractMonitorID(textfield);
-    arrayManager(monitorID);
+    //var monitorID = extractMonitorID(textfield);
+    var monitorLabel = extractMonitorLabel(textfield);
+    arrayManager(monitorLabel);
     
-    clearTimeout(pauseTimeouts[monitorID]);
+    clearTimeout(pauseTimeouts[monitorLabel]);
     
-    var textboxData = textboxInfo[monitorID];
+    var textboxData = textboxInfo[monitorLabel];
     
     if(textboxData.firstInputTimestamp == 0) {
         textboxData.firstInputTimestamp = getCurTime();
@@ -160,7 +165,7 @@ function onTextKeyDown(e) {
     if (unicode == 8) {
         deleteDelegate(textfield, textboxData);
     }
-    pauseDelegateDown(monitorID);
+    pauseDelegateDown(monitorLabel);
 }
 
 function deleteDelegate(textfield, data) {    // TODO: touch up
@@ -172,20 +177,20 @@ function deleteDelegate(textfield, data) {    // TODO: touch up
     }
 }
 
-function pauseDelegateDown(monitorID) {
-    if(textboxInfo[monitorID].isPauseActive) {
+function pauseDelegateDown(monitorLabel) {
+    if(textboxInfo[monitorLabel].isPauseActive) {
         var curTime = getCurTime();
-        var addedTime = curTime - textboxInfo[monitorID].lastPauseTimestamp;
-        textboxInfo[monitorID].pauseTime += addedTime + PAUSE_TIME_PERIOD;
-        textboxInfo[monitorID].isPauseActive = false;
+        var addedTime = curTime - textboxInfo[monitorLabel].lastPauseTimestamp;
+        textboxInfo[monitorLabel].pauseTime += addedTime + PAUSE_TIME_PERIOD;
+        textboxInfo[monitorLabel].isPauseActive = false;
     }
 }
 
-function recordPause(monitorID) {
-    textboxInfo[monitorID].lastPauseTimestamp = getCurTime();
-    textboxInfo[monitorID].pauseCount += 1;
-    textboxInfo[monitorID].isPauseActive = true;
-    logAction("Pause "+monitorID);
+function recordPause(monitorLabel) {
+    textboxInfo[monitorLabel].lastPauseTimestamp = getCurTime();
+    textboxInfo[monitorLabel].pauseCount += 1;
+    textboxInfo[monitorLabel].isPauseActive = true;
+    logAction("Pause " + monitorLabel);
 }
 
 function getParameterByName(name) {
@@ -195,8 +200,8 @@ function getParameterByName(name) {
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function hasMonitorIDBeenInitd(monitorID) {
-    return monitorID < textboxInfo.length;
+function hasMonitorLabelBeenInitd(monitorLabel) {
+    return monitorLabel in textboxInfo;
 }
 
 function countWords(text) {
@@ -222,11 +227,11 @@ function countSentences(text) {
 function prepParseStats() {
     $('[id=monitoredtext]').each(function() {   // For each monitored text field...
         var text = $(this).val();
-        var monitorID = extractMonitorID($(this));
-        if(hasMonitorIDBeenInitd(monitorID)) {
-            textboxInfo[monitorID].wordCount = countWords(text);
-            textboxInfo[monitorID].sentenceCount = countSentences(text);
-            textboxInfo[monitorID].content= text;
+        var monitorLabel = extractMonitorLabel($(this));
+        if(hasMonitorLabelBeenInitd(monitorLabel)) {
+            textboxInfo[monitorLabel].wordCount = countWords(text);
+            textboxInfo[monitorLabel].sentenceCount = countSentences(text);
+            textboxInfo[monitorLabel].content = text;
         }
     });
 }

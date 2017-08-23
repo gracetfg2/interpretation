@@ -16,4 +16,19 @@ function connect_to_db(){
 
    return $connection;
 }
+
+function UploadReflection($designerID, $designID, $content, $conn) {
+    if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, Content) VALUES (?, ?, ?)
+    ON DUPLICATE KEY UPDATE
+    Content = VALUES(Content)"))) {
+        echo "UploadReflection Statement Prep Failed: (" . $conn->errno . ") " . $conn->error;
+    }
+    $stmt->bind_param("iis", $designerID, $designID, $content);
+    $stmt->execute();
+    mysqli_stmt_close($stmt);
+}
+
+function CloseConnection_Util($conn) {
+    mysqli_close($conn);
+}
 ?>

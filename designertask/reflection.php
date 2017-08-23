@@ -48,7 +48,7 @@ $ok_to_use=1;
             mysqli_stmt_bind_result($stmt1, $filename);
             mysqli_stmt_fetch($stmt1);
             mysqli_stmt_close($stmt1);
-            //**************** Get Feedback ****************//
+            //**************** Get Feedback ****************
             if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
                 mysqli_stmt_bind_param($stmt2, "ii", $design_id, $ok_to_use);
                 mysqli_stmt_execute($stmt2);
@@ -113,7 +113,6 @@ $ok_to_use=1;
             <br>
                <a href= '../view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
-
 
         <div id="task">
             <?php
@@ -183,7 +182,7 @@ $ok_to_use=1;
             ?>
          <div style="border-radius:10px;background-color:#ffffe6; padding:30px">
                      
-                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you could take to improve your design: </h4><textarea id="monitoredtext" monitorid="0" rows="4"></textarea>
+                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you could take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"></textarea>
                     <br>
                   <div style="text-align:center;margin-top:20px;" >
                     <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="printJSON();" id="btn_next" >Submit </button></div>
@@ -215,7 +214,11 @@ function nextPage()
     
 function printJSON() {
     var json = outputJSON();
-    post('submit_behavior.php', {jsonGlobals: json[0], jsonTextareas: json[1], redirect: "sum_rate.php"});
+    var designId = 1;
+    var contentVal = $('#monitoredtext').val();
+    
+    post('submit_reflection_behavior.php', {content: contentVal, designIdx: designId, jsonGlobals: json[0], jsonTextareas: json[1], jsonRating: json[2], redirect: "sum_rate.php"});
+
 }
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit

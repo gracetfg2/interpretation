@@ -1,9 +1,9 @@
 <?php
 function Connect() {
-    $servername = "localhost";
-    $username = "root";
-    $password = "1234567";
-    $database = "crowdsight_interpretation";
+    $servername = "cpanel3.engr.illinois.edu";
+    $username = "mouscho2_admin";
+    $password = "AdminP@ss";
+    $database = "mouscho2_DesignProxy";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);

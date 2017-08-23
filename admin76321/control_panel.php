@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['admin']='gracesnehabrian';
+
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
@@ -212,7 +213,7 @@ else {
             {//No feedback yet
               echo "<td></td><td></td><td></td><td></td><td></td><td></td>";
             }
-             mysqli_stmt_close($stmt2);
+            // mysqli_stmt_close($stmt2);
           }
          
           echo "<td><a href='send_email198713.php?designer_id=".$value['DesignerID']."'>SentEmail</td>";
