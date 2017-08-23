@@ -2,7 +2,8 @@
     session_start();
     $_SESSION["role"]=1; //Designer login
 //    header('Location: sign-up-close.php');
-    if(!$_SESSION["designer_id"])
+//$_SESSION["designer_id"] = 1;
+    if(!isset($_SESSION["designer_id"]))
     {
       //haven't login;
     }else{
