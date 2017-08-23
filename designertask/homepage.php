@@ -90,19 +90,10 @@ switch ($stage){
 	case 0: 
 	case 1:
 	case 2:
-	//	if($design_number==){
 			echo "<p style='text-align:center;font-weight:bold'> Welcome to the design study! </p>
  				 <p>In the first phase of the study, you will need to create and submit a flyer, and complete a short survey by <span style='color:red'>".$first_deadline.".</span> 
  				 <p> Now, please click 'Next' to read the design task. We hope you enjoy the task and look forward to seeing your creative solutions!
  				  </p><p><a class='btn btn-primary btn-lg' href='first_stage.php' role='button'>Next</a></p>";	
-		/*}
-		else
-		{
-			echo "<p>Hi ".$designer['name'].", </p>
- 				 <p>You have NOT submitted your initial design yet. Please submit the design and complete the short survey by <span style='color:red'>".$first_deadline."</span>. </p>
- 				 <p><a class='btn btn-primary btn-lg' href='first_stage.php' role='button'>Next</a></p>";	
-	
-		}*/
 		
 		break;
 	case 3:
