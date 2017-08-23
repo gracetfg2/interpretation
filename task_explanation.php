@@ -538,14 +538,14 @@ function nextPage()
 	var error_msg= "";
 	
 
-	if( counting( $('#f'+current_page).val() )>20 &&  $("input[name='feedback"+current_page+"_rating']:checked").val()!=undefined){
+	if( counting( $('#f'+current_page).val() )>1 &&  $("input[name='feedback"+current_page+"_rating']:checked").val()!=undefined){
 		change_page=true;
 		if (current_page < numPages()) {
         current_page++;
         changePage(current_page);
     	}
 	}
-	else if( counting( $('#f'+current_page).val() )<=20) 
+	else if( counting( $('#f'+current_page).val() )<=1) 
 	{
 	 	error_msg+="Your response is too short, please check if you explain all the main points to the designer.";
 	 	change_page=false;

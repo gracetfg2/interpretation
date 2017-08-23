@@ -1,86 +1,6 @@
 <?php 
 	
-	session_start();	
-		//************* Check Login ****************// 
-	$DESIGNER= $_SESSION['designer_id'];
-	$experimentID= $_SESSION['experimentID'];
-	if(!$DESIGNER) { header("Location: ../index.php"); die(); }
-	//************* End Check Login ****************// 
 
-	//Get Designer's Project
-	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
-	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
-
-   	$conn = connect_to_db();
-	
-	$filename="";
-	$timespent="";
-	$getProjectId=0;
-	$getDesignId=0;
-	$version=1;
-
-
-	$sql10="SELECT * FROM u_Designer WHERE DesignerID=?";
-		if($stmt6=mysqli_prepare($conn,$sql10))
-		{
-			mysqli_stmt_bind_param($stmt6,"i",$DESIGNER);
-			mysqli_stmt_execute($stmt6);
-			$result = $stmt6->get_result();
-			$designer_info=$result->fetch_assoc() ;		 	
-		 
-		}
-
-	if($designer_info['process']>2)
-	{
-		 header("Location: homepage.php"); die(); 
-	}	
-
-
-   	if ($stmt1 = mysqli_prepare($conn, "SELECT ProjectID From Project WHERE f_DesignerID = ?")) {
-	    mysqli_stmt_bind_param($stmt1, "i", $DESIGNER);
-	    mysqli_stmt_execute($stmt1);
-	    $stmt1->store_result();
-		if($stmt1->num_rows > 0) {
-		    mysqli_stmt_bind_result($stmt1, $getProjectId);
-		    mysqli_stmt_fetch($stmt1);
-		   
-		    if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `f_ProjectID`=?")) {
-	    		mysqli_stmt_bind_param($stmt2, "i", $getProjectId);
-	    		mysqli_stmt_execute($stmt2);
-	    		$result = $stmt2->get_result();
-	    		while ($row = $result->fetch_assoc()) {
-	    			$design[]=$row;
-	    		}  	
-	    		mysqli_stmt_close($stmt2);	
-			}
-		}
-		else
-		{
-			$getProjectId=0;
-			echo "No project yet";
-		}
-		mysqli_stmt_close($stmt1);
-
-	}
-
-	if (count($design)==0)
-	{
-		$getDesignId=0;
-		echo "No design yet";
-	}
-	else
-	{
-		foreach($design as $value)
-		if ($value['version']==1)
-		{
-			$filename=$value['file'];
-			$timespent=$value['time_spent'];
-			$getDesignId=$value['DesignID'];
-		}
-		
-	}	
-
-   
 
  ?>
 <html lang="en">
@@ -172,75 +92,58 @@ em{
 
 
 <div class="main-section">
-	<div class="container ">
+	<div class="container " style="padding-top:50px">
 
 
 		<form class="form-horizontal" name="design_form" id="design_form" method="post" action="save_design.php" enctype="multipart/form-data">
 		
-<div style="margin-top:30px">
-		<div class="panel panel-info" style="width:80%;  margin:0px auto">
+
+		<div class="panel panel-info" style=" width:80%;  margin:0px auto">
   <div class="panel-heading">
-    <h3 class="panel-title"> Please complete the first phase of the study by <span style="color:red"><?php echo $first_deadline;?></span></h3>
+    <h3 class="panel-title"> Great. Now you should revise your design! </span></h3>
   </div>
   <div class="panel-body">
-   <span class="statement" style="text-align: justify;">
-   You need to design a flyer addressing the design brief and requirements below. Please upload the design image that you are satisfied with. Once you click Submit, you are not able to make further changes. Please retain a copy of the design for the next phase of the study. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
-   <h4 class="title">Rules / Requirements</h4>
-    <span class="statement">
-    <ol>1) You can use your favorite software to design the flyer. But no paper sketches allowed.</ol>
- <ol>2) The flyer size should be 8.5" x 11" (US Letter size) and in portrait orientation.</ol>
- <ol>3) The flyer must be created from scratch. No templates allowed.</ol>
- <ol>4) You may use images from the public domain, but not profanity, obscenity, or nudity.</ol>
- 
- </span>
-    <h4 class="title">Design Brief</h4>
-    <span class="statement" style="text-align: justify;">
-			    <ol>You have been hired to design a flyer for a half marathon event. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website www.running-nyc.com (not live yet). The top three runners will receive a $300 prize each. The goal of your flyer is to encourage participation, be visually appealing, and convey the event details.
-</ol>
-	</span>
-	
+   <span class="statement" style="text-align: justify;"><p>
+Please <strong>invest 15 to 30 minutes </strong>revising your design based on the feedback and your own insights. The revised designs rated in the top five by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
 
+ </p>
+	<p style="font-size:16px"><br>
+	<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
+	</p>
+ </span>
+
+
+	   
   </div>
 </div>
-</div>
+
 	<hr>
-	
 	 <div class="form-group" id="form-group-file">
-	    <label for="fileToUpload" class="col-sm-2 control-label"><?php if ($filename!=""){ echo "Change File";}else { echo "Upload File";}?><em>*</em></label>
-	    <div class="col-sm-10">
+	    <label for="fileToUpload" class="col-sm-4 col-md-4 control-label">upload revised design<em>*</em></label>
+	    <div class="col-sm-8 col-md-8">
 		    <input class="input-file" id="fileToUpload" name="fileToUpload" type="file" onChange="fileUpdate(this);">
 		    <p class="help-block">Only JPG, JPEG, PNG, and GIF files are allowed, the image size should be less than 5MB</p>
-<img  id='current-img' name='current-img'  <?php if ($filename!="") { echo "width='80%'' height='auto' src='../design/".$filename."'";} ?> > 
+<img  id='current-img' name='current-img'  > 
 		    <input type="hidden" id="exist_file" name="exist_file" value=<?php if ($filename!="") { echo "'true'"; }else { echo "'false'";}  ?> >               
 		</div>
-		
 	</div>
 
 
-
-<input type="hidden" id="update_file" name="update_file" value="false">
-<input type="hidden" id="project_id" name="project_id" value=<?php echo "'".$getProjectId."'"?>>
-<input type="hidden" id="action" name="action">
-<input type="hidden" id="version" name="version" value=<?php echo "'".$version."'"?>>
-<input type="hidden" id="design_id" name="design_id" value=<?php echo "'".$getDesignId."'"?>>
-
-<input type="hidden" id="prepareTime" name="prepareTime" value=""/>
-<input type="hidden" id="taskTime" name="taskTime" value=""/> 	
-<input type="hidden" id="_behavior" name="_behavior" value=""/>
 
 </form>
 
 <div class="container" style="text-align:center; padding-bottom:20px;">		 	
- 	<!-- <button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('save')"> Save </button>&nbsp-->
-	<button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('submit')"> Submit </button>&nbsp</div>
+ 	<!-- <button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('save')"> Save and Return Later</button>&nbsp-->
+	<button type="submit" class="btn-save" id="submit-bn" onClick="javascript:save('submit')" disabled> Submit [ now disabled ]</button>&nbsp</div>
+
 	</div>
-	<?php echo $current_projectID;?>
+
 
 </div>
+
+
 <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/footer.php');
 ?>
-
-
 <script>
 isOkay = true;
 	 
@@ -383,7 +286,7 @@ function fileUpdate(input) {
 		
 		}
 		else{
-			// $("#error_alert").show();
+			 $("#error_alert").show();
 		}
 	
 	}
@@ -393,7 +296,19 @@ function fileUpdate(input) {
 
  	
  </body>
+ <!--
+ <p><br>Content:
+	<a href= <?php //echo '../design/'.$filename1; ?> target='_blank'> Initial Design</a>&nbsp&nbsp
+	<?php /*
+		if($designer['group']=='feedback'||$designer['group']=='feedback-reflection'||$designer['group']=='reflection-feedback')
+			echo "<a href='check_feedback.php?design_id=".$initialID."' target='_blank'>Feedback</a>&nbsp&nbsp";
 
+		if($designer['group']=='reflection'||$designer['group']=='feedback-reflection'||$designer['group']=='reflection-feedback')
+			echo "<a href='check_reflection.php'>My reflection</a>";
+*/
 
+	?>
+	</p>
+-->
 
 </html>

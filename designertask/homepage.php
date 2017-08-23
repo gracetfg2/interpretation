@@ -142,7 +142,6 @@ switch ($stage){
 			case 'sum_reflection':
 				$next_page="reflection.php";
 				break;
-				break;
 			case 'explain-reflection':
 				$next_page="$feedback.php";
 				break;

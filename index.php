@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION["experimentID"]=3;
     $_SESSION["role"]=1; //Designer login
 //    header('Location: sign-up-close.php');
     if(!$_SESSION["designer_id"])
@@ -8,7 +7,7 @@
       //haven't login;
     }else{
       //Already login
-      header('Location: designer/homepage.php');
+      header('Location: designertask/homepage.php');
     }
 
 ?>
@@ -93,7 +92,7 @@ function submit(){
                       $("#result").text("Your password is incorrect.");
                       break;
                     case "success":
-                      window.location.href = "designer/homepage.php";
+                      window.location.href = "designertask/homepage.php";
                       break;
                     case "finished":
                       $("#result").text("You have completed the study. Thank you.");

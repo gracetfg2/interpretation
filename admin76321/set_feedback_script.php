@@ -6,19 +6,10 @@ $conn = connect_to_db();
 
 foreach ($_POST as $key => $value)
 {
-  // echo $key;
-  // echo ' ';
-  // echo $value;
-  // echo '    ';
-	// $sql = "UPDATE `exp1_Feedback` SET `designer_rating` =".htmlspecialchars($value)." WHERE `FeedbackID`=".htmlspecialchars($key);
-	// if (mysqli_query($conn, $sql)) {
-	//     //echo $sql."<br>" ;
-	// } else {
-	//     echo "Error updating record: " . mysqli_error($conn);
-	// }
+
 
   if (strpos($key,'f') !== false) {// process
-		$sql2 = "UPDATE Feedback SET `ok_to_use` ='".htmlspecialchars($value)."' WHERE FeedbackID=".substr($key,1);
+		$sql2 = "UPDATE ExpertFeedback SET `ok_to_use` ='".htmlspecialchars($value)."' WHERE FeedbackID=".substr($key,1);
 		if (mysqli_query($conn, $sql2)) {
 		    //echo $sql2."</br>";
 		} else {
@@ -26,7 +17,7 @@ foreach ($_POST as $key => $value)
 		}
 	}else if (strpos($key,'a') !== false) {// process
 		
-		$sql2 = "UPDATE `Feedback` SET `edited_content` =? WHERE `FeedbackID`=?";
+		$sql2 = "UPDATE `ExpertFeedback` SET `edited_content` =? WHERE `FeedbackID`=?";
 		if($stmt2 = mysqli_prepare($conn,$sql2)){
 			mysqli_stmt_bind_param($stmt2, "si", $edit,$feedback_id);
 			$edit=$value;

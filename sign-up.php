@@ -159,7 +159,7 @@ session_start();
          <div class="form-group required" id="form-group-expertise">
             <label for="expertise" class="col-sm-4 control-label">Design Expertise<em>*</em></label>
                 <div class="col-sm-8" >
-                      To be considered as an expert, you should have more than five years of professional experience in design, have an davanced degree, and have received external awards. </p>
+                      To be considered as an expert, you should have more than five years of professional experience in design, and have an advanced degree or have received external awards. </p>
                       <label class="radio-inline" style="text-align: left">
                         Novice
                       </label>

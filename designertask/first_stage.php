@@ -3,7 +3,6 @@
 	session_start();	
 		//************* Check Login ****************// 
 	$DESIGNER= $_SESSION['designer_id'];
-	$experimentID= $_SESSION['experimentID'];
 	if(!$DESIGNER) { header("Location: ../index.php"); die(); }
 	//************* End Check Login ****************// 
 

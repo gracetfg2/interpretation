@@ -60,3 +60,8 @@ div.fixed {
     bottom:25px;
     z-index:1;
 }
+
+.has-error
+{
+    background-color:#f2dede;
+}

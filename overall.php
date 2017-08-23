@@ -14,7 +14,7 @@
  }
 
  //Get Design
- if ($stmt = mysqli_prepare($conn, "SELECT time_spent, file From Design WHERE mid = ?")) {
+ if ($stmt = mysqli_prepare($conn, "SELECT time_spent, file, DesignID From Design WHERE mid = ?")) {
      /* bind parameters for markers */
      mysqli_stmt_bind_param($stmt, "s", $mid);
      /* execute query */
@@ -23,7 +23,7 @@
      $stmt->store_result();
 
  	if($stmt->num_rows > 0) {
- 	    mysqli_stmt_bind_result($stmt, $time_spent,$file);
+ 	    mysqli_stmt_bind_result($stmt, $time_spent,$file , $design_id);
  	    /* fetch value */
  	    mysqli_stmt_fetch($stmt);
  	    /* close statement */
@@ -45,33 +45,6 @@
  $_ip = mysqli_real_escape_string($conn, $ip);
  $_proxy = mysqli_real_escape_string($conn, $proxy);
 
-$existing_turker=0;
-
- /************ Check Provider Existence ****************/
-if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = ? AND PROXY = ? ")) 
- {
-    /* bind parameters for markers */
-    mysqli_stmt_bind_param($stmt, "ss",  $_ip,  $_proxy);
-    /* execute query */
-    mysqli_stmt_execute($stmt);
-    $stmt->store_result();
-    
-    
-    /* bind result variables */
-    if($stmt->num_rows > 0) 
-    {
-    	$existing_turker=1;
-        //existing provider
-        mysqli_stmt_bind_result($stmt, $current_provider);
-        /* fetch value */
-        mysqli_stmt_fetch($stmt);
-        $_SESSION['c_provider']=$current_provider; 
-        /* close statement */
-        mysqli_stmt_close($stmt);
-    } 
-   
- }
-
 ?>
 
 <!DOCTYPE html>
@@ -92,12 +65,6 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 
 		<div class="container">
 
-		<?php 
-/*if($existing_turker==1){
- echo "<span style='color:red;font-size:20px;'>We notice that this device has been used to submit other HITs in this batch. To ensure the feedback quality, we will check all these submissions. If we find too much similarity, we will reject all the submissions. Otherwise, thanks for helping more designers with us. </span>" ;
-}
-*/
-?>
 			<!-- Instructions -->
 			<div class="well" id="instructions" style="width:100%; font-size:16px; margin:0px auto;text-align:justify;padding-left:50px;padding-right:50px;background:#F2F2F2">				
 				<h3 style="color:black;">
@@ -106,19 +73,28 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 					</strong>
 				</h3>
 				<p >
-					In this HIT, you will need to review a graphic design and its goals for at least one minute and provide feedback on the design. Your feedback should include both <strong>strengths </strong>(what you like) and <strong>weaknesses</strong> (what you don’t like) about the <span style='color:blue'>overall concept and the theme </span> of the design. We are not the designer, so you don't need to be overly positive. However, responses that demonstrate insufficient effort or are overly offensive will be rejected.</p>
+					You will need to review a graphic design and its goals for at least one minute and provide feedback on the design. Your feedback should span three categories: 
+
+					<ol>
+						<li style="text-indent:20px"><b>Overall concept </b> of the design.</li>
+	   					<li style="text-indent:20px"><b>Layout and composition </b>of the visual elements in the design.</li>
+	   					<li style="text-indent:20px"><b>Aesthetics</b> of the design such as the color, font, and imagery choices.</li>
+					</ol>
+
+					For each category, you need to address both strengths (what you like) and weaknesses (what you don’t like) about that category of the design. Please limit the feedback within 150 words.</p>
 				
 
-			<div id="turker-div" name="turker-div"><strong> Enter your MTurk ID to start :</strong> <input type="text" id="turkerID" name="turkerID"><em style="color:red;"> (required)*</em>
-			<p><em style="color:grey">This is for the purpose of payment. </em></p>
-			</div>
+					<div id="turker-div" name="turker-div"><strong> Enter your ID to start :</strong> <input type="text" id="turkerID" name="turkerID"><em style="color:red;"> (required)*</em>
+					<p><em style="color:grey">This is for the purpose of payment. </em></p>
+					</div>
 
 			</div>
 
 
-<div id="info" name="info" style="display:none"><span style='color:red'>You have already completed the maximum number of HITs allowed in this batch. Multiple submissions will be rejected and impact your approval rate.</span></div>
-<div id='survey-part' style="display:none">
+			<div id="info" name="info" style="display:none"><span style='color:red'>You don't have the access to work on this task.</span></div>
+			<div id='survey-part' style="display:none">
 
+			<!--Design image and brief section-->
 			<div class="row" style="width:100%;padding-top: 20px;  margin:auto;">
 				
 			<!--Design -->		
@@ -126,19 +102,20 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 					<div id="image" style="margin-top:20px">		
 						 <div class="img-div" onmouseover="" style=" cursor: pointer; margin-right:20px; " >
 
-						 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="<?php echo $dfolder.$file ?>" onClick="view('<?php echo $mid;?> ');" >
+						 <img style="border: 1px solid #A4A4A4; width:300px; " id="picture" name="picture" src="<?php echo $dfolder.$file ?>" onClick="view('<?php echo $mid;?> ');" >
 						 <p><em style="color:grey">* Click on the image to enlarge </em></p>
 						</div>
 					</div>
 			<!--</div>-->
 			
-			<h3>Design Goals</h3> <span style="font-size:16px">This is the first draft of a flyer created for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen>(not live yet). The top three runners will receive a $300 prize each. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
-	<p><br>You can click on the image to enlarge.</p></span>
+					<h3>Design Goals</h3> <span style="font-size:16px">This is the first draft of a flyer created for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen>(not live yet). The top three runners will receive a $300 prize each. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+					<p><br>You can click on the image to enlarge.</p></span>
 			</div>
-	
+			<!--End Design image and brief section-->
+			
 			<hr>
 
-			<div class="row">	
+			<div class="row" id="survey-part">	
 				<div class="sub_frame">	
 					<div id="qual_div">
 						<h4 class="question-text"><strong>1. How would you rate the degree to which the flyer satisfied all of the design goals?</strong> <em style="color:red;"> (required)</em></h4>				
@@ -171,113 +148,51 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 				
 				<div class="sub_frame">	
 					<div id="fbk_div">
-					<h4 class="question-text required"><strong>2. Enter your feedback about the <span style="color:blue"><em>overall concept</em> </span>of the design, including both its strengths and weaknesses. &nbsp</strong><em style="color:red;"> (required)</em></h4>
-					 <textarea id="text" name="text" rows="5" onkeyup="onTextKeyUp()" onkeydown="onTextKeyDown(event)" style="width:100%;"></textarea>
+					<h4 class="question-text required"><strong>2. Enter your feedback to the design including both its strengths and weaknesses and spans three categories of the design (i.e. overall concept, layout and ). &nbsp</strong><em style="color:red;"> (required)</em></h4>
+					 <textarea id="text" name="text" rows="10" onkeyup="onTextKeyUp()" onkeydown="onTextKeyDown(event)" style="width:100%;"></textarea>
 					 
 					</div>
 				</div>
 
-				<div class="sub_frame">	
-						
-					<h4 class="question-text"><strong>How would you rate your level of design expertise?</strong> </h4>				
-					<table border="0" cellpadding="5" cellspacing="0" style="text-align: center;width:30%;">
-							<td  class="radio-label" ></td>
-							<td><label class="radio-cell">1</label></td> 
-							<td><label class="radio-cell">2</label></td> 
-							<td><label class="radio-cell">3</label></td> 
-							<td><label class="radio-cell">4</label></td>
-							<td><label class="radio-cell">5</label></td>  
-							<td  class="radio-label" ></td>
-						</tr>
-						
-						<tr>
-							<td class="radio-label" >Novice</td>
-							<td class="radio-cell"><input type="radio" class="radio-inline" name="expertiseRadios" id="expertiseRadios1" value="1"></td>
-						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertiseRadios" id="expertiseRadios2" value="2"></td>
-						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertiseRadios" id="expertiseRadios3" value="3"></td>
-						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertiseRadios" id="expertiseRadios4" value="4"></td>
-						<td class="radio-cell"><input type="radio" class="radio-inline" name="expertiseRadios" id="expertiseRadios5" value="5"></td>
-						<td class="radio-label">Expert</td>		
-						</tr>
-					</table>
-
-					<h4 class="question-text"  style="margin-top:35px;" ><strong>What gender do you identify with? <strong></h4>
-					<label class="radio-inline">
-						<input type="radio" name="genderRadios" id="genderRadios1" value="male"> Male
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="genderRadios" id="genderRadios2" value="female"> Female
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="genderRadios" id="genderRadios3" value="other"> Other
-					</label>
-		
-
-					<h4 class="question-text" style="margin-top:35px;" ><strong>What is your age range? <strong></h4>
-					<label class="radio-inline">
-					  <input type="radio" name="ageRadios" id="ageRadios1" value="under18"> under 18
-					</label>
-					<label class="radio-inline">
-					  <input type="radio" name="ageRadios" id="ageRadios2" value="18to25"> 18-25
-					</label>
-					<label class="radio-inline">
-					  <input type="radio" name="ageRadios" id="ageRadios3" value="26to35"> 26-35
-					</label>
-					<label class="radio-inline">
-					  <input type="radio" name="ageRadios" id="ageRadios4" value="36to45"> 36-45
-					</label>
-					<label class="radio-inline">
-					  <input type="radio" name="ageRadios" id="ageRadios5" value="46to55"> 46-55
-					</label>
-					<label class="radio-inline">
-					  <input type="radio" name="ageRadios" id="ageRadios6" value="56Older"> 56 or Older
-					</label>
-
-				</div><!--END OF optional question section-->
+					<div style="text-align:center;margin-top:20px;" ><button type="submit" class="btn-submit" name="submit-bn" id="submit-bn" onclick="verified();">	Submit</button> </div>
+				
 
 
-				</div><!--end row-->
+				<form action="webpage-utility/save_feedback.php?mid=<?php echo $mid;?>" method="post" id="feedback_form" name="feedback_form">
+					<input type="hidden" name="_fbk-text">
+					<input type="hidden" name="_age">
+					<input type="hidden" name="_expertL">
+					<input type="hidden" name="_gender">
+					<input type="hidden" name="_quality">
+					<input type="hidden" name="_behavior">
+					<input type="hidden" name="_turkerID">
+					<input type="hidden" name="_ip" value="<?php echo $ip;?>">
+					<input type="hidden" name="_proxy" value="<?php echo $proxy;?>">
 
-			
-			
 
-			<div style="text-align:center;margin-top:20px;" >
-			<button type="submit" class="btn-submit" name="submit-bn" id="submit-bn" onclick="submit();">Submit</button> 
-			</div>
-			
-			<form class="hidden" action="webpage-utility/save_feedback.php?mid=<?php echo $mid;?>" method="post" id="feedback_form" name="feedback_form">
-				<input type="hidden" name="_fbk-text">
-				<input type="hidden" name="_age">
-				<input type="hidden" name="_expertL">
-				<input type="hidden" name="_gender">
-				<input type="hidden" name="_quality">
-				<input type="hidden" name="_behavior">
-				<input type="hidden" name="_turkerID">
-				<input type="hidden" name="_ip" value="<?php echo $ip;?>">
-				<input type="hidden" name="_proxy" value="<?php echo $proxy;?>">
+					<input type="hidden" name="_type" id="_type" value="<?php echo $type;?>">
+					<input type="hidden" name="_designID" id="_designID" value="<?php echo $design_id;?>">
+					<input type="hidden" id="startTime" name="startTime" value=""/>
+					<input type="hidden" id="submitTime" name="submitTime" value=""/>
+	        		<input type="hidden" id="prepareTime" name="prepareTime" value=""/>
+	        		<input type="hidden" id="taskTime" name="taskTime" value=""/>
+	        		<input type="hidden" id="numberOfOps" name="numberOfOps" value=""/>
+	        		<input type="hidden" id="numberOfPause" name="numberOfPause" value=""/>
+	        		<input type="hidden" id="numberOfDel" name="numberOfDel" value=""/>
+	        		<input type="hidden" id="timeStamps" name="timeStamps" value=""/>        	
+	        		<input type="hidden" id="eventHistory" name="eventHistory" value=""/>
+	        		
+				
+				</form>
 
-				<input type="hidden" name="_type" id="_type" value="<?php echo $type;?>">
-				<input type="hidden" id="startTime" name="startTime" value=""/>
-				<input type="hidden" id="submitTime" name="submitTime" value=""/>
-        		<input type="hidden" id="prepareTime" name="prepareTime" value=""/>
-        		<input type="hidden" id="taskTime" name="taskTime" value=""/>
-        		<input type="hidden" id="numberOfOps" name="numberOfOps" value=""/>
-        		<input type="hidden" id="numberOfPause" name="numberOfPause" value=""/>
-        		<input type="hidden" id="numberOfDel" name="numberOfDel" value=""/>
-        		<input type="hidden" id="timeStamps" name="timeStamps" value=""/>        	
-        		<input type="hidden" id="eventHistory" name="eventHistory" value=""/>
-			</form>
+				
 
-			<div style="margin-top:25px;"></div>
+				
+	
+			</div><!--END OF survey part-->
 
-		</div>
 
-	</div>
 	</div><!--end container-->
-
-
-
-
 
 </div><!--end main-section-->
 <script>
@@ -311,41 +226,10 @@ window.open("viewpic.php?image="+mid);
 //Check TurkID 
 document.getElementById('turkerID').focusout = function(e){  	
 	if ($('#turkerID').val() != "") {
-		turkID();
+		$('#survey-part').show();
 	}
 
 };
-
-
-function turkID() {
-     
-	$.post( "check_turker.php", { turker: $.trim($('#turkerID').val()) })
-  	.done(function( data ) {
-    
-    	switch(data)
-                {
-                  case "exists":
-                 
-          			$('#survey-part').hide();
-          			
-          			$('#info').show();
-          			isOkay = false;
-          			provider_ok=0;
-          			//window.location.href ='already_exist.php';             
-                    break;
-                   case "success":
-          
-                   	provider_ok=1;
-                  	$('#info').hide();
-                  	$('#survey-part').show();
-                    break;
-                  default:
-                  	
-                }
-  });
-   
-}
-
 
 
 function logAction(action, param) {
@@ -364,66 +248,39 @@ $(document).ready(function() {
   // var task_params = document.getElementById("survey").href.substring(56).toString();
   // (new Image).src = 'http://128.174.241.28:8080/?' + task_params;
  
-  hitStartTime = (new Date()).getTime();
-  logAction("init");
+		  hitStartTime = (new Date()).getTime();
+		  logAction("init");
 
- $('textarea').bind('cut copy paste', function (e) {
-    e.preventDefault(); //disable cut,copy,paste
-});
-
-
-  $(window).focus(function() {
-    logAction("focus");
-  });
-
-  $(window).blur(function() {
-    logAction("blur");
-  });
-
-	$('input[type=radio][name=expertiseRadios]').change(function(){
-		turkID();
-		  logAction("expert");
-	})
-
-	$('input[type=radio][name=ageRadios]').change(function(){
-		turkID();
-		  logAction("age");
-	})
-
-	$('input[type=radio][name=qualRadios]').change(function(){
-		turkID();
-		  logAction("quality");
-		  $("#qual_div").removeClass("has-error-text");
-	})
-
-	$('input[type=radio][name=genderRadios]').change(function(){
-		turkID();
-		  logAction("gender");
-	})
-
-	$("#text").bind("keydown", function(){
-		turkID();
-    	$('#fbk_div').removeClass("has-error-text");
-
-	}
-	);
-
-	$("#turkerID").bind("keydown", function(){
-    	$('#turker-div').removeClass("has-error-text");
-	}
-	);
+		 $('textarea').bind('cut copy paste', function (e) {
+		    e.preventDefault(); //disable cut,copy,paste
+		});
 
 
-/* Count Page Visit
-	$.ajax({
-		type: "POST",
-		url: "countvisit.php",
-		data: { starttime:  $.trim( $("#feedback_form [name=_starttime]").val()) },
-		success: function(data){
+		  $(window).focus(function() {
+		    logAction("focus");
+		  });
 
+		  $(window).blur(function() {
+		    logAction("blur");
+		  });
+
+		$('input[type=radio][name=qualRadios]').change(function(){
+			  logAction("quality");
+			  $("#qual_div").removeClass("has-error-text");
+		})
+
+
+		$("#text").bind("keydown", function(){			
+	    	$('#fbk_div').removeClass("has-error-text");
 		}
-	});
-*/
+		);
+
+		$("#turkerID").bind("keydown", function(){
+	    	$('#turker-div').removeClass("has-error-text");
+		}
+		);
+
+
  
 });
 
@@ -460,6 +317,7 @@ function onTextKeyDown(e) {
 
 
   clearTimeout(typingTimer);
+
   var unicode = e.keyCode ? e.keyCode : e.charCode;
   if (unicode == 8 || unicode == 46) {
     if (!delFlag) {
@@ -486,7 +344,8 @@ function getParameterByName(name) {
 
 
 function verified(){
-				var errorMsg='';
+		
+		var errorMsg='';
 	  	$("#error_alert").hide();
 		$(".has-error").removeClass("has-error");
 		 var isOkay = true;
@@ -494,7 +353,7 @@ function verified(){
 
 	if ($('#turkerID').val() == "") {
 		 $("#error_alert").show();
-		 errorMsg=errorMsg+'\n'+"Provide your Turker ID.";
+		 errorMsg=errorMsg+'\n'+"Provide your name to get your compensation.";
 		 $('#turker-div').addClass("has-error-text");
 		 isOkay = false;
 		}
@@ -508,7 +367,7 @@ function verified(){
 			 errorMsg=errorMsg+'\n'+"Provide your feedback.";
 		}
 		else{
-			if(counting(document.getElementById('text').value)<30)
+			if(counting(document.getElementById('text').value)<3)
 			{	
 				 errorMsg=errorMsg+'\n'+"You feedback is too short. Please elaborate on your comments more.";
 				$('#fbk_div').addClass("has-error-text");
@@ -524,28 +383,12 @@ function verified(){
 			 
           isOkay = false;
         }
-
-
-		
-
+	
 		if(isOkay==true && provider_ok==1){
 			logAction("submit");
-			
 			$("#feedback_form [name=_fbk-text]").val( $("#text").val() );
-			$("#feedback_form [name=_age]").val($('input[name="ageRadios"]:checked').val() );
-			$("#feedback_form [name=_expertL]").val($('input[name="expertiseRadios"]:checked').val() );
-			$("#feedback_form [name=_gender]").val($('input[name="genderRadios"]:checked').val() );
 			$("#feedback_form [name=_quality]").val($('input[name="qualRadios"]:checked').val() );
 			$("#feedback_form [name=_turkerID]").val( $("#turkerID").val() );
-			
-
-			$("#feedback_form [name=_behavior]").val(JSON.stringify(eventLogs));
- 			$("#feedback_form [name=prepareTime]").val( annoStartTime - hitStartTime);
- 			$("#feedback_form [name=taskTime]").val( (new Date()).getTime() - annoStartTime );
- 			$("#feedback_form [name=numberOfPause]").val(pauseCount);
- 			$("#feedback_form [name=numberOfDel]").val(delCount);
- 			$("#feedback_form [name=startTime]").val( annoStartTime );
- 			$("#feedback_form [name=submitTime]").val((new Date()).getTime());
 			$("#feedback_form").submit();
 			
 		}
@@ -555,31 +398,7 @@ function verified(){
 		   alert("Before submitting, your response should: "+errorMsg);
 		}
 }
-function submit() {
 
-	$.post( "check_turker.php", { turker: $.trim($('#turkerID').val()) })
-  	.done(function( data ) {
-    
-    	switch(data)
-                {
-                  case "exists":
-                 
-          			$('#survey-part').html("Submission failed. The Turker ID have already been used to submit HIT in this batch.");
-          			$('#submit-bn').hide();
-          			$('#info').show();
-          			isOkay = false;
-          			provider_ok=0;
-          			//window.location.href ='already_exist.php';             
-                    break;
-                   case "success":
-                   	verified();
-                    break;
-                  default:
-                  	
-                }
-  });
-
-}
 
 
 </script>

@@ -25,68 +25,16 @@ if ($stmt = mysqli_prepare($conn, "SELECT DesignID, mturk_code From Design WHERE
     mysqli_stmt_close($stmt);
 }
 
-/************ Save Provider Information***************/
-if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = ? AND PROXY = ?")) 
- {
-    /* bind parameters for markers */
-    mysqli_stmt_bind_param($stmt, "ss", $_POST['_ip'], $_POST['_proxy']);
-    /* execute query */
-    mysqli_stmt_execute($stmt);
-    $stmt->store_result();
+
+
+
+$stmt = $conn->prepare("INSERT INTO ExpertFeedback (f_designID, f_providerID, content, design_quality) VALUES ( ?,?,?,?)");
     
+    $stmt->bind_param("issi", $design_id, $_turkerID, $fbktext,  $design_quality);  
     
-    /* bind result variables */
-    if($stmt->num_rows > 0) 
-    {
-        //existing provider
-        mysqli_stmt_bind_result($stmt, $current_provider);
-        /* fetch value */
-        mysqli_stmt_fetch($stmt);
-        $_SESSION['c_provider']=$current_provider; 
-        /* close statement */
-        mysqli_stmt_close($stmt);
-    } 
-    else 
-    {
-        //new provider
-        $stmt = $conn->prepare("INSERT INTO u_Provider (IP, PROXY) VALUES ( ?,?)");
-                
-        $stmt->bind_param("ss", $_ip,$_proxy);
-        $success = $stmt->execute();
-        if(!$success){
-           
-            $isOkay=false;
-            echo "Error: " .$stmt->error;  mysqli_stmt_close($stmt);die();
-        }
-        else
-        {
-            $_SESSION['c_provider']= $stmt->insert_id; mysqli_stmt_close($stmt);
-        }
-         
-    }
- }
-
-
-
-
-
-$stmt = $conn->prepare("INSERT INTO Feedback (f_ProviderID,f_DesignID,category,content,preparedTime,taskTime,age,expertise,gender, countDel,numOfPause,turkerID,  design_quality) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    
-    $stmt->bind_param("iissiisisiisi", $currentProvider, $design_id, $category,$fbktext, $preparedTime, $taskTime, $age, $expertise, $gender, $del, $pause, $turkerID,  $quality);
-   
-    $currentProvider=$_SESSION['c_provider']; 
-    $category=$_POST['_type'];
-    
-    $preparedTime= $_POST['prepareTime'];
-    $taskTime= $_POST['taskTime'];
-    $age= $_POST['_age'];
-    $expertise= $_POST['_expertL'];
-    $gender= $_POST['_gender'];
+    $_turkerID=$_POST['_turkerID']; 
     $fbktext=nl2br($_POST['_fbk-text']);
-    $del=$_POST['numberOfDel'];
-    $pause=$_POST['numberOfPause'];
-    $turkerID=$_POST['_turkerID'];
-    $quality=$_POST['_quality'];
+    $design_quality=$_POST['_quality'];
  
 
     $success = $stmt->execute();
