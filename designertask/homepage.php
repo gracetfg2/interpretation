@@ -130,11 +130,11 @@ switch ($stage){
 			case 'self-explain':
 				$next_page="explain.php";
 	 			break;
-			case 'sum_reflection':
+			case 'reflection':
 				$next_page="reflection.php";
 				break;
 			case 'explain-reflection':
-				$next_page="$explain.php";
+				$next_page="explain.php";
 				break;
 	 		case 'control':
 				$next_page="second_stage.php";

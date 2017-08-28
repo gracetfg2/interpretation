@@ -7,8 +7,9 @@ var firstCharTimestamp = INVALID_VALUE;
 var textboxInfo = {};
 
 class TextboxData {
-    constructor(pCount, pTime, lastP, lastIn, delCount, wCount, senCount, isP, cont) {
+    constructor(pCount, pTime, label, lastP, lastIn, delCount, wCount, senCount, isP, cont) {
         this.firstInputTimestamp = 0;
+        this.label = label;
         this.pauseCount = pCount;
         this.pauseTime = pTime;
         this.lastPauseTimestamp = lastP
@@ -116,16 +117,6 @@ function onInitTextKeyDown(e) {
     onTextKeyDown(e);
 }
 
-    // Manage potential resizes to the textbox info array and timeout array
-/*function arrayManager(curTextboxID) {
-    var curLen = textboxInfo.length;
-    
-    var slotsToMake = (curTextboxID - curLen) + 1;
-    for(var i = 0; i < slotsToMake; i++) {
-        textboxInfo.push(new TextboxData(0, 0.0, 0.0, 0.0, 0, 0, 0, false , null));
-        pauseTimeouts.push();
-    }
-}*/
 
 function arrayManager(curTextboxLabel) {
     if(!hasMonitorLabelBeenInitd(curTextboxLabel)) {
@@ -134,10 +125,6 @@ function arrayManager(curTextboxLabel) {
     }
 }
 
-
-/*function extractMonitorID(textfield) {
-    return parseInt(textfield.attr("monitorid"));
-}*/
 
 function extractMonitorLabel(textfield) {
     return textfield.attr("monitorlabel");
@@ -236,6 +223,7 @@ function prepParseStats() {
     });
 }
 
+//Get Rating Value
 var ratings = [];
 
 function getRatings() {
@@ -250,9 +238,12 @@ function getRatings() {
 function outputJSON() {
     prepParseStats();
     getRatings();
+
     var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp});
     var textboxStr = JSON.stringify(textboxInfo);
     var ratingStr = JSON.stringify(ratings);
+
+    //alert(ratingStr);
     //console.log(globalStr)
     //console.log(textboxStr);
     return [globalStr, textboxStr, ratingStr];

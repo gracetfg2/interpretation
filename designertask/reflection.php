@@ -1,4 +1,9 @@
 <?php
+/******************************
+The following SESSION variables will be set:
+$_SESSION['designer_id']
+$_SESSION['designer_group']
+*****************************/
 
 session_start();    
 //************* Check Login ****************// 
@@ -21,6 +26,7 @@ $filename="";
 
     }   
 
+$_SESSION['designer_group']= $designer['group'];
 
     if($designer['process']>5 ||$designer['process']<4)
     { header("Location: ../index.php"); die(); }
@@ -36,9 +42,10 @@ $filename="";
         $design=$result->fetch_assoc() ;            
         mysqli_stmt_close($stmt);   
     }
-$design_id=$design['DesignID'];
-$mid=$design['mid'];
-$ok_to_use=1;
+
+    $design_id=$design['DesignID'];
+    $mid=$design['mid'];
+    $ok_to_use=1;
 
     if ($stmt1 = mysqli_prepare($conn, "SELECT file From Design WHERE  DesignID= ? AND f_DesignerID = ?")) {
         mysqli_stmt_bind_param($stmt1, "ii", $design_id,$DESIGNER);
@@ -93,6 +100,7 @@ $ok_to_use=1;
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
     <script type="text/javascript" src="behavior_record_updated.js"></script>
     <!---->
     <title>Prototype</title>
@@ -158,13 +166,13 @@ $ok_to_use=1;
                 
                     <tr>
                         <td class='radio-label' ><strong>Low</strong></td>
-                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."1'  value='1' "; if ($value['designer_rating']==1){echo "checked ";} echo "onclick='rate(this.name,1);'></td>
-                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."2'  value='2' "; if ($value['designer_rating']==2){echo "checked ";} echo "onclick='rate(this.name,2);'></td>
-                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."3'  value='3' "; if ($value['designer_rating']==3){echo "checked ";} echo "onclick='rate(this.name,3);'></td>
-                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."4'  value='4' "; if ($value['designer_rating']==4){echo "checked ";} echo "onclick='rate(this.name,4);'></td>
-                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."5'  value='5' "; if ($value['designer_rating']==5){echo "checked ";} echo "onclick='rate(this.name,5);'></td>
-                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."6'  value='6' "; if ($value['designer_rating']==6){echo "checked ";} echo "onclick='rate(this.name,6);'></td>
-                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."7'  value='7' "; if ($value['designer_rating']==7){echo "checked ";} echo "onclick='rate(this.name,7);'></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."1'  value='1' "; if ($value['designer_rating']==1){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."2'  value='2' "; if ($value['designer_rating']==2){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."3'  value='3' "; if ($value['designer_rating']==3){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."4'  value='4' "; if ($value['designer_rating']==4){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."5'  value='5' "; if ($value['designer_rating']==5){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."6'  value='6' "; if ($value['designer_rating']==6){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."7'  value='7' "; if ($value['designer_rating']==7){echo "checked ";} echo "></td>
                         <td class='radio-label'><strong>High</strong></td>      
                     </tr>
 
@@ -180,12 +188,13 @@ $ok_to_use=1;
                
                 
             ?>
+         
          <div style="border-radius:10px;background-color:#ffffe6; padding:30px">
                      
                     <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you could take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"></textarea>
                     <br>
                   <div style="text-align:center;margin-top:20px;" >
-                    <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="printJSON();" id="btn_next" >Submit </button></div>
+                    <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>
            
         </div>
            
@@ -212,14 +221,26 @@ function nextPage()
     printJSON();
 }
     
-function printJSON() {
+function submit() {
     var json = outputJSON();
-    var designId = 1;
+
     var contentVal = $('#monitoredtext').val();
-    
-    post('submit_reflection_behavior.php', {content: contentVal, designIdx: designId, jsonGlobals: json[0], jsonTextareas: json[1], jsonRating: json[2], redirect: "sum_rate.php"});
+    var designId=1;
+    post('save_task.php', {
+        content: contentVal, 
+        designIdx: designId, 
+        jsonGlobals: json[0], 
+        jsonTextareas: json[1], 
+        jsonRating: json[2], 
+        redirect: "second_stage.php"
+    });
+
+
 
 }
+
+
+
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
 function post(path, params, method) {
@@ -241,6 +262,7 @@ function post(path, params, method) {
             form.appendChild(hiddenField);
          }
     }
+            
 
     document.body.appendChild(form);
     form.submit();

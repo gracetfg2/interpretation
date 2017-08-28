@@ -84,9 +84,9 @@ else {
             case 1:
             case 2:$weightedsun+=1;break;
             case 3:
-            case 4: $weightedsun+=2;break;
+            case 4:$weightedsun+=2;break;
             case 5:
-            case 6: $weightedsun+=3;break;
+            case 6:$weightedsun+=3;break;
           }
           switch($value['experience'])
           {
@@ -120,11 +120,11 @@ else {
           echo "<td><select name='g".$value['DesignerID']."'>";
 
                 echo "<option disabled value='NULL'>Null</option>";
-                echo "<option value ='control'"; ($value['group']=='control')? "selected":""; echo ">control</option>";
-                echo "<option value ='self_explain'"; ($value['group']=='self_explain')? "selected":""; echo ">self_explain</option>";
-                echo "<option value ='reflection'"; ($value['group']=='reflection')? "selected":""; echo ">reflection</option>";
+                echo "<option value ='control'"; if($value['group']=='control') echo "selected"; echo ">control</option>";
+                echo "<option value ='self_explain'"; if($value['group']=='self_explain') echo "selected"; echo ">self_explain</option>";
+                echo "<option value ='reflection'"; if($value['group']=='reflection') echo "selected"; echo ">reflection</option>";
                 
-               echo "<option value ='explain_reflect'"; ($value['group']=='explain_reflect')? "selected":""; echo ">explain_reflect</option>";
+               echo "<option value ='explain_reflect'"; if($value['group']=='explain_reflect') echo "selected"; echo ">explain_reflect</option>";
                 
           echo "</select></td>";
 
