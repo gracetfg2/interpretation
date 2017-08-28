@@ -214,6 +214,7 @@ function countSentences(text) {
 function prepParseStats() {
     $('[id=monitoredtext]').each(function() {   // For each monitored text field...
         var text = $(this).val();
+        var label = $(this).val();
         var monitorLabel = extractMonitorLabel($(this));
         if(hasMonitorLabelBeenInitd(monitorLabel)) {
             textboxInfo[monitorLabel].wordCount = countWords(text);

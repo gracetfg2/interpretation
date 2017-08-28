@@ -77,7 +77,7 @@ function SendData($jsonGlobals, $jsonTextareas, $feedbackRatings, $conn) {
 function CommitToDatabase($jsonGlobals, $jsonTextareas, $ratings) {
 
     //SendData($jsonGlobals, $jsonTextareas, $ratings,  $conn);
-    SendData($jsonGlobals, $jsonTextareas, $ratings, $conn);
+    SendData($jsonGlobals, $jsonTextareas, $ratings);
     CloseConnection($conn);
     return true;
 }

@@ -33,14 +33,16 @@ $conn = connect_to_db();
     foreach($textareaInfo as $label => $textbox) {
         //echo "Iterating";
         echo  $label."=>".$textbox;
-        
+
         if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON DUPLICATE KEY UPDATE
+        
         FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
         PauseCount = VALUES(PauseCount), PauseTime = VALUES(PauseTime), DeleteCount = VALUES(DeleteCount), 
         WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount)"))) {
             echo "SendData Textarea prepare failed: (" . $conn->errno . ") " . $conn->error;
         }
+
         $firstInput = $textbox->firstInputTimestamp;
         $lastInput = $textbox->lastInputTimestamp;
         $pauseCount = $textbox->pauseCount;
@@ -48,6 +50,7 @@ $conn = connect_to_db();
         $deleteCount = $textbox->deleteCount;
         $wordCount = $textbox->wordCount;
         $sentCount = $textbox->sentenceCount;
+
         $stmt->bind_param("isiiiiiii", $DESIGNER, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount);
         $stmt->execute();
         mysqli_stmt_close($stmt);
