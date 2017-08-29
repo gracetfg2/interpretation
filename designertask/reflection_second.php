@@ -152,7 +152,7 @@ $_SESSION['designer_group']= $designer['group'];
                 echo "<table class='table table-hover table-nonfluid'>";
                 echo " <thead><tr>
                 <td width='5%'></td>
-                <td width='60%' align='left'><strong></strong></td>
+                <td width='60%' align='left'><strong>Your Response</strong></td>
                 <td width='35%' align='center'><strong>Perceived Quality</strong></td>
                 </tr></thead> <tbody>";
 
@@ -161,12 +161,24 @@ $_SESSION['designer_group']= $designer['group'];
                 {
                     $feedbackNum += 1;
 
-                    $content=htmlspecialchars($value['edited_content']);
+                    $content=htmlspecialchars($value['interpretation']);
+                    $original=htmlspecialchars($value['edited_content']);
                    // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
 
                     echo "<tr id='div-".$value['FeedbackID']."' >
                             <td><strong>#".$feedbackNum."</strong></td>
-                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."</td>  
+                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
+
+
+
+                            <div class='collapse' id='collapseExample".$feedbackNum."'>  
+                                <div class='card card-block'>
+                                ".nl2br($original)."
+                                </div>
+                             </div>
+                             </div>
+                            </td>  
 
                 <td>
                 <table border='0' cellpadding='5' cellspacing='0' width='100%'>
@@ -280,7 +292,6 @@ function post(path, params, method) {
          }
     }
             
-
     document.body.appendChild(form);
     form.submit();
 }

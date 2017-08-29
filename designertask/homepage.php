@@ -107,6 +107,8 @@ switch ($stage){
 		//$group="reflection-feedback";
 		$inst_design="Revise your initial design.";
 		$inst_review="Review feedback from the target audience.";
+		$inst_explain="Restate the meaning of each feedback using your own words.";
+		$inst_reflect="Reflect on the set of feedback.";
 		$inst_complete="Complete a survey asking about your design process.";
 		$next_page="";
 		
@@ -118,25 +120,43 @@ switch ($stage){
 		}
 		echo "<p style='text-align:center;font-weight:bold'>Hi ".$designer['name'].", Welcome back to the study!</p><p> In this phase, you need to complete the following steps by 
 			 <span style='color:red'>".$designer['second_deadline']."</span>. </p>  
-	 			<p>
-	 				
-	 				 1) ".$inst_review." <br>
-	 				 2) ".$inst_design." <br>
-	 				 3) ".$inst_complete." <br>
-	 				</p>
-	 				";
+	 			";
 	 
 		switch ($group){
-			case 'self-explain':
+			case 'self_explain':
+				echo "<p>	 				
+	 				 1) ".$inst_review." <br>
+	 				 2) ".$inst_explain."<br>
+	 				 3) ".$inst_design." <br>
+	 				 4) ".$inst_complete." <br>
+	 				</p>";
 				$next_page="explain.php";
 	 			break;
 			case 'reflection':
+				echo "<p>	 				
+	 				 1) ".$inst_review."<br>
+	 				 2) ".$inst_reflect."<br>
+	 				 3) ".$inst_design."<br>
+	 				 4) ".$inst_complete."<br>
+	 				</p>";
 				$next_page="reflection.php";
 				break;
-			case 'explain-reflection':
-				$next_page="explain.php";
+			case 'explain_reflect':
+				echo "<p>	 				
+	 				1) ".$inst_review." <br>
+	 				2) ".$inst_design." <br>
+	 				3) ".$inst_explain." <br>
+	 				4) ".$inst_reflect." <br>
+	 				5) ".$inst_complete." <br>
+	 				</p>";
+				$next_page="explain_initial.php";
 				break;
 	 		case 'control':
+	 			echo "<p>	 				
+	 				 1) ".$inst_review." <br>
+	 				 2) ".$inst_design." <br>
+	 				 3) ".$inst_complete." <br>
+	 				</p>";
 				$next_page="second_stage.php";
  				break;
 			default:

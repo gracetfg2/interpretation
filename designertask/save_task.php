@@ -3,111 +3,111 @@
 
 session_start();    
 //************* Check Login ****************// 
-
 $designerID= $_SESSION['designer_id'];
+
+if(!$designerID) { header("Location: ../index.php"); die(); }
+
+//************* Get Data****************// 
 $designID= $_POST['designIdx'];
-$jsonGlobals= $_POST['jsonGlobals'];
+$_jsonGlobals= $_POST['jsonGlobals'];
 $jsonTextareas= $_POST['jsonTextareas'];
 $jsonRating= $_POST['jsonRating'];
-
 /********************************************/
-if(!$DESIGNER) { header("Location: ../index.php"); die(); }
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
     
 
-    /*****Save Global Info***********/
-    if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID) VALUES (?, ?, ?)
+/*****Save Global Info***********/
+if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID) VALUES (?, ?, ?)
+ON DUPLICATE KEY UPDATE
+PageOpenedTime = VALUES(PageOpenedTime), FirstCharTime = VALUES(FirstCharTime)"))) {
+    echo "SendData Global prepare failed: (" . $conn->errno . ") " . $conn->error;
+}
+$jsonGlobals = json_decode($_jsonGlobals);
+
+$stmt->bind_param("iii", $jsonGlobals->openPageTimestamp, $jsonGlobals->firstCharTimestamp, $designerID);
+$stmt->execute();
+mysqli_stmt_close($stmt);
+
+
+/*****Save Text Data***********/
+$textareaInfo = json_decode($jsonTextareas);
+    
+foreach($textareaInfo as $label => $textbox) {
+    //echo "Iterating";
+ 
+    if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON DUPLICATE KEY UPDATE
-    PageOpenedTime = VALUES(PageOpenedTime), FirstCharTime = VALUES(FirstCharTime)"))) {
-        echo "SendData Global prepare failed: (" . $conn->errno . ") " . $conn->error;
+    
+    FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
+    PauseCount = VALUES(PauseCount), PauseTime = VALUES(PauseTime), DeleteCount = VALUES(DeleteCount), 
+    WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount)"))) {
+        echo "SendData Textarea prepare failed: (" . $conn->errno . ") " . $conn->error;
     }
-    $stmt->bind_param("iii", $jsonGlobals->openPageTimestamp, $jsonGlobals->firstCharTimestamp, $designerID);
+
+    $firstInput = $textbox->firstInputTimestamp;
+    $lastInput = $textbox->lastInputTimestamp;
+    $pauseCount = $textbox->pauseCount;
+    $pauseTime = $textbox->pauseTime;
+    $deleteCount = $textbox->deleteCount;
+    $wordCount = $textbox->wordCount;
+    $sentCount = $textbox->sentenceCount;
+
+    $stmt->bind_param("isiiiiiii", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount);
     $stmt->execute();
     mysqli_stmt_close($stmt);
 
-
-    $textareaInfo = json_decode($jsonTextareas);
-    
-    foreach($textareaInfo as $label => $textbox) {
-        //echo "Iterating";
-        echo  $label."=>".$textbox;
-
-        if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    if( $label =="reflection")
+    {
+        if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, content) VALUES (?, ?, ?)
         ON DUPLICATE KEY UPDATE
+        content = VALUES(content)"))) {
+            echo "SendData Reflection prepare failed: (" . $conn->errno . ") " . $conn->error;
+        }
+        $content= $textbox->content;
+        $stmt->bind_param("iis", $designerID, $designID, $content);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+   
+    }
+    else
+    {
+
+        $split = explode("-",  $label);
+        $label=$split[0];
+        $feedback_id=$split[1];
+        $sql = "UPDATE `ExpertFeedback` SET `interpretation` =? WHERE `FeedbackID`=?";
         
-        FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
-        PauseCount = VALUES(PauseCount), PauseTime = VALUES(PauseTime), DeleteCount = VALUES(DeleteCount), 
-        WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount)"))) {
-            echo "SendData Textarea prepare failed: (" . $conn->errno . ") " . $conn->error;
+         // echo $feedback_id. "=>".$textbox->content;
+        if($stmt = mysqli_prepare($conn,$sql)){
+            mysqli_stmt_bind_param($stmt, "si",$textbox->content, $feedback_id);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
         }
 
-        $firstInput = $textbox->firstInputTimestamp;
-        $lastInput = $textbox->lastInputTimestamp;
-        $pauseCount = $textbox->pauseCount;
-        $pauseTime = $textbox->pauseTime;
-        $deleteCount = $textbox->deleteCount;
-        $wordCount = $textbox->wordCount;
-        $sentCount = $textbox->sentenceCount;
-
-        $stmt->bind_param("isiiiiiii", $DESIGNER, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount);
-        $stmt->execute();
-        mysqli_stmt_close($stmt);
-    }
-
-    
- /*
-    //$lastInsertIdx = $conn->insert_id;
-    $textareaInfo = json_decode($jsonTextareas);
-    //var_dump($textareaInfo);
-    
-    foreach($textareaInfo as $label => $textbox) {
-        //echo "Iterating";
-        //var_dump($textbox);
-        if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ON DUPLICATE KEY UPDATE
-        FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
-        PauseCount = VALUES(PauseCount), PauseTime = VALUES(PauseTime), DeleteCount = VALUES(DeleteCount), 
-        WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount)"))) {
-            echo "SendData Textarea prepare failed: (" . $conn->errno . ") " . $conn->error;
-        }
-        $firstInput = $textbox->firstInputTimestamp;
-        $lastInput = $textbox->lastInputTimestamp;
-        $pauseCount = $textbox->pauseCount;
-        $pauseTime = $textbox->pauseTime;
-        $deleteCount = $textbox->deleteCount;
-        $wordCount = $textbox->wordCount;
-        $sentCount = $textbox->sentenceCount;
-        $stmt->bind_param("isiiiiiii", $DESIGNER, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount);
-        $stmt->execute();
-        mysqli_stmt_close($stmt);
-    }
-
-
-
-    $ratingInfo = json_decode($feedbackRatings);
-    //var_dump($textareaInfo);
-    
-    foreach($ratingInfo as $label => $textbox) {
-        echo $label . $textbox;
     }
 
 }
 
+/*****Save Rating Data***********/
+$ratingInfo = json_decode($jsonRating);
+//var_dump($textareaInfo);
 
-function CommitToDatabase($jsonGlobals, $jsonTextareas, $ratings) {
+foreach($ratingInfo as $label => $textbox) {
+   //echo  "feedbackid=".$label."=>".$textbox->rating;
 
-    //SendData($jsonGlobals, $jsonTextareas, $ratings,  $conn);
-    SendData($jsonGlobals, $jsonTextareas, $ratings);
-    CloseConnection($conn);
-    return true;
+    $sql = "UPDATE `ExpertFeedback` SET `designer_rating` =? WHERE `FeedbackID`=?";
+    
+    if($stmt = mysqli_prepare($conn,$sql)){
+        mysqli_stmt_bind_param($stmt, "ii",$textbox->rating, $label);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
+
 }
 
-*/
-
-
-
+header('Location: '.$_POST['redirect']);
 
 
 ?>

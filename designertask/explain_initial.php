@@ -75,7 +75,7 @@ $ok_to_use=1;
         die();
     }
 
-   $next_page= ($designer['group'] == 'self_explain') ? "second_stage.php" : "reflection.php";
+   $next_page= "reflection_second.php";
  //  $next_page="second_stage.php";
 
     mysqli_close($conn);
@@ -106,11 +106,38 @@ $ok_to_use=1;
     <div class="container">
 
         <div class="alert alert-info" id="instruction">
-            <h3>Review Feedback</h3>
-               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of experience in design. We want you to restate the meaning of the feedback using your own words and rate the usefulness of the feedback for improving your design.</p>
-               <br>
-               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> View my initial design and its description</a>
+            <h3>Instructions</h3>
+               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least two years of experience in design. We are trying to learn more about how designers read and learn from feedback, as well as what makes some feedback better than others. In order for us to assess what information the feedback is good at prompting revisions, for each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaning the feedback to your peers or co-workers. You need to write your explanation in the textbox. Your response should cover all the suggestions mentioned in the feedback whether you agree with them or not. 
+
+                 <br><br>Responses that demonstrate insufficient effort will be rejected. Also, copy and paste functions are disabled in this task. 
+
+               <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->
+
+
+
+         <div id='design-part' style="display:none">
+        <div class="row" style="width:100%;padding-top: 20px;  margin:auto;">
+
+            <div class="col-md-3" id="image" style="margin-top:20px">       
+                 <div class="img-div" onmouseover="" style=" cursor: pointer; margin-right:20px; " >
+
+                 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="test/initial_design.png" onClick="view();" >
+                 <p><em style="color:grey">* Click on the image to enlarge </em></p>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+            <h3>Design Goals</h3> <span style="font-size:16px">This is the first draft of a flyer created for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen>(not live yet). The top three runners will receive a $300 prize each. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+            <p><br>You can click on the image to enlarge.</p></span>
+
+            </div>
+
+
+            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="startReview()">Start Review Feedback</button>
+        </div>
+    </div>
+
 
 
     <div id="task">
@@ -125,39 +152,10 @@ $ok_to_use=1;
                 $interpretation = str_ireplace ($breaks, "\r\n", $value['interpretation']);
       
                 echo"
-                    <div style=\"display:none;\" id=\"p".$feedbackNum."\">
+                    <div style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
                         <feedback><h4>Feedback #".$feedbackNum.": </h4>".nl2br($content)."</feedback>
                         <hr>
                         <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
-
-                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp Please rate the usefulness of feedback #".$feedbackNum." for improving your design:</h5>
-                        <br>
-
-                        <table border='0' cellpadding='5' cellspacing='0' width=\"50%\">
-                            <tr aria-hidden='true'>
-                                <td  class='radio-label'></td>
-                                <td><label class='radio-cell'>1</label></td> 
-                                <td><label class='radio-cell'>2</label></td> 
-                                <td><label class='radio-cell'>3</label></td> 
-                                <td><label class='radio-cell'>4</label></td>
-                                <td><label class='radio-cell'>5</label></td> 
-                                <td><label class='radio-cell'>6</label></td>
-                                <td><label class='radio-cell'>7</label></td> 
-                                <td  class='radio-label' ></td>
-                            </tr>
-
-                         <tr>
-                    <td class='radio-label' ><strong>Low</strong></td>
-                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."1'  value='1' "; if ($value['designer_rating']==1){echo "checked ";} echo "onclick='rate(this.name,1);'></td>
-                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."2'  value='2' "; if ($value['designer_rating']==2){echo "checked ";} echo "onclick='rate(this.name,2);'></td>
-                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."3'  value='3' "; if ($value['designer_rating']==3){echo "checked ";} echo "onclick='rate(this.name,3);'></td>
-                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."4'  value='4' "; if ($value['designer_rating']==4){echo "checked ";} echo "onclick='rate(this.name,4);'></td>
-                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."5'  value='5' "; if ($value['designer_rating']==5){echo "checked ";} echo "onclick='rate(this.name,5);'></td>
-                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."6'  value='6' "; if ($value['designer_rating']==6){echo "checked ";} echo "onclick='rate(this.name,6);'></td>
-                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."7'  value='7' "; if ($value['designer_rating']==7){echo "checked ";} echo "onclick='rate(this.name,7);'></td>
-                    <td class='radio-label'><strong>High</strong></td>      
-                </tr>                       
-                        </table>
                          
                     </div>";
             }

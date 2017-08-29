@@ -7,9 +7,8 @@ var firstCharTimestamp = INVALID_VALUE;
 var textboxInfo = {};
 
 class TextboxData {
-    constructor(pCount, pTime, label, lastP, lastIn, delCount, wCount, senCount, isP, cont) {
+    constructor(pCount, pTime, lastP, lastIn, delCount, wCount, senCount, isP, cont) {
         this.firstInputTimestamp = 0;
-        this.label = label;
         this.pauseCount = pCount;
         this.pauseTime = pTime;
         this.lastPauseTimestamp = lastP
@@ -19,6 +18,7 @@ class TextboxData {
         this.sentenceCount = senCount;
         this.isPauseActive = isP;
         this.content = cont;
+       
     }
 }
 
@@ -214,7 +214,6 @@ function countSentences(text) {
 function prepParseStats() {
     $('[id=monitoredtext]').each(function() {   // For each monitored text field...
         var text = $(this).val();
-        var label = $(this).val();
         var monitorLabel = extractMonitorLabel($(this));
         if(hasMonitorLabelBeenInitd(monitorLabel)) {
             textboxInfo[monitorLabel].wordCount = countWords(text);
@@ -225,15 +224,23 @@ function prepParseStats() {
 }
 
 //Get Rating Value
-var ratings = [];
+var ratingInfo = {};
+
+
+class RatingData {
+    constructor(rating) {
+        this.rating = rating;      
+    }
+}
 
 function getRatings() {
 
-      $(':radio').each(function () {
+    $('input[type=radio]').each(function() {
         name = $(this).attr('name');
-        rated_value= $("input[name='"+name +"']:checked").val();        
-        ratings.push(name,rated_value);
+        ratingInfo[name] = new RatingData(0);
+        ratingInfo[name].rating = $("input[name='"+name +"']:checked").val();      
     });
+
 }
 
 function outputJSON() {
@@ -242,48 +249,11 @@ function outputJSON() {
 
     var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp});
     var textboxStr = JSON.stringify(textboxInfo);
-    var ratingStr = JSON.stringify(ratings);
+    var ratingStr = JSON.stringify(ratingInfo);
 
-    //alert(ratingStr);
+   // alert(ratingStr);
     //console.log(globalStr)
     //console.log(textboxStr);
     return [globalStr, textboxStr, ratingStr];
 }
 
-/*function submit() {
-    var errorMsg='';
-    $("#error_alert").hide();
-    $(".has-error").removeClass("has-error");
-    var isOkay = true;
-
-    var multiline= $('#text').val().replace(/\r?\n/g, '<br />');
-    $('#text').val( $.trim( multiline ));
-
-    if ($('#text').val() == "") {
-        $("#error_alert").show();
-        $('#fbk-div').addClass("has-error");
-        errorMsg += 'Please provide feedback on the design. ';
-        isOkay = false;
-    }
-
-    if(isOkay==true){
-        logAction("submit");
-        $("#feedback_form [name=_fbk-text]").val( $("#text").val() );
-        $("#feedback_form [name=_age]").val($('input[name="ageRadios"]:checked').val() );
-        $("#feedback_form [name=_expertL]").val($('input[name="expertiseRadios"]:checked').val() );
-        $("#feedback_form [name=_gender]").val($('input[name="genderRadios"]:checked').val() );
-
-        $("#feedback_form [name=_behavior]").val(JSON.stringify(eventLogs));
-        $("#feedback_form [name=prepareTime]").val( annoStartTime - hitStartTime);
-        $("#feedback_form [name=taskTime]").val( (new Date()).getTime() - annoStartTime );
-        $("#feedback_form [name=numberOfPause]").val(pauseCount);
-        $("#feedback_form [name=numberOfDel]").val(delCount);
-        $("#feedback_form [name=startTime]").val( annoStartTime );
-        $("#feedback_form [name=submitTime]").val((new Date()).getTime());
-        $("#feedback_form").submit();
-    }
-    else
-    {
-        alert(errorMsg);
-    }
-}*/
