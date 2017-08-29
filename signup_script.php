@@ -103,7 +103,7 @@ if($isOkay == 1){ //send message
     <body>
     <h2>
     Hi '.$name.',</h2>
-<p style="font-size:14px">Thanks for your registration! To begin the study, please login to our design platform (http://review-my-design.org/reflection/index.php) using the following account. The platform will step you through the process. <br>
+<p style="font-size:14px">Thanks for your registration! To begin the study, please login to our design platform (http://review-my-design.org/'.$folder.'/index.php) using the following account. The platform will step you through the process. <br>
 
      <br>
     -------------------------------------------<br>
@@ -181,7 +181,7 @@ mysqli_close($conn);
 <nav class="navbar navbar-fixed-top navbar-inverse" style="background:#002058">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" style="color:#E87722" href="/reflection/index.php">CRAFT</a>
+                <a class="navbar-brand" style="color:#E87722" href=".interpretation/index.php">CRAFT</a>
             </div>
          
         </div>
