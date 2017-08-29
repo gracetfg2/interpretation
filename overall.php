@@ -152,7 +152,7 @@
 				
 				<div class="sub_frame">	
 					<div id="fbk_div">
-					<h4 class="question-text required"><strong>2. Enter your feedback to the design including both its strengths and weaknesses and spans three categories of the design (i.e. overall concept, layout and ). &nbsp</strong><em style="color:red;"> (required)</em></h4>
+					<h4 class="question-text required"><strong>2. Enter your feedback to the design including both its strengths and weaknesses and spans three categories of the design (i.e. overall concept, layout and aesthetics). &nbsp</strong><em style="color:red;"> (required)</em></h4>
 					 <textarea id="text" name="text" rows="10" onkeyup="onTextKeyUp()" onkeydown="onTextKeyDown(event)" style="width:100%;"></textarea>
 					 
 					</div>
