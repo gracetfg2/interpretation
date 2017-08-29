@@ -108,7 +108,8 @@
 					</div>
 			<!--</div>-->
 			
-					<h3>Design Goals</h3> <span style="font-size:16px">This is the first draft of a flyer created for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen>(not live yet). The top three runners will receive a $300 prize each. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+					<h3>Design Goals</h3> <span style="font-size:16px">T  <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
+
 					<p><br>You can click on the image to enlarge.</p></span>
 			</div>
 			<!--End Design image and brief section-->
