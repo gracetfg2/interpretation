@@ -107,7 +107,11 @@ $ok_to_use=1;
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of experience in design. We want you to restate the meaning of the feedback using your own words and rate the usefulness of the feedback for improving your design.</p>
+            <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
+
+            <br><br>For each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers, and write your explanation in the textbox. Your responses should cover all the suggestions mentioned in the feedback whether you agree or not. After that, please rate the usefulness of the feedback for improving your design. Please note that Responses that demonstrate insufficient effort will be rejected. Also, copy and paste functions are disabled on the task pages. 
+
+            </p>
                <br>
                <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->
@@ -128,7 +132,7 @@ $ok_to_use=1;
                     <div style=\"display:none;\" id=\"p".$feedbackNum."\">
                         <feedback><h4>Feedback #".$feedbackNum.": </h4>".nl2br($content)."</feedback>
                         <hr>
-                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
+                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea onpaste='return false;' rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
 
                         <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp Please rate the usefulness of feedback #".$feedbackNum." for improving your design:</h5>
                         <br>
@@ -168,7 +172,7 @@ $ok_to_use=1;
               <ul class="pager" >
                 <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous</a></li>
                 <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next</a></li>
-                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Go to Next Step </a></li>
+                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save and Go to Next Step </a></li>
               </ul>
             </nav>
    
@@ -181,6 +185,9 @@ $ok_to_use=1;
 
 <!--Begin Script-->       
 <script>
+
+
+
 var current_page = 1;
 
 function prevPage()
@@ -288,6 +295,10 @@ function post(path, params, method) {
 }
 
 $(document).ready(function(){
+
+    $('textarea').bind('cut copy paste', function (e) {
+        e.preventDefault(); //disable cut,copy,paste
+    });
 
     changePage(1);
 

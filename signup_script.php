@@ -181,7 +181,7 @@ mysqli_close($conn);
 <nav class="navbar navbar-fixed-top navbar-inverse" style="background:#002058">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" style="color:#E87722" href=".interpretation/index.php">CRAFT</a>
+                <a class="navbar-brand" style="color:#E87722" href="index.php">CRAFT</a>
             </div>
          
         </div>

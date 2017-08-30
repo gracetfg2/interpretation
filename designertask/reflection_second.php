@@ -134,10 +134,10 @@ $_SESSION['designer_group']= $designer['group'];
     <div class="container" style="line-height: 2em;">
 
         <div class="alert alert-info" id="instruction">
-            <h3>Review Feedback</h3>
-             <p>We have collected feedback from three independent reviewers to help you revise your design. Please review all the feedback and reflect on it by answering one question. After that, please click "Next" to go to the next step.</p>
+            <h3>Reflect on the Feedback</h3>
+             <p>Before revising your design, we want you to reflect on the set of feedback you just reviewed and generate an action plan for improving your design. Also, please rate the usefulness of each piece of feedback for improving your design. After that, please click "Submit" to go to the next step.</p>
             <br>
-               <a href= '../view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
+               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
 
         <div id="task">
@@ -221,7 +221,7 @@ $_SESSION['designer_group']= $designer['group'];
          
          <div style="border-radius:10px;background-color:#ffffe6; padding:30px">
                      
-                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you could take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you will take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
                     <br>
                   <div style="text-align:center;margin-top:20px;" >
                     <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>

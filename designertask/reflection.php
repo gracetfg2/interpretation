@@ -134,8 +134,8 @@ $_SESSION['designer_group']= $designer['group'];
     <div class="container" style="line-height: 2em;">
 
         <div class="alert alert-info" id="instruction">
-            <h3>Review Feedback</h3>
-             <p>We have collected feedback from three independent reviewers to help you revise your design. Please review all the feedback and reflect on it by answering one question. After that, please click "Next" to go to the next step.</p>
+            <h3>Review and Reflect on Feedback</h3>
+             <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers are from the target audiences and all have more than three years of professional experience in design. Please review the feedback, rate its usefulness for improving your design, and answer the question below. After that, please click "Next" to go to the next step.</p>
             <br>
                <a href= '../view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->

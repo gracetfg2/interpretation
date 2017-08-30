@@ -107,10 +107,10 @@ $ok_to_use=1;
 
         <div class="alert alert-info" id="instruction">
             <h3>Instructions</h3>
-               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least two years of experience in design. We are trying to learn more about how designers read and learn from feedback, as well as what makes some feedback better than others. In order for us to assess what information the feedback is good at prompting revisions, for each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaning the feedback to your peers or co-workers. You need to write your explanation in the textbox. Your response should cover all the suggestions mentioned in the feedback whether you agree with them or not. 
+               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
 
-                 <br><br>Responses that demonstrate insufficient effort will be rejected. Also, copy and paste functions are disabled in this task. 
-
+               <br><br>For each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers, and write your explanation in the textbox. Your responses should cover all the suggestions mentioned in the feedback whether you agree or not. Please note that Responses that demonstrate insufficient effort will be rejected. Also, copy and paste functions are disabled on the task pages.
+            <br> <br>
                <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->
 
@@ -155,7 +155,7 @@ $ok_to_use=1;
                     <div style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
                         <feedback><h4>Feedback #".$feedbackNum.": </h4>".nl2br($content)."</feedback>
                         <hr>
-                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
+                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea onpaste='return false;' rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
                          
                     </div>";
             }
@@ -164,9 +164,9 @@ $ok_to_use=1;
 
             <nav aria-label="...">
               <ul class="pager" >
-                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous</a></li>
-                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next</a></li>
-                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Go to Next Step </a></li>
+                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous</button></li>
+                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next </button></li>
+                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save and Go to Next Step </button></li>
               </ul>
             </nav>
    
@@ -195,6 +195,7 @@ function nextPage()
         current_page++;
         changePage(current_page);
     }
+
    // window.scrollTo(0,document.body.scrollHeight);
 }
     
