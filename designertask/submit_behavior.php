@@ -4,36 +4,29 @@
 session_start();    
 //************* Check Login ****************// 
 $DESIGNER= $_SESSION['designer_id'];
+$designID= $_POST['designIdx'];
+
+
 if(!$DESIGNER) { header("Location: ../index.php"); die(); }
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
-
-function Connect(){
-    $servername = "cpanel3.engr.illinois.edu";
-    $username = "mouscho2_admin";
-    $password = "AdminP@ss";
-    $database = "mouscho2_DesignProxy";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $database);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    return $conn;
-}
+$conn = connect_to_db();
+    
 
 function CloseConnection($conn) {
     mysqli_close($conn);
 }
 
-//function SendData($jsonGlobals, $jsonTextareas, $ratings ,$conn) {
-function SendData($jsonGlobals, $jsonTextareas, $conn) {
+function SendData($jsonGlobals, $jsonTextareas, $feedbackRatings, $conn) {
     global $DESIGNER;
+
+    /*****Save Global Info***********/
     if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID) VALUES (?, ?, ?)
     ON DUPLICATE KEY UPDATE
     PageOpenedTime = VALUES(PageOpenedTime), FirstCharTime = VALUES(FirstCharTime)"))) {
         echo "SendData Global prepare failed: (" . $conn->errno . ") " . $conn->error;
     }
+
     $globalInfo = json_decode($jsonGlobals);
     $designerID = $DESIGNER;
 
@@ -41,6 +34,7 @@ function SendData($jsonGlobals, $jsonTextareas, $conn) {
     $stmt->execute();
     mysqli_stmt_close($stmt);
     
+ /*
     //$lastInsertIdx = $conn->insert_id;
     $textareaInfo = json_decode($jsonTextareas);
     //var_dump($textareaInfo);
@@ -66,37 +60,41 @@ function SendData($jsonGlobals, $jsonTextareas, $conn) {
         $stmt->execute();
         mysqli_stmt_close($stmt);
     }
+
+
+
+    $ratingInfo = json_decode($feedbackRatings);
+    //var_dump($textareaInfo);
+    
+    foreach($ratingInfo as $label => $textbox) {
+        echo $label . $textbox;
+    }
+*/
+
 }
 
-//function CommitToDatabase($jsonGlobals, $jsonTextareas, $ratings) {
-function CommitToDatabase($jsonGlobals, $jsonTextareas) {
-    $conn = Connect();
+
+function CommitToDatabase($jsonGlobals, $jsonTextareas, $ratings) {
+
     //SendData($jsonGlobals, $jsonTextareas, $ratings,  $conn);
-    SendData($jsonGlobals, $jsonTextareas, $conn);
+    SendData($jsonGlobals, $jsonTextareas, $ratings);
     CloseConnection($conn);
     return true;
 }
 
-if($_SESSION['jankPost'] == "reflection") {
-    $_POST['jsonGlobals'] = $_SESSION['jsonGlobals'];
-    $_POST['jsonTextareas'] = $_SESSION['jsonTextareas'];
-    $_POST['redirect'] = $_SESSION['redirect'];
-    unset($_SESSION['jsonGlobals']);
-    unset($_SESSION['jsonTextareas']);
-    unset($_SESSION['redirect']);
-    unset($_SESSION['jankPost']);
-}
+ $send_succeed= CommitToDatabase($_POST['jsonGlobals'], $_POST['jsonTextareas'],  $_POST['jsonRating']);
 
-if (isset($_POST['jsonGlobals']) && isset($_POST['jsonTextareas'])) {
-    CommitToDatabase($_POST['jsonGlobals'], $_POST['jsonTextareas']);
-    if(isset($_POST['redirect'])) {
-        header("Location: " . $_POST['redirect']);
-    }
-    else {
-        echo "Redirect not POSTed!";
-    }
-}
-else {
-    echo "jsonGlobals and/or jsonTextareas not POSTed!";
-}
+ if( $send_succeed== true)
+ {
+    echo "complete saving data";
+ }
+ else
+ {
+    echo "Commit To Database fail";
+ }
+
+
+
+
+
 ?>

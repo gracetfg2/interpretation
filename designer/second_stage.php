@@ -1,6 +1,86 @@
 <?php 
 	
+	session_start();	
+	//************* Check Login ****************// 
+	$DESIGNER= $_SESSION['designer_id'];
+	if(!$DESIGNER) { header("Location: ../index.php"); die(); }
+	//************* End Check Login ****************// 
 
+	//Get Designer's Project
+	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
+   	$conn = connect_to_db();
+	include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
+
+	$filename1="";
+	
+//for current design
+	$filename="";	
+	$getProjectId=0;
+	$getDesignId=0;
+	$version=2;
+
+	$sql="SELECT * FROM u_Designer WHERE DesignerID=?";
+		if($stmt5=mysqli_prepare($conn,$sql))
+		{
+			mysqli_stmt_bind_param($stmt5,"i",$DESIGNER);
+			mysqli_stmt_execute($stmt5);
+			$result = $stmt5->get_result();
+			$designer=$result->fetch_assoc() ;		 	
+		 
+		}
+
+	if($designer['process']<4)
+	{
+		 header("Location: homepage.php"); die(); 
+	}	
+
+   	if ($stmt1 = mysqli_prepare($conn, "SELECT ProjectID From Project WHERE f_DesignerID = ?")) {
+	    mysqli_stmt_bind_param($stmt1, "i", $DESIGNER);
+	    mysqli_stmt_execute($stmt1);
+	    $stmt1->store_result();
+		if($stmt1->num_rows > 0) {
+		    mysqli_stmt_bind_result($stmt1, $getProjectId);
+		    mysqli_stmt_fetch($stmt1);
+		   
+		    if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `f_ProjectID`=?")) {
+	    		mysqli_stmt_bind_param($stmt2, "i", $getProjectId);
+	    		mysqli_stmt_execute($stmt2);
+	    		$result = $stmt2->get_result();
+	    		while ($row = $result->fetch_assoc()) {
+	    			$design[]=$row;
+	    		}  	
+	   		}
+		}
+		else
+		{
+
+			header("Location: ../index.php"); die();
+		}
+		
+	}
+
+	if (count($design)==0)
+	{
+		//something wrong
+		header("Location: ../index.php"); die();
+	}
+	else
+	{
+		foreach($design as $value)
+		if ($value['version']==1)
+		{
+			$filename1=$value['file'];
+			$initialID=$value['DesignID'];
+			$mid=$value['mid'];
+
+		}
+		else if ($value['version']==2)
+		{
+			$filename=$value['file'];
+			$getDesignId=$value['DesignID'];
+		}
+
+	}
 
  ?>
 <html lang="en">

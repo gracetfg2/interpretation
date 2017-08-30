@@ -44,7 +44,7 @@ $stmt = $conn->prepare("INSERT INTO ExpertFeedback (f_designID, f_providerID, co
     }
 mysqli_close($conn);
 
-echo "The submission code is <strong>".$mturk_code."</strong>. <br>Please copy the code and paste it to the HIT page to receive your compensation. ";
+echo "The verification code is <strong>".$mturk_code."</strong>. <br>Please keep the codes of all the designs you reviewed";
 
 ?>
 

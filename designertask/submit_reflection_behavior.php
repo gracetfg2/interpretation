@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();    
 //************* Check Login ****************// 
 if(!$_SESSION['designer_id']) { header("Location: ../index.php"); die(); }
@@ -16,7 +15,9 @@ function CommitToDatabase() {
 if(isset($_POST['content']) && isset($_POST['designIdx'])) {
     CommitToDatabase();
 }
+
 if (isset($_POST['jsonGlobals']) && isset($_POST['jsonTextareas'])) {
+    
     if(isset($_POST['redirect'])) {
         $url = 'submit_behavior.php';
         $_SESSION['jsonGlobals'] = $_POST['jsonGlobals'];

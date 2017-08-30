@@ -194,7 +194,9 @@ em{
  </span>
     <h4 class="title">Design Brief</h4>
     <span class="statement" style="text-align: justify;">
-			    <ol>You have been hired to design a flyer for a half marathon event. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website www.running-nyc.com (not live yet). The top three runners will receive a $300 prize each. The goal of your flyer is to encourage participation, be visually appealing, and convey the event details.
+			    <ol>
+			    <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
+
 </ol>
 	</span>
 	

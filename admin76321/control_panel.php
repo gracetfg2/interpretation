@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['admin']='gracesnehabrian';
+
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
@@ -83,9 +84,9 @@ else {
             case 1:
             case 2:$weightedsun+=1;break;
             case 3:
-            case 4: $weightedsun+=2;break;
+            case 4:$weightedsun+=2;break;
             case 5:
-            case 6: $weightedsun+=3;break;
+            case 6:$weightedsun+=3;break;
           }
           switch($value['experience'])
           {
@@ -117,56 +118,14 @@ else {
           }
           //Select Group 
           echo "<td><select name='g".$value['DesignerID']."'>";
-            switch ($value['group']) {
-              case 'sum_reflection':
-								echo "<option disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option selected value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'individual_reflection':
-								echo "<option disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option selected value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'reflection-feedback':
-								echo "<option disabled value='NULL'>Null</option>";
-                  echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option selected value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'feedback-reflection':
-								echo "<option disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option selected value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              case 'control':
+
                 echo "<option disabled value='NULL'>Null</option>";
-                echo "<option selected value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-              default:
-								echo "<option selected disabled value='NULL'>Null</option>";
-                echo "<option value ='control'>control</option>";
-                echo "<option value='sum_reflection'>sum_reflection</option>";
-                echo "<option value ='individual_reflection'>individual_reflection</option>";
-                echo "<option value ='feedback-reflection'>feedback-reflection</option>";
-                echo "<option value = 'reflection-feedback'>reflection-feedback</option>";
-                break;
-            }
+                echo "<option value ='control'"; if($value['group']=='control') echo "selected"; echo ">control</option>";
+                echo "<option value ='self_explain'"; if($value['group']=='self_explain') echo "selected"; echo ">self_explain</option>";
+                echo "<option value ='reflection'"; if($value['group']=='reflection') echo "selected"; echo ">reflection</option>";
+                
+               echo "<option value ='explain_reflect'"; if($value['group']=='explain_reflect') echo "selected"; echo ">explain_reflect</option>";
+                
           echo "</select></td>";
 
 
@@ -254,7 +213,7 @@ else {
             {//No feedback yet
               echo "<td></td><td></td><td></td><td></td><td></td><td></td>";
             }
-             mysqli_stmt_close($stmt2);
+            // mysqli_stmt_close($stmt2);
           }
          
           echo "<td><a href='send_email198713.php?designer_id=".$value['DesignerID']."'>SentEmail</td>";

@@ -11,8 +11,8 @@
 	//if(!$stage) { header("Location: ../index.php"); die(); }
 
 	//Get Designer's Project
-	include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
-		include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
+	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
+		include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
    	$conn = connect_to_db();
 	
 $confidence="";
@@ -83,7 +83,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
  	<?php include('../webpage-utility/ele_header.php');?>
     <title>Home </title>
     <!-- Custom styles for this template -->
-     <link rel="stylesheet" type="text/css" href="/reflection/css/feedback_form_tmp.css">
+     <link rel="stylesheet" type="text/css" href="/interpretation/css/feedback_form_tmp.css">
 <style>
 .nquestion_text{
 	font-family:Tahoma, Geneva, sans-serif;
@@ -107,7 +107,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
  </head>
 
  <body>
- <?php include($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/ele_nav.php');?>
+ <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
 
 <div class="main-section">
 	<div class="container " style="padding-top:30px">
@@ -262,9 +262,9 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 			<?php
 
 		
-			if ($group=="reflection" || $group=="reflection-feedback")
+			if ($group=="reflection" || $group=="explain_reflection")
 				include('final_reflection_question7.php');
-			else if($group=="feedback" || $group=="feedback-reflection")
+			else if($group=="self_explain" || $group=="explain_reflection")
 				include('final_feedback_question7.php');
 			
 			if($group=="reflection-feedback")

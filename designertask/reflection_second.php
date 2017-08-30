@@ -134,10 +134,10 @@ $_SESSION['designer_group']= $designer['group'];
     <div class="container" style="line-height: 2em;">
 
         <div class="alert alert-info" id="instruction">
-            <h3>Review and Reflect on Feedback</h3>
-             <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers are from the target audiences and all have more than three years of professional experience in design. Please review the feedback, rate its usefulness for improving your design, and answer the question below. After that, please click "Next" to go to the next step.</p>
+            <h3>Reflect on the Feedback</h3>
+             <p>Before revising your design, we want you to reflect on the set of feedback you just reviewed and generate an action plan for improving your design. Also, please rate the usefulness of each piece of feedback for improving your design. After that, please click "Submit" to go to the next step.</p>
             <br>
-               <a href= '../view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
+               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
 
         <div id="task">
@@ -152,7 +152,7 @@ $_SESSION['designer_group']= $designer['group'];
                 echo "<table class='table table-hover table-nonfluid'>";
                 echo " <thead><tr>
                 <td width='5%'></td>
-                <td width='60%' align='left'><strong></strong></td>
+                <td width='60%' align='left'><strong>Your Response</strong></td>
                 <td width='35%' align='center'><strong>Perceived Quality</strong></td>
                 </tr></thead> <tbody>";
 
@@ -161,12 +161,24 @@ $_SESSION['designer_group']= $designer['group'];
                 {
                     $feedbackNum += 1;
 
-                    $content=htmlspecialchars($value['edited_content']);
+                    $content=htmlspecialchars($value['interpretation']);
+                    $original=htmlspecialchars($value['edited_content']);
                    // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
 
                     echo "<tr id='div-".$value['FeedbackID']."' >
                             <td><strong>#".$feedbackNum."</strong></td>
-                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."</td>  
+                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
+
+
+
+                            <div class='collapse' id='collapseExample".$feedbackNum."'>  
+                                <div class='card card-block'>
+                                ".nl2br($original)."
+                                </div>
+                             </div>
+                             </div>
+                            </td>  
 
                 <td>
                 <table border='0' cellpadding='5' cellspacing='0' width='100%'>
@@ -209,7 +221,7 @@ $_SESSION['designer_group']= $designer['group'];
          
          <div style="border-radius:10px;background-color:#ffffe6; padding:30px">
                      
-                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you could take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you will take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
                     <br>
                   <div style="text-align:center;margin-top:20px;" >
                     <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>
@@ -251,7 +263,7 @@ function submit() {
         jsonGlobals: json[0], 
         jsonTextareas: json[1], 
         jsonRating: json[2],
-        originPage: "reflection.php",
+        originPage: "reflection_second.php",
         redirect: "second_stage.php"
     });
 
@@ -281,7 +293,6 @@ function post(path, params, method) {
          }
     }
             
-
     document.body.appendChild(form);
     form.submit();
 }

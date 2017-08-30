@@ -18,6 +18,7 @@ class TextboxData {
         this.sentenceCount = senCount;
         this.isPauseActive = isP;
         this.content = cont;
+       
     }
 }
 
@@ -116,16 +117,6 @@ function onInitTextKeyDown(e) {
     onTextKeyDown(e);
 }
 
-    // Manage potential resizes to the textbox info array and timeout array
-/*function arrayManager(curTextboxID) {
-    var curLen = textboxInfo.length;
-    
-    var slotsToMake = (curTextboxID - curLen) + 1;
-    for(var i = 0; i < slotsToMake; i++) {
-        textboxInfo.push(new TextboxData(0, 0.0, 0.0, 0.0, 0, 0, 0, false , null));
-        pauseTimeouts.push();
-    }
-}*/
 
 function arrayManager(curTextboxLabel) {
     if(!hasMonitorLabelBeenInitd(curTextboxLabel)) {
@@ -134,10 +125,6 @@ function arrayManager(curTextboxLabel) {
     }
 }
 
-
-/*function extractMonitorID(textfield) {
-    return parseInt(textfield.attr("monitorid"));
-}*/
 
 function extractMonitorLabel(textfield) {
     return textfield.attr("monitorlabel");
@@ -236,62 +223,37 @@ function prepParseStats() {
     });
 }
 
-var ratings = [];
+//Get Rating Value
+var ratingInfo = {};
+
+
+class RatingData {
+    constructor(rating) {
+        this.rating = rating;      
+    }
+}
 
 function getRatings() {
 
-      $(':radio').each(function () {
+    $('input[type=radio]').each(function() {
         name = $(this).attr('name');
-        rated_value= $("input[name='"+name +"']:checked").val();        
-        ratings.push(name,rated_value);
+        ratingInfo[name] = new RatingData(0);
+        ratingInfo[name].rating = $("input[name='"+name +"']:checked").val();      
     });
+
 }
 
 function outputJSON() {
     prepParseStats();
     getRatings();
-    var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp});
+
+    var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp, closePageTimestamp:getCurTime()});
     var textboxStr = JSON.stringify(textboxInfo);
-    var ratingStr = JSON.stringify(ratings);
+    var ratingStr = JSON.stringify(ratingInfo);
+
+   // alert(ratingStr);
     //console.log(globalStr)
     //console.log(textboxStr);
     return [globalStr, textboxStr, ratingStr];
 }
 
-/*function submit() {
-    var errorMsg='';
-    $("#error_alert").hide();
-    $(".has-error").removeClass("has-error");
-    var isOkay = true;
-
-    var multiline= $('#text').val().replace(/\r?\n/g, '<br />');
-    $('#text').val( $.trim( multiline ));
-
-    if ($('#text').val() == "") {
-        $("#error_alert").show();
-        $('#fbk-div').addClass("has-error");
-        errorMsg += 'Please provide feedback on the design. ';
-        isOkay = false;
-    }
-
-    if(isOkay==true){
-        logAction("submit");
-        $("#feedback_form [name=_fbk-text]").val( $("#text").val() );
-        $("#feedback_form [name=_age]").val($('input[name="ageRadios"]:checked').val() );
-        $("#feedback_form [name=_expertL]").val($('input[name="expertiseRadios"]:checked').val() );
-        $("#feedback_form [name=_gender]").val($('input[name="genderRadios"]:checked').val() );
-
-        $("#feedback_form [name=_behavior]").val(JSON.stringify(eventLogs));
-        $("#feedback_form [name=prepareTime]").val( annoStartTime - hitStartTime);
-        $("#feedback_form [name=taskTime]").val( (new Date()).getTime() - annoStartTime );
-        $("#feedback_form [name=numberOfPause]").val(pauseCount);
-        $("#feedback_form [name=numberOfDel]").val(delCount);
-        $("#feedback_form [name=startTime]").val( annoStartTime );
-        $("#feedback_form [name=submitTime]").val((new Date()).getTime());
-        $("#feedback_form").submit();
-    }
-    else
-    {
-        alert(errorMsg);
-    }
-}*/

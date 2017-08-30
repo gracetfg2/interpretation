@@ -90,19 +90,10 @@ switch ($stage){
 	case 0: 
 	case 1:
 	case 2:
-	//	if($design_number==){
 			echo "<p style='text-align:center;font-weight:bold'> Welcome to the design study! </p>
  				 <p>In the first phase of the study, you will need to create and submit a flyer, and complete a short survey by <span style='color:red'>".$first_deadline.".</span> 
  				 <p> Now, please click 'Next' to read the design task. We hope you enjoy the task and look forward to seeing your creative solutions!
  				  </p><p><a class='btn btn-primary btn-lg' href='first_stage.php' role='button'>Next</a></p>";	
-		/*}
-		else
-		{
-			echo "<p>Hi ".$designer['name'].", </p>
- 				 <p>You have NOT submitted your initial design yet. Please submit the design and complete the short survey by <span style='color:red'>".$first_deadline."</span>. </p>
- 				 <p><a class='btn btn-primary btn-lg' href='first_stage.php' role='button'>Next</a></p>";	
-	
-		}*/
 		
 		break;
 	case 3:
@@ -116,6 +107,8 @@ switch ($stage){
 		//$group="reflection-feedback";
 		$inst_design="Revise your initial design.";
 		$inst_review="Review feedback from the target audience.";
+		$inst_explain="Restate the meaning of each feedback using your own words.";
+		$inst_reflect="Reflect on the set of feedback.";
 		$inst_complete="Complete a survey asking about your design process.";
 		$next_page="";
 		
@@ -127,25 +120,43 @@ switch ($stage){
 		}
 		echo "<p style='text-align:center;font-weight:bold'>Hi ".$designer['name'].", Welcome back to the study!</p><p> In this phase, you need to complete the following steps by 
 			 <span style='color:red'>".$designer['second_deadline']."</span>. </p>  
-	 			<p>
-	 				
+	 			";
+	 
+		switch ($group){
+			case 'self_explain':
+				echo "<p>	 				
+	 				 1) ".$inst_review." <br>
+	 				 2) ".$inst_explain."<br>
+	 				 3) ".$inst_design." <br>
+	 				 4) ".$inst_complete." <br>
+	 				</p>";
+				$next_page="explain.php";
+	 			break;
+			case 'reflection':
+				echo "<p>	 				
+	 				 1) ".$inst_review."<br>
+	 				 2) ".$inst_reflect."<br>
+	 				 3) ".$inst_design."<br>
+	 				 4) ".$inst_complete."<br>
+	 				</p>";
+				$next_page="reflection.php";
+				break;
+			case 'explain_reflect':
+				echo "<p>	 				
+	 				1) ".$inst_review." <br>
+	 				2) ".$inst_design." <br>
+	 				3) ".$inst_explain." <br>
+	 				4) ".$inst_reflect." <br>
+	 				5) ".$inst_complete." <br>
+	 				</p>";
+				$next_page="explain_initial.php";
+				break;
+	 		case 'control':
+	 			echo "<p>	 				
 	 				 1) ".$inst_review." <br>
 	 				 2) ".$inst_design." <br>
 	 				 3) ".$inst_complete." <br>
-	 				</p>
-	 				";
-	 
-		switch ($group){
-			case 'self-explanation':
-				$next_page="feedback.php";
-	 			break;
-			case 'sum_reflection':
-				$next_page="reflection.php";
-				break;
-			case 'explain-reflection':
-				$next_page="$feedback.php";
-				break;
-	 		case 'control':
+	 				</p>";
 				$next_page="second_stage.php";
  				break;
 			default:
@@ -162,7 +173,7 @@ switch ($stage){
 		break;
 	case 6:
 		echo "<p style='text-align:center;font-weight:bold'>Thank you for participating! </p>
-		<p>The compensation for the second phase study ($20) will be sent to your Paypal account <span style='color:blue'>".$designer['paypal']."</span> shortly.";
+		<p>The compensation for the study ($25) will be sent to your Paypal account <span style='color:blue'>".$designer['paypal']."</span> shortly.";
 		echo "
 		If you do not receive the payment by ".$pay_deadline.", please contact Grace Yen at <span style='text-decoration:underline'> ".$admin_email." </span>. </p><p>The winners of the competition will receive a notification through the contact email by ".$contest_deadline.". Wish you the best luck ! </p><br>
 		<p style='font-size:16px'><span style='font-weight:bold'>Best Regards,</span><br> Grace Y. Yen, PhD Candidate<br>Department of Computer Sciecne<br>University of Illinois @ Urbana-Champaign</p>
@@ -171,7 +182,6 @@ switch ($stage){
 	default:
 		echo "Design Study ";
 		break;
-
 }
 
 ?>

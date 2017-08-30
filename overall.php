@@ -84,7 +84,7 @@
 					For each category, you need to address both strengths (what you like) and weaknesses (what you don’t like) about that category of the design. Please limit the feedback within 150 words.</p>
 				
 
-					<div id="turker-div" name="turker-div"><strong> Enter your ID to start :</strong> <input type="text" id="turkerID" name="turkerID"><em style="color:red;"> (required)*</em>
+					<div id="turker-div" name="turker-div"><strong> Enter your name to start :</strong> <input type="text" id="turkerID" name="turkerID"><em style="color:red;"> (required)*</em>
 					<p><em style="color:grey">This is for the purpose of payment. </em></p>
 					</div>
 
@@ -108,7 +108,11 @@
 					</div>
 			<!--</div>-->
 			
-					<h3>Design Goals</h3> <span style="font-size:16px">This is the first draft of a flyer created for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen>(not live yet). The top three runners will receive a $300 prize each. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+					<h3>Design Goals</h3> 
+
+
+					This is the first draft of a flyer created for a charity jazz concert featuring the band "Smooth Digital", a group of four alumni from the School of Music at the University of Illinois. The concert will take place on October 12th from 6:00 PM - 9:00 PM on the Main Quad. Tickets are $10 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+
 					<p><br>You can click on the image to enlarge.</p></span>
 			</div>
 			<!--End Design image and brief section-->
@@ -148,7 +152,7 @@
 				
 				<div class="sub_frame">	
 					<div id="fbk_div">
-					<h4 class="question-text required"><strong>2. Enter your feedback to the design including both its strengths and weaknesses and spans three categories of the design (i.e. overall concept, layout and ). &nbsp</strong><em style="color:red;"> (required)</em></h4>
+					<h4 class="question-text required"><strong>2. Enter your feedback to the design including both its strengths and weaknesses and spans three categories of the design (i.e. overall concept, layout and aesthetics). &nbsp</strong><em style="color:red;"> (required)</em></h4>
 					 <textarea id="text" name="text" rows="10" onkeyup="onTextKeyUp()" onkeydown="onTextKeyDown(event)" style="width:100%;"></textarea>
 					 
 					</div>

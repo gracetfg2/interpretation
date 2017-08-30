@@ -163,13 +163,6 @@ if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `u_Designer` WHERE `DesignerID
 		mysqli_stmt_close($stmt2);	
 }
 
-$file_name="../behavior/".$designer['group']."/s".$designer['DesignerID']."_design_session_".$currentVersion.".txt"; 
-$myfile = fopen($file_name, "a");
-$txt = "\n New Record\n".$_POST['_behavior']."\n";
-fwrite($myfile, $txt);
-fclose($myfile);
-
-
 
 if($_POST['action']=="save"){
 	//echo "preview";
