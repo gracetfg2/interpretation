@@ -154,6 +154,7 @@
 					<div id="fbk_div">
 					<h4 class="question-text required"><strong>2. Enter your feedback to the design including both its strengths and weaknesses and spans three categories of the design (i.e. overall concept, layout and aesthetics). &nbsp</strong><em style="color:red;"> (required)</em></h4>
 					 <textarea id="text" name="text" rows="10" onkeyup="onTextKeyUp()" onkeydown="onTextKeyDown(event)" style="width:100%;"></textarea>
+					 <span id="word-count"></span>
 					 
 					</div>
 				</div>
@@ -255,11 +256,6 @@ $(document).ready(function() {
 		  hitStartTime = (new Date()).getTime();
 		  logAction("init");
 
-		 $('textarea').bind('cut copy paste', function (e) {
-		    e.preventDefault(); //disable cut,copy,paste
-		});
-
-
 		  $(window).focus(function() {
 		    logAction("focus");
 		  });
@@ -306,7 +302,7 @@ function onTextKeyUp() {
 
   clearTimeout(typingTimer);
   typingTimer = setTimeout(recordPause, doneTypingInterval);
-  //$('#word-good').html(counting(document.getElementById('text').value));
+  $('#word-count').html("Current word count: "+counting(document.getElementById('text').value));
   logAction("text_update", document.getElementById("text").value);
 }
 

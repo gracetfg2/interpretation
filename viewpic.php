@@ -15,6 +15,7 @@ session_start();
  if ($stmt = mysqli_prepare($conn, "SELECT file From Design WHERE mid = ?")) {
      /* bind parameters for markers */
      mysqli_stmt_bind_param($stmt, "s", $mid);
+     mysqli_stmt_bind_param($stmt, "s", $mid);
      /* execute query */
      mysqli_stmt_execute($stmt);
      /* bind result variables */
