@@ -269,7 +269,9 @@ function submit() {
 
 }
 
-
+$(document).ready(function(){
+    notifyVisible("reflection");
+});
 
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit

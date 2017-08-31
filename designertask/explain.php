@@ -194,7 +194,7 @@ function prevPage()
 {
     if (current_page > 1) {
         current_page--;
-        changePage(current_page);
+        changePage(current_page, current_page + 1);
     }
 }
 
@@ -202,12 +202,12 @@ function nextPage()
 {
     if (current_page < numPages()) {
         current_page++;
-        changePage(current_page);
+        changePage(current_page, current_page - 1);
     }
    // window.scrollTo(0,document.body.scrollHeight);
 }
     
-function changePage(page)
+function changePage(page, oldPage)
 {
     var btn_next = document.getElementById("btn_next");
     var btn_prev = document.getElementById("btn_prev");
@@ -246,6 +246,10 @@ function changePage(page)
         btn_next.style.display = "inline";
         btn_finish.style.display ="none";
     }
+    
+    if(page != oldPage)
+        notifyHidden("explain".concat(oldPage).concat("-").concat(oldPage));
+    notifyVisible("explain".concat(page).concat("-").concat(page));
 }
 
 function numPages()
@@ -290,7 +294,6 @@ function post(path, params, method) {
             form.appendChild(hiddenField);
          }
     }
-
     document.body.appendChild(form);
     form.submit();
 }
@@ -301,7 +304,7 @@ $(document).ready(function(){
         e.preventDefault(); //disable cut,copy,paste
     });
 
-    changePage(1);
+    changePage(1,1);
 
 });
 </script>

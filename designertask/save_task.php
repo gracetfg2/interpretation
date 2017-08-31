@@ -58,12 +58,13 @@ $textareaInfo = json_decode($jsonTextareas);
 foreach($textareaInfo as $label => $textbox) {
     //echo "Iterating";
  
-    if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount, visible_time, writing_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON DUPLICATE KEY UPDATE
-    
     FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
     PauseCount = VALUES(PauseCount), PauseTime = VALUES(PauseTime), DeleteCount = VALUES(DeleteCount), 
-    WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount)"))) {
+    WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount),
+    visible_time = visible_time + VALUES(visible_time),
+    writing_time = writing_time + VALUES(writing_time)"))) {
         echo "SendData Textarea prepare failed: (" . $conn->errno . ") " . $conn->error;
     }
 
@@ -74,8 +75,12 @@ foreach($textareaInfo as $label => $textbox) {
     $deleteCount = $textbox->deleteCount;
     $wordCount = $textbox->wordCount;
     $sentCount = $textbox->sentenceCount;
+    $visibleTime = $textbox->visibleTime;
+    $writingTime = $textbox->writingTime;
+    
+    echo"Visible time: ".$visibleTime;
 
-    $stmt->bind_param("isiiiiiii", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount);
+    $stmt->bind_param("isiiiiiiiii", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount, $visibleTime, $writingTime);
     $stmt->execute();
     mysqli_stmt_close($stmt);
 
