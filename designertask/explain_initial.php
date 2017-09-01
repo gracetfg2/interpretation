@@ -211,9 +211,6 @@ function nextPage()
     if(contentVal.length == 0) {
         window.alert("Please rephrase the feedback!");
     }
-    else if(isRadioButtonChecked(current_page) == false) {
-        window.alert("Please rate the feedback!");
-    }
     else if (current_page < numPages()) {
         current_page++;
         changePage(current_page, current_page - 1);
@@ -280,9 +277,6 @@ function submit() {
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
     if(contentVal.length == 0) {
         window.alert("Please rephrase the feedback!");
-    }
-    else if(isRadioButtonChecked(current_page) == false) {
-        window.alert("Please rate the feedback!");
     }
     else {       
         var json = outputJSON();

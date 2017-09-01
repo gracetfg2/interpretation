@@ -81,7 +81,7 @@ foreach($textareaInfo as $label => $textbox) {
     $visibleTime = $textbox->visibleTime;
     $writingTime = $textbox->writingTime;
     
-    echo"Visible time: ".$visibleTime;
+    //echo"Visible time: ".$visibleTime;
 
     $stmt->bind_param("isiiiiiiiii", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount, $visibleTime, $writingTime);
 
