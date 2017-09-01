@@ -262,19 +262,14 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 			<?php
 
 		
-<<<<<<< HEAD
-			if($group=="self_explain" || $group=="explain_reflect")
-=======
-			if ($group=="reflection" || $group=="explain_reflection")
-				include('final_reflection_question7.php');
-			else if($group=="self_explain" || $group=="explain_reflection")
->>>>>>> Victor
-				include('final_feedback_question7.php');
-			
-			if($group=="reflection-feedback")
-				include('final_feedback_question8.php');
 
-			if($group=="feedback-reflection")
+			if($group=="self_explain" || $group=="explain_reflect")
+				include('final_feedback_question7.php');			
+		
+			if($group=="reflection")
+				include('final_reflection_question7.php');
+
+			if($group=="explain_reflect")
 				include('final_reflection_question8.php');
 
 			if ($group=="control")
@@ -313,20 +308,20 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 	})
 	$("#time").bind("keydown", function(){
     	$('#div-time').removeClass("has-error");
-}	);
+	});
 
 
 	$("#mainChange").bind("keydown", function(){
     	$('#div-change').removeClass("has-error");
-}	);
+	});
 
 	$("#ex_feedback").bind("keydown", function(){
     	$('#div-ex-feedback').removeClass("has-error");
-}	);
+	});
 
 	$("#ex_reflection").bind("keydown", function(){
     	$('#div-ex-reflection').removeClass("has-error");
-}	);
+	});
 
 	$('input[type=radio][name=degreeOfChange]').change(function(){
 		   $("#div-revision").removeClass("has-error");

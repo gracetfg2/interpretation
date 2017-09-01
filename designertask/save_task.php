@@ -19,23 +19,14 @@ $conn = connect_to_db();
     
 
 /*****Save Global Info***********/
-<<<<<<< HEAD
-if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID) VALUES (?, ?, ?)
-=======
+
 if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID, total_task, total_interpretation, total_reflection) VALUES (?, ?, ?, ?, ?, ?)
->>>>>>> Victor
+
 ON DUPLICATE KEY UPDATE
 PageOpenedTime = VALUES(PageOpenedTime), FirstCharTime = VALUES(FirstCharTime)"))) {
     echo "SendData Global prepare failed: (" . $conn->errno . ") " . $conn->error;
 }
 $jsonGlobals = json_decode($_jsonGlobals);
-
-<<<<<<< HEAD
-$stmt->bind_param("iii", $jsonGlobals->openPageTimestamp, $jsonGlobals->firstCharTimestamp, $designerID);
-$stmt->execute();
-mysqli_stmt_close($stmt);
-
-=======
 $pageOpen = $jsonGlobals->openPageTimestamp;
 $pageClose = $jsonGlobals->closePageTimestamp;
 $zero = 0;
@@ -61,7 +52,6 @@ else if($_POST['originPage'] == "explain.php" || $_POST['originPage'] == "explai
     }
 }
 
->>>>>>> Victor
 
 /*****Save Text Data***********/
 $textareaInfo = json_decode($jsonTextareas);
@@ -69,14 +59,7 @@ $textareaInfo = json_decode($jsonTextareas);
 foreach($textareaInfo as $label => $textbox) {
     //echo "Iterating";
  
-<<<<<<< HEAD
-    if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ON DUPLICATE KEY UPDATE
-    
-    FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
-    PauseCount = VALUES(PauseCount), PauseTime = VALUES(PauseTime), DeleteCount = VALUES(DeleteCount), 
-    WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount)"))) {
-=======
+
     if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount, visible_time, writing_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON DUPLICATE KEY UPDATE
     FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
@@ -84,7 +67,6 @@ foreach($textareaInfo as $label => $textbox) {
     WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount),
     visible_time = visible_time + VALUES(visible_time),
     writing_time = writing_time + VALUES(writing_time)"))) {
->>>>>>> Victor
         echo "SendData Textarea prepare failed: (" . $conn->errno . ") " . $conn->error;
     }
 
@@ -95,17 +77,14 @@ foreach($textareaInfo as $label => $textbox) {
     $deleteCount = $textbox->deleteCount;
     $wordCount = $textbox->wordCount;
     $sentCount = $textbox->sentenceCount;
-<<<<<<< HEAD
 
-    $stmt->bind_param("isiiiiiii", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount);
-=======
     $visibleTime = $textbox->visibleTime;
     $writingTime = $textbox->writingTime;
     
     echo"Visible time: ".$visibleTime;
 
     $stmt->bind_param("isiiiiiiiii", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount, $visibleTime, $writingTime);
->>>>>>> Victor
+
     $stmt->execute();
     mysqli_stmt_close($stmt);
 

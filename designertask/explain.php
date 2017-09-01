@@ -209,6 +209,7 @@ function nextPage()
     
 function changePage(page, oldPage)
 {
+    
     var btn_next = document.getElementById("btn_next");
     var btn_prev = document.getElementById("btn_prev");
     var btn_finish = document.getElementById("btn_finish");
