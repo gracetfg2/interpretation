@@ -119,6 +119,7 @@ $ok_to_use=1;
 
     <div id="task">
         <?php
+            $feedbackIDs = [];
             $feedbackNum = 0;
             foreach ($feedback as $value)
             {
@@ -185,8 +186,21 @@ $ok_to_use=1;
 
 <!--Begin Script-->       
 <script>
+    
+function rate (val) {
+    //isRadioChecked = true;
+}
 
-
+function isRadioButtonChecked(page) {
+    //return isRadioChecked;
+    var ret = false;
+    $('td').each(function() {
+        if($(this).find('input:radio:checked').length != 0 && $(this).is(':visible') == true) {
+            ret = true;
+        }
+    });
+    return ret;
+}
 
 var current_page = 1;
 
@@ -200,7 +214,15 @@ function prevPage()
 
 function nextPage()
 {
-    if (current_page < numPages()) {
+    var label = "explain" + current_page + "-" + current_page;
+    var contentVal = $("textarea[monitorlabel='" + label + "']").val();
+    if(contentVal.length == 0) {
+        window.alert("Please rephrase the feedback!");
+    }
+    else if(isRadioButtonChecked(current_page) == false) {
+        window.alert("Please rate the feedback!");
+    }
+    else if (current_page < numPages()) {
         current_page++;
         changePage(current_page, current_page - 1);
     }
@@ -261,17 +283,26 @@ function numPages()
 }
 
 function submit() {
-    var json = outputJSON();
-    var designId=$('#design_id').val();
-    post('save_task.php', {
-        designIdx: designId, 
-        jsonGlobals: json[0], 
-        jsonTextareas: json[1], 
-        jsonRating: json[2],
-        originPage: "explain.php",
-        redirect: $('#next_page').val()
-    });
-
+    var label = "explain" + current_page + "-" + current_page;
+    var contentVal = $("textarea[monitorlabel='" + label + "']").val();
+    if(contentVal.length == 0) {
+        window.alert("Please rephrase the feedback!");
+    }
+    else if(isRadioButtonChecked(current_page) == false) {
+        window.alert("Please rate the feedback!");
+    }
+    else {       
+        var json = outputJSON();
+        var designId=$('#design_id').val();
+        post('save_task.php', {
+            designIdx: designId, 
+            jsonGlobals: json[0], 
+            jsonTextareas: json[1], 
+            jsonRating: json[2],
+            originPage: "explain.php",
+            redirect: $('#next_page').val()
+        });
+    }
 }
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit

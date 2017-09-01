@@ -226,13 +226,13 @@ $_SESSION['designer_group']= $designer['group'];
 <script>
 var current_page = 1;
 
-function prevPage()
+/*function prevPage()
 {
     if (current_page > 1) {
         current_page--;
         changePage(current_page);
     }
-}
+}*/
 
 function nextPage()
 {
@@ -241,18 +241,23 @@ function nextPage()
 }
     
 function submit() {
-    var json = outputJSON();
     var contentVal = $('#monitoredtext').val();
-    var designId=$('#design_id').val();
-    post('save_task.php', {
-        content: contentVal,
-        designIdx: designId,
-        jsonGlobals: json[0],
-        jsonTextareas: json[1],
-        jsonRating: json[2],
-        originPage: "reflection.php",
-        redirect: "second_stage.php"
-    });
+    if(countWords(contentVal) < 30) {
+        window.alert("Please provide a longer reflection for the feedback!");
+    }
+    else {
+        var json = outputJSON();
+        var designId=$('#design_id').val();
+        post('save_task.php', {
+            content: contentVal,
+            designIdx: designId,
+            jsonGlobals: json[0],
+            jsonTextareas: json[1],
+            jsonRating: json[2],
+            originPage: "reflection.php",
+            redirect: "second_stage.php"
+        });
+    }
 }
 
 $(document).ready(function(){
