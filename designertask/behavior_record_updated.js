@@ -18,7 +18,12 @@ class TextboxData {
         this.sentenceCount = senCount;
         this.isPauseActive = isP;
         this.content = cont;
-       
+        this.visibleTime = 0.0;
+        this.becameVisibleTimestamp = 0;
+        this.isVisible = false;
+        this.firstInputAfterRevealTimestamp = 0;
+        this.isInputAfterRevealStale = true;
+        this.writingTime = 0;
     }
 }
 
@@ -144,6 +149,10 @@ function onTextKeyDown(e) {
     if(textboxData.firstInputTimestamp == 0) {
         textboxData.firstInputTimestamp = getCurTime();
     }
+    if(textboxData.isInputAfterRevealStale == true) {
+        textboxData.isInputAfterRevealStale = false;
+        textboxData.firstInputAfterRevealTimestamp = getCurTime();
+    }
     
     textboxData.lastInputTimestamp = getCurTime();
     
@@ -191,6 +200,29 @@ function hasMonitorLabelBeenInitd(monitorLabel) {
     return monitorLabel in textboxInfo;
 }
 
+function notifyVisible(textLabel) {
+    arrayManager(textLabel);
+    var textbox = textboxInfo[textLabel];
+    if(textbox.isVisible == true) {
+        console.log("ERROR: visible textbox was notified of visibility: ".concat(textLabel));
+        return;
+    }
+    textbox.isVisible = true;
+    textbox.isInputAfterRevealStale = true;
+    textbox.becameVisibleTimestamp = getCurTime();
+}
+
+function notifyHidden(textLabel) {
+    var textbox = textboxInfo[textLabel];
+    if(textbox.isVisible == false) {
+        console.log("ERROR: hidden textbox was notified of being hidden: ".concat(textLabel));
+        return;
+    }
+    textbox.visibleTime += getCurTime() - textbox.becameVisibleTimestamp;
+    textbox.writingTime += getCurTime() - textbox.firstInputAfterRevealTimestamp;
+    textbox.isVisible = false;
+}
+
 function countWords(text) {
     var words = text.split(/\n| /);
     var blankWordCount = 0;
@@ -219,6 +251,9 @@ function prepParseStats() {
             textboxInfo[monitorLabel].wordCount = countWords(text);
             textboxInfo[monitorLabel].sentenceCount = countSentences(text);
             textboxInfo[monitorLabel].content = text;
+            if(textboxInfo[monitorLabel].isVisible == true) {
+                notifyHidden(monitorLabel);
+            }
         }
     });
 }
@@ -246,7 +281,6 @@ function getRatings() {
 function outputJSON() {
     prepParseStats();
     getRatings();
-
 
     var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp, closePageTimestamp:getCurTime()});
     var textboxStr = JSON.stringify(textboxInfo);
