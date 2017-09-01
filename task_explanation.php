@@ -744,24 +744,20 @@ function submitresult() {
 
     if(isOkay==true){
       logAction("submit");
- 
- 
+
       $("#response-form [name=_f1]").val( $("#f1").val() );
       $("#response-form [name=_f2]").val( $("#f2").val() );
       $("#response-form [name=_f3]").val( $("#f3").val() );
       $("#response-form [name=_mid]").val( $("#turkerID").val() );
-      $("#response-form [name=reviewDesignTime]").val( (review_start - hitStartTime)/1000) ;   
- 
+      $("#response-form [name=reviewDesignTime]").val( (review_start - hitStartTime)/1000) ;    
       $("#response-form [name=prepareTime]").val(( annoStartTime - hitStartTime)/1000);
       $("#response-form [name=taskTime]").val( ((new Date()).getTime() - hitStartTime)/1000 );
       $("#response-form [name=numberOfPause]").val(pauseCount);
-
       $("#response-form [name=action_plan_time]").val( ( ( new Date() ).getTime() - action_plan_start)/1000 );
       $("#response-form [name=numberOfDel]").val(delCount);
       $("#response-form [name=startTime]").val( annoStartTime );
-      $("#response-form [name=submitTime]").val((new Date()).getTime());
-      
-     $("#response-form").submit();
+      $("#response-form [name=submitTime]").val((new Date()).getTime());      
+      $("#response-form").submit();
       
     }
     else

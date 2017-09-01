@@ -262,7 +262,13 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 			<?php
 
 		
+<<<<<<< HEAD
 			if($group=="self_explain" || $group=="explain_reflect")
+=======
+			if ($group=="reflection" || $group=="explain_reflection")
+				include('final_reflection_question7.php');
+			else if($group=="self_explain" || $group=="explain_reflection")
+>>>>>>> Victor
 				include('final_feedback_question7.php');
 			
 			if($group=="reflection-feedback")

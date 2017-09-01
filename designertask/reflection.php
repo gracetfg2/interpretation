@@ -87,7 +87,6 @@ $_SESSION['designer_group']= $designer['group'];
     }
 
 
-
     if ($stmt_reflection = mysqli_prepare($conn, "SELECT * FROM `Reflection` WHERE `DesignerID`=? AND `DesignID`=?")) {
                 mysqli_stmt_bind_param($stmt_reflection, "ii", $DESIGNER, $design_id);
                 mysqli_stmt_execute($stmt_reflection);
@@ -106,7 +105,6 @@ $_SESSION['designer_group']= $designer['group'];
 
     mysqli_stmt_close($stmt_reflection);
     mysqli_close($conn);
-
 ?>
 
 
@@ -246,17 +244,19 @@ function submit() {
     var contentVal = $('#monitoredtext').val();
     var designId=$('#design_id').val();
     post('save_task.php', {
-        content: contentVal, 
-        designIdx: designId, 
-        jsonGlobals: json[0], 
-        jsonTextareas: json[1], 
-        jsonRating: json[2], 
+        content: contentVal,
+        designIdx: designId,
+        jsonGlobals: json[0],
+        jsonTextareas: json[1],
+        jsonRating: json[2],
+        originPage: "reflection.php",
         redirect: "second_stage.php"
     });
-
 }
 
-
+$(document).ready(function(){
+    notifyVisible("reflection");
+});
 
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit

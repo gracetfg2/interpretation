@@ -247,7 +247,11 @@ function outputJSON() {
     prepParseStats();
     getRatings();
 
+<<<<<<< HEAD
     var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp});
+=======
+    var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp, closePageTimestamp:getCurTime()});
+>>>>>>> Victor
     var textboxStr = JSON.stringify(textboxInfo);
     var ratingStr = JSON.stringify(ratingInfo);
 

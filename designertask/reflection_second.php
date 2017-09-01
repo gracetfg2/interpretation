@@ -262,14 +262,17 @@ function submit() {
         designIdx: designId, 
         jsonGlobals: json[0], 
         jsonTextareas: json[1], 
-        jsonRating: json[2], 
+        jsonRating: json[2],
+        originPage: "reflection_second.php",
         redirect: "second_stage.php"
     });
 
 }
 
 
-
+$(document).ready(function(){
+    notifyVisible("reflection");
+});
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
 function post(path, params, method) {
