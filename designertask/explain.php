@@ -221,7 +221,7 @@ function nextPage()
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
 
    console.log(label);
-
+console.log("value="+contentVal);
 
     if(countWords(contentVal) < 30) {
         console.log(label);
