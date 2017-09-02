@@ -135,6 +135,7 @@ $ok_to_use=1;
                         <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea onpaste='return false;' rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
                          
                     </div>";
+                  echo "<input type='hidden' name='fid".$feedbackNum ."' id='fid".$feedbackNum ."' value='".$value['FeedbackID']."'>";  
             }
         ?>
         
