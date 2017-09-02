@@ -119,7 +119,8 @@ $ok_to_use=1;
 
     <div id="task">
         <?php
-          
+        
+
             $feedbackNum = 0;
             foreach ($feedback as $value)
             {
@@ -128,6 +129,8 @@ $ok_to_use=1;
                   
                 $breaks = array("<br />");  
                 $interpretation = str_ireplace ($breaks, "\r\n", $value['interpretation']);
+
+               
 
                 echo"
                     <div style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
@@ -187,7 +190,7 @@ function prevPage()
 function nextPage()
 {
     var current_fid = $("#feedbackList" +current_page).val();
-    var label = "explain" + current_page + "-" + current_fid ; 
+    var label = "explain" + current_page + "-" + current_fid ;
 
    
     console.log(label);
