@@ -119,8 +119,7 @@ $ok_to_use=1;
 
     <div id="task">
         <?php
-            $feedback_list[];
-
+          
             $feedbackNum = 0;
             foreach ($feedback as $value)
             {
@@ -129,8 +128,6 @@ $ok_to_use=1;
                   
                 $breaks = array("<br />");  
                 $interpretation = str_ireplace ($breaks, "\r\n", $value['interpretation']);
-
-                $feedback_list[$feedbackNum]=$value['FeedbackID'];
 
                 echo"
                     <div style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
