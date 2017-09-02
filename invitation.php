@@ -41,7 +41,7 @@
 
         <h3>Be Creative. Design a Flyer. </h3>
         <p>We are researchers at the University of Illinois investigating how designer use online feedback to iterate on their creative work. In this study, you will need to create a flyer design for a jazz concert, perform an assigned activity, and revise the design. All designs and data collected in this study are for research purposes only.</p>
-        <p>  We do not require design background, but your design should meet certain criteria and has sufficient quality to be considered in the study. We list designs in our last study when we asked for a flyer design for a half marathon event.
+        <p>  We do not require design background, but your design should meet certain criteria and has adequate quality to be considered in the study. We list designs in our last study when we asked for a flyer design for a half marathon event.
         </p>
          
          <table style="border-spacing: 30px;">
