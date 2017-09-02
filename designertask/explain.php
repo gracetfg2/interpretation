@@ -168,6 +168,7 @@ $ok_to_use=1;
                         </table>
                          
                     </div>";
+                     echo "<input type='hidden' name='fid".$feedbackNum ."' id='fid".$feedbackNum ."' value='".$value['FeedbackID']."'>";  
             }
         ?>
         
@@ -217,14 +218,10 @@ function prevPage()
 
 function nextPage()
 {
-    var label = "explain" + current_page + "-" + current_page;
+     var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
-
-   console.log(label);
-console.log("value="+contentVal);
-
-    if(countWords(contentVal) < 30) {
-        console.log(label);
+   
+    if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
     else if(isRadioButtonChecked(current_page) == false) {
@@ -292,11 +289,10 @@ function numPages()
 }
 
 function submit() {
-    var label = "explain" + current_page + "-" + current_page;
+     var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
-    
-    if(countWords(contentVal) < 30) {
-        console.log(label);
+   
+    if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
     else if(isRadioButtonChecked(current_page) == false) {
