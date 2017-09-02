@@ -119,8 +119,6 @@ $ok_to_use=1;
 
     <div id="task">
         <?php
-            $feedback_list[];
-
             $feedbackNum = 0;
             foreach ($feedback as $value)
             {
@@ -129,9 +127,7 @@ $ok_to_use=1;
                   
                 $breaks = array("<br />");  
                 $interpretation = str_ireplace ($breaks, "\r\n", $value['interpretation']);
-
-                $feedback_list[$feedbackNum]=$value['FeedbackID'];
-
+      
                 echo"
                     <div style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
                         <feedback><h4>Feedback #".$feedbackNum.": </h4>".nl2br($content)."</feedback>
@@ -139,8 +135,6 @@ $ok_to_use=1;
                         <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea onpaste='return false;' rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
                          
                     </div>";
-
-                    echo "<input type='hidden' name='feedback".$feedbackNum."' id='feedback".$feedbackNum." value=".$value['FeedbackID']. " >";
             }
         ?>
         
@@ -189,7 +183,7 @@ function prevPage()
 
 function nextPage()
 {
-    var label = "explain" + current_page + "-" + $("textarea[monitorlabel='" + label + "']");
+    var label = "explain" + current_page + "-" + current_page;
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
     if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
