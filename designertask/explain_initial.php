@@ -119,7 +119,7 @@ $ok_to_use=1;
 
     <div id="task">
         <?php
-        
+            $feedback_list[];
 
             $feedbackNum = 0;
             foreach ($feedback as $value)
@@ -130,7 +130,7 @@ $ok_to_use=1;
                 $breaks = array("<br />");  
                 $interpretation = str_ireplace ($breaks, "\r\n", $value['interpretation']);
 
-               
+                $feedback_list[$feedbackNum]=$value['FeedbackID'];
 
                 echo"
                     <div style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
@@ -140,7 +140,7 @@ $ok_to_use=1;
                          
                     </div>";
 
-                    echo "<input type='hidden' name='feedbackList".$feedbackNum."' id='feedbackList".$feedbackNum." value=".$value['FeedbackID']. " >";
+                    echo "<input type='hidden' name='feedback".$feedbackNum."' id='feedback".$feedbackNum." value=".$value['FeedbackID']. " >";
             }
         ?>
         
@@ -189,12 +189,7 @@ function prevPage()
 
 function nextPage()
 {
-    var current_fid = $("#feedbackList" +current_page).val();
-    var label = "explain" + current_page + "-" + current_fid ;
-
-   
-    console.log(label);
-
+    var label = "explain" + current_page + "-" + $("textarea[monitorlabel='" + label + "']");
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
     if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
