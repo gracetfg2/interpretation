@@ -109,35 +109,12 @@ $ok_to_use=1;
             <h3>Instructions</h3>
                <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
 
-               <br><br>For each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers, and write your explanation in the textbox. Your responses should cover all the suggestions mentioned in the feedback whether you agree or not. Please note that Responses that demonstrate insufficient effort will be rejected. Also, copy and paste functions are disabled on the task pages.
+               <br><br>We want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. You should write your explanation in the textbox. Your response should cover all the suggestions whether you agree or not.  Responses that demonstrate insufficient effort will be rejected. 
+               <br><br>
+              Copy and paste functions are disabled on the task pages. Please spend around 15 minutes reviewing all the three feedback. 
             <br> <br>
                <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->
-
-
-
-         <div id='design-part' style="display:none">
-        <div class="row" style="width:100%;padding-top: 20px;  margin:auto;">
-
-            <div class="col-md-3" id="image" style="margin-top:20px">       
-                 <div class="img-div" onmouseover="" style=" cursor: pointer; margin-right:20px; " >
-
-                 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="test/initial_design.png" onClick="view();" >
-                 <p><em style="color:grey">* Click on the image to enlarge </em></p>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-            <h3>Design Goals</h3> <span style="font-size:16px">This is the first draft of a flyer created for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen>(not live yet). The top three runners will receive a $300 prize each. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
-            <p><br>You can click on the image to enlarge.</p></span>
-
-            </div>
-
-
-            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="startReview()">Start Review Feedback</button>
-        </div>
-    </div>
-
 
 
     <div id="task">
@@ -164,9 +141,9 @@ $ok_to_use=1;
 
             <nav aria-label="...">
               <ul class="pager" >
-                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous</button></li>
-                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next </button></li>
-                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save and Go to Next Step </button></li>
+                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous feedback</button></li>
+                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next feedback</button></li>
+                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save responses and go to next step </button></li>
               </ul>
             </nav>
    

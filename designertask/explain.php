@@ -109,7 +109,10 @@ $ok_to_use=1;
             <h3>Review Feedback</h3>
             <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
 
-            <br><br>For each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers, and write your explanation in the textbox. Your responses should cover all the suggestions mentioned in the feedback whether you agree or not. After that, please rate the usefulness of the feedback for improving your design. Please note that Responses that demonstrate insufficient effort will be rejected. Also, copy and paste functions are disabled on the task pages. 
+            <br><br>We want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. You should write your explanation in the textbox, and the response should cover all the suggestions in the feedback whether you agree or not.  Responses that demonstrate insufficient effort will be rejected. After that, please rate the usefulness of the feedback for improving your design. 
+
+            <br><br>
+              Copy and paste functions are disabled on the task pages. Please spend around 15 minutes reviewing all the three feedback. 
 
             </p>
                <br>
@@ -171,9 +174,9 @@ $ok_to_use=1;
 
             <nav aria-label="...">
               <ul class="pager" >
-                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous</a></li>
-                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next</a></li>
-                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save and Go to Next Step </a></li>
+                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous feedback</a></li>
+                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next feedback</a></li>
+                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save responses and go to next step </a></li>
               </ul>
             </nav>
    
