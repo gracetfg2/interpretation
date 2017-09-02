@@ -29,6 +29,9 @@ $explain_reflectionuse="";
 $explain_feedbackuse="";
 
 
+$explain_useful="";
+$explain_selfexplain="";
+
 $control_useful="";
 
 if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_DesignerID = ?")) {
@@ -48,6 +51,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 	$reflection_useful=$designer['reflection_useful'];
 
 	$control_useful=$designer['control_useful'];  
+
+	$explain_useful=$designer['explain_useful'];  
+
 	
 	$breaks = array("<br />");  
 	$explain_process = str_ireplace ($breaks, "\r\n", $designer['explain_process']);
@@ -55,6 +61,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 		
 	$explain_reflectionuse = str_ireplace ($breaks, "\r\n", $designer['explain_reflectionuse']);
 	$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
+
+	$explain_selfexplain = str_ireplace ($breaks, "\r\n", $designer['explain_selfexplain']);
+	//$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
 
 
 	mysqli_stmt_close($stmt);
@@ -255,8 +264,39 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 					</table>
 			</div>
 
-			<div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please describe the main revisions you made to the initial design, and why. </strong> </h4>
+			<div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please list all the revisions you made to the initial design, and why. </strong> </h4>
 				 <textarea id="mainChange" name="mainChange" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>	
+			</div>
+
+			<div class="sub_frame" id="div-feedback" name="div-feedback">			
+				<h4 class="nquestion_text"><strong> 7. How useful was the feedback received from the independent reviewers for improving your initial design?
+				
+			 	</strong> </h4>				
+				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">
+					<tr aria-hidden="true">
+						<td  class="radio-label" style="width: 140px"></td>
+						<td><label class="radio-cell">1</label></td> 
+						<td><label class="radio-cell">2</label></td> 
+						<td><label class="radio-cell">3</label></td> 
+						<td><label class="radio-cell">4</label></td>
+						<td><label class="radio-cell">5</label></td> 
+						<td><label class="radio-cell">6</label></td>
+						<td><label class="radio-cell">7</label></td>  
+						<td  class="radio-label" style="width: 140px"></td>
+					</tr>
+					
+					<tr>
+					<td class="radio-label" style="width: 60px" >Not Useful</td>
+					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback1" value="1" <?php if ($feedback_useful==1) echo 'checked'?> ></td>
+					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback2" value="2"<?php if ($feedback_useful==2) echo 'checked'?>></td>
+					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback3" value="3" <?php if ($feedback_useful==3) echo 'checked'?>></td>
+					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback4" value="4" <?php if ($feedback_useful==4) echo 'checked'?>></td>
+					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback5" value="5" <?php if ($feedback_useful==5) echo 'checked'?>></td>
+					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback6" value="6" <?php if ($feedback_useful==6) echo 'checked'?>></td>
+					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback7" value="7" <?php if ($feedback_useful==7) echo 'checked'?>></td>
+					<td class="radio-label" style="width: 200px">Very Useful</td>		
+					</tr>
+					</table>
 			</div>
 
 			<?php
@@ -264,7 +304,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 		
 
 			if($group=="self_explain" || $group=="explain_reflect")
-				include('final_feedback_question7.php');			
+				include('final_explain_question7.php');			
 		
 			if($group=="reflection")
 				include('final_reflection_question7.php');
@@ -379,6 +419,16 @@ function submit() {
           }
 		}
 
+
+		if($("input[name='explain']").length){
+			
+			if ($("input[name='explain']:checked").size() == 0 ) {
+          	isOkay = false;
+          	$("#div-explain").addClass("has-error");
+			
+          }
+		}
+
 		$('input#time').val($.trim($('input#time').val() )  );		
 		if ($('input#time').val() == "") {
 			  isOkay = false;
@@ -407,13 +457,23 @@ function submit() {
 	        isOkay = false;
 	    }
 	}
+
+	if($("#ex_explain").length){
+				
+	    $('#ex_explain').val($.trim($('#ex_explain').val() ) ); 
+	    if( $('#ex_explain').val() == "" ){
+	       $('#ex_explain').parents('.sub_frame:first').addClass("has-error");
+	        isOkay = false;
+	    }
+	}
+
 	if($("#ex_reflection").length){
 	    $('#ex_reflection').val($.trim($('#ex_reflection').val() ) ); 
 	    if( $('#ex_reflection').val() == "" ){
 	       $('#ex_reflection').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
 	    }
-}
+	}
 	if(isOkay==true){
 		$("#complete_form").submit();
 		

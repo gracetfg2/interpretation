@@ -28,6 +28,9 @@ $explain_feedbackuse="";
 $explain_process="";
 $control_useful="";
 
+$explain_useful="";
+$explain_selfexplain="";
+
 /*Todo :check availibility
 if($designer['process']<=3 && $currentVersion=2)  
 	header("Location: ../reflection/index.php"); die();
@@ -37,7 +40,7 @@ else $currentVersion=2;
 $isOkay=1;
 
 	/*****Save Data Info***********/
-    if (!($stmt = mysqli_prepare($conn, "INSERT INTO monitorbehavior ( f_DesignerID, subject_group , confidence_".$currentVersion.", design_time_".$currentVersion.", effort_".$currentVersion.", quality_".$currentVersion.", degreeOfChange, feedback_useful, reflection_useful, explain_revision, explain_reflectionuse, explain_feedbackuse, explain_process, control_useful) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,? )
+    if (!($stmt = mysqli_prepare($conn, "INSERT INTO monitorbehavior ( f_DesignerID, subject_group , confidence_".$currentVersion.", design_time_".$currentVersion.", effort_".$currentVersion.", quality_".$currentVersion.", degreeOfChange, feedback_useful, reflection_useful, explain_revision, explain_reflectionuse, explain_feedbackuse, explain_process, control_useful, explain_useful, explain_selfexplain) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,? )
     ON DUPLICATE KEY UPDATE
     
     f_DesignerID = VALUES(f_DesignerID), 
@@ -53,8 +56,9 @@ $isOkay=1;
     explain_reflectionuse = VALUES(explain_reflectionuse), 
     explain_feedbackuse = VALUES(explain_feedbackuse),
     explain_process = VALUES(explain_process),
-    control_useful = VALUES(control_useful)
-
+    control_useful = VALUES(control_useful),
+    explain_useful = VALUES(explain_useful),
+    explain_selfexplain = VALUES(explain_selfexplain)
     "))) {
         echo "SendData final survey prepare failed: (" . $conn->errno . ") " . $conn->error;
     }
@@ -75,7 +79,10 @@ $isOkay=1;
 	$explain_process=$_POST['explain_process'];
 	$control_useful=$_POST['control_useful'];
 
-    $stmt->bind_param("isiisiiiissssi", $designer_id,$subject_group,$confidence,$time,$effort, $quality, $degreeOfChange, $feedback_useful, $reflection_useful, $explain_revision,$explain_reflectionuse,	$explain_feedbackuse,$explain_process, 	$control_useful);
+	$explain_useful=$_POST['explain'];
+	$explain_selfexplain=$_POST['selfexplain'];	
+
+    $stmt->bind_param("isiisiiiissssiis", $designer_id,$subject_group,$confidence,$time,$effort, $quality, $degreeOfChange, $feedback_useful, $reflection_useful, $explain_revision,$explain_reflectionuse,	$explain_feedbackuse,$explain_process, 	$control_useful, $explain_useful, $explain_selfexplain);
  	$success = $stmt->execute();
     if(!$success){  
         echo $stmt->error;
@@ -95,7 +102,7 @@ if($isOkay==1)
 
 		mysqli_stmt_bind_param($stmt3, "ii", $process, $designer_id);
 		if($currentVersion==1)	$process=3;
-		else if ($currentVersion==2) $process=5;
+		else if ($currentVersion==2) $process=6;
 		mysqli_stmt_execute($stmt3);
 	}	
 	else

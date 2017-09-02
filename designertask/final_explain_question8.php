@@ -1,5 +1,5 @@
 <div class="sub_frame" id="div-feedback" name="div-feedback">			
-		<h4 class="nquestion_text"><strong> 7. How useful was the feedback received from the independent reviewers for improving your initial design?
+		<h4 class="nquestion_text"><strong> 9. How useful was the feedback received from the independent reviewers for improving your initial design?
 				
 			 </strong> </h4>				
 				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">
@@ -27,9 +27,8 @@
 					<td class="radio-label" style="width: 200px">Very Useful</td>		
 					</tr>
 					</table>
-</div>
+			</div>
 
-
-<div class="sub_frame" id="div-ex-process" name="div-ex-process"><h4 class="nquestion_text"><strong> 8. Please briefly explain your rating given to question 7. </strong> </h4>
-	 <textarea id="explain_process" name="explain_process" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_process, ENT_QUOTES); ?></textarea>	
+<div class="sub_frame" id="div-ex-feedback" name="div-ex-feedback"><h4 class="nquestion_text"><strong> 10. Please briefly explain your rating given to question 9. </strong> </h4>
+	 <textarea id="ex_feedback" name="ex_feedback" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_feedbackuse, ENT_QUOTES); ?></textarea>	
 </div>
