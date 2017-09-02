@@ -241,8 +241,8 @@ function nextPage()
     
 function submit() {
     var contentVal = $('#monitoredtext').val();
-    if(countWords(contentVal) < 30) {
-        window.alert("Please provide a longer reflection for the feedback!");
+    if(countWords(contentVal) < 10) {
+        window.alert("Please provide a more detailed action plan before revising it.");
     }
     else {
         var json = outputJSON();

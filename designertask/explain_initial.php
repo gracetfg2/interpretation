@@ -185,8 +185,8 @@ function nextPage()
 {
     var label = "explain" + current_page + "-" + current_page;
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
-    if(contentVal.length == 0) {
-        window.alert("Please rephrase the feedback!");
+    if(countWords(contentVal) < 20) {
+        window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
     else if (current_page < numPages()) {
         current_page++;
@@ -252,8 +252,8 @@ function numPages()
 function submit() {
     var label = "explain" + current_page + "-" + current_page;
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
-    if(contentVal.length == 0) {
-        window.alert("Please rephrase the feedback!");
+    if(countWords(contentVal) < 20) {
+        window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
     else {       
         var json = outputJSON();
