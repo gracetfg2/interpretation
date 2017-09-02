@@ -184,8 +184,9 @@ function prevPage()
 
 function nextPage()
 {
-    var label = "explain" + current_page + "-" + current_page;
+    var label = "explain" + current_page + "-" + $('fid'+current_page).val();
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
+    console.log(label);
     if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
