@@ -116,7 +116,7 @@ $ok_to_use=1;
 
             </p>
                <br>
-               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> View my initial design and its description</a>
+               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->
 
 
@@ -220,7 +220,11 @@ function nextPage()
     var label = "explain" + current_page + "-" + current_page;
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
 
+   console.log(label);
+
+
     if(countWords(contentVal) < 30) {
+        console.log(label);
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
     else if(isRadioButtonChecked(current_page) == false) {
@@ -292,6 +296,7 @@ function submit() {
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
     
     if(countWords(contentVal) < 30) {
+        console.log(label);
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
     else if(isRadioButtonChecked(current_page) == false) {
