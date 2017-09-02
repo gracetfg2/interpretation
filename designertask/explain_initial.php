@@ -189,7 +189,9 @@ function prevPage()
 
 function nextPage()
 {
-    var label = "explain" + current_page + "-" + $("input[name='feedbackList" + current_page + "']").val();
+    var current_fid = $("#feedbackList" +current_page).val();
+    var label = "explain" + current_page + "-" + current_fid ; 
+
    
     console.log(label);
 
