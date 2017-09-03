@@ -77,14 +77,10 @@ foreach($textareaInfo as $label => $textbox) {
     $deleteCount = $textbox->deleteCount;
     $wordCount = $textbox->wordCount;
     $sentCount = $textbox->sentenceCount;
+    $visibleTime = $textbox->visibleTime / 1000;
+    $writingTime = $textbox->writingTime / 1000;
 
-    $visibleTime = $textbox->visibleTime;
-    $writingTime = $textbox->writingTime;
-    
-    //echo"Visible time: ".$visibleTime;
-
-    $stmt->bind_param("isiiiiiiiii", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount, $visibleTime, $writingTime);
-
+    $stmt->bind_param("isiiiiiiidd", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount, $visibleTime, $writingTime);
     $stmt->execute();
     mysqli_stmt_close($stmt);
 
