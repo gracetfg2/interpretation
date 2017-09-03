@@ -11,8 +11,8 @@ class TextboxData {
         this.firstInputTimestamp = 0;
         this.pauseCount = pCount;
         this.pauseTime = pTime;
-        this.lastPauseTimestamp = lastP;
-        this.lastInputTimestamp = lastIn;
+        this.lastPauseTimestamp = lastP
+        this.lastInputTimestamp = lastIn
         this.deleteCount = delCount;
         this.wordCount = wCount;
         this.sentenceCount = senCount;
