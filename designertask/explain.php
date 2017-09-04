@@ -218,14 +218,17 @@ function prevPage()
 
 function nextPage()
 {
-     var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
+    var changePageOkay= true;
+    var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
    
     if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
+        changePageOkay=false;
     }
     else if(isRadioButtonChecked(current_page) == false) {
         window.alert("Please rate the feedback!");
+        changePageOkay=false;
     }
     else if (current_page < numPages()) {
         current_page++;
@@ -243,8 +246,9 @@ function changePage(page, oldPage)
     // Validate page
     if (page < 1) page = 1;
     if (page > numPages()) page = numPages();
-
- 
+//Validate oldPage
+    if (oldPage < 1) oldPage = 1;
+    if (oldPage > numPages()) oldPage = numPages();
   
    for(var page_index=1; page_index<=numPages() ; page_index ++)
     {
@@ -259,10 +263,9 @@ function changePage(page, oldPage)
     
     }
 
-
     if (page == 1) {
         btn_prev.style.display = "none";
-    } else {
+    }else {
         btn_prev.style.display = "inline";
     }
 
@@ -274,10 +277,9 @@ function changePage(page, oldPage)
         btn_next.style.display = "inline";
         btn_finish.style.display ="none";
     }
-    
     if(page != oldPage)
-        notifyHidden("explain".concat(oldPage).concat("-").concat(oldPage));
-    notifyVisible("explain".concat(page).concat("-").concat(page));
+        notifyHidden("explain".concat(oldPage).concat("-").concat($('#fid'+oldPage).val() ));
+    notifyVisible("explain".concat(page).concat("-").concat($('#fid'+page).val() ));
 }
 
 function numPages()
