@@ -218,7 +218,7 @@ function prevPage()
 
 function nextPage()
 {
-     var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
+    var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
    
     if(countWords(contentVal) < 20) {
@@ -275,9 +275,15 @@ function changePage(page, oldPage)
         btn_finish.style.display ="none";
     }
     
+    var newLabel = "explain" + page + "-" + $('#fid'+page).val();
+    var oldLabel = "explain" + oldPage + "-" + $('#fid'+oldPage).val();
     if(page != oldPage)
+        notifyHidden(oldLabel);
+    notifyVisible(newLabel);
+    
+    /*if(page != oldPage)
         notifyHidden("explain".concat(oldPage).concat("-").concat(oldPage));
-    notifyVisible("explain".concat(page).concat("-").concat(page));
+    notifyVisible("explain".concat(page).concat("-").concat(page));*/
 }
 
 function numPages()
