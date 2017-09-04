@@ -94,7 +94,7 @@ else
 }
 
 if($isOkay == 1){ //send message
-
+    echo $email;
     //Send password to new participant
     $to      = $email; // Send email to our user
     $subject = 'Registration confirmation for participant ID '.$did.'| Login Information'; // Give the email a subject 
