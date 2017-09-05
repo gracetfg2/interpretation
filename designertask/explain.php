@@ -25,7 +25,9 @@ if($stmt=mysqli_prepare($conn,$sql))
     $designer=$result->fetch_assoc() ;          
     mysqli_stmt_close($stmt);   
 
-}   
+}
+
+echo "<input type='hidden' name='desgroup' id='designergroup' value='".$designer['group']."'>";   // Allows JS to fetch the designer group
 
 if($designer['process']>5 ||$designer['process']<4)
 { header("Location: ../index.php"); die(); }
@@ -307,14 +309,27 @@ function submit() {
     else {       
         var json = outputJSON();
         var designId=$('#design_id').val();
-        post('save_task.php', {
-            designIdx: designId, 
-            jsonGlobals: json[0], 
-            jsonTextareas: json[1], 
-            jsonRating: json[2],
-            originPage: "explain.php",
-            redirect: 'second_stage.php'
-        });
+        var dgroup = $('#designergroup').val();
+        if(dgroup == "self_explain") {
+            post('save_task.php', {
+                designIdx: designId, 
+                jsonGlobals: json[0], 
+                jsonTextareas: json[1], 
+                jsonRating: json[2],
+                originPage: "explain.php",
+                redirect: 'second_stage.php'
+            });
+        }
+        else if(dgroup == "explain_reflect") {
+            post('save_task.php', {
+                designIdx: designId, 
+                jsonGlobals: json[0], 
+                jsonTextareas: json[1], 
+                jsonRating: json[2],
+                originPage: "explain.php",
+                redirect: 'reflection_second.php'
+            });
+        }
     }
 }
 
