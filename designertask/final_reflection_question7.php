@@ -1,6 +1,6 @@
 <div class="sub_frame" id="div-reflection" name="div-reflection">			
 		<h4 class="nquestion_text"><strong> 
-			8. How useful was writing responses to the three reflection questions for improving your design?		
+			7. How useful was writing an action plan for improving your design?		
 				
 			 </strong> </h4>				
 				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">
@@ -31,6 +31,6 @@
 			</div>
 
 
-<div class="sub_frame" id="div-ex-reflection" name="div-ex-reflection"><h4 class="nquestion_text"><strong> 9. Please briefly explain your rating given to question 7. </strong> </h4>
+<div class="sub_frame" id="div-ex-reflection" name="div-ex-reflection"><h4 class="nquestion_text"><strong> 8. Please briefly explain your rating given to question 7. </strong> </h4>
 	 <textarea id="ex_reflection" name="ex_reflection" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_reflectionuse, ENT_QUOTES); ?></textarea>	
 </div>

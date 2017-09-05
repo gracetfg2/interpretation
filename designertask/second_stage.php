@@ -73,6 +73,7 @@
 			$initialID=$value['DesignID'];
 			$mid=$value['mid'];
 
+
 		}
 		else if ($value['version']==2)
 		{
@@ -187,7 +188,10 @@ em{
 			Please <strong>invest 15 to 30 minutes </strong>revising your design based on the feedback and your own insights. The revised designs rated in the top five by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
 		 	</p>
 			<p style="font-size:16px"><br>
-			<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
+			<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blank"> See my initial design and feedback</a>
+
+			<a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blank"> View feedback</a>
+			
 			</p>
 		 	</span>   
   		</div>

@@ -268,7 +268,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 				 <textarea id="mainChange" name="mainChange" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>	
 			</div>
 
-			<div class="sub_frame" id="div-feedback" name="div-feedback">			
+			<div class="sub_frame" id="div-feedback" name="div-feedback" style='display:none'>			
 				<h4 class="nquestion_text"><strong> 7. How useful was the feedback received from the independent reviewers for improving your initial design?
 				
 			 	</strong> </h4>				
@@ -313,7 +313,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 				include('final_reflection_question8.php');
 
 			if ($group=="control")
-				include('control_question.php');
+				include('final_feedback_question7.php');
 
 			?>
 
