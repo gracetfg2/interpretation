@@ -238,9 +238,11 @@ function changePage(page, oldPage)
         btn_finish.style.display ="none";
     }
     
+    var newLabel = "explain" + page + "-" + $('#fid'+page).val();
+    var oldLabel = "explain" + oldPage + "-" + $('#fid'+oldPage).val();
     if(page != oldPage)
-        notifyHidden("explain".concat(oldPage).concat("-").concat(oldPage));
-        notifyVisible("explain".concat(page).concat("-").concat(page));
+        notifyHidden(oldLabel);
+    notifyVisible(newLabel);
 }
 
 function numPages()
