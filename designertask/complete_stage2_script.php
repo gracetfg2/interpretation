@@ -80,7 +80,7 @@ $isOkay=1;
 	$control_useful=$_POST['control_useful'];
 
 	$explain_useful=$_POST['explain'];
-	$explain_selfexplain=$_POST['selfexplain'];	
+	$explain_selfexplain=$_POST['ex_selfexplain'];	
 
     $stmt->bind_param("isiisiiiissssiis", $designer_id,$subject_group,$confidence,$time,$effort, $quality, $degreeOfChange, $feedback_useful, $reflection_useful, $explain_revision,$explain_reflectionuse,	$explain_feedbackuse,$explain_process, 	$control_useful, $explain_useful, $explain_selfexplain);
  	$success = $stmt->execute();

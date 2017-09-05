@@ -31,5 +31,5 @@
 
 
 <div class="sub_frame" id="div-ex-selfexplain" name="div-ex-selfexplain"><h4 class="nquestion_text"><strong> 8. Please briefly explain your rating given to question 7. </strong> </h4>
-	 <textarea id="selfexplain" name="selfexplain" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_selfexplain, ENT_QUOTES); ?></textarea>	
+	 <textarea id="ex_selfexplain" name="ex_selfexplain" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_selfexplain, ENT_QUOTES); ?></textarea>	
 </div>
