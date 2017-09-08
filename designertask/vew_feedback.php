@@ -27,11 +27,11 @@ session_start();
         mysqli_stmt_execute($stmt1);
         $result = $stmt1->get_result();
         $design = $result->fetch_assoc();
-        echo "wawawawawa=".$design['DesignID'];
+        //echo "wawawawawa=".$design['DesignID'];
             //**************** Get Feedback ****************
             if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
                 mysqli_stmt_bind_param($stmt2, "ii", $design['DesignID'], $ok_to_use);
-                echo "wawawawawa=".$design['DesignID'];
+                //echo "wawawawawa=".$design['DesignID'];
                 mysqli_stmt_execute($stmt2);
                 $result = $stmt2->get_result();
                 while ($myrow = $result->fetch_assoc()) {
@@ -57,7 +57,7 @@ session_start();
 
 
     $file= $dfolder.$design['file']; 
-    echo $file;
+    //echo $file;
     mysqli_close($conn);
 ?>
 
@@ -81,7 +81,7 @@ session_start();
 
 
 <body>
-    <?php include('../webpage-utility/ele_nav.php');?>
+  
 
     <div class="container" style="line-height: 2em;">
 

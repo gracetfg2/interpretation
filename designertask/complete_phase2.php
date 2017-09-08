@@ -446,7 +446,7 @@ function submit() {
     if( $('#mainChange').val() == "" ){
        $('#mainChange').parents('.sub_frame:first').addClass("has-error");
         isOkay = false;
-
+ 		alert('mainChange');
     }
 
 	if($("#ex_feedback").length){
@@ -455,6 +455,7 @@ function submit() {
 	    if( $('#ex_feedback').val() == "" ){
 	       $('#ex_feedback').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
+	           alert('ex_feedback');
 	    }
 	}
 
@@ -464,6 +465,7 @@ function submit() {
 	    if( $('#ex_explain').val() == "" ){
 	       $('#ex_explain').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
+	         alert('ex_explain');
 	    }
 	}
 
@@ -472,6 +474,7 @@ function submit() {
 	    if( $('#ex_reflection').val() == "" ){
 	       $('#ex_reflection').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
+	        alert('ex_reflection');
 	    }
 	}
 	if(isOkay==true){
