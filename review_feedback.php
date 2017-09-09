@@ -11,7 +11,6 @@
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
 	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
-    //CloseConnection_Util($conn);
 ?>
 <html lang="en">
     <head>
@@ -66,9 +65,29 @@
         }
         echo"
             <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
-            <div class=\"container\">";
+            <div class=\"container\">
+            
+                <h1>Review Your Feedback:</h1>
+                <p>Below is all of the feedback you have written for designs. Good work!</p>
+                <table class=\"table table\">
+                        <thead>
+                          <tr>
+                            <th>Design</th>
+                            <th>Your Feedback</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                ";
                 foreach($results as $res) {
-                    echo"
+                        echo "   
+                          <tr>
+                            <td><img src=\"". $res[0] ."\" class=\"img-responsive\"></td>
+                            <td><p class=\"text-center\">
+                                ". $res[1] ."
+                            </p></td>
+                          </tr>
+                        ";
+                    /*echo"
                     <div class=\"row box\">
                         <div class=\"col-md-6\">
                             <img src=\"". $res[0] ."\" class=\"img-responsive\">
@@ -78,9 +97,11 @@
                                 ". $res[1] ."
                             </p>
                         </div>
-                    </div>";
+                    </div>";*/
                 }
         echo"
+                    </tbody>
+                </table>
             </div>
         ";
         
