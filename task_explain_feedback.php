@@ -100,7 +100,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
                 <li style="text-indent:20px"><b>Layout and composition </b>of the visual elements in the design.</li>
                 <li style="text-indent:20px"><b>Aesthetics</b> of the design such as the color, font, and imagery choices.</li>
             </ol>
-        To prepare you write feedback, we want you to review a sample design and its feedback from professional designers. After the practice task, you will review the actual design.<br><br>
+        To prepare you write feedback, we want you to read others' feedback and complete a practice task. After that, you will review the actual design.<br><br>
 
     	<div id="turker-div" name="turker-div"><strong> Enter your MTurk ID to start :</strong> <input type="text" id="turkerID" name="turkerID"><em style="color:red;"> (required)*</em>
     	<p><em style="color:grey">This is for the purpose of payment. </em></p>
@@ -120,7 +120,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
                 <div class='row'>
                         <div class='col-md-8'> 
                              <p> 
-                            In the practice task, you will read three pieces of feedback given to the sample design on the right. Each feedback covers one aspect of the three feedback categories. We want you to read each sentence out loud and restate its meaning using your own words. You may imagine that you are explaining the feedback to the designer. You need to write your explanation in the textbox. The response should not skip any suggestions mentioned in the feedback.
+                            In the practice task, you will read three pieces of feedback given to the sample design on the right. Each feedback covers one aspect of the three feedback categories. We want to learn more about how designers read and learn from sample feedback, as well as what makes some sample feedback better than others.
+
+                            <br><br>For each piece of feedback, you need to read each sentence out loud and restate its meaning using your own words. You may imagine that you are explaining the feedback to the designer. You need to write your explanation in the textbox. The response should not skip any suggestions mentioned in the feedback.
                             </p> 
 
                              <p>The design is addressing the following design brief:</p>
