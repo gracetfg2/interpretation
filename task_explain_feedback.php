@@ -103,7 +103,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
         To prepare you write feedback, we want you to read others' feedback and complete a practice task. After that, you will review the actual design.<br><br>
 
     	<div id="turker-div" name="turker-div"><strong> Enter your MTurk ID to start :</strong> <input type="text" id="turkerID" name="turkerID"><em style="color:red;"> (required)*</em>
-    	<p><em style="color:grey">This is for the purpose of payment. </em></p>
+    	<p><em style="color:grey">This is for the purpose of payment. We have multiple batches for this task but you can only participate once. Multiple submissions will be rejected and impact your approval rate</em></p>
     	</div>
 	   </div><!---->
 
