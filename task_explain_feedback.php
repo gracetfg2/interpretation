@@ -439,7 +439,7 @@ function prevPage()
         changePage(current_page);
     }
 }
-
+var review_finish='';
 
 function nextPage()
 {
@@ -452,6 +452,11 @@ function nextPage()
         if (current_page < numPages()) {
         current_page++;
         changePage(current_page);
+        }
+
+        if(current_page==3)
+        {
+            review_finish= (new Date()).getTime();
         }
     }
     else if( counting( $('#f'+current_page).val() )<=1) 
@@ -524,10 +529,16 @@ function numPages()
 }
 
 var review_start="";
-var review_flag=false;
+var review_flag=true;
 
 function startReview(){
-    review_start= (new Date()).getTime();
+    
+    if(review_flag==true)
+    {
+        review_start= (new Date()).getTime();
+        review_flag=false;
+    }
+
     $("#reviewbtn").hide();
     $("#task").show();
     changePage(1);
@@ -653,7 +664,7 @@ function submitresult() {
       $("#response-form [name=_f3]").val( $("#f3").val() );
       $("#response-form [name=_mid]").val( $("#turkerID").val() );
       $("#response-form [name=reviewDesignTime]").val( (review_start - hitStartTime)/1000) ;    
-      $("#response-form [name=prepareTime]").val(( annoStartTime - hitStartTime)/1000);
+      $("#response-form [name=prepareTime]").val(( review_finish - review_start)/1000);
       $("#response-form [name=taskTime]").val( ((new Date()).getTime() - hitStartTime)/1000 );
       $("#response-form [name=numberOfPause]").val(pauseCount);
       $("#response-form [name=action_plan_time]").val( ( ( new Date() ).getTime() - action_plan_start)/1000 );
