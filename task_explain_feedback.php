@@ -120,7 +120,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
                 <div class='row'>
                         <div class='col-md-8'> 
                              <p> 
-                            In the practice task, you will read three pieces of feedback given to the sample design on the right. Each feedback covers one aspect of the three feedback categories. We want to learn more about how designers read and learn from sample feedback, as well as what makes some sample feedback better than others.
+                            In the practice task, you will read three pieces of feedback given to the sample design on the right. Each feedback covers one aspect of the three feedback categories (concept, layout, and aesthetics). We want to learn more about how designers read and learn from sample feedback, as well as what makes some sample feedback better than others.
 
                             <br><br>For each piece of feedback, you need to read each sentence out loud and restate its meaning using your own words. You may imagine that you are explaining the feedback to the designer. You need to write your explanation in the textbox. The response should not skip any suggestions mentioned in the feedback.
                             </p> 
