@@ -198,7 +198,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
                
                 <div class="alert alert-info" id="instruction">
                     <h3>Feedback Task</h3> 
-                     Now, please review the flyer design below and provide your feedback. Your feedback should span the three categories: overall concept, layout and composition, and the aesthetics of the design. For each category, you need to address both strengths (what you like) and weaknesses (what you don’t like) about that category of the design.    Responses that demonstrate insufficient effort or overly positive/negative will be rejected.
+                     Now, please review the following design addressing the same design brief and provide your feedback. Your feedback should span the three categories: overall concept, layout and composition, and the aesthetics of the design. For each category, you need to address both strengths (what you like) and weaknesses (what you don’t like) about that category of the design.    Responses that demonstrate insufficient effort or overly positive/negative will be rejected.
                 </div><!---->
 
                     <div class='row'>
