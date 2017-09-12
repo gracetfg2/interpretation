@@ -152,8 +152,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
     <div id="task" style="display:none">
         <div id="p1" >
             <div class='row'>
+            <h4> (#1) Concept of the design: </h4> 
                 <div class='col-md-6'>
-                <feedback><h4> (#1) Concept of the design: </h4>  Ok, so: "Smooth Digital! Cool, but, uh... Do we know them? Are they a band? What do they play?". Careful when the only giveaway that we are talking about a music show is the Sax player in the background, and right now he is more like a decoration than a proper element of the piece. Also you are taking away the main selling point of the event, we want to make profit by making a remark that this is a Charity event. Remember this is something that moves people to be there, that's why Charity drives always put that info upfront!
+                <feedback> Ok, so: "Smooth Digital! Cool, but, uh... Do we know them? Are they a band? What do they play?". Careful when the only giveaway that we are talking about a music show is the Sax player in the background, and right now he is more like a decoration than a proper element of the piece. Also you are taking away the main selling point of the event, we want to make profit by making a remark that this is a Charity event. Remember this is something that moves people to be there, that's why Charity drives always put that info upfront!
                <br> Strengths: Strong and clean poster if Smooth Digital is a immediately recognizable brand.
                 <br>Weaknesses: Lacks key info: Charity event as a main information, and that we are talking about a Jazz band.</feedback>
                 </div>
@@ -167,8 +168,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 
         <div id="p2" style="display:none">
             <div class='row'>
+            <h4>(#2) Layout and composition: </h4>
             <div class='col-md-6'>
-                <feedback><h4>(#2) Layout and composition: </h4>Great display on the information, it's the thing that pops out from it. But be careful not to block the view from the sax player, it's not entirely clear he's playing sax, and the cleanest way to save that is either taking the date and ticket price lower on the poster, right above the bottom info. Or lower the size of the sax player so he doesn't go behind the text.
+                <feedback>Great display on the information, it's the thing that pops out from it. But be careful not to block the view from the sax player, it's not entirely clear he's playing sax, and the cleanest way to save that is either taking the date and ticket price lower on the poster, right above the bottom info. Or lower the size of the sax player so he doesn't go behind the text.
                 <br>Strengths: See that triangle shape the text makes? That helps with the readability of the poster. Gives the person a direction to their sight and the info presented. Remember that when adding the missing info.
                 <br>Weaknesses: Sax player almost unrecognizable behind letters, best to keep him clear.</feedback>
                 </div>
@@ -181,8 +183,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT ProviderID From u_Provider WHERE IP = 
 
             <div style="display:none" id="p3">
             <div class='row'>
+            <h4> (#3) Aesthetics of the design: </h4>
                 <div class='col-md-6'>
-                <feedback><h4> (#3) Aesthetics of the design: </h4>Besides having the sax player on full display, he can be brought up with a bit of color (as long as the attention doesn't shift to him, just enough to make him more recognizable), just stick to your color scheme so far. You can try just shadowing him with the blue like in "Smooth Digital", something discrete that makes him pop.
+                <feedback>Besides having the sax player on full display, he can be brought up with a bit of color (as long as the attention doesn't shift to him, just enough to make him more recognizable), just stick to your color scheme so far. You can try just shadowing him with the blue like in "Smooth Digital", something discrete that makes him pop.
                 <br> Strengths: Color Scheme. Use those yellows for relevant information. But see that the contrast in "Smooth Digital" works perfectly the way it is.
                 <br> Weaknesses: Sax player almost blends with dark background. A small accent or change in color can bring him up without hoarding all the attention.</feedback>
                 </div>
