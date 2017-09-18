@@ -36,7 +36,7 @@
 
 <div class="sub_frame" id="div-difference" name="div-difference">			
 		<h4 class="nquestion_text"><strong> 
-		11. How would you rate the difference between the two tasks, restating and reflection on the feedback? 		
+		11. How would you rate the difference between the two tasks, restating the meaning of the feedback versus reflection on the feedback? 		
 				
 			 </strong> </h4>				
 				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">
