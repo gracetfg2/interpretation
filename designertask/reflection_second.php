@@ -138,7 +138,7 @@ $_SESSION['designer_group']= $designer['group'];
             <h3>Reflect on the Feedback</h3>
              <p>After reviewing the feedback, we want you to reflect on the set of feedback by answering the following questions. After that, please click "Submit" to go to the next step.</p>
             <br>
-            <p style="font-size:16px"><br>
+            <p style="font-size:16px">
     <a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
     </p>
          </div><!--End alert section for instruction-->
