@@ -95,8 +95,7 @@ $_SESSION['designer_group']= $designer['group'];
                 $myrow = $result2->fetch_assoc();
                 $breaks = array("<br />");  
                 $reflection_content = str_ireplace ($breaks, "\r\n", $myrow['content']);
-                $feel = str_ireplace ($breaks, "\r\n", $myrow['feel']);
-                $strength = str_ireplace ($breaks, "\r\n", $myrow['strength']);
+                
     }   
     else {
     //No Designs found
@@ -136,25 +135,70 @@ $_SESSION['designer_group']= $designer['group'];
 
         <div class="alert alert-info" id="instruction">
             <h3>Reflect on the Feedback</h3>
-             <p>After reviewing the feedback, we want you to reflect on the set of feedback by answering the following questions. After that, please click "Submit" to go to the next step.</p>
+             <p>Before revising your design, we want you to reflect on the set of feedback you just reviewed and generate an action plan for improving your design. Also, please rate the usefulness of each piece of feedback for improving your design. After that, please click "Submit" to go to the next step.</p>
             <br>
                <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
 
-<div id='task'>
+        <div id="task">
+            <?php
+            include('feedback_list.php');
+
+            if(count($feedback)<1){
+                echo "<div style='text-align:center'><p>Your feedback is not ready yet, please contact Grace Yen at <em>design4uiuc@gmail.com</em></p></div>";
+    
+            }else{
+
+                echo "<table class='table table-hover table-nonfluid'>";
+                echo " <thead><tr>
+                <td width='5%'></td>
+                <td width='60%' align='left'><strong>Your Response</strong></td>
+               
+                </tr></thead> <tbody>";
+
+                $feedbackNum = 0;
+                foreach ($feedback as $value)
+                {
+                    $feedbackNum += 1;
+
+                    $content=htmlspecialchars($value['interpretation']);
+                    $original=htmlspecialchars($value['edited_content']);
+                   // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
+
+                    echo "<tr id='div-".$value['FeedbackID']."' >
+                            <td><strong>#".$feedbackNum."</strong></td>
+                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
+
+
+                            <div class='collapse' id='collapseExample".$feedbackNum."'>  
+                                <div class='card card-block'>
+                                ".nl2br($original)."
+                                </div>
+                             </div>
+                             </div>
+                            </td>  
+
+          
+                   
+                    </tr>";
+
+                }
+                echo "</tbody></table>";
+
+            }
+               
+                
+            ?>
+         
+         <div style="border-radius:10px;background-color:#ffffe6; padding:30px">
                      
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I feel about the feedback: </h4><textarea id="monitoredtext" monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
-        <br>
-
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What did I do particularly well on the design? </h4><textarea id="monitoredtext" monitorlabel="reflection-strength" rows="4"><?php echo htmlspecialchars($strength);?></textarea>
-        <br>
-
-         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, what actions could I take to improve my Ddesign? </h4><textarea id="monitoredtext" monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
-        <br>
-</div>
-        <div style="text-align:center;margin-top:20px;" >
-        <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>
-
+                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you will take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+                    <br>
+                  <div style="text-align:center;margin-top:20px;" >
+                    <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>
+           
+        </div>
  
 <input type="hidden" name="design_id" id="design_id" value="<?php echo $design_id;?>">
           
@@ -182,31 +226,21 @@ function nextPage()
 }
     
 function submit() {
-
-    var isOkay=true;
-
-
-    $('[id=monitoredtext]').each(function() {   // For each monitored text field...
-        var text = $(this).val();       
-        if(countWords(text) < 20) {           
-             isOkay=false;
-        }
-    });
-
-
-    if(isOkay==false) {
-        window.alert("Please provide more detailed responses.");
+    var contentVal = $('#monitoredtext').val();
+    if(countWords(contentVal) < 30) {
+        window.alert("Please provide a longer reflection for the feedback!");
     }
     else {
         var json = outputJSON();
         var designId=$('#design_id').val();
         post('save_task.php', {
+            content: contentVal,
             designIdx: designId,
             jsonGlobals: json[0],
             jsonTextareas: json[1],
             jsonRating: json[2],
             originPage: "reflection.php",
-            redirect: "rating.php"
+            redirect: "second_stage.php"
         });
     }
 }

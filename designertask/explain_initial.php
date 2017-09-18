@@ -106,12 +106,17 @@ $ok_to_use=1;
     <div class="container">
 
         <div class="alert alert-info" id="instruction">
-            <h3>Instructions</h3>
-               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
+            <h3>Review Feedback</h3>
+               <p>We have collected feedback from two independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
 
-               <br><br>We want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. You should write your explanation in the textbox. Your response should cover all the suggestions whether you agree or not.  Responses that demonstrate insufficient effort will be rejected. 
-               <br><br>
-              Copy and paste functions are disabled on the task pages. Please spend around 15 minutes reviewing all the three feedback. 
+               <br><br>For each piece of feedback, we want you to:
+                <ul>
+                    <li>Read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. 
+                    <li>Write your explanation in the textbox under the feedback. Your response should only contain your explanation of the feedback, do not write your action plans or any other thoughts in there. Also, you should not skip any sentence in the feedback. Responses that demonstrate insufficient effort will be rejected. 
+                </ul>
+
+                <br>
+              Note: Copy and paste functions are disabled on the task pages. Please spend around 5 minutes reviewing each piece of feedback. 
             <br> <br>
                <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->

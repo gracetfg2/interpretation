@@ -268,36 +268,6 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 				 <textarea id="mainChange" name="mainChange" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>	
 			</div>
 
-			<div class="sub_frame" id="div-feedback" name="div-feedback" style='display:none'>			
-				<h4 class="nquestion_text"><strong> 7. How useful was the feedback received from the independent reviewers for improving your initial design?
-				
-			 	</strong> </h4>				
-				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">
-					<tr aria-hidden="true">
-						<td  class="radio-label" style="width: 140px"></td>
-						<td><label class="radio-cell">1</label></td> 
-						<td><label class="radio-cell">2</label></td> 
-						<td><label class="radio-cell">3</label></td> 
-						<td><label class="radio-cell">4</label></td>
-						<td><label class="radio-cell">5</label></td> 
-						<td><label class="radio-cell">6</label></td>
-						<td><label class="radio-cell">7</label></td>  
-						<td  class="radio-label" style="width: 140px"></td>
-					</tr>
-					
-					<tr>
-					<td class="radio-label" style="width: 60px" >Not Useful</td>
-					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback1" value="1" <?php if ($feedback_useful==1) echo 'checked'?> ></td>
-					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback2" value="2"<?php if ($feedback_useful==2) echo 'checked'?>></td>
-					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback3" value="3" <?php if ($feedback_useful==3) echo 'checked'?>></td>
-					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback4" value="4" <?php if ($feedback_useful==4) echo 'checked'?>></td>
-					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback5" value="5" <?php if ($feedback_useful==5) echo 'checked'?>></td>
-					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback6" value="6" <?php if ($feedback_useful==6) echo 'checked'?>></td>
-					<td class="radio-cell"><input type="radio" class="radio-inline" name="feedback" id="feedback7" value="7" <?php if ($feedback_useful==7) echo 'checked'?>></td>
-					<td class="radio-label" style="width: 200px">Very Useful</td>		
-					</tr>
-					</table>
-			</div>
 
 			<?php
 
@@ -386,15 +356,20 @@ function submit() {
 
 	    if ($("input[name='confidence']:checked").size() == 0 ) {
            isOkay = false;
+
+
+            console.log("1");
            $("#div-confidence").addClass("has-error");
         }
 
         if ($("input[name='effort']:checked").size() == 0 ) {
           isOkay = false;
+           console.log("2");
            $("#div-effort").addClass("has-error");			
         }
         if ($("input[name='design_quality']:checked").size() == 0 ) {
           isOkay = false;
+           console.log("3");
            $("#div-quality").addClass("has-error");
 			
         }
@@ -404,9 +379,12 @@ function submit() {
 		{
 		   if ($("input[name='feedback']:checked").size() == 0 ) {
           		isOkay = false;
+          		 console.log("4");
            		$("#div-feedback").addClass("has-error");
 			
        		 }
+
+
 		}
 
 
@@ -414,6 +392,7 @@ function submit() {
 			
 			if ($("input[name='reflection']:checked").size() == 0 ) {
           	isOkay = false;
+          	 console.log("5");
           	$("#div-reflection").addClass("has-error");
 			
           }
@@ -424,6 +403,7 @@ function submit() {
 			
 			if ($("input[name='explain']:checked").size() == 0 ) {
           	isOkay = false;
+          	 console.log("6");
           	$("#div-explain").addClass("has-error");
 			
           }
@@ -432,12 +412,14 @@ function submit() {
 		$('input#time').val($.trim($('input#time').val() )  );		
 		if ($('input#time').val() == "") {
 			  isOkay = false;
+			   console.log("7");
 			  $("#div-time").addClass("has-error");
 			
 		}
 
 		if ($("input[name='degreeOfChange']:checked").size() == 0 ) {
           isOkay = false;
+           console.log("8");
            $("#div-revision").addClass("has-error");
 			
         }
@@ -446,15 +428,17 @@ function submit() {
     if( $('#mainChange').val() == "" ){
        $('#mainChange').parents('.sub_frame:first').addClass("has-error");
         isOkay = false;
+         console.log("9");
  		alert('mainChange');
     }
 
-	if($("#ex_feedback").length){
+	if($("#ex_feedback").length) {
 				
 	    $('#ex_feedback').val($.trim($('#ex_feedback').val() ) ); 
 	    if( $('#ex_feedback').val() == "" ){
 	       $('#ex_feedback').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
+	         console.log("10");
 	           alert('ex_feedback');
 	    }
 	}
@@ -465,6 +449,7 @@ function submit() {
 	    if( $('#ex_explain').val() == "" ){
 	       $('#ex_explain').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
+ console.log("11");
 	         alert('ex_explain');
 	    }
 	}
@@ -474,9 +459,13 @@ function submit() {
 	    if( $('#ex_reflection').val() == "" ){
 	       $('#ex_reflection').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
+	         console.log("12");
 	        alert('ex_reflection');
 	    }
 	}
+
+	console.log("isOkay="+isOkay);
+
 	if(isOkay==true){
 		$("#complete_form").submit();
 		
