@@ -149,7 +149,7 @@ switch ($stage){
 	 				4) ".$inst_reflect." <br>
 	 				5) ".$inst_complete." <br>
 	 				</p>";
-				$next_page="explain.php";
+				$next_page="explain_initial.php";
 				break;
 	 		case 'control':
 	 			echo "<p>	 				

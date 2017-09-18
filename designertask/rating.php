@@ -135,7 +135,7 @@ $_SESSION['designer_group']= $designer['group'];
 
         <div class="alert alert-info" id="instruction">
             <h3>Rate the Feedback</h3>
-             <p>Please rate the usefulness of the feedback.</p>
+             <p>Please rate the usefulness of the feedback. You may want to consider the degree to which the feedback is helpful for improving the design or gaining insight. Also, you may disregard any feedback that is outside the scope of the design brief.</p>
             <br>
                <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See design description and my initial design</a>
          </div><!--End alert section for instruction-->
@@ -152,7 +152,7 @@ $_SESSION['designer_group']= $designer['group'];
                 echo "<table class='table table-hover table-nonfluid'>";
                 echo " <thead><tr>
                 <td width='5%'></td>
-                <td width='60%' align='left'><strong>Your Response</strong></td>
+                <td width='60%' align='left'><strong>Feedback</strong></td>
                 <td width='35%' align='center'><strong>Perceived Quality</strong></td>
                 </tr></thead> <tbody>";
 

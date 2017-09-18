@@ -47,11 +47,14 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 	$feedback_useful=$designer['feedback_useful']; 
 	$reflection_useful=$designer['reflection_useful'];
 
+	$difference_rating=$designer['difference_rating'];
+
 	$control_useful=$designer['control_useful'];  
 	
 	$breaks = array("<br />");  
 	$explain_process = str_ireplace ($breaks, "\r\n", $designer['explain_process']);
 	$explain_revision = str_ireplace ($breaks, "\r\n", $designer['explain_revision']);
+	$explain_difference= str_ireplace ($breaks, "\r\n", $designer['explain_difference']);
 		
 	$explain_reflectionuse = str_ireplace ($breaks, "\r\n", $designer['explain_reflectionuse']);
 	$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
@@ -332,6 +335,10 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 		   $("#div-feedback").removeClass("has-error");
 	})
 
+	$('input[type=radio][name=difference]').change(function(){
+		   $("#div-difference").removeClass("has-error");
+	})
+
 	$('input[type=radio][name=reflection]').change(function(){
 		   $("#div-reflection").removeClass("has-error");
 	}) 
@@ -357,7 +364,6 @@ function submit() {
         if ($("input[name='design_quality']:checked").size() == 0 ) {
           isOkay = false;
            $("#div-quality").addClass("has-error");
-			
         }
 
 
@@ -370,14 +376,19 @@ function submit() {
        		 }
 		}
 
-
-		if($("input[name='reflection']").length){
-			
+		if($("input[name='reflection']").length){			
 			if ($("input[name='reflection']:checked").size() == 0 ) {
           	isOkay = false;
-          	$("#div-reflection").addClass("has-error");
-			
+          	$("#div-reflection").addClass("has-error");			
           }
+		}
+
+		if($("input[name='difference']").length){			
+			if ($("input[name='difference']:checked").size() == 0 ) {
+          		isOkay = false;
+          		console.log(difference);
+          		$("#div-difference").addClass("has-error");	
+          	}
 		}
 
 		$('input#time').val($.trim($('input#time').val() )  );		
@@ -408,6 +419,16 @@ function submit() {
 	        isOkay = false;
 	    }
 	}
+
+	if($("#ex_reflection").length){
+				
+	    $('#ex_reflection').val($.trim($('#ex_reflection').val() ) ); 
+	    if( $('#ex_reflection').val() == "" ){
+	       $('#ex_reflection').parents('.sub_frame:first').addClass("has-error");
+	        isOkay = false;
+	    }
+	}
+
 	if($("#ex_reflection").length){
 	    $('#ex_reflection').val($.trim($('#ex_reflection').val() ) ); 
 	    if( $('#ex_reflection').val() == "" ){

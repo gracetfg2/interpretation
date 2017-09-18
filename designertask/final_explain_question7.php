@@ -1,5 +1,5 @@
 <div class="sub_frame" id="div-explain" name="div-explain">			
-		<h4 class="nquestion_text"><strong> 7. How useful was restating the meaning of the feedback for understanding that feedback?
+		<h4 class="nquestion_text"><strong> 7. How useful was the task that asked you to restate the meaning of the feedback for understanding that feedback?
 				
 			 </strong> </h4>				
 				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">

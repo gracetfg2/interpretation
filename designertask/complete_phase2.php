@@ -65,6 +65,10 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 	$explain_selfexplain = str_ireplace ($breaks, "\r\n", $designer['explain_selfexplain']);
 	//$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
 
+	$difference_rating=$designer['difference_rating']; 
+
+	$explain_difference=$designer['explain_difference']; 
+
 
 	mysqli_stmt_close($stmt);
 
@@ -119,15 +123,13 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
  <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
 
 <div class="main-section">
-	<div class="container " style="padding-top:30px">
+	<div class="container" style="padding-top:30px">
 
 
 
 		<form class="form-horizontal" name="complete_form" id="complete_form" method="post" action="complete_stage2_script.php" enctype="multipart/form-data">
 		
-
-
-		<div class="alert alert-success" style="width:80%;margin:0px auto;padding-right:70px;;padding-left:70px;">
+		<div class="alert alert-success" style="width:90%;margin:0px auto; padding-right:70px;;padding-left:70px;">
 		<h3>Awesome! This is the final step to complete the study </h3>
 		<p style="font-size:16px">Please complete the following survey by <span style='color:red'><?php echo $designer_info['second_deadline'];?></span>, and then you are done with the study. If your design ranks in the top five, we will contact you. Your survey answers will NOT affect the compensation. </p>
 		</div>
@@ -136,8 +138,12 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 					  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 					  Please fill out the empty answers.
 		</div>
-			
-			
+		<div style='height: 20px'></div>
+		<div class="alert alert-warning" role="alert" style="width:90%;margin:0px auto;padding-right:70px;">
+		<h4><strong>Part I : </strong> Questions about your final design and the change between the initial and the revised design.</h4>
+		</div>			
+
+
 			<div class="sub_frame" id="div-time" name="div-time">
 				<h4 class="nquestion_text"><strong> 1. How many minutes did you spend revising the flyer? </strong> </h4>			
 			      <input type="text" class="form-control" name="time" id="time" placeholder="e.g. 50 minutes" maxlength="30" value='<?php print htmlspecialchars($time, ENT_QUOTES); ?>'> 
@@ -268,6 +274,9 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 				 <textarea id="mainChange" name="mainChange" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>	
 			</div>
 
+		<div class="alert alert-warning" role="alert" style="width:90%;margin:0px auto;padding-right:70px;">
+		<h4><strong>Part II : </strong> Questions about the activities you experienced in the design process.</h4>
+		</div>	
 
 			<?php
 
@@ -333,12 +342,20 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
     	$('#div-ex-reflection').removeClass("has-error");
 	});
 
+	$("#ex_difference").bind("keydown", function(){
+    	$('#div-ex-difference').removeClass("has-error");
+	});
+
 	$('input[type=radio][name=degreeOfChange]').change(function(){
 		   $("#div-revision").removeClass("has-error");
 	})
 
 	$('input[type=radio][name=feedback]').change(function(){
 		   $("#div-feedback").removeClass("has-error");
+	})
+
+	$('input[type=radio][name=difference]').change(function(){
+		   $("#div-difference").removeClass("has-error");
 	})
 
 	$('input[type=radio][name=reflection]').change(function(){
@@ -397,6 +414,17 @@ function submit() {
 			
           }
 		}
+
+		if($("input[name='difference']").length){
+			
+			if ($("input[name='difference']:checked").size() == 0 ) {
+          	isOkay = false;
+          	 console.log("5");
+          	$("#div-difference").addClass("has-error");
+			
+          }
+		}
+
 
 
 		if($("input[name='explain']").length){
@@ -461,6 +489,17 @@ function submit() {
 	        isOkay = false;
 	         console.log("12");
 	        alert('ex_reflection');
+	    }
+	}
+
+
+	if($("#ex_difference").length){
+	    $('#ex_difference').val($.trim($('#ex_difference').val() ) ); 
+	    if( $('#ex_difference').val() == "" ){
+	       $('#ex_difference').parents('.sub_frame:first').addClass("has-error");
+	        isOkay = false;
+	         console.log("13");
+	       
 	    }
 	}
 
