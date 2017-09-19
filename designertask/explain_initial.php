@@ -107,14 +107,11 @@ $ok_to_use=1;
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-               <p>We have collected feedback from two independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
-
-               <br><br>For each piece of feedback, we want you to:
-                <ul>
-                    <li>Read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. 
-                    <li>Write your explanation in the textbox under the feedback. Your response should only contain your explanation of the feedback, do not write your action plans or any other thoughts in there. Also, you should not skip any sentence in the feedback. Responses that demonstrate insufficient effort will be rejected. 
-                </ul>
-
+            <p>We have collected feedback from two independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
+            </p>
+            <p>
+               We want to learn more about how designers read and learn from feedback, as well as what makes some feedback better than others. For each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. Please write your explanation in the textbox under the feedback. Your response should cover all the sentences in the feedback. The feedback providers will read your responses, reflect on it, and improve the way they provide feedback in the future.             
+               </p>
                 <br>
               Note: Copy and paste functions are disabled on the task pages. Please spend around 5 minutes reviewing each piece of feedback. 
             <br> <br>
