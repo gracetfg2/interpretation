@@ -84,7 +84,33 @@ foreach($textareaInfo as $label => $textbox) {
     $stmt->execute();
     mysqli_stmt_close($stmt);
 
-    if( $label =="reflection")
+    if($label =="reflection-feel")
+    {
+        if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, feel) VALUES (?, ?, ?)
+        ON DUPLICATE KEY UPDATE
+        feel = VALUES(feel)"))) {
+            echo "SendData Reflection prepare failed: (" . $conn->errno . ") " . $conn->error;
+        }
+        $content= $textbox->content;
+        $stmt->bind_param("iis", $designerID, $designID, $content);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+   
+    }
+    else if( $label =="reflection-strength")
+    {
+        if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, strength) VALUES (?, ?, ?)
+        ON DUPLICATE KEY UPDATE
+        strength = VALUES(strength)"))) {
+            echo "SendData Reflection prepare failed: (" . $conn->errno . ") " . $conn->error;
+        }
+        $content= $textbox->content;
+        $stmt->bind_param("iis", $designerID, $designID, $content);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+   
+    }
+    else if( $label =="reflection-action")
     {
         if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, content) VALUES (?, ?, ?)
         ON DUPLICATE KEY UPDATE
@@ -94,10 +120,9 @@ foreach($textareaInfo as $label => $textbox) {
         $content= $textbox->content;
         $stmt->bind_param("iis", $designerID, $designID, $content);
         $stmt->execute();
-        mysqli_stmt_close($stmt);
-   
+        mysqli_stmt_close($stmt);  
     }
-    else
+    else 
     {
 
         $split = explode("-",  $label);

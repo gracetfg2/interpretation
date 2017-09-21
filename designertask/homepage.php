@@ -149,8 +149,7 @@ switch ($stage){
 	 				4) ".$inst_reflect." <br>
 	 				5) ".$inst_complete." <br>
 	 				</p>";
-				//$next_page="explain_initial.php";
-                $next_page="explain.php";
+				$next_page="explain_initial.php";
 				break;
 	 		case 'control':
 	 			echo "<p>	 				
@@ -158,7 +157,7 @@ switch ($stage){
 	 				 2) ".$inst_design." <br>
 	 				 3) ".$inst_complete." <br>
 	 				</p>";
-				$next_page="second_stage.php";
+				$next_page="feedback.php";
  				break;
 			default:
 				echo "Something Goes wrong";die();

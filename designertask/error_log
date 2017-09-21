@@ -1,0 +1,4 @@
+[02-Sep-2017 02:58:59 UTC] PHP Fatal error:  Cannot use [] for reading in /home/crowdsight/public_html/interpretation/designertask/explain_initial.php on line 122
+[02-Sep-2017 03:00:23 UTC] PHP Fatal error:  Cannot use [] for reading in /home/crowdsight/public_html/interpretation/designertask/explain_initial.php on line 122
+[02-Sep-2017 03:03:13 UTC] PHP Fatal error:  Cannot use [] for reading in /home/crowdsight/public_html/interpretation/designertask/explain_initial.php on line 122
+[02-Sep-2017 03:25:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/crowdsight/public_html/interpretation/designertask/explain_initial.php on line 123

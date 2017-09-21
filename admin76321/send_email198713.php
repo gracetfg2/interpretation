@@ -7,7 +7,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
 include_once('../webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
-$current_second_deadline='August 18th at 5 pm (Central Time)';
+$current_second_deadline='September 20th at 11:59 pm (Central Time)';
 
 	$sql="SELECT * FROM u_Designer WHERE DesignerID=?";
 	if($stmt=mysqli_prepare($conn,$sql))
@@ -28,7 +28,7 @@ $current_second_deadline='August 18th at 5 pm (Central Time)';
     <body>
     <h3>
     Hi '.$designer['name'].',</h3>
-<p style="font-size:14px"> In the second phase, you have to revise your initial design to better achieve the stated design goal. Please login to our design platform (http://review-my-design.org/reflection/index.php) and complete the second phase of our study by '.$current_second_deadline.'. More importantly, we hope you enjoy the study! <br>
+<p style="font-size:14px"> In the second phase, you have to revise your initial design to better achieve the stated design goal. Please login to our design platform (http://review-my-design.org/interpretation/index.php) and complete the second phase of our study by '.$current_second_deadline.'. Please block out one hour to finish the stage. More importantly, we hope you enjoy the study! <br>
 
      <br>
     -------------------------------------------<br>
@@ -37,7 +37,7 @@ $current_second_deadline='August 18th at 5 pm (Central Time)';
     --------------------------------------------<br>
     <br>
   
-    Also, the $10 for the first phase of the study has been sent to your Paypal address ('.$designer['paypal'].'). If you have any questions, please contact Grace Yen at '.$admin_email.'.
+  If you have any questions, please contact Grace Yen at '.$admin_email.'.
    When you contact us, please include <b>[ Participant '.$designer['DesignerID'].'] </b>in your email subject. Thank you!<br>
 <br>
     Best Regards,<br>

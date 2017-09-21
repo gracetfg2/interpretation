@@ -48,7 +48,7 @@ session_start();
 		    echo "Error: " .$stmt->error; die();
 	}else
 	{
-		echo "The submission code is <strong>N6SGKUBhs8F6T</strong>. <br>Please copy the code and paste it to the HIT page to receive your compensation. ";
+		echo "The submission code is <strong>H3KUJ1NKAG8</strong>. <br>Please copy the code and paste it to the HIT page to receive your compensation. ";
 
 	}
 	

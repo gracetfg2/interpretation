@@ -106,12 +106,14 @@ $ok_to_use=1;
     <div class="container">
 
         <div class="alert alert-info" id="instruction">
-            <h3>Instructions</h3>
-               <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
-
-               <br><br>We want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. You should write your explanation in the textbox. Your response should cover all the suggestions whether you agree or not.  Responses that demonstrate insufficient effort will be rejected. 
-               <br><br>
-              Copy and paste functions are disabled on the task pages. Please spend around 15 minutes reviewing all the three feedback. 
+            <h3>Review Feedback</h3>
+            <p>We have collected feedback from two independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
+            </p>
+            <p>
+               We want to learn more about how designers read and learn from feedback, as well as what makes some feedback better than others. For each piece of feedback, we want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. Please write your explanation in the textbox under the feedback. Your response should cover all the sentences in the feedback. The feedback providers will read your responses, reflect on it, and improve the way they provide feedback in the future.             
+               </p>
+                <br>
+              Note: Copy and paste functions are disabled on the task pages. Please spend around 5 minutes reviewing each piece of feedback. 
             <br> <br>
                <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->

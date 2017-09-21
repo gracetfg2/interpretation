@@ -95,8 +95,7 @@ $_SESSION['designer_group']= $designer['group'];
                 $myrow = $result2->fetch_assoc();
                 $breaks = array("<br />");  
                 $reflection_content = str_ireplace ($breaks, "\r\n", $myrow['content']);
-                $feel = str_ireplace ($breaks, "\r\n", $myrow['feel']);
-                $strength = str_ireplace ($breaks, "\r\n", $myrow['strength']);
+                
     }   
     else {
     //No Designs found
@@ -135,28 +134,102 @@ $_SESSION['designer_group']= $designer['group'];
     <div class="container" style="line-height: 2em;">
 
         <div class="alert alert-info" id="instruction">
-            <h3>Reflect on the Feedback</h3>
-             <p>After reviewing the feedback, we want you to reflect on the set of feedback by answering the following questions. After that, please click "Submit" to go to the next step.</p>
+            <h3>Rate the Feedback</h3>
+             <p>Please rate the usefulness of the feedback. You may want to consider the degree to which the feedback is helpful for improving the design or gaining insight. Also, you may disregard any feedback that is outside the scope of the design brief.</p>
             <br>
-            <p style="font-size:16px">
+                    <p style="font-size:16px">
     <a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
     </p>
          </div><!--End alert section for instruction-->
 
-<div id='task'>
+        <div id="task">
+            <?php
+            include('feedback_list.php');
+
+            if(count($feedback)<1){
+                echo "<div style='text-align:center'><p>Your feedback is not ready yet, please contact Grace Yen at <em>design4uiuc@gmail.com</em></p></div>";
+    
+            }else{
+
+                echo "<table class='table table-hover table-nonfluid'>";
+                echo " <thead><tr>
+                <td width='5%'></td>
+                <td width='60%' align='left'><strong>Feedback</strong></td>
+                <td width='35%' align='center'><strong>Perceived Quality</strong></td>
+                </tr></thead> <tbody>";
+
+                $feedbackNum = 0;
+                foreach ($feedback as $value)
+                {
+                    $feedbackNum += 1;
+
+                    $content=htmlspecialchars($value['interpretation']);
+                    $original=htmlspecialchars($value['edited_content']);
+                   // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
+
+                    echo "<tr id='div-".$value['FeedbackID']."' >
+                            <td><strong>#".$feedbackNum."</strong></td>
+                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($original)."
+                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read my explanation</a>
+
+
+                            <div class='collapse' id='collapseExample".$feedbackNum."'>  
+                                <div class='card card-block'>
+                                ".nl2br($content)."
+                                </div>
+                             </div>
+                             </div>
+                            </td>  
+
+                <td>
+                <table border='0' cellpadding='5' cellspacing='0' width='100%'>
+                    <tr aria-hidden='true'>
+                        <td  class='radio-label'></td>
+                        <td><label class='radio-cell'>1</label></td> 
+                        <td><label class='radio-cell'>2</label></td> 
+                        <td><label class='radio-cell'>3</label></td> 
+                        <td><label class='radio-cell'>4</label></td>
+                        <td><label class='radio-cell'>5</label></td> 
+                        <td><label class='radio-cell'>6</label></td>
+                        <td><label class='radio-cell'>7</label></td> 
+                        <td  class='radio-label' ></td>
+                    </tr>
+                
+                    <tr>
+                        <td class='radio-label' ><strong>Low</strong></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."1'  value='1' "; if ($value['designer_rating']==1){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."2'  value='2' "; if ($value['designer_rating']==2){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."3'  value='3' "; if ($value['designer_rating']==3){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."4'  value='4' "; if ($value['designer_rating']==4){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."5'  value='5' "; if ($value['designer_rating']==5){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."6'  value='6' "; if ($value['designer_rating']==6){echo "checked ";} echo "></td>
+                        <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."7'  value='7' "; if ($value['designer_rating']==7){echo "checked ";} echo "></td>
+                        <td class='radio-label'><strong>High</strong></td>      
+                    </tr>
+
+                </table>
+                </td>
+                   
+                    </tr>";
+
+                }
+                echo "</tbody></table>";
+
+            }
+               
+                
+            ?>
+         
+         <div style="border-radius:10px;background-color:#ffffe6; padding:30px;display:none">
                      
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I feel about the feedback: </h4><textarea id="monitoredtext" monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
-        <br>
+                    <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, please specify the strength and the weakness of your initial design, and describe what actions you will take to improve your design: </h4><textarea id="monitoredtext" monitorlabel="reflection" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+                    <br>
+                 
+        </div>
 
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What did I do particularly well on the design? </h4><textarea id="monitoredtext" monitorlabel="reflection-strength" rows="4"><?php echo htmlspecialchars($strength);?></textarea>
-        <br>
-
-         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, what actions could I take to improve my Ddesign? </h4><textarea id="monitoredtext" monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
-        <br>
-</div>
-        <div style="text-align:center;margin-top:20px;" >
-        <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>
-
+         <div style="text-align:center;margin-top:20px;" >
+                    <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>
+           
  
 <input type="hidden" name="design_id" id="design_id" value="<?php echo $design_id;?>">
           
@@ -184,41 +257,28 @@ function nextPage()
 }
     
 function submit() {
-
-    var isOkay=true;
-
-
-    $('[id=monitoredtext]').each(function() {   // For each monitored text field...
-        var text = $(this).val();       
-        if(countWords(text) < 20) {           
-             isOkay=false;
-        }
-    });
-
-
-    if(isOkay==false) {
-        window.alert("Please provide more detailed responses.");
+    var contentVal = $('#monitoredtext').val();
+    if(countWords(contentVal) < 30) {
+        window.alert("Please provide a longer reflection for the feedback!");
     }
     else {
         var json = outputJSON();
         var designId=$('#design_id').val();
         post('save_task.php', {
+            content: contentVal,
             designIdx: designId,
             jsonGlobals: json[0],
             jsonTextareas: json[1],
             jsonRating: json[2],
             originPage: "reflection.php",
-            redirect: "rating.php"
+            redirect: "second_stage.php"
         });
     }
 }
 
 
 $(document).ready(function(){
-    //notifyVisible("reflection");
-    notifyVisible("reflection-feel");
-    notifyVisible("reflection-strength");
-    notifyVisible("reflection-action");
+    notifyVisible("reflection");
 });
 
     // https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
