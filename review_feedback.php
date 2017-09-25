@@ -11,26 +11,27 @@
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
 	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
+
 ?>
 <html lang="en">
-    <head>
-
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
-        <title>Home </title>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
-        <style>
-            .box {
-                border: 2px solid black;
-                padding: 5px;
-                margin: 5px;
-            }
-        </style>
-    </head>
+<head>
+<title>Review Feedback </title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<style>
+    .box {
+        border: 2px solid black;
+        padding: 5px;
+        margin: 5px;
+    }
+</style>
+</head>
     
-    <body>
-        <?php
+<body>
+
+<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
+        
+<?php
         $feedback = array();
         $results = array();
         if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_providerID`=?")) {

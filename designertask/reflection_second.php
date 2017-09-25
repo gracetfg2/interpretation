@@ -207,7 +207,7 @@ function submit() {
             jsonGlobals: json[0],
             jsonTextareas: json[1],
             jsonRating: json[2],
-            originPage: "reflection.php",
+            originPage: "reflection_second.php",
             redirect: "rating.php"
         });
     }
