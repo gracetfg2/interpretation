@@ -4,6 +4,7 @@ The following SESSION variables will be set:
 $_SESSION['designer_id']
 $_SESSION['designer_group']
 *****************************/
+
 session_start();    
 //************* Check Login ****************// 
 $DESIGNER= $_SESSION['designer_id'];
@@ -24,9 +25,9 @@ if($stmt=mysqli_prepare($conn,$sql))
     $designer=$result->fetch_assoc() ;          
     mysqli_stmt_close($stmt);   
 
-}   
-$_SESSION['designer_group']=$designer['group'];
+}
 
+echo "<input type='hidden' name='desgroup' id='designergroup' value='".$designer['group']."'>";   // Allows JS to fetch the designer group
 
 if($designer['process']>5 ||$designer['process']<4)
 { header("Location: ../index.php"); die(); }
@@ -76,23 +77,7 @@ $ok_to_use=1;
         die();
     }
 
-
-
-    switch($designer['group'])
-    {
-        case 'self_explain':
-            $next_page= "rating.php";
-            break;
-        case 'explain_reflect':
-            $next_page= "reflection_second.php";
-            break;
-        case 'default':
-            echo "Something wrong here. Please contact Grace at design4uiuc@gmail.com";
-            die();
-            break;
-
-    }
-  
+   $next_page= ($designer['group'] == 'self_explain') ? "second_stage.php" : "reflection.php";
  //  $next_page="second_stage.php";
 
     mysqli_close($conn);
@@ -124,21 +109,22 @@ $ok_to_use=1;
 
         <div class="alert alert-info" id="instruction">
             <h3>Review Feedback</h3>
-            <p>We have collected feedback from two independent reviewers to help you revise your design. Each reviewer  has at least three years of professional experience in design. 
+            <p>We have collected feedback from three independent reviewers to help you revise your design. These reviewers each has at least three years of professional experience in design. 
+
+            <br><br>We want you to read each sentence out loud and explain what it means to you using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. You should write your explanation in the textbox, and the response should cover all the suggestions in the feedback whether you agree or not.  Responses that demonstrate insufficient effort will be rejected. After that, please rate the usefulness of the feedback for improving your design. 
+
+            <br><br>
+              Copy and paste functions are disabled on the task pages. Please spend around 15 minutes reviewing all the three feedback. 
 
             </p>
-            <p>We want to learn more about how you read and learn from feedback. For each piece of the feedback, we want you to understand its meaning and rewrite the content using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. Your responses will be sent back to the feedback providers. <span style='color:red'>Do not skip any ideas in the feedback and don't write anything other than the explanation (e.g. do NOT write your action plans)</span>.
-               </p>
-                <br>
-             <span style='color:grey'><em> Note: Copy and paste functions are disabled on the task pages.   </em></span>
-            <br> <br>
-            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="startReview()">Start Review Feedback</button>  
+               <br>
+               <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
          </div><!--End alert section for instruction-->
 
 
-    <div id="task" style='display:none;'>
-    <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
+    <div id="task">
         <?php
+            $feedbackIDs = [];
             $feedbackNum = 0;
             foreach ($feedback as $value)
             {
@@ -149,26 +135,51 @@ $ok_to_use=1;
                 $interpretation = str_ireplace ($breaks, "\r\n", $value['interpretation']);
       
                 echo"
-                    <div class='row' style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
-                    <h4>Feedback #".$feedbackNum.": </h4>
-                    <div class='col-md-6'>
-                        <feedback>".nl2br($content)."</feedback>
-                    </div>
-                    <div class='col-md-6'>
-                        <div style='position:fixed; top: 120px; right: 100px; width: 400px;'>
-                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Restate the feedback #".$feedbackNum." using your own words. Don't skip any ideas:</h5><textarea onpaste='return false;' rows='50' id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
-                        </div>
-                    </div>   
+                    <div style=\"display:none;\" id=\"p".$feedbackNum."\">
+                        <feedback><h4>Feedback #".$feedbackNum.": </h4>".nl2br($content)."</feedback>
+                        <hr>
+                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Please restate the meaning of feedback #".$feedbackNum." using your own words:</h5><textarea onpaste='return false;' rows=\"4\" id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
+
+                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp Please rate the usefulness of feedback #".$feedbackNum." for improving your design:</h5>
+                        <br>
+
+                        <table border='0' cellpadding='5' cellspacing='0' width=\"50%\">
+                            <tr aria-hidden='true'>
+                                <td  class='radio-label'></td>
+                                <td><label class='radio-cell'>1</label></td> 
+                                <td><label class='radio-cell'>2</label></td> 
+                                <td><label class='radio-cell'>3</label></td> 
+                                <td><label class='radio-cell'>4</label></td>
+                                <td><label class='radio-cell'>5</label></td> 
+                                <td><label class='radio-cell'>6</label></td>
+                                <td><label class='radio-cell'>7</label></td> 
+                                <td  class='radio-label' ></td>
+                            </tr>
+
+                         <tr>
+                    <td class='radio-label' ><strong>Low</strong></td>
+                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."1'  value='1' "; if ($value['designer_rating']==1){echo "checked ";} echo "onclick='rate(this.name,1);'></td>
+                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."2'  value='2' "; if ($value['designer_rating']==2){echo "checked ";} echo "onclick='rate(this.name,2);'></td>
+                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."3'  value='3' "; if ($value['designer_rating']==3){echo "checked ";} echo "onclick='rate(this.name,3);'></td>
+                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."4'  value='4' "; if ($value['designer_rating']==4){echo "checked ";} echo "onclick='rate(this.name,4);'></td>
+                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."5'  value='5' "; if ($value['designer_rating']==5){echo "checked ";} echo "onclick='rate(this.name,5);'></td>
+                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."6'  value='6' "; if ($value['designer_rating']==6){echo "checked ";} echo "onclick='rate(this.name,6);'></td>
+                    <td class='radio-cell'><input type='radio' class='radio-inline' name='".$value['FeedbackID']."' id='".$value['FeedbackID']."7'  value='7' "; if ($value['designer_rating']==7){echo "checked ";} echo "onclick='rate(this.name,7);'></td>
+                    <td class='radio-label'><strong>High</strong></td>      
+                </tr>                       
+                        </table>
+                         
                     </div>";
-                  echo "<input type='hidden' name='fid".$feedbackNum ."' id='fid".$feedbackNum ."' value='".$value['FeedbackID']."'>";  
+                     echo "<input type='hidden' name='fid".$feedbackNum ."' id='fid".$feedbackNum ."' value='".$value['FeedbackID']."'>";  
             }
         ?>
         
+
             <nav aria-label="...">
               <ul class="pager" >
-                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous feedback</button></li>
-                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next feedback</button></li>
-                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save responses and go to next step </button></li>
+                <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous feedback</a></li>
+                <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next feedback</a></li>
+                <li><button type="button" class="btn btn-success" id="btn_finish" style="display:none" onclick="submit();" >Save responses and go to next step </a></li>
               </ul>
             </nav>
    
@@ -181,10 +192,9 @@ $ok_to_use=1;
 
 <!--Begin Script-->       
 <script>
-
-function startReview(){
-     $("#task").show();
-      $("#instruction").hide();
+    
+function rate (val) {
+    //isRadioChecked = true;
 }
 
 function isRadioButtonChecked(page) {
@@ -210,11 +220,17 @@ function prevPage()
 
 function nextPage()
 {
+    var changePageOkay= true;
     var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
    
     if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
+        changePageOkay=false;
+    }
+    else if(isRadioButtonChecked(current_page) == false) {
+        window.alert("Please rate the feedback!");
+        changePageOkay=false;
     }
     else if (current_page < numPages()) {
         current_page++;
@@ -223,17 +239,18 @@ function nextPage()
    // window.scrollTo(0,document.body.scrollHeight);
 }
     
-
 function changePage(page, oldPage)
 {
+    
     var btn_next = document.getElementById("btn_next");
     var btn_prev = document.getElementById("btn_prev");
     var btn_finish = document.getElementById("btn_finish");
     // Validate page
     if (page < 1) page = 1;
     if (page > numPages()) page = numPages();
-
- 
+//Validate oldPage
+    if (oldPage < 1) oldPage = 1;
+    if (oldPage > numPages()) oldPage = numPages();
   
    for(var page_index=1; page_index<=numPages() ; page_index ++)
     {
@@ -248,10 +265,9 @@ function changePage(page, oldPage)
     
     }
 
-
     if (page == 1) {
         btn_prev.style.display = "none";
-    } else {
+    }else {
         btn_prev.style.display = "inline";
     }
 
@@ -269,6 +285,10 @@ function changePage(page, oldPage)
     if(page != oldPage)
         notifyHidden(oldLabel);
     notifyVisible(newLabel);
+    
+    /*if(page != oldPage)
+        notifyHidden("explain".concat(oldPage).concat("-").concat(oldPage));
+    notifyVisible("explain".concat(page).concat("-").concat(page));*/
 }
 
 function numPages()
@@ -286,17 +306,33 @@ function submit() {
     if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
+    else if(isRadioButtonChecked(current_page) == false) {
+        window.alert("Please rate the feedback!");
+    }
     else {       
         var json = outputJSON();
         var designId=$('#design_id').val();
-        post('save_task.php', {
-            designIdx: designId, 
-            jsonGlobals: json[0], 
-            jsonTextareas: json[1], 
-            jsonRating: json[2],
-            originPage: "explain_initial.php",
-            redirect: $('#next_page').val()
-        });
+        var dgroup = $('#designergroup').val();
+        if(dgroup == "self_explain") {
+            post('save_task.php', {
+                designIdx: designId, 
+                jsonGlobals: json[0], 
+                jsonTextareas: json[1], 
+                jsonRating: json[2],
+                originPage: "explain.php",
+                redirect: 'second_stage.php'
+            });
+        }
+        else if(dgroup == "explain_reflect") {
+            post('save_task.php', {
+                designIdx: designId, 
+                jsonGlobals: json[0], 
+                jsonTextareas: json[1], 
+                jsonRating: json[2],
+                originPage: "explain.php",
+                redirect: 'reflection_second.php'
+            });
+        }
     }
 }
 
@@ -320,12 +356,16 @@ function post(path, params, method) {
             form.appendChild(hiddenField);
          }
     }
-
     document.body.appendChild(form);
     form.submit();
 }
 
 $(document).ready(function(){
+
+    $('textarea').bind('cut copy paste', function (e) {
+        e.preventDefault(); //disable cut,copy,paste
+    });
+
     changePage(1,1);
 
 });

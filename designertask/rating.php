@@ -138,7 +138,7 @@ $_SESSION['designer_group']= $designer['group'];
              <p>Please rate the usefulness of the feedback. You may want to consider the degree to which the feedback is helpful for improving the design or gaining insight. Also, you may disregard any feedback that is outside the scope of the design brief.</p>
             <br>
                     <p style="font-size:16px">
-    <a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
+    <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
     </p>
          </div><!--End alert section for instruction-->
 

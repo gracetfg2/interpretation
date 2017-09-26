@@ -29,6 +29,6 @@
 					</table>
 			</div>
 
-<div class="sub_frame" id="div-ex-feedback" name="div-ex-feedback"><h4 class="nquestion_text"><strong> 11. Please briefly explain your rating given to question 9. </strong> </h4>
+<div class="sub_frame" id="div-ex-feedback" name="div-ex-feedback"><h4 class="nquestion_text"><strong> 11. Please briefly explain your rating given to question 10. </strong> </h4>
 	 <textarea id="ex_feedback" name="ex_feedback" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_feedbackuse, ENT_QUOTES); ?></textarea>	
 </div>
