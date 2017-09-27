@@ -26,7 +26,7 @@
 <div class="container">
             
 <h1><?php echo $providerName."'s Feedback"; ?>:</h1>
-<p>We expect that you provide feedback of similar high quality. Remember that the students are mostly novices, you may need to provide constructive feedback about how they should fix the problem </p> 
+<h3>We expect that you provide feedback of similar high quality. Remember that the students are mostly novices, you may need to provide constructive feedback about how they should fix the problem </h3> 
 <hr>
 <div class='row'>
     <strong>
