@@ -33,8 +33,8 @@
 <hr>
 <div class='row'>
     <strong>
-        <div class='col-md-4'>Design Image</div>
-        <div class='col-md-8'><p>Feedback Content</p></div>
+        <div class='col-md-3'>Design Image</div>
+        <div class='col-md-9'><p>Feedback Content</p></div>
     </strong>
 </div>
 <hr>
@@ -75,8 +75,8 @@
                 foreach($results as $res) {
                         echo "   
                         <div class='row'>
-                            <div class='col-md-4'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
-                            <div class='col-md-6'><p>". $res[1] ."</p></div>
+                            <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
+                            <div class='col-md-9'><p>". $res[1] ."</p></div>
 
                         </div>
                         <hr>
