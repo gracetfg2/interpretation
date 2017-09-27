@@ -12,7 +12,7 @@
 <html lang="en">
 <head>
 <title>Review Feedback </title>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <style>
@@ -25,10 +25,24 @@
 </head>
     
 <body>
-   
+  
+<div class="container">
+            
+<h1>Review Your Feedback:</h1>
+<p>Below is all of the feedback you have written for designs.</p> 
+<hr>
+<div class='row'>
+    <strong>
+        <div class='col-md-4'>Design Image</div>
+        <div class='col-md-2'><p>Student's rating of the usefulness of feedback</p></div>
+        <div class='col-md-6'><p>Feedback Content</p></div>
+    </strong>
+</div>
+<hr>
 <?php
         $feedback = array();
         $results = array();
+
         if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_providerID`=?")) {
             mysqli_stmt_bind_param($stmt, "s", $providerName);
             mysqli_stmt_execute($stmt);
@@ -37,7 +51,6 @@
                 array_push($feedback, $row);
             }
         }
-        echo"<br><br><br>";
         foreach($feedback as $entry) {
             $designID = $entry['f_DesignID'];
             
@@ -54,44 +67,33 @@
                 echo "Image query prepare failed: (" . $conn->errno . ") " . $conn->error;
             }
             $feedbackContent = $entry['content'];
+            $feedbackRating = $entry['designer_rating'];
             $imagePath = "/interpretation/design/". $image;
-            array_push($results, [$imagePath, $feedbackContent]);
+            array_push($results, [$imagePath, $feedbackContent, $feedbackRating]);
             //echo "<img src=\"". $imagePath ."\">\n";
             //echo $feedbackText;
         }
-        echo"
-            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
-            <div class=\"container\">
-            
-                <h1>Review Your Feedback:</h1>
-                <p>Below is all of the feedback you have written for designs. Good work!</p>
-                <table class=\"table table\">
-                        <thead>
-                          <tr>
-                            <th >Design</th>
-                            <th>Your Feedback</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                ";
                 foreach($results as $res) {
                         echo "   
-                          <tr>
-                            <td><img width='100px' src=\"". $res[0] ."\" class=\"img-responsive\"></td>
-                            <td><p>
-                                ". $res[1] ."
-                            </p></td>
-                          </tr>
+                        <div class='row'>
+                            <div class='col-md-4'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
+
+                            <div class='col-md-2'><p>". $res[2] ."</p></div>
+                            <div class='col-md-6'><p>". $res[1] ."</p></div>
+
+                        </div>
+                        <hr>
                         ";
                     
                 }
         echo"
-                    </tbody>
-                </table>
-            </div>
+   
+
         ";
         
         CloseConnection_Util($conn);
         ?>
-    </body>
+</div>
+</body>
+
 </html>
