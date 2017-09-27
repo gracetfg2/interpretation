@@ -24,9 +24,10 @@
 <body>
   
 <div class="container">
-            
+ <div class='well'>           
 <h1><?php echo $providerName."'s Feedback"; ?>:</h1>
 <h3>We expect that you provide high quality feedback for all the students. Remember that the students are novices, try to be concise about how to improve the design. Don't be too positive. We expect all the students will make extensive revisions on their design.</h3> 
+</div>
 <hr>
 <div class='row'>
     <strong>
