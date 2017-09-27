@@ -1,9 +1,6 @@
 <?php 
-	
-	session_start();	
-	
+	session_start();		
     $providerName = $_GET['designer'];
-
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
 	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
@@ -28,8 +25,8 @@
   
 <div class="container">
             
-<h1>Review Your Feedback:</h1>
-<p>Below is all of the feedback you have written for designs.</p> 
+<h1><?php echo $providerName."'s Feedback"; ?>:</h1>
+<p>We expect that you provide feedback of similar high quality. Remember that the students are mostly novices, you may need to provide constructive feedback about how they should fix the problem </p> 
 <hr>
 <div class='row'>
     <strong>
