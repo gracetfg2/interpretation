@@ -44,16 +44,30 @@ else {
       <th>Rewrite Usefulness </th>
       <th>Reflection Usefulness </th>
 
+      <th>Explanation Time </th>
+      <th> Reflection Time </th>
+
       <th>Task Difference </th>
-    <th>Explain Rewrite </th>
-        <th>Explain Reflection </th>
+      <th>Explain Rewrite </th>
+      <th>Explain Reflection </th>
       <th>Explain Difference </th>
+
+
 
       </tr>
 
       <?php
         foreach($designer as $bdata)
         {
+
+          if ($stmt3 = mysqli_prepare($conn, "SELECT * FROM BehaviorGlobal WHERE DesignerID=?")) {
+            mysqli_stmt_bind_param($stmt3, "i", $bdata['f_DesignerID']);
+            mysqli_stmt_execute($stmt3);
+            $result = $stmt3->get_result();
+            $behavior = $result->fetch_assoc();
+          }
+
+
 
 
           if( $bdata['explain_difference']!=null){
@@ -67,10 +81,14 @@ else {
           echo "<td>".$bdata['explain_useful']."</td>";
           echo "<td>".$bdata['reflection_useful']."</td>";
           echo "<td>".$bdata['difference_rating']."</td>";
-          
+
+          echo "<td>".$behavior['total_interpretation']."</td>";
+          echo "<td>".$behavior['total_reflection']."</td>";
+ 
           echo "<td>".$bdata['explain_selfexplain']."</td>";
           echo "<td>".$bdata['explain_reflectionuse']."</td>";
           echo "<td>".$bdata['explain_difference']."</td>";
+
          
           echo "</tr>";
 

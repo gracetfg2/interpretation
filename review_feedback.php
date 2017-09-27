@@ -1,12 +1,8 @@
 <?php 
 	
 	session_start();	
-	//************* Check Login ****************// 
-	//$DESIGNER= $_SESSION['designer_id'];
-	//if(!$DESIGNER) { header("Location: ../index.php"); die(); }
-	//************* End Check Login ****************//
-
-    $providerName = "Vic";
+	
+    $providerName = "Desiree Escobedo";
 
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
@@ -16,6 +12,8 @@
 <html lang="en">
 <head>
 <title>Review Feedback </title>
+
+<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <style>
     .box {
@@ -27,10 +25,7 @@
 </head>
     
 <body>
-
-<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
-        
+   
 <?php
         $feedback = array();
         $results = array();
@@ -73,7 +68,7 @@
                 <table class=\"table table\">
                         <thead>
                           <tr>
-                            <th>Design</th>
+                            <th >Design</th>
                             <th>Your Feedback</th>
                           </tr>
                         </thead>
@@ -82,23 +77,13 @@
                 foreach($results as $res) {
                         echo "   
                           <tr>
-                            <td><img src=\"". $res[0] ."\" class=\"img-responsive\"></td>
-                            <td><p class=\"text-center\">
+                            <td><img width='100px' src=\"". $res[0] ."\" class=\"img-responsive\"></td>
+                            <td><p>
                                 ". $res[1] ."
                             </p></td>
                           </tr>
                         ";
-                    /*echo"
-                    <div class=\"row box\">
-                        <div class=\"col-md-6\">
-                            <img src=\"". $res[0] ."\" class=\"img-responsive\">
-                        </div>
-                        <div class=\"col-md-6\">
-                            <p class=\"text-center\">
-                                ". $res[1] ."
-                            </p>
-                        </div>
-                    </div>";*/
+                    
                 }
         echo"
                     </tbody>

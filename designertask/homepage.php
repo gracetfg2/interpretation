@@ -66,9 +66,8 @@
 <div class="container">
 
 <ol class="cd-multi-steps text-center custom-icon">
-	<li class="<?php if($stage<2 ) echo "current"; else if($stage>1) echo "visited";?>"><em>Sign Up  </em></li>
-
-	<li class="<?php if($stage<2) echo "current"; else if($stage>1) echo "visited";?>"><em>First Stage  </em></li>
+	<li class="visited"><em>Sign Up  </em></li>
+	<li class="<?php if($stage<=2) echo "current"; else if($stage>1) echo "visited";?>"><em>First Stage  </em></li>
 	<li class="<?php if($stage==3) echo "current"; else if($stage>3) echo "visited";?>"><em>Preparation  </em></li>
 	<li class="<?php if($stage==4 ||$stage==5 ) echo "current"; else if($stage>5) echo "visited";?>"><em>Second Stage  </em></li>
 	<li class="<?php if($stage==6) echo "current"; else if($stage>6) echo "visited";?>"><em>Completion</em></li>
@@ -144,9 +143,9 @@ switch ($stage){
 			case 'explain_reflect':
 				echo "<p>	 				
 	 				1) ".$inst_review." <br>
-	 				2) ".$inst_design." <br>
-	 				3) ".$inst_explain." <br>
-	 				4) ".$inst_reflect." <br>
+	 				2) ".$inst_explain." <br>
+	 				3) ".$inst_reflect." <br>
+	 				4) ".$inst_design." <br>
 	 				5) ".$inst_complete." <br>
 	 				</p>";
 				$next_page="explain_initial.php";
