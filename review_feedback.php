@@ -34,8 +34,7 @@
 <div class='row'>
     <strong>
         <div class='col-md-4'>Design Image</div>
-        <div class='col-md-2'><p>Student's rating of the usefulness of feedback</p></div>
-        <div class='col-md-6'><p>Feedback Content</p></div>
+        <div class='col-md-8'><p>Feedback Content</p></div>
     </strong>
 </div>
 <hr>
@@ -77,8 +76,6 @@
                         echo "   
                         <div class='row'>
                             <div class='col-md-4'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
-
-                            <div class='col-md-2'><p>". $res[2] ."</p></div>
                             <div class='col-md-6'><p>". $res[1] ."</p></div>
 
                         </div>
