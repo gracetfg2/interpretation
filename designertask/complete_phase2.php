@@ -34,6 +34,9 @@ $explain_selfexplain="";
 
 $control_useful="";
 
+$mainChangeRows = 2;
+$mainChangeCols = 70;
+
 if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_DesignerID = ?")) {
   
 	mysqli_stmt_bind_param($stmt, "i", $DESIGNER);
@@ -270,9 +273,12 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 					</table>
 			</div>
 
-			<div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please list all the revisions you made to the initial design, and why. </strong> </h4>
-				 <textarea id="mainChange" name="mainChange" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>	
-			</div>
+            <div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please list the key revisions you made to the design, and why. </strong> </h4>
+                1: <textarea id="mainChange1" name="mainChange1" rows="2" cols="1" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>
+                <div class="mainChangeAppendTarget">
+                </div>
+                <button type="button" onclick="addMainChangeTextarea()">Add...</button> <button type="button" onclick="removeMainChangeTextarea()">Remove</button>
+            </div>
 
 		<div class="alert alert-warning" role="alert" style="width:90%;margin:0px auto;padding-right:70px;">
 		<h4><strong>Part II : </strong> Questions about the activities you experienced in the design process.</h4>
@@ -314,7 +320,13 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 
 <script>
-	 	
+    function addMainChangeTextarea() {
+        var curTextareas = 2 + $('.mainChangeAppendTarget').children().length;
+        $( ".mainChangeAppendTarget" ).append("<div class=\"dynArea\">" + curTextareas + ": " + '<textarea id="mainChange' + curTextareas + '"  name="mainChange' + curTextareas + '" rows="2" cols="1" style="width:100%"></textarea><br></div>');
+    }
+    function removeMainChangeTextarea() {
+        $('.mainChangeAppendTarget').children().last().remove();
+    }
 
 	$('input[type=radio][name=effort]').change(function(){
 		   $("#div-effort").removeClass("has-error");
@@ -457,7 +469,7 @@ function submit() {
        $('#mainChange').parents('.sub_frame:first').addClass("has-error");
         isOkay = false;
          console.log("9");
- 		alert('mainChange');
+ 		//alert('mainChange');
     }
 
 	if($("#ex_feedback").length) {
@@ -488,7 +500,7 @@ function submit() {
 	       $('#ex_reflection').parents('.sub_frame:first').addClass("has-error");
 	        isOkay = false;
 	         console.log("12");
-	        alert('ex_reflection');
+	        //alert('ex_reflection');
 	    }
 	}
 
