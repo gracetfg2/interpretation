@@ -82,7 +82,12 @@ $isOkay=1;
 	$degreeOfChange=$_POST['degreeOfChange'];
 	$feedback_useful=$_POST['feedback'];
 	$reflection_useful=$_POST['reflection'];
-	$explain_revision=$_POST['mainChange'];				
+	//$explain_revision=$_POST['mainChange'];
+    $mainChangeArr = [];
+    for($i = 1; isset($_POST['mainChange'.$i]); $i += 1) {
+        array_push($mainChangeArr, $_POST['mainChange'.$i]);
+    }
+    $explain_revision = json_encode($mainChangeArr);
 	$explain_reflectionuse=$_POST['ex_reflection'];
 	$explain_feedbackuse=$_POST['ex_feedback'];
 
