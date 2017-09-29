@@ -76,8 +76,6 @@ $ok_to_use=1;
         die();
     }
 
-
-
     switch($designer['group'])
     {
         case 'self_explain':
@@ -123,48 +121,80 @@ $ok_to_use=1;
     <div class="container">
 
         <div class="alert alert-info" id="instruction">
+
+        <div id='task-inst'>
             <h3>Review Feedback</h3>
             <p>We have collected feedback from two independent reviewers to help you revise your design. Each reviewer  has at least three years of professional experience in design. 
 
             </p>
-            <p>We want to learn more about how you read and learn from feedback. For each piece of the feedback, we want you to understand its meaning and rewrite the content using your own words. You may imagine that you are explaining the feedback to your peers or co-workers. Your responses will be sent back to the feedback providers. <span style='color:red'>Do not skip any ideas in the feedback and don't write anything other than the explanation (e.g. do NOT write your action plans)</span>.
-               </p>
+            <p>To ensure that you comprehend the feedback, we want you to rewrite the content of the feedback using your own words. Your response should cover all the content and keep its original meaning. You may imagine that you are rewriting the feedback to a peer or a co-worker. Do NOT skip any content and do NOT write other thoughts here (e.g. action plan).
+            </p>
+
                 <br>
              <span style='color:grey'><em> Note: Copy and paste functions are disabled on the task pages.   </em></span>
             <br> <br>
-            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="startReview()">Start Review Feedback</button>  
-         </div><!--End alert section for instruction-->
+            
+            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="ReadExample()">Next</button>  
+        </div>
+
+        <div id='example-panel' style='display:none;'>
+
+        <h3>Read the example:</h3>
+        <div class='row'>
+
+        <div class='col-md-6'>
+        <h5>Original Feedback:</h5>
+            <p style='font-size: 14px'>
+               I like the top part (image, heading font and its qualities) and the runner figure. But I don't like the middle (starting from NYC Central Park to the URL). It looks clumsy. It feels like there is too much line-spacing here, and that makes the flyer harder to read. And the typeface could be wider and of lower height - then it would be a good contrast compared to the heading and date, and thus easier for the eyes. I'm ok with the bottom, but it would be great if it was of more color contrast compared to the background, and with more letter-spacing - so that it was easy to read from a distance. Maybe make the runner grey and the ground (which is a background for "october 1" stuff) - black? Or at least increase letter-spacing.
+            </p>
+        </div>
+        <div class='col-md-6' style='height:250px'>
+            <h5>Potential Response:</h5>
+            <textarea id='sample' style='font-size: 14px; height:100%'>The overall top part of the ad and the runner figure look good. For the middle section of the design. The text to left of the runner looks odd and has too much line-spacing, making the ad hard to read at a glance. The overall font size should be smaller to provide better contrast against the heading and date. But at the same time, choosing another font that doesn't give the feeling of crowded. The bottom part does not have enough color contrast, so does the letter-spacing, making it hard to be read from a distance.  Having the runner a lighter color with the ground for the background of "October 1 2016" darker would provide better contrast.  The least thing that should be done is to increase letter spacing.
+            </textarea>
+        </div>
+        </div>
+            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="startReview()">I read the example and am ready to review my feedback</button> 
+
+      
+        </div>
+        
+
+        </div><!--End alert section for instruction-->
 
 
     <div id="task" style='display:none;'>
-    <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and its description</a>
+    <div style='margin-bottom: 30px'>
+        <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and design brief</a>
+    </div>
         <?php
             $feedbackNum = 0;
             foreach ($feedback as $value)
             {
                 $feedbackNum += 1;
-                $content=htmlspecialchars($value['edited_content']);
-                  
+                $content=htmlspecialchars($value['edited_content']);                 
                 $breaks = array("<br />");  
                 $interpretation = str_ireplace ($breaks, "\r\n", $value['interpretation']);
-      
                 echo"
-                    <div class='row' style=\"display:none;margin-left:20px;\" id=\"p".$feedbackNum."\">
-                    <h4>Feedback #".$feedbackNum.": </h4>
-                    <div class='col-md-6'>
-                        <feedback>".nl2br($content)."</feedback>
-                    </div>
-                    <div class='col-md-6'>
-                        <div style='position:fixed; top: 120px; right: 100px; width: 400px;'>
-                        <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Restate the feedback #".$feedbackNum." using your own words. Don't skip any ideas:</h5><textarea onpaste='return false;' rows='50' id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
-                        </div>
-                    </div>   
+                    <div class='well well-lg' style=\"display:none; min-height: 300px;\" id=\"p".$feedbackNum."\">      
+                        <div class='row'>
+                        
+                            <div class='col-md-6'>     
+                                <h4>Feedback #".$feedbackNum.": </h4>                                       
+                                <p>".nl2br($content)."</p>
+                            </div>
+                              <div class='col-md-6'>   
+                                <h5><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>&nbsp  Rewrite feedback #".$feedbackNum." using your own words. Your response should cover the content of the feedback completely:</h5>
+
+                                <textarea style='font-size:14px' onkeyup=\"textAreaAdjust(this)\" style=\"overflow:hidden; min-height: 150px;\" onpaste='return false;' rows='50' id=\"monitoredtext\" monitorlabel=\"explain".$feedbackNum."-".$value['FeedbackID']."\">".htmlspecialchars($interpretation)."</textarea>
+                            </div> 
+                        </div>         
                     </div>";
                   echo "<input type='hidden' name='fid".$feedbackNum ."' id='fid".$feedbackNum ."' value='".$value['FeedbackID']."'>";  
             }
         ?>
-        
-            <nav aria-label="...">
+        <div style='height:50px'></div>
+            <nav aria-label="..." >
               <ul class="pager" >
                 <li><button type="button" class="btn btn-default" onclick="prevPage();" id="btn_prev" style="display:none">Previous feedback</button></li>
                 <li><button type="button" class="btn btn-info" onclick="nextPage();" id="btn_next" style="display:none">Next feedback</button></li>
@@ -183,8 +213,16 @@ $ok_to_use=1;
 <script>
 
 function startReview(){
-     $("#task").show();
-      $("#instruction").hide();
+    $("#task").show();
+    $("#instruction").hide();
+    $("#example-panel").hide();
+}
+
+
+
+function ReadExample(){
+     $("#example-panel").show();
+      $("#task-inst").hide();
 }
 
 function isRadioButtonChecked(page) {
@@ -244,10 +282,8 @@ function changePage(page, oldPage)
         else
         {
             $("#p"+page_index).hide();
-        }
-    
+        }    
     }
-
 
     if (page == 1) {
         btn_prev.style.display = "none";
@@ -325,8 +361,14 @@ function post(path, params, method) {
     form.submit();
 }
 
+function textAreaAdjust(o) {
+  o.style.height = "1px";
+  o.style.height = (155+o.scrollHeight)+"px";
+}
+
 $(document).ready(function(){
     changePage(1,1);
+
 
 });
 </script>

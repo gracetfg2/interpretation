@@ -22,9 +22,8 @@
 </head>
     
 <body>
-  
-<div class="container">
  
+<div class="container"> 
  <div class='well' style='padding: 20px'>  
     <h1><?php echo $providerName; ?>:</h1>
     <h4>Below is the list of feedback you have written. We expect that you provide high quality feedback for all the students. Remember that the students are novices, you need to be concise about how to improve the design. Don't be too positive. We expect that all the students can make extensive revisions on their design.</h4> 

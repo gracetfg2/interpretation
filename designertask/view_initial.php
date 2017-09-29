@@ -47,26 +47,23 @@ session_start();
 <body>
      <div class="main-section" style="background:#F2F2F2;padding-top:50px;padding-right:50px;padding-left:50px">
      <div class="container">
-     
 
-          <div class="row" style="width:100%;padding-top: 20px;  margin:auto;">
-                  <h1>Design Description</h1> <span style="font-size:24px">
-                    <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
-.
-     </span>   
-              <h1>Your Initial Design</h1>
-                          <div id="image" style="margin-top:20px">          
-                               <div class="img-div" style=" margin-right:20px; " >
-
-                               <img style="border: 1px solid #A4A4A4; width:800px; " id="picture" name="picture" src="<?php echo $dfolder.$file ?>"  >
-                               </div>
-                         </div>
-               <!--</div>-->
-               
-              
-               </div>
-
-
+      <div class="row" style="width:100%;padding-top: 20px;  margin:auto;">
+        
+        <!--Design -->    
+        <!--<div class="row" style="width:40%;padding-top: 20px;  margin:auto;">-->
+        <div class="col-md-5">    
+           <img style="border: 1px solid #A4A4A4; width:100%; " id="picture" name="picture" src="<?php echo $dfolder.$file ?>" onClick="view('<?php echo $mid;?> ');" >
+        </div>
+        
+        <div class="col-md-7">        
+          <h3>Design Goals</h3> 
+          <span style="font-size:16px">
+              <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
+          </span>
+        </div>
+      
+      </div>
 
 
           </div>

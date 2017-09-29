@@ -135,14 +135,14 @@ $_SESSION['designer_group']= $designer['group'];
 
         <div class="alert alert-info" id="instruction">
             <h3>Rate the Feedback</h3>
-             <p>Please rate the usefulness of the feedback. You may want to consider the degree to which the feedback is helpful for improving the design or gaining insight. Also, you may disregard any feedback that is outside the scope of the design brief.</p>
+             <p>Please rate the usefulness of each piece of the feedback. You may want to consider the degree to which the feedback is helpful for improving the design or gaining insight. </p>
             <br>
                     <p style="font-size:16px">
-    <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
-    </p>
+   <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and design brief</a>
+   </p>
          </div><!--End alert section for instruction-->
 
-        <div id="task">
+        <div >
             <?php
             include('feedback_list.php');
 
@@ -154,8 +154,8 @@ $_SESSION['designer_group']= $designer['group'];
                 echo "<table class='table table-hover table-nonfluid'>";
                 echo " <thead><tr>
                 <td width='5%'></td>
-                <td width='60%' align='left'><strong>Feedback</strong></td>
-                <td width='35%' align='center'><strong>Perceived Quality</strong></td>
+                <td width='60%' align='left'><strong>Your response to the feedback</strong></td>
+                <td width='35%' align='left'><strong>Perceived quality of the original feedback</strong></td>
                 </tr></thead> <tbody>";
 
                 $feedbackNum = 0;
@@ -169,13 +169,13 @@ $_SESSION['designer_group']= $designer['group'];
 
                     echo "<tr id='div-".$value['FeedbackID']."' >
                             <td><strong>#".$feedbackNum."</strong></td>
-                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($original)."
-                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read my explanation</a>
+                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
 
 
                             <div class='collapse' id='collapseExample".$feedbackNum."'>  
                                 <div class='card card-block'>
-                                ".nl2br($content)."
+                                ".nl2br($original)."
                                 </div>
                              </div>
                              </div>

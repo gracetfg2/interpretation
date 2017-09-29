@@ -85,21 +85,25 @@ session_start();
 
     <div class="container" style="line-height: 2em;">
 
+      <div class="row" style="width:100%;padding-top: 20px;  margin:auto;">
+        
+        <!--Design -->    
+        <!--<div class="row" style="width:40%;padding-top: 20px;  margin:auto;">-->
+        <div class="col-md-3">    
+           <img style="border: 1px solid #A4A4A4; width:100%; " id="picture" name="picture" src="<?php echo $dfolder.$file ?>" onClick="view('<?php echo $mid;?> ');" >
+        </div>
+        
+        <div class="col-md-9">        
+          <h3>Design Goals</h3> 
+          <span style="font-size:16px">
+              <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
+          </span>
+        </div>
+      
+      </div>
 
-    <div class='row' id='design-part' style="margin-top:20px">
-              
-                 <img style="border: 1px solid #A4A4A4; width:400px; " id="picture" name="picture" src="<?php echo $file;?>">
-   
- 
-            <h3>Design Goals</h3> <span style="font-size:16px">This is the first draft of a flyer created for a half marathon race called RUN@NYC. The event will be hosted by and held at Central Park in Manhattan, New York City at 7 am on October 1, 2016. Runners can register through the event website <spen style=" text-decoration: underline;">www.running-nyc.com </spen>(not live yet). The top three runners will receive a $300 prize each. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
 
-    </div>
-
-
-
-
-
-        <div class='row' id="task">
+        <div class='row' style='margin-top: 20px'>
             <?php
             include('feedback_list.php');
 
@@ -109,19 +113,24 @@ session_start();
             }else{
 
                 echo "<table class='table table-hover table-nonfluid'>";
-                echo "<tbody>";
+                echo "<tbody>
+                <thead><td></td>
+                <td><strong>Your Response<strong></td>
+                <td><strong>Original Feedback<strong></td>
+                </thead>";
 
                 $feedbackNum = 0;
                 foreach ($feedback as $value)
                 {
                     $feedbackNum += 1;
-
+                    $original=htmlspecialchars($value['content']);
                     $content=htmlspecialchars($value['edited_content']);
                    // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
 
                     echo "<tr id='div-".$value['FeedbackID']."' >
                             <td><strong>#".$feedbackNum."</strong></td>
                             <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."</td>  
+                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($original)."</td> 
 
                        </tr>";
 

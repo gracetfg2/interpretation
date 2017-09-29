@@ -132,30 +132,33 @@ $_SESSION['designer_group']= $designer['group'];
 <body>
     <?php include('../webpage-utility/ele_nav.php');?>
 
-    <div class="container" style="line-height: 2em;">
+    <div class="container" style="line-height: 1.5em;">
 
         <div class="alert alert-info" id="instruction">
             <h3>Reflect on the Feedback</h3>
-             <p>After reviewing the feedback, we want you to reflect on the set of feedback by answering the following questions. After that, please click "Submit" to go to the next step.</p>
+             <p>Before revising your design, we want you to answer three questions. You can review your initial design and your responses to the feedback through the following link.</p>
             <br>
             <p style="font-size:16px">
-    <a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blanck"> See my initial design and feedback</a>
-    </p>
+            <ul>
+           <li><a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blank"> View my design and my responses to the feedback</a></li>
+            </ul>
+            </p>
          </div><!--End alert section for instruction-->
 
-<div id='task'>
                      
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I feel about the feedback: </h4><textarea id="monitoredtext" monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
+        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I feel about the feedback : </h4><textarea id="monitoredtext" placeholder='i.e. Wrtie your feeling about receiving this set of feedback.' monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
         <br>
 
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What did I do particularly well on the design? </h4><textarea id="monitoredtext" monitorlabel="reflection-strength" rows="4"><?php echo htmlspecialchars($strength);?></textarea>
+        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I think about the feedback? </h4><textarea id="monitoredtext" placeholder='i.e. Write the strength and weakness of the set of feedback.' monitorlabel="reflection-strength" rows="4"><?php echo htmlspecialchars($strength);?></textarea>
         <br>
 
-         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, what actions could I take to improve my design? </h4><textarea id="monitoredtext" monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the feedback, what actions could I take to improve my design? </h4><textarea id="monitoredtext" placeholder='i.e. Make a list of what you are going to change your design.' monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
         <br>
-</div>
+        </div>
+        
         <div style="text-align:center;margin-top:20px;" >
-        <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button></div>
+        <button style="margin:0 auto;" type="button" class="btn btn-success" onclick="submit();" id="btn_next" >Submit </button>
+
 
  
 <input type="hidden" name="design_id" id="design_id" value="<?php echo $design_id;?>">
