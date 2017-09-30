@@ -61,6 +61,8 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 	$breaks = array("<br />");  
 	$explain_process = str_ireplace ($breaks, "\r\n", $designer['explain_process']);
 	$explain_revision = str_ireplace ($breaks, "\r\n", $designer['explain_revision']);
+    
+    //$explain_revision = json_decode($explain_revision); // Throw out the raw JSON input, it's unneeded
 		
 	$explain_reflectionuse = str_ireplace ($breaks, "\r\n", $designer['explain_reflectionuse']);
 	$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
@@ -274,9 +276,11 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 			</div>
 
             <div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please list the key revisions you made to the design, and why. </strong> </h4>
-                1: <textarea id="mainChange1" name="mainChange1" rows="2" cols="1" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>
-                <div class="mainChangeAppendTarget">
-                </div>
+                <!--1:--> <!--textarea id="mainChange1" name="mainChange1" rows="2" cols="1" style="width:100%;"><?//php echo htmlspecialchars(json_decode($explain_revision)[0], ENT_QUOTES); ?></textarea-->
+                <!--div class="container"-->
+                    <div class="mainChangeAppendTarget">
+                    </div>
+                <!--/div-->
                 <button type="button" onclick="addMainChangeTextarea()">Add...</button> <button type="button" onclick="removeMainChangeTextarea()">Remove</button>
             </div>
 
@@ -302,28 +306,34 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 			?>
 
-			
+        <input type="hidden" id="_group" name="_group" value='<?php echo $group;?>'>
+        <input type="hidden" name="_stage" id="_stage" value="<?php echo $stage;?>">
 
-<input type="hidden" id="_group" name="_group" value='<?php echo $group;?>'>
-<input type="hidden" name="_stage" id="_stage" value="<?php echo $stage;?>">
-				
-</form>
-<div style="text-align:center;margin-top:20px;">
-		<button type="submit" class="btn-submit" id="submit-bn" onclick="submit();">Submit</button> 
-</div>
-
-
-
+        </form>
+        <div style="text-align:center;margin-top:20px;">
+                <button type="submit" class="btn-submit" id="submit-bn" onclick="submit();">Submit</button> 
+        </div>
 	</div>
-	
 </div>
-
 
 <script>
+    var textareaText = <?php echo $explain_revision; ?>;
+    
+    $( document ).ready(function() {
+        for(var i = 0; i < textareaText.length; i++) {
+            addMainChangeTextarea();
+        }
+    });
+    
     function addMainChangeTextarea() {
-        var curTextareas = 2 + $('.mainChangeAppendTarget').children().length;
-        $( ".mainChangeAppendTarget" ).append("<div class=\"dynArea\">" + curTextareas + ": " + '<textarea id="mainChange' + curTextareas + '"  name="mainChange' + curTextareas + '" rows="2" cols="1" style="width:100%"></textarea><br></div>');
+        var curTextareas = 1 + $('.mainChangeAppendTarget').children().length;
+        var curTextareaStr = "";
+        if(textareaText.length >= curTextareas) {
+            curTextareaStr = textareaText[curTextareas - 1];
+        }
+        $( ".mainChangeAppendTarget" ).append('<div class="dynArea"> <div class="row"><div class="col"> ' + curTextareas + ": " + '</div><div class="col"><textarea class="form-control" id="mainChange' + curTextareas + '"  name="mainChange' + curTextareas + '" rows="2">' + curTextareaStr + '</textarea></div></div></div>');
     }
+    
     function removeMainChangeTextarea() {
         $('.mainChangeAppendTarget').children().last().remove();
     }
