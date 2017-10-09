@@ -183,7 +183,7 @@ em{
   </div>
   <div class="panel-body">
    <span class="statement" style="text-align: justify;">
-   You need to design a flyer addressing the design brief and requirements below. Please upload the design image that you are satisfied with. Once you click Submit, you are not able to make further changes. Please retain a copy of the design for the next phase of the study. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
+   You need to design a flyer addressing the design brief and fulfilling all the requirements below. Please upload the design image that you are satisfied with. Once you click Submit, you are not able to make further changes. Please retain a copy of the design for the next phase of the study. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
    <h4 class="title">Rules / Requirements</h4>
     <span class="statement">
     <ol>1) You can use your favorite software to design the flyer. But no paper sketches allowed.</ol>
