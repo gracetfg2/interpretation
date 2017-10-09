@@ -194,7 +194,7 @@ mysqli_close($conn);
             <div class="alert alert-success" role="alert">
                 <h2 style="padding-left: 15px;padding-right: 15px">Thanks for your registration. </h2>
                 <div style="font-size:20px; color: #173B0B;padding-left: 15px;padding-right: 15px">
-                   A confirmation email including the next steps for the competition has been sent to <b><?php echo test_input($_POST["email"]);?></b>. You may need to check the spam box if you do not receive it. <br>If you still have problem receiving the confirmtion email, please contact Grace Yen at <a href="mailto:<?php echo $admin_email;?>?Subject=No Confirmation Email Received" target="_top"><?php echo $admin_email;?></a>
+                   A confirmation email including the next steps for the study has been sent to <b><?php echo test_input($_POST["email"]);?></b>. You may need to check the spam box if you do not receive it. <br>If you still have problem receiving the confirmtion email, please contact Grace Yen at <a href="mailto:<?php echo $admin_email;?>?Subject=No Confirmation Email Received" target="_top"><?php echo $admin_email;?></a>
                 </div>
             </div>    
         </div>
