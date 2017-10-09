@@ -75,7 +75,7 @@ compensation.</p>
 </ul>
 
         </p>
-        <p> We do not require a strong design background, but your submission should address our design brief properly. We list three designs from our last study where the designers designed and iterated on a flyer addressing a running event.
+        <p> We do not require a strong design background, but your submission should address our design brief properly. We list three designs from our last study where the designers designed and iterated on a flyer design addressing a running event.
         </p>  
 
         <table style="border-spacing: 30px;">
