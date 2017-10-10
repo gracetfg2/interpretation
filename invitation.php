@@ -50,7 +50,7 @@
        <p> 
        <ul style='font-size: 18px'> 
         <li>You must be at least 18 years of age.</li>
-        <li>You must be willing to create an design and iterate on it properly
+        <li>You must be willing to create an design and iterate on it.
         </li>
         <li>You must have some experience in designing any form of visual designs such as flyers, posters, logos, websites, or powerpoint slides.</li>
 <li>You must allow us to keep a copy of your design and feedback for research purposes</li>
