@@ -39,7 +39,7 @@
 <br>
         <h1 ><span style="font-size:42px;">Online Design Study</span></h1>
 
-        <h3>Be creative. Help us understand how you iterate on your design.</h3>
+        <h3>Be creative. Help us study online feedback exchange.</h3>
         <p>We are investigating how a designer incorporates online feedback into a design process. In this study, you will create a flyer for a jazz concert, review feedback, perform an assigned activity, and revise the design. All designs and data collected in this study are for research purposes only.</p>
              
 
