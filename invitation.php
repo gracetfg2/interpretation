@@ -44,25 +44,6 @@
              
 
 <hr>
-         <h3>Procedure and Deadlines</h3>
-         <p>​The study has two phases. In the first phase, you will need to submit your
-initial design addressing a given design brief. In the second phase, you will perform the activity assigned to you, revise your initial design and complete a survey. All the activities can be completed online.</p>
-
-<p>
-<ul style='font-size: 18px'> 
-<li>Deadline for the first phase: <span style='color:red'> <?php echo $first_deadline; ?></span>. </li>
-<li>Deadline for the second phase: Three days after you complete the first stage of the study. </li>
-</ul>
-</p>
-<p>Please check your schedule before signing up.</p>
-
-<hr>
-    <h3>Compensation and prizes:  </h3>
-      <p>​We will provide $25 for full participation. The top 10 (out of
-120) designs will receive a bonus of $20 US dollars. All compensation will be distributed
-via Paypal, so you will need to provide a Paypal address if you want to receive the
-compensation.</p>
-<hr>
     <h3>Selection Criteria:  </h3>             
        <p> 
        <ul style='font-size: 18px'> 
@@ -91,7 +72,30 @@ compensation.</p>
 
          </table>
   
+<hr>         
+    <h3>Compensation and prizes:  </h3>
+      <p>​We will provide <strong>$25</strong> for full participation. The top 10 (out of
+120) designs will receive a bonus of $20 US dollars. All compensation will be distributed
+via Paypal, so you will need to provide a Paypal address if you want to receive the
+compensation.</p>
 <hr>
+
+
+
+<h3>Procedure and Deadlines</h3>
+         <p>​The study has two phases. In the first phase, you will need to submit your
+initial design addressing a given design brief. In the second phase, you will perform the activity assigned to you, revise your initial design and complete a survey. All the activities can be completed online.</p>
+
+<p>
+<ul style='font-size: 18px'> 
+<li>Deadline for the first phase: <span style='color:red'> <?php echo $first_deadline; ?></span>. </li>
+<li>Deadline for the second phase: Three days after you complete the first stage of the study. </li>
+</ul>
+</p>
+<p>Please check your schedule before signing up.</p>
+
+<hr>
+
 <h3>Contact Us </h3>
 <p>
 The study has been approved by the University of Illinois Institutional Review Board. If you have questions, please contact our research staff Grace Yen at <a href="mailto:design4uiuc@gmail.com">design4uiuc@gmail.com</a>  
