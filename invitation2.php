@@ -56,7 +56,21 @@
 </ul>
 
         </p>
-        <p> We do not require a design background, but your submission should address our design brief. 
+        <p> We do not require design background, but your submission should address our design brief. We list three designs from our last study where the designers designed and iterated on a flyer design addressing a running event.
+        </p>  
+
+        <table style="border-spacing: 30px;">
+            <tr>
+               
+            <?php
+                $files = glob('samples/*.*'); // assuming images are stored in directory called "images"
+                foreach($files as $file) {
+                    echo "<td><img width='200px' height='250px' src='".$file."' /></td><td width='10px'></td>";
+                }
+            ?>
+            </tr>
+
+         </table>
   
 <hr>         
     <h3>Compensation and prizes:  </h3>

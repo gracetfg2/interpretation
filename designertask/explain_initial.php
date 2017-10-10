@@ -139,7 +139,7 @@ $ok_to_use=1;
 
         <div id='example-panel' style='display:none;'>
 
-        <h3>Read the example:</h3>
+        <h3>Before restating your own feedback, please read the following sample response:</h3>
         <div class='row'>
 
         <div class='col-md-6'>
@@ -149,7 +149,7 @@ $ok_to_use=1;
             </p>
         </div>
         <div class='col-md-6' style='height:250px'>
-            <h5>Potential Response:</h5>
+            <h5>Sample Response:</h5>
             <textarea id='sample' style='font-size: 14px; height:100%'>The overall top part of the ad and the runner figure look good. For the middle section of the design. The text to left of the runner looks odd and has too much line-spacing, making the ad hard to read at a glance. The overall font size should be smaller to provide better contrast against the heading and date. But at the same time, choosing another font that doesn't give the feeling of crowded. The bottom part does not have enough color contrast, so does the letter-spacing, making it hard to be read from a distance.  Having the runner a lighter color with the ground for the background of "October 1 2016" darker would provide better contrast.  The least thing that should be done is to increase letter spacing.
             </textarea>
         </div>

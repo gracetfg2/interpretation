@@ -217,8 +217,11 @@ em{
   		</div>
 	</div>
 
-	<div>Following is your feedback:</div>
-
+	<p style="font-size:16px">
+            <ul>
+           <li><a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blank"> View my design and my responses to the feedback</a></li>
+            </ul>
+            </p>
            
 	 <div class="form-group" id="form-group-file">
 	    <label for="fileToUpload" class="col-sm-4 col-md-4 control-label">Upload Revised Design<em>*</em></label>
