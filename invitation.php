@@ -44,20 +44,21 @@
              
 
 <hr>
-    <h3>Selection Criteria:  </h3>             
+    <h3>Selection Criteria:  </h3> 
+      <p> No design background required. But to be eligible in the study: 
+              
        <p> 
        <ul style='font-size: 18px'> 
         <li>You must be at least 18 years of age.</li>
         <li>You must be willing to create an design and iterate on it properly
         </li>
-        <li>You must have taken at least one design-related course (e.g. User-Interface Design, Human-Computer Interaction, etc)</li>
+        <li>You must have some experience in designing any form of visual designs such as flyers, posters, logos, websites, or powerpoint slides.</li>
 <li>You must allow us to keep a copy of your design and feedback for research purposes</li>
 
 </ul>
 
         </p>
-        <p> We do not require a design background, but your submission should address our design brief. 
-  
+      
 <hr>         
     <h3>Compensation and prizes:  </h3>
       <p>​We will provide <strong>$25</strong> for full participation. The top 10 (out of
