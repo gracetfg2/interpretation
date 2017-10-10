@@ -96,6 +96,11 @@ initial design addressing a given design brief. In the second phase, you will pe
 
 <hr>
 
+<h3>About Us </h3>
+<p>
+We are researchers from the Department of Computer Science at the University of Illinois at Urbana-Champaign. For more information, please visit our <a href="http://orchid.cs.illinois.edu/publications/index.html">group website</a>.
+</p>
+<hr>
 <h3>Contact Us </h3>
 <p>
 The study has been approved by the University of Illinois Institutional Review Board. If you have questions, please contact our research staff Grace Yen at <a href="mailto:design4uiuc@gmail.com">design4uiuc@gmail.com</a>  
