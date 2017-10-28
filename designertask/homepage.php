@@ -162,7 +162,7 @@ switch ($stage){
 				echo "Something Goes wrong";die();
 				break;
 		}
-		echo "<p>Please have your initial design ready, and we will step you through the second phase. More importantly, we hope you will enjoy performing the revision!</p>";
+		echo "<p>Please have your initial design ready in the tool, and we will step you through the second phase. More importantly, we hope you will enjoy performing the revision!</p>";
 		echo "<p><a class='btn btn-primary btn-lg' href='".$next_page."' role='button'>Next</a></p>";
 		break;
 	case 5:

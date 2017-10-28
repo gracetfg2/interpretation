@@ -171,7 +171,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 			</div>
 
 			<div class="sub_frame" id="div-confidence">			
-				<h4 class="nquestion_text"><strong> 4. How confident are you that the flyer satisfied all of the design goals? </strong> </h4>				
+				<h4 class="nquestion_text"><strong> 4. How confident are you that the flyer addresses the design brief (i.e. encourage participation, be visually appealing, and convey the event details)? </strong> </h4>				
 				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">
 					<tr aria-hidden="true">
 						<td  class="radio-label" style="width: 140px"></td>

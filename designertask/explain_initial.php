@@ -124,10 +124,7 @@ $ok_to_use=1;
 
         <div id='task-inst'>
             <h3>Review Feedback</h3>
-            <p>We have collected feedback from two independent reviewers to help you revise your design. Each reviewer  has at least three years of professional experience in design. 
-
-            </p>
-            <p>To ensure that you comprehend the feedback, we want you to rewrite the content of the feedback using your own words. Your response should cover all the content and keep its original meaning. You may imagine that you are rewriting the feedback to a peer or a co-worker. Do NOT skip any content and do NOT write other thoughts here (e.g. action plan).
+            <p>We have collected feedback from two independent reviewers to help you revise your design. To ensure that you fully comprehend the feedback, we want you to <strong>rewrite the content of the feedback using your own words</strong>. Your response should cover all the content and keep its original meaning. Do NOT write anything beyond the explanation of the feedback (e.g. do NOT write action plan).
             </p>
 
                 <br>
@@ -145,7 +142,7 @@ $ok_to_use=1;
         <div class='col-md-6'>
         <h5>Original Feedback:</h5>
             <p style='font-size: 14px'>
-               I like the top part (image, heading font and its qualities) and the runner figure. But I don't like the middle (starting from NYC Central Park to the URL). It looks clumsy. It feels like there is too much line-spacing here, and that makes the flyer harder to read. And the typeface could be wider and of lower height - then it would be a good contrast compared to the heading and date, and thus easier for the eyes. I'm ok with the bottom, but it would be great if it was of more color contrast compared to the background, and with more letter-spacing - so that it was easy to read from a distance. Maybe make the runner grey and the ground (which is a background for "october 1" stuff) - black? Or at least increase letter-spacing.
+               I'm ok with the bottom, but it would be great if it was of more color contrast compared to the background, and with more letter-spacing - so that it was easy to read from a distance. Maybe make the runner grey and the ground (which is a background for "october 1" stuff) - black? Or at least increase letter-spacing.
             </p>
         </div>
         <div class='col-md-6' style='height:250px'>

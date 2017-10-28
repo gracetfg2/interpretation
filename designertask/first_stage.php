@@ -179,25 +179,26 @@ em{
 <div style="margin-top:30px">
 		<div class="panel panel-info" style="width:80%;  margin:0px auto">
   <div class="panel-heading">
-    <h3 class="panel-title"> Please complete the first phase of the study by <span style="color:red"><?php echo $first_deadline;?></span></h3>
+    <h3 class="panel-title"> Please complete this phase of the study by <span style="color:red"><?php echo $first_deadline;?></span></h3>
   </div>
   <div class="panel-body">
    <span class="statement" style="text-align: justify;">
    You need to design a flyer addressing the design brief and fulfilling all the requirements below. Please upload the design image that you are satisfied with. Once you click Submit, you are not able to make further changes. Please retain a copy of the design for the next phase of the study. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
    <h4 class="title">Rules / Requirements</h4>
     <span class="statement">
-    <ol>1) You can use your favorite software to design the flyer. But no paper sketches allowed.</ol>
+ <ol>1) You should use your favorite software to design the flyer. No paper sketch allowed.</ol>
  <ol>2) The flyer size should be 8.5" x 11" (US Letter size) and in portrait orientation.</ol>
  <ol>3) The flyer must be created from scratch. No templates allowed.</ol>
  <ol>4) You may use images from the public domain, but not profanity, obscenity, or nudity.</ol>
- 
- </span>
+
     <h4 class="title">Design Brief</h4>
     <span class="statement" style="text-align: justify;">
 			    <ol>
 			    <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
 
-</ol>
+				</ol>
+				<span style='color:red'>Please keep the digital copy of your design for the next phase of the study.
+ </span>
 	</span>
 	
 
