@@ -36,12 +36,20 @@
 
     <div class="container" style="padding-top:20px">
 
-
+<nav class="navbar navbar-fixed-top navbar-inverse" style="background:#A3DDFB  ">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color:#E87722" href="index.php"><img width='150px' src="school_logo.gif"></a>
+            </div>
+         
+        </div>
+      
+  </nav>
 
 
       <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron" style="margin-top:20px; padding-top:20px;background:white;margin-left:0px">
-<div><img width='200px' src="school_logo.gif"></div>
+<div></div>
 <br>
   <h2 style="text-align:center;"><span> Online Design Research</span></h2>
     <p>We are investigating how a user incorporates online feedback into an iterative design process. In this study, you will practice creating a flyer for a charity event featuring the American singer-songwriter, Taylor Swift. All designs and data collected in this study are for research purposes only. The total time commitment will be around 2.5 hours (including design sessions) split between separate days. All the activities are conducted online.</p>
