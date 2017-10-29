@@ -97,9 +97,9 @@ switch ($stage){
 		break;
 	case 3:
 		echo "
-			<p style='text-align:center;font-weight:bold'>You have completed the first phase of the competition! </p>
+			<p style='text-align:center;font-weight:bold'>You have completed the first phase of the study! </p>
 	
-		<p> We will prepare the material for the second phase of the study. Once it is ready, we will notify you through your contact email. This will take around three days. </p>
+		<p> The two designers will provide feedback on your design. Once the material for the second phase is ready, we will notify you through your contact email. This will take around three days. </p>
 		";
 		break;
 	case 4:
@@ -113,7 +113,7 @@ switch ($stage){
 		
 		if ($group==NULL)
 		{
-			echo "<p style='text-align:center;font-weight:bold'>We are still preparing for your second phase competition. </p>
+			echo "<p style='text-align:center;font-weight:bold'>We are still preparing for your second phase study. </p>
 			<p>If you haven't heard from us for more than a week, please contact us.</p>";
 			die();	
 		}
@@ -162,7 +162,7 @@ switch ($stage){
 				echo "Something Goes wrong";die();
 				break;
 		}
-		echo "<p>Please have your initial design ready in the tool, and we will step you through the second phase. More importantly, we hope you will enjoy performing the revision!</p>";
+		echo "<p>Please have your initial design ready in the tool, and we will step you through the second phase. More importantly, we hope you will enjoy the task!</p>";
 		echo "<p><a class='btn btn-primary btn-lg' href='".$next_page."' role='button'>Next</a></p>";
 		break;
 	case 5:
@@ -174,7 +174,7 @@ switch ($stage){
 		echo "<p style='text-align:center;font-weight:bold'>Thank you for participating! </p>
 		<p>The compensation for the study ($25) will be sent to your Paypal account <span style='color:blue'>".$designer['paypal']."</span> shortly.";
 		echo "
-		If you do not receive the payment by ".$pay_deadline.", please contact Grace Yen at <span style='text-decoration:underline'> ".$admin_email." </span>. </p><p>The winners of the competition will receive a notification through the contact email by ".$contest_deadline.". Wish you the best luck ! </p><br>
+			If you do not receive the payment by ".$pay_deadline.", please contact Grace Yen at <span style='text-decoration:underline'> ".$admin_email." </span>. </p><p>The winners of the competition will receive a notification through the contact email by ".$contest_deadline.". Wish you the best luck ! </p><br>
 		<p style='font-size:16px'><span style='font-weight:bold'>Best Regards,</span><br> Grace Y. Yen, PhD Candidate<br>Department of Computer Sciecne<br>University of Illinois @ Urbana-Champaign</p>
 		";
 		break;

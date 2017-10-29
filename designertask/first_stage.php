@@ -183,28 +183,39 @@ em{
   </div>
   <div class="panel-body">
    <span class="statement" style="text-align: justify;">
-   You need to design a flyer addressing the design brief and fulfilling all the requirements below. Please upload the design image that you are satisfied with. Once you click Submit, you are not able to make further changes. Please retain a copy of the design for the next phase of the study. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
-   <h4 class="title">Rules / Requirements</h4>
-    <span class="statement">
- <ol>1) You should use your favorite software to design the flyer. No paper sketch allowed.</ol>
- <ol>2) The flyer size should be 8.5" x 11" (US Letter size) and in portrait orientation.</ol>
- <ol>3) The flyer must be created from scratch. No templates allowed.</ol>
- <ol>4) You may use images from the public domain, but not profanity, obscenity, or nudity.</ol>
-
+   You need to design a flyer addressing the following design brief. Please upload the design image that you are satisfied with. Once you click 'Submit', you are not able to make further changes. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
+   
     <h4 class="title">Design Brief</h4>
     <span class="statement" style="text-align: justify;">
 			    <ol>
 			    <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
 
 				</ol>
-				<span style='color:red'>Please keep the digital copy of your design for the next phase of the study.
- </span>
 	</span>
-	
+
+	<h4 class="title">Rules / Requirements</h4>
+    <span class="statement">
+ <ol>
+ <li>You should use your favorite software to design the flyer. No paper sketch allowed.</li>
+ <li>The flyer size should be 8.5" x 11" (US Letter size) and in portrait orientation.</li>
+ <li>The flyer must be created from scratch. No templates allowed.</li>
+ <li>You may use images from the public domain, but not profanity, obscenity, or nudity.</li>
+ </ol>
+
+ </span>
+	<div class="alert alert-info" style="margin-top: 20px">
+<strong>Note:</strong>
+<ol>
+<li>Designs that violate any of the above rules will not be considered in the study. </li>
+<li>Retain a copy of the design for the next phase of the study.</li>
+</ol>
+</div>
 
   </div>
 </div>
 </div>
+
+
 	<hr>
 	
 	 <div class="form-group" id="form-group-file">

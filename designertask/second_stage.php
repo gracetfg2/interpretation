@@ -207,7 +207,7 @@ em{
 	  </div>
   <div class="panel-body">
 		   <span class="statement" style="text-align: justify;"><p>
-			Please <strong>invest 15 to 30 minutes </strong>revising your design based on the feedback and your own insights. The revised designs rated in the top five by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
+			Please <strong>invest 15 to 30 minutes </strong>revising your design based on the feedback. The revised designs rated in the top five by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
 		 	</p>
 			<p style="font-size:12px"><br>
 		

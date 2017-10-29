@@ -94,7 +94,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 
 		<div class="alert alert-success" style="width:90%;margin:0px auto;padding-right:70px;;padding-left:70px;">
 		<div style="text-align:center"><h3>Awesome! We have received your design. </h3></div>
-		<p style="font-size:16px"> As the last step of this phase, we would like to know a little more about your design process. Please answer the following questions to complete the first phase of the study.</p>
+		<p style="font-size:16px"> Before completing the first phase of the study, we would like to know a little more about your design process. Please answer the following questions to complete the first phase of the study.</p>
 		<p style="font-size:16px;color:#848484;">Note: Your answers will NOT affect the compensation. </p>		
 		</div>
 

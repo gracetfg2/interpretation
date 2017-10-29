@@ -105,7 +105,7 @@ or click <strong>Sign Up</strong> to begin the study.
 </p>
 
 <a class="btn btn-lg btn-primary" href="sign-up.php" role="button">Sign Up</a>
-  
+  <a class="btn btn-lg btn-success" href="index.php" role="button"> Log In</a>
 </div>
     </div> <!-- /container -->
 
