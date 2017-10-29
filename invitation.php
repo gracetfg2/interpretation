@@ -63,8 +63,8 @@
     <p> 
       <ul style='font-size: 18px'> 
       <li>You must be at least 18 years of age.</li>
-      <li>You must have a strong desire to create a flyer addressing the design brief.</li>
-      <li>You must be willing to incorporate online feedback into the design process.</li>
+      <li>You must create a design addressing the design brief.</li>
+      <li>You must allow us to share your designs with professional designers for feedback generation.</li>
       <li>You must allow us to keep a copy of your design and feedback for research purposes.</li>
       </ul>
   </p>       
