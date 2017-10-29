@@ -183,7 +183,7 @@ em{
   </div>
   <div class="panel-body">
    <span class="statement" style="text-align: justify;">
-   You need to design a flyer addressing the following design brief. Please upload the design image that you are satisfied with. Once you click 'Submit', you are not able to make further changes. You need to invest approximately <strong>60 minutes </strong>designing the flyer. Now, be creative and have fun! </span>
+   You need to design a flyer addressing the following design brief. Please upload the design image that you are satisfied with. Once you click 'Submit', you are not able to make further changes. Please invest approximately <strong>60 minutes </strong>designing the flyer. We will share your submitted design with two designers who agree to provide feedback to help you iterate on it. Now, be creative and have fun! </span>
    
     <h4 class="title">Design Brief</h4>
     <span class="statement" style="text-align: justify;">
