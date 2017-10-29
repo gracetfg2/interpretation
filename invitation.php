@@ -98,6 +98,7 @@ initial design addressing our design brief. We hire two professional designers t
   </div>
 <hr> 
 
+<img width='150px' class="img-circle" style='display:none' src="school_logo.gif">
 
 <h3>Contact Us </h3>
 <p>

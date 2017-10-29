@@ -181,6 +181,7 @@ session_start();
                 </div>
         </div>
   <hr>
+
         <div class="form-group required" id="form-group-education">
             <label for="education" class="col-sm-4 control-label"> Design Education Background <em>*</em></label>
                 <div class="col-sm-8" >
