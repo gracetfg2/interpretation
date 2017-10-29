@@ -52,6 +52,7 @@
 <div></div>
 <br>
   <h2 style="text-align:center;"><span> Online Design Research</span></h2>
+  <h2>Be Creative. No Design Experience Required.</h2>
     <p>We are investigating how a user incorporates online feedback into an iterative design process. In this study, you will practice creating a flyer for a charity event featuring the American singer-songwriter, <a href='https://www.youtube.com/user/taylorswift' target="_blank">Taylor Swift</a>. All designs and data collected in this study are for research purposes only. The total time commitment will be around 2.5 hours (including design sessions) split between separate days. All the activities are conducted online.</p>
 <hr>
 
