@@ -206,8 +206,8 @@ em{
 	<div class="alert alert-info" style="margin-top: 20px">
 <strong>Note:</strong>
 <ol>
-<li>Designs that violate any of the above rules will not be considered in the study. </li>
-<li>Retain a copy of the design for the next phase of the study.</li>
+<li>Designs not following the above rules will not be considered in the study. </li>
+<li>Please retain a copy of the design for the next phase of the study.</li>
 </ol>
 </div>
 
