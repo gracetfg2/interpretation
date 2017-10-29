@@ -59,8 +59,9 @@
         
         <div class="row" style="text-align:center; padding-bottom:20px">
 
-         <button type="button" class="btn btn-large btn-primary" onclick="submit()">Log In</button>
-          <button type="button" class="btn btn-large btn-warning" onclick="signup()"">Register</button>
+         <button type="button" class="btn btn-large btn-warning" onclick="signup()"">Register</button>
+            <button type="button" class="btn btn-large btn-primary" onclick="submit()">Log In</button>
+       
          <!--<button type="button" class="btn btn-large btn-success" onclick="window.location.href='./sign-up.php'">Register</button>-->
        </div>
          <?php include("webpage-utility/footer.php") ?>
