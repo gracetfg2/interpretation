@@ -90,7 +90,7 @@ switch ($stage){
 	case 1:
 	case 2:
 			echo "<p style='text-align:center;font-weight:bold'> Welcome to the design study! </p>
- 				 <p>In the first phase of the study, you will need to create and submit a flyer, and complete a short survey by <span style='color:red'>November 2nd at 11:59 pm (Central Time)</span> 
+ 				 <p>In the first phase of the study, you will need to create and submit a flyer, and complete a short survey by <span style='color:red'>".$first_deadline.".</span> 
  				 <p> Now, please click 'Next' to read the design task. We hope you enjoy the task and look forward to seeing your creative solutions!
  				  </p><p><a class='btn btn-primary btn-lg' href='first_stage.php' role='button'>Next</a></p>";	
 		
