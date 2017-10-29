@@ -58,6 +58,7 @@
         </form>
         
         <div class="row" style="text-align:center; padding-bottom:20px">
+         <a class="btn btn-lg btn-primary" href="sign-up.php" role="button">Sign Up</a>
          <button type="button" class="btn btn-large btn-primary" onclick="submit()">Sign in</button>
          <!--<button type="button" class="btn btn-large btn-success" onclick="window.location.href='./sign-up.php'">Register</button>-->
        </div>
