@@ -36,7 +36,7 @@
 
     <div class="container" style="padding-top:20px">
 
-<nav class="navbar navbar-fixed-top navbar-inverse" style="background:#A3DDFB  ">
+<nav class="navbar navbar-fixed-top navbar-inverse" style="background:#EBF5FB  ">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" style="color:#E87722" href="index.php"><img width='150px' src="school_logo.gif"></a>
