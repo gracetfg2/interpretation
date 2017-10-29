@@ -39,7 +39,7 @@
 <nav class="navbar navbar-fixed-top navbar-inverse" style="background:#EBF5FB  ">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" style="color:#E87722" href="index.php"><img width='150px' src="school_logo.gif"></a>
+                <a class="navbar-brand" href="index.php"><img width='150px' src="school_logo.gif"></a>
             </div>
          
         </div>
