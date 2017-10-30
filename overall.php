@@ -6,7 +6,7 @@
  $type="overall";
 
  if(!$mid){header('Location: feedback_error.php');}
-
+	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
  include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
  $conn = connect_to_db();
  	if (!$conn) {
@@ -111,7 +111,7 @@
 					<h3>Design Goals</h3> 
 
 
-					This is the first draft of a flyer created for a charity jazz concert featuring the band "Smooth Digital", a group of four alumni from the School of Music at the University of Illinois. The concert will take place on October 12th from 6:00 PM - 9:00 PM on the Main Quad. Tickets are $10 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+   <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
 
 					<p><br>You can click on the image to enlarge.</p></span>
 			</div>
