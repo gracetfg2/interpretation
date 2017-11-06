@@ -76,7 +76,7 @@ initial design addressing our design brief. We hire two professional designers t
 <p>
 <ul style='font-size: 18px'> 
 <li>Deadline for the first phase: <span style='color:red'> <?php echo $first_deadline; ?></span>. </li>
-<li>Deadline for the second phase: Three days after you complete the first stage of the study. </li>
+<li>Deadline for the second phase: A week after you complete the first stage of the study. </li>
 </ul>
 </p>
 <p>Please check your schedule before signing up.</p>
