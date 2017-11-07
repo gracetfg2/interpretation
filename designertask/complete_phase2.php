@@ -57,7 +57,6 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 	
 	$breaks = array("<br />");  
 	$explain_process = str_ireplace ($breaks, "\r\n", $designer['explain_process']);
-	$explain_revision = str_ireplace ($breaks, "\r\n", $designer['explain_revision']);
 		
 	$explain_reflectionuse = str_ireplace ($breaks, "\r\n", $designer['explain_reflectionuse']);
 	$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
@@ -69,6 +68,10 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 
 	$explain_difference=$designer['explain_difference']; 
 
+
+
+	$explain_revision = $designer['explain_revision'];
+	//$changelist[]= var_dump(json_decode($explain_revision));
 
 	mysqli_stmt_close($stmt);
 
@@ -277,15 +280,17 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 			</div>-->
 
 <div class="sub_frame" id="div-change" name="div-change">
-	<h4 class="nquestion_text"><strong> 6. Please list the changes you made to the initial design. </strong> </h4>
+	<h4 class="nquestion_text"><strong> 6. Please list the main revisions between the initial and the revised design. You can click the 'Add' button to add more items.</strong> </h4>
 	<div id="myDIV" class="header">
   		
-  		<input type="text" id="myInput" style="border: 1px solid #AEB6BF "  placeholder="e.g. I changed the background color from yellow to pink because....">
+  		<input type="text" id="myInput" style="border: 1px solid #AEB6BF "  placeholder="e.g. 1. I changed the background color from yellow to pink because....">
   		<button type="button" class="btn" onclick="newElement()">Add</button>
 </div>
 
 <ul id="myUL" style='margin-top: 10px'>
-
+<?php 
+	echo $explain_revision;
+?>
 </ul>
 
 </div>
@@ -472,8 +477,9 @@ function submit() {
  		alert('mainChange');
     }*/
 
-    if(changes.length==0){
-    	$('#mainChange').parents('.sub_frame:first').addClass("has-error");
+    if(document.getElementById("myUL").children.length==0 || !$("#myUL").children().is(':visible')) {
+
+    	$('#myDIV').parents('.sub_frame:first').addClass("has-error");
         isOkay = false;
 		alert('Please list at least one change you made to the design.');
     }
@@ -524,8 +530,8 @@ function submit() {
 	console.log("isOkay="+isOkay);
 
 	if(isOkay==true){
-		$("#complete_form [name=mainChange]").val( JSON.stringify(changes));
-			
+		$("#complete_form [name=change_list]").val(  $('#myUL').html());
+		//alert(JSON.stringify(changes));	
 		$("#complete_form").submit();
 		
 	}
@@ -539,11 +545,12 @@ function submit() {
 
 
 
+
 // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("li");
+var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("span");
+  var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
@@ -563,37 +570,25 @@ for (i = 0; i < close.length; i++) {
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'li') {
+  if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
 }, false);
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
-
-
-	
-   $('#div-change').removeClass("has-error");
-
- 
-
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
-
-
-var element = {number:changes.length, content: inputValue};
-changes.push(element);
-
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
-    alert("Please describe what you changed to the design.");
+    alert("You must write something!");
   } else {
     document.getElementById("myUL").appendChild(li);
   }
   document.getElementById("myInput").value = "";
 
-  var span = document.createElement("span");
+  var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
@@ -605,8 +600,6 @@ changes.push(element);
       div.style.display = "none";
     }
   }
-
-
 }
 
 

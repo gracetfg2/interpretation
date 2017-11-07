@@ -82,7 +82,7 @@ $isOkay=1;
 	$degreeOfChange=$_POST['degreeOfChange'];
 	$feedback_useful=$_POST['feedback'];
 	$reflection_useful=$_POST['reflection'];
-	$explain_revision=$_POST['mainChange'];				
+	$explain_revision=$_POST['change_list'];				
 	$explain_reflectionuse=$_POST['ex_reflection'];
 	$explain_feedbackuse=$_POST['ex_feedback'];
 

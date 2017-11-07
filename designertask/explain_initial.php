@@ -118,7 +118,6 @@ $ok_to_use=1;
         include('../webpage-utility/ele_nav.php');
     ?>
     <script type="text/javascript" src="behavior_record_updated.js"></script>
-    <script type="text/javascript" src="reflection_script.js"></script>
     <div class="container">
 
         <div class="alert alert-info" id="instruction">
