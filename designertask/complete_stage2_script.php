@@ -25,7 +25,7 @@ $reflection_useful="";
 $explain_reflectionuse="";
 $explain_feedbackuse="";
 
-
+$explain_difficult="";
 
 
 $explain_process="";
@@ -46,7 +46,7 @@ else $currentVersion=2;
 $isOkay=1;
 
 	/*****Save Data Info***********/
-    if (!($stmt = mysqli_prepare($conn, "INSERT INTO monitorbehavior ( f_DesignerID, subject_group , confidence_".$currentVersion.", design_time_".$currentVersion.", effort_".$currentVersion.", quality_".$currentVersion.", degreeOfChange, feedback_useful, reflection_useful, explain_revision, explain_reflectionuse, explain_feedbackuse, explain_process, control_useful, explain_useful, explain_selfexplain, difference_rating, explain_difference ) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,? )
+    if (!($stmt = mysqli_prepare($conn, "INSERT INTO monitorbehavior ( f_DesignerID, subject_group , confidence_".$currentVersion.", design_time_".$currentVersion.", effort_".$currentVersion.", quality_".$currentVersion.", degreeOfChange, feedback_useful, reflection_useful, explain_revision, explain_reflectionuse, explain_feedbackuse, explain_process, control_useful, explain_useful, explain_selfexplain, difference_rating, explain_difference ,explain_difficult) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,? )
     ON DUPLICATE KEY UPDATE
     
     f_DesignerID = VALUES(f_DesignerID), 
@@ -66,8 +66,8 @@ $isOkay=1;
     explain_useful = VALUES(explain_useful),
     explain_selfexplain = VALUES(explain_selfexplain),
     difference_rating = VALUES(difference_rating),
-    explain_difference = VALUES(explain_difference)
-
+    explain_difference = VALUES(explain_difference),
+ explain_difficult = VALUES(explain_difficult)
 
     "))) {
         echo "SendData final survey prepare failed: (" . $conn->errno . ") " . $conn->error;
@@ -95,7 +95,9 @@ $isOkay=1;
     $explain_difference=$_POST['ex_difference'];  
     $difference_rating=$_POST['difference'];  
 
-    $stmt->bind_param("isiisiiiissssiisis", $designer_id,$subject_group,$confidence,$time,$effort, $quality, $degreeOfChange, $feedback_useful, $reflection_useful, $explain_revision,$explain_reflectionuse,	$explain_feedbackuse,$explain_process, 	$control_useful, $explain_useful, $explain_selfexplain,  $difference_rating,  $explain_difference);
+    $explain_difficult=$_POST['explain_difficult'];  
+
+    $stmt->bind_param("isiisiiiissssiisiss", $designer_id,$subject_group,$confidence,$time,$effort, $quality, $degreeOfChange, $feedback_useful, $reflection_useful, $explain_revision,$explain_reflectionuse,	$explain_feedbackuse,$explain_process, 	$control_useful, $explain_useful, $explain_selfexplain,  $difference_rating,  $explain_difference, $explain_difficult);
  	$success = $stmt->execute();
     if(!$success){  
         echo $stmt->error;

@@ -61,6 +61,9 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_Designe
 	$explain_reflectionuse = str_ireplace ($breaks, "\r\n", $designer['explain_reflectionuse']);
 	$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
 
+	$explain_difficult=str_ireplace ($breaks, "\r\n", $designer['explain_difficult']);
+
+
 	$explain_selfexplain = str_ireplace ($breaks, "\r\n", $designer['explain_selfexplain']);
 	//$explain_feedbackuse=str_ireplace ($breaks, "\r\n", $designer['explain_feedbackuse']);
 
@@ -275,17 +278,16 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 					</table>
 			</div>
 
-		<!--	<div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please list the changes you made to the initial design. </strong> </h4>
-				 <textarea id="mainChange" name="mainChange" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>	
-			</div>-->
+
 
 <div class="sub_frame" id="div-change" name="div-change">
-	<h4 class="nquestion_text"><strong> 6. Please list the main revisions between the initial and the revised design. You can click the 'Add' button to add more items.</strong> </h4>
+	<h4 class="nquestion_text"><strong> 6 Please list the main revisions between the initial and the revised design. You can click the 'Add' button to add more items.</strong> </h4>
 	<div id="myDIV" class="header">
   		
   		<input type="text" id="myInput" style="border: 1px solid #AEB6BF "  placeholder="e.g. 1. I changed the background color from yellow to pink because....">
   		<button type="button" class="btn" onclick="newElement()">Add</button>
 </div>
+
 
 <ul id="myUL" style='margin-top: 10px'>
 <?php 
@@ -318,7 +320,10 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 			?>
 
-			
+	
+<div class="sub_frame" id="div-difficult" name="div-difficult"><h4 class="nquestion_text"><strong> (Optional) Is there any issues that you felt uncertain or not sure how to fix it? Please describe the situation, if any.  </strong> </h4>
+ <textarea id="explain_difficult" name="explain_difficult" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_difficult, ENT_QUOTES); ?></textarea>	
+</div>		
 
 <input type="hidden" id="_group" name="_group" value='<?php echo $group;?>'>
 <input type="hidden" name="_stage" id="_stage" value="<?php echo $stage;?>">
