@@ -97,6 +97,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
     <title>Home </title>
     <!-- Custom styles for this template -->
      <link rel="stylesheet" type="text/css" href="/interpretation/css/feedback_form_tmp.css">
+       <link rel="stylesheet" type="text/css" href="/interpretation/css/to_do.css">
 <style>
 .nquestion_text{
 	font-family:Tahoma, Geneva, sans-serif;
@@ -131,7 +132,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 		
 		<div class="alert alert-success" style="width:90%;margin:0px auto; padding-right:70px;;padding-left:70px;">
 		<h3>Awesome! This is the final step to complete the study </h3>
-		<p style="font-size:16px">Please complete the following survey by <span style='color:red'><?php echo $designer_info['second_deadline'];?></span>, and then you are done with the study. If your design ranks in the top five, we will contact you. Your survey answers will NOT affect the compensation. </p>
+		<p style="font-size:16px">Please complete the following survey by <span style='color:red'><?php echo $designer_info['second_deadline'];?></span>, and then you are done with the study. If your design ranks in the top ten, we will contact you and give you the additional reward. Your survey answers will NOT affect the compensation. </p>
 		</div>
 		
 		<div class="alert alert-danger" role="alert" id="error_alert" style="display:none;">
@@ -241,6 +242,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 
 
+
 			<div class="sub_frame" id="div-revision" name="div-revision">			
 				<h4 class="nquestion_text"><strong> 5. Please rate the degree of revision between the initial and revised design. </strong> </h4>				
 				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">
@@ -270,9 +272,24 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 					</table>
 			</div>
 
-			<div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please list all the revisions you made to the initial design, and why. </strong> </h4>
+		<!--	<div class="sub_frame" id="div-change" name="div-change"><h4 class="nquestion_text"><strong> 6. Please list the changes you made to the initial design. </strong> </h4>
 				 <textarea id="mainChange" name="mainChange" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_revision, ENT_QUOTES); ?></textarea>	
-			</div>
+			</div>-->
+
+<div class="sub_frame" id="div-change" name="div-change">
+	<h4 class="nquestion_text"><strong> 6. Please list the changes you made to the initial design. </strong> </h4>
+	<div id="myDIV" class="header">
+  		
+  		<input type="text" id="myInput" style="border: 1px solid #AEB6BF "  placeholder="e.g. I changed the background color from yellow to pink because....">
+  		<button type="button" class="btn" onclick="newElement()">Add</button>
+</div>
+
+<ul id="myUL" style='margin-top: 10px'>
+
+</ul>
+
+</div>
+
 
 		<div class="alert alert-warning" role="alert" style="width:90%;margin:0px auto;padding-right:70px;">
 		<h4><strong>Part II : </strong> Questions about the activities you experienced in the design process.</h4>
@@ -300,7 +317,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 <input type="hidden" id="_group" name="_group" value='<?php echo $group;?>'>
 <input type="hidden" name="_stage" id="_stage" value="<?php echo $stage;?>">
-				
+<input type="hidden" name="change_list" id="change_list" value="">				
 </form>
 <div style="text-align:center;margin-top:20px;">
 		<button type="submit" class="btn-submit" id="submit-bn" onclick="submit();">Submit</button> 
@@ -314,7 +331,8 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 
 <script>
-	 	
+
+var changes = [];	 	
 
 	$('input[type=radio][name=effort]').change(function(){
 		   $("#div-effort").removeClass("has-error");
@@ -329,10 +347,6 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
     	$('#div-time').removeClass("has-error");
 	});
 
-
-	$("#mainChange").bind("keydown", function(){
-    	$('#div-change').removeClass("has-error");
-	});
 
 	$("#ex_feedback").bind("keydown", function(){
     	$('#div-ex-feedback').removeClass("has-error");
@@ -425,8 +439,6 @@ function submit() {
           }
 		}
 
-
-
 		if($("input[name='explain']").length){
 			
 			if ($("input[name='explain']:checked").size() == 0 ) {
@@ -452,12 +464,18 @@ function submit() {
 			
         }
 
-    $('#mainChange').val($.trim($('#mainChange').val() ) ); 
+  /*  $('#mainChange').val($.trim($('#mainChange').val() ) ); 
     if( $('#mainChange').val() == "" ){
        $('#mainChange').parents('.sub_frame:first').addClass("has-error");
         isOkay = false;
          console.log("9");
  		alert('mainChange');
+    }*/
+
+    if(changes.length==0){
+    	$('#mainChange').parents('.sub_frame:first').addClass("has-error");
+        isOkay = false;
+		alert('Please list at least one change you made to the design.');
     }
 
 	if($("#ex_feedback").length) {
@@ -506,6 +524,8 @@ function submit() {
 	console.log("isOkay="+isOkay);
 
 	if(isOkay==true){
+		$("#complete_form [name=mainChange]").val( JSON.stringify(changes));
+			
 		$("#complete_form").submit();
 		
 	}
@@ -516,6 +536,79 @@ function submit() {
 
 
 }
+
+
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("span");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'li') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+
+
+	
+   $('#div-change').removeClass("has-error");
+
+ 
+
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+
+
+var element = {number:changes.length, content: inputValue};
+changes.push(element);
+
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("Please describe what you changed to the design.");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("span");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+
+}
+
 
 </script>
 
