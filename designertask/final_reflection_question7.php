@@ -1,6 +1,6 @@
 <div class="sub_frame" id="div-reflection" name="div-reflection">			
 		<h4 class="nquestion_text"><strong> 
-			7. How useful was the task that asked you to write your responses to your feeling, thoughts, and action plan?		
+			7. How useful was writing down your feeling, thoughts, and action plan?		
 				
 			 </strong> </h4>				
 				<table border="0" cellpadding="5" cellspacing="0" id="entry_1519429516">

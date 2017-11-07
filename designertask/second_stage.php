@@ -208,11 +208,12 @@ em{
   <div class="panel-body">
 		   <span class="statement" style="text-align: justify;"><p>
 			Please invest around <strong> 60 minutes </strong>revising your design based on the feedback. The revised designs rated in the top ten by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
-		 	</p>
-			<p style="font-size:12px"><br>
+		 	
+		 	<br><br>
+
+		 	<a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View initial design and the design brief</a>
+	</p>
 		
-			
-			</p>
 		 	</span>   
   		</div>
 	</div>
@@ -225,11 +226,12 @@ em{
          	switch($designer['group'])
          	{
          		case 'control':
-         			echo "<table class='table table-hover table-nonfluid'>";
-                	echo "<tbody>
-                			<thead><td></td>
-                			<td><strong> Your Feedback<strong></td>
-                			</thead>";
+         		case 'reflection':
+         		echo "
+         		<div style='background:#ffffcc; padding:1px; padding-left:1px'><h4><strong> Your Feedback<strong></h4></div>
+         		<table class='table table-hover table-nonfluid'>";
+                echo " 
+	                    <tbody>";
 
 	                $feedbackNum = 0;
 	                foreach ($feedback as $value)
@@ -249,36 +251,72 @@ em{
 	                echo "</tbody></table>";
          			break;
          		case 'self_explain':
-         			         			echo "<table class='table table-hover table-nonfluid'>";
+         		case 'explain_reflect';
+     				echo "<div style='background:#ffffcc; padding:1px;padding-left:1px'><h4><strong> Your Response to the feedback<strong></h4></div><table class='table table-hover table-nonfluid'>";
                 	echo "<tbody>
-                			<thead><td></td>
-                			<td><strong> Your Interpretation<strong></td>
-                			<td><strong> Feedback coNTENT<strong></td>
-                			</thead>";
+                			";
 
 	                $feedbackNum = 0;
 	                foreach ($feedback as $value)
 	                {
-	                    $feedbackNum += 1;
-	                   $content=htmlspecialchars($value['edited_content']);
-	                   $interpretation=htmlspecialchars($value['interpretation']);
+	                   $feedbackNum += 1;
+	                   $content=htmlspecialchars($value['interpretation']);
+	                   $original=htmlspecialchars($value['edited_content']);
 	                   // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
 
 	                    echo "<tr id='div-".$value['FeedbackID']."' >
 	                            <td><strong>#".$feedbackNum."</strong></td>
 	                    
-	                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($interpretation)."</td> 
-	                             <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."</td> 
+	                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+	                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
 
+
+	                            <div class='collapse' id='collapseExample".$feedbackNum."'>  
+	                                <div class='card card-block'>
+	                                ".nl2br($original)."
+	                                </div>
+	                             </div>
+
+								</td> 
 	                       </tr>";
 
 	                }
 	                echo "</tbody></table>";
-         			break;
+         			break;	
 
          		default:
          			break;
 
+         	}
+
+         	if($designer['group']=='reflection' || $designer['group']=='explain_reflect')
+         	{
+				    if ($stmt_reflection = mysqli_prepare($conn, "SELECT * FROM `Reflection` WHERE `DesignerID`=?")) {
+				                mysqli_stmt_bind_param($stmt_reflection, "i", $DESIGNER);
+				                mysqli_stmt_execute($stmt_reflection);
+				                $result2 = $stmt_reflection->get_result();
+				                $myrow = $result2->fetch_assoc();
+				                $breaks = array("<br />");  
+				                $reflection_content = str_ireplace ($breaks, "\r\n", $myrow['content']);
+				                $feel = str_ireplace ($breaks, "\r\n", $myrow['feel']);
+				                $strength = str_ireplace ($breaks, "\r\n", $myrow['strength']);
+				    }   
+				    else {
+				    //No Designs found
+				        echo "Our system encounter some problems, please contact our staff Grace at yyen4@illinois.edu with error code: SHOWFEEDBACK";
+				     
+				        die();
+				    }
+
+         		echo "<div style='background:#ffffcc; padding:1px; padding-left:1px'><h4><strong> Your Action Plan<strong></h4></div><table class='table table-hover table-nonfluid'>";
+                echo " 
+	                    <tbody>
+	                    <tr>
+	                    
+	                         <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($reflection_content)."</td> 
+
+	                     </tr>";              
+	            echo "</tbody></table>";
          	}
          ?>
   

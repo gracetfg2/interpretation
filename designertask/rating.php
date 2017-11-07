@@ -170,15 +170,7 @@ $_SESSION['designer_group']= $designer['group'];
                     echo "<tr id='div-".$value['FeedbackID']."' >
                             <td><strong>#".$feedbackNum."</strong></td>
                             <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($original)."
-                            <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read your response</a>
-
-
-                            <div class='collapse' id='collapseExample".$feedbackNum."'>  
-                                <div class='card card-block'>
-                                ".nl2br($content)."
-                                </div>
-                             </div>
-                             </div>
+                        
                             </td>  
 
                 <td>
