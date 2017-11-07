@@ -12,12 +12,12 @@ $designID= $_POST['designIdx'];
 $_jsonGlobals= $_POST['jsonGlobals'];
 $jsonTextareas= $_POST['jsonTextareas'];
 $jsonRating= $_POST['jsonRating'];
+$jsonLog= $_POST['jsonLog'];
 /********************************************/
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
     
-
 /*****Save Global Info***********/
 
 if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID, total_task, total_interpretation, total_reflection) VALUES (?, ?, ?, ?, ?, ?)
@@ -52,6 +52,23 @@ else if($_POST['originPage'] == "explain.php" || $_POST['originPage'] == "explai
     }
 }
 
+/*****Save Log Data TO A FILE***********/
+if($_POST['originPage'] == "reflection.php" || $_POST['originPage'] == "explain_initial.php" || $_POST['originPage'] == "reflection_second.php") {
+    if (!($stmt = mysqli_prepare($conn, "SELECT * FROM u_Designer WHERE DesignerID=?"))) {
+        echo "Select group prepare failed: (" . $conn->errno . ") " . $conn->error;
+    }
+    $stmt->bind_param("i", $designerID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $group = ($result->fetch_assoc())['group'];
+    mysqli_stmt_close($stmt);
+
+    $logFileName = "../behavior/" . $group . "/s" . strval($designerID) . "_" . $group . ".txt";
+    $logFile = fopen($logFileName, 'a') or die('Cannot open file:  '.$logFileName);
+    $data = 'New data line 1';
+    fwrite($logFile, $_POST['originPage'] . "\r\n" . $jsonLog . "\r\n\r\n");
+    fclose($logFile);
+}
 
 /*****Save Text Data***********/
 $textareaInfo = json_decode($jsonTextareas);

@@ -252,6 +252,7 @@ function submit() {
             jsonGlobals: json[0],
             jsonTextareas: json[1],
             jsonRating: json[2],
+            jsonLog: json[3],
             originPage: "reflection.php",
             redirect: "rating.php"
         });
