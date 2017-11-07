@@ -196,7 +196,7 @@ $_SESSION['designer_group']= $designer['group'];
         </textarea>
         <br>
 
-         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, what actions could I take to improve my Ddesign? </h4><textarea id="monitoredtext" monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, what actions could I take to improve my design? </h4><textarea id="monitoredtext" monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
         <br>
 </div>
         <div style="text-align:center;margin-top:20px;" >
