@@ -207,7 +207,7 @@ em{
 	  </div>
   <div class="panel-body">
 		   <span class="statement" style="text-align: justify;"><p>
-			Please <strong>invest 15 to 30 minutes </strong>revising your design based on the feedback. The revised designs rated in the top five by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
+			Please invest around <strong> 60 minutes </strong>revising your design based on the feedback. The revised designs rated in the top ten by an independent design expert will be awarded an additional $20. Please upload an image of the revised design that you are satisfied with. Once you click Submit, no further changes are possible. The revised design and follow-up survey must be completed by <span style="color:red"><?php echo $designer['second_deadline'];?></span> and will complete the study. We hope you enjoyed the design task and look forward to your submission!
 		 	</p>
 			<p style="font-size:12px"><br>
 		
@@ -219,12 +219,75 @@ em{
 
 	<p style="font-size:16px">
             <ul>
-           <li><a href= 'vew_feedback.php?mid=<?php echo $mid;?>' target="_blank"> View my design and my responses to the feedback</a></li>
+           <li>
+           
+         <?php
+         	switch($designer['group'])
+         	{
+         		case 'control':
+         			echo "<table class='table table-hover table-nonfluid'>";
+                	echo "<tbody>
+                			<thead><td></td>
+                			<td><strong> Your Feedback<strong></td>
+                			</thead>";
+
+	                $feedbackNum = 0;
+	                foreach ($feedback as $value)
+	                {
+	                    $feedbackNum += 1;
+	                   $content=htmlspecialchars($value['edited_content']);
+	                   // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
+
+	                    echo "<tr id='div-".$value['FeedbackID']."' >
+	                            <td><strong>#".$feedbackNum."</strong></td>
+	                    
+	                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."</td> 
+
+	                       </tr>";
+
+	                }
+	                echo "</tbody></table>";
+         			break;
+         		case 'self_explain':
+         			         			echo "<table class='table table-hover table-nonfluid'>";
+                	echo "<tbody>
+                			<thead><td></td>
+                			<td><strong> Your Interpretation<strong></td>
+                			<td><strong> Feedback coNTENT<strong></td>
+                			</thead>";
+
+	                $feedbackNum = 0;
+	                foreach ($feedback as $value)
+	                {
+	                    $feedbackNum += 1;
+	                   $content=htmlspecialchars($value['edited_content']);
+	                   $interpretation=htmlspecialchars($value['interpretation']);
+	                   // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
+
+	                    echo "<tr id='div-".$value['FeedbackID']."' >
+	                            <td><strong>#".$feedbackNum."</strong></td>
+	                    
+	                            <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($interpretation)."</td> 
+	                             <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."</td> 
+
+	                       </tr>";
+
+	                }
+	                echo "</tbody></table>";
+         			break;
+
+         		default:
+         			break;
+
+         	}
+         ?>
+  
+           </li>
             </ul>
             </p>
-           
+           <hr>
 	 <div class="form-group" id="form-group-file">
-	    <label for="fileToUpload" class="col-sm-4 col-md-4 control-label">Upload Revised Design<em>*</em></label>
+	    <label for="fileToUpload" class="col-sm-4 col-md-4 control-label">Upload revised design<em>*</em></label>
 	    <div class="col-sm-8 col-md-8">
 		    <input class="input-file" id="fileToUpload" name="fileToUpload" type="file" onChange="fileUpdate(this);">
 		    <p class="help-block">Only JPG, JPEG, PNG, and GIF files are allowed, the image size should be less than 5MB</p>

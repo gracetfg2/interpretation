@@ -118,40 +118,41 @@ $ok_to_use=1;
         include('../webpage-utility/ele_nav.php');
     ?>
     <script type="text/javascript" src="behavior_record_updated.js"></script>
+    <script type="text/javascript" src="reflection_script.js"></script>
     <div class="container">
 
         <div class="alert alert-info" id="instruction">
 
         <div id='task-inst'>
             <h3>Review Feedback</h3>
-            <p>We have collected feedback from two independent reviewers to help you revise your design. To ensure that you fully comprehend the feedback, we want you to <strong>rewrite the content of the feedback using your own words</strong>. Your response should cover all the content and keep its original meaning. Do NOT write anything beyond the explanation of the feedback (e.g. do NOT write action plan).
+            <p style="font-size:20px">We have collected feedback from two independent reviewers to help you revise your design. These reviewers have at least three years of professional experience in design. To ensure that you fully comprehend the feedback, we want you to <strong>rewrite the content of the feedback using your own words</strong>. Your response should cover all the content and keep its original meaning. Do NOT write anything beyond the explanation of the feedback (e.g. do NOT write action plan).
             </p>
 
                 <br>
-             <span style='color:grey'><em> Note: Copy and paste functions are disabled on the task pages.   </em></span>
-            <br> <br>
             
             <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="ReadExample()">Next</button>  
         </div>
 
         <div id='example-panel' style='display:none;'>
 
-        <h3>Before restating your own feedback, please read the following sample response:</h3>
+        <h3>Read an example of the restating task:</h3>
+        <br>
         <div class='row'>
 
         <div class='col-md-6'>
-        <h5>Original Feedback:</h5>
-            <p style='font-size: 14px'>
-               I'm ok with the bottom, but it would be great if it was of more color contrast compared to the background, and with more letter-spacing - so that it was easy to read from a distance. Maybe make the runner grey and the ground (which is a background for "october 1" stuff) - black? Or at least increase letter-spacing.
+        <h4>Feedback from the reviewer:</h4>
+            <p style='font-size: 16px'>
+               I'm ok with the bottom, but it would be great if it was of more color contrast compared to the background, and with more letter-spacing - so that it was easy to read from a distance. Should at least increase letter-spacing.
             </p>
         </div>
+
         <div class='col-md-6' style='height:250px'>
-            <h5>Sample Response:</h5>
-            <textarea id='sample' style='font-size: 14px; height:100%'>The overall top part of the ad and the runner figure look good. For the middle section of the design. The text to left of the runner looks odd and has too much line-spacing, making the ad hard to read at a glance. The overall font size should be smaller to provide better contrast against the heading and date. But at the same time, choosing another font that doesn't give the feeling of crowded. The bottom part does not have enough color contrast, so does the letter-spacing, making it hard to be read from a distance.  Having the runner a lighter color with the ground for the background of "October 1 2016" darker would provide better contrast.  The least thing that should be done is to increase letter spacing.
+            <h4> Response from the designer:</h4>
+            <textarea id='sample' style='font-size: 14px;'>The reviewer didn't like the bottom part of the flyer because it does not give enough color contrast. I think this is probably because I set the background color too dark and used a dark green for the text. Also, the letter-spacing is too small, making it hard to be read from a distance. The least thing I should do is to increase the letter-spacing.
             </textarea>
         </div>
         </div>
-            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="startReview()">I read the example and am ready to review my feedback</button> 
+            <button type="button" class="btn btn-success" style="margin:0px auto" id="reviewbtn" onclick="startReview()">Next</button> 
 
       
         </div>
@@ -161,8 +162,18 @@ $ok_to_use=1;
 
 
     <div id="task" style='display:none;'>
-    <div style='margin-bottom: 30px'>
-        <a href='view_initial.php?mid=<?php echo $mid;?>' target="_blank"> View my initial design and design brief</a>
+    <div>
+        <div class="alert alert-info" id="instruction">
+            <h3>Restate Your Feedback :</h3>
+             <p>To show your understanding of the feedback, please rewrite the content of the feedback using your own words. Your responses should cover all the content and keep its original meaning. Do NOT write anything beyond the explanation of the feedback (e.g. do NOT write action plan).</p>
+             <p>Please invest approximately 10 minutes per feedback. There are in total two pieces of feedback.</p>
+            <br>
+             <span style='color:grey'><em> Note: Copy and paste functions are disabled on the task pages.   </em></span>
+            <p style="font-size:16px">
+            <a href= 'view_initial.php?mid=<?php echo $mid;?>' target="_blank"> Open your initial design and the design brief</a>
+            </p>
+         </div><!--End alert section for instruction-->
+
     </div>
         <?php
             $feedbackNum = 0;

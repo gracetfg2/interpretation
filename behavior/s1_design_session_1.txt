@@ -1,9 +1,0 @@
-
- New Record
-[[1501708059599,"init"],[1501708067144,"blur"],[1501708072659,"focus"],[1501708073169,"start-upload-design"],[1501708075123,"submit"],[13570,"prepareTime"],[1956,"taskTime"]]
-
- New Record
-[[1501708112510,"init"],[1501708116896,"submit"],[null,"prepareTime"],[null,"taskTime"]]
-
- New Record
-[[1503452621457,"init"],[1503452624080,"blur"],[1503452638609,"focus"],[1503452638648,"start-upload-design"],[1503452640496,"submit"],[17191,"prepareTime"],[1848,"taskTime"]]
