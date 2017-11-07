@@ -28,7 +28,7 @@ $current_second_deadline='November 8th at 11:59 pm (Central Time)';
     <body>
     <h3>
     Hi '.$designer['name'].',</h3>
-<p style="font-size:14px"> In the second phase, you have to revise your initial design to better achieve the stated design goal. Please prepare your initial design in the tool and login to our design platform (http://review-my-design.org/interpretation/index.php). You should complete the second phase by '.$current_second_deadline.'. After completing, we will check your submission and distribute the $30 through your Paypal address. Please block out 1.5 hour to finish the stage. More importantly, we hope you enjoy the study! <br>
+<p style="font-size:14px"> In the second phase, you have to revise your initial design to better achieve the stated design goal. Please prepare your initial design in the tool and login to our design platform (http://review-my-design.org/interpretation/index.php). You should complete the second phase by '.$current_second_deadline.'. After completing this phase, we will check the submission and distribute the $30 through your Paypal address. Please block out 1.5 hour to finish the stage. More importantly, we hope you enjoy the study! <br>
 
      <br>
     -------------------------------------------<br>

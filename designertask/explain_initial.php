@@ -164,7 +164,7 @@ $ok_to_use=1;
     <div>
         <div class="alert alert-info" id="instruction">
             <h3>Restate Your Feedback :</h3>
-             <p>To show your understanding of the feedback, please rewrite the content of the feedback using your own words. Your responses should cover all the content and keep its original meaning. Do NOT write anything beyond the explanation of the feedback (e.g. do NOT write action plan).</p>
+             <p>To ensure that your understand the feedback, please restate the content of the feedback using your own words. Your responses should cover all the content and keep its original meaning. Do NOT write anything beyond the explanation of the feedback (e.g. do NOT write action plan).</p>
              <p>Please invest approximately 10 minutes per feedback. There are in total two pieces of feedback.</p>
             <br>
              <span style='color:grey'><em> Note: Copy and paste functions are disabled on the task pages.   </em></span>
