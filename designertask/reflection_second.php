@@ -39,8 +39,8 @@ $_SESSION['designer_group']= $designer['group'];
         mysqli_stmt_bind_param($stmt,"ii",$DESIGNER,$version);
         mysqli_stmt_execute($stmt);
         $result = $stmt->get_result();
-        $design=$result->fetch_assoc() ;            
-        mysqli_stmt_close($stmt);   
+        $design=$result->fetch_assoc() ;
+        mysqli_stmt_close($stmt);
     }
 
     $design_id=$design['DesignID'];
@@ -210,6 +210,7 @@ function submit() {
             jsonGlobals: json[0],
             jsonTextareas: json[1],
             jsonRating: json[2],
+            jsonLog: json[3],
             originPage: "reflection_second.php",
             redirect: "rating.php"
         });

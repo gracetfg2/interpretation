@@ -6,6 +6,8 @@ var firstCharTimestamp = INVALID_VALUE;
 
 var textboxInfo = {};
 
+var DEBUGMODE = 0;
+
 class TextboxData {
     constructor(pCount, pTime, lastP, lastIn, delCount, wCount, senCount, isP, cont) {
         this.firstInputTimestamp = 0;
@@ -33,19 +35,22 @@ var pauseTimeouts = {};
 var eventLogs = [];
 
 function logAction(action, param) {
-    console.log(action);
     if (typeof param === "undefined") {
         eventLogs.push([(new Date()).getTime(), action]);
+        if(DEBUGMODE)
+            console.log(action);
     }
     else {
         eventLogs.push([(new Date()).getTime(), action, param])
+        if(DEBUGMODE)
+            console.log(action + ", " + param);
     }
 }
 
 $(document).ready(function() {
     openPageTimestamp = getCurTime();
     //console.log("Open Page: " + openPageTimestamp);
-    logAction("Opened");
+    logAction("opened");
 
     $(window).focus(function() {
         logAction("focus");
@@ -107,7 +112,7 @@ function pauseDelegateUp(monitorLabel) {
 
 function onInitTextKeyDown(e) {
     firstCharTimestamp = getCurTime();
-    logAction("start");
+    //logAction("start");
         // Now don't call this function ever again!
     $('[id=monitoredtext]').each(function() {
         $(this).unbind();
@@ -158,6 +163,8 @@ function onTextKeyDown(e) {
     
     var unicode = e.keyCode ? e.keyCode : e.charCode;
     
+    logAction(monitorLabel, textfield.val() + e.key);
+    
     if (unicode == 8) {
         deleteDelegate(textfield, textboxData);
     }
@@ -169,7 +176,7 @@ function deleteDelegate(textfield, data) {    // TODO: touch up
     var cursorOffset = textfield.getCursorPosition();
     if(textVal != "" && cursorOffset != 0) {
         data.deleteCount += 1;
-        logAction("Delete");
+        //logAction("Delete");
     }
 }
 
@@ -186,7 +193,7 @@ function recordPause(monitorLabel) {
     textboxInfo[monitorLabel].lastPauseTimestamp = getCurTime();
     textboxInfo[monitorLabel].pauseCount += 1;
     textboxInfo[monitorLabel].isPauseActive = true;
-    logAction("Pause " + monitorLabel);
+    //logAction("Pause " + monitorLabel);
 }
 
 function getParameterByName(name) {
@@ -219,7 +226,8 @@ function notifyHidden(textLabel) {
         return;
     }
     textbox.visibleTime += getCurTime() - textbox.becameVisibleTimestamp;
-    textbox.writingTime += getCurTime() - textbox.firstInputAfterRevealTimestamp;
+    if(textbox.firstInputAfterRevealTimestamp != 0)
+        textbox.writingTime += getCurTime() - textbox.firstInputAfterRevealTimestamp;
     textbox.isVisible = false;
 }
 
@@ -286,10 +294,11 @@ function outputJSON() {
     var globalStr = JSON.stringify({openPageTimestamp:openPageTimestamp, firstCharTimestamp:firstCharTimestamp, closePageTimestamp:getCurTime()});
     var textboxStr = JSON.stringify(textboxInfo);
     var ratingStr = JSON.stringify(ratingInfo);
+    var logStr = JSON.stringify(eventLogs);
 
    // alert(ratingStr);
     //console.log(globalStr)
     //console.log(textboxStr);
-    return [globalStr, textboxStr, ratingStr];
+    return [globalStr, textboxStr, ratingStr, logStr];
 }
 
