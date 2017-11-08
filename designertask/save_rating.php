@@ -1,149 +1,162 @@
 <?php
 
 
-session_start();
-if(!$_SESSION['designer_id']){ header('Location: ../index.php');  die();}
-if(!$_GET['design_id']){ header('Location: ../index.php');  die();}
-$designer_id=$_SESSION['designer_id'];
-$design_id=$_GET['design_id'];
+session_start();    
+//************* Check Login ****************// 
+$designerID= $_SESSION['designer_id'];
+
+if(!$designerID) { header("Location: ../index.php"); die(); }
+
+//************* Get Data****************// 
+$designID= $_POST['designIdx'];
+
+/********************************************/
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
+    
+
+/*****Save Global Info***********/
+
+if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorGlobal (PageOpenedTime, FirstCharTime, DesignerID, total_task, total_interpretation, total_reflection) VALUES (?, ?, ?, ?, ?, ?)
+
+ON DUPLICATE KEY UPDATE
+PageOpenedTime = VALUES(PageOpenedTime), FirstCharTime = VALUES(FirstCharTime)"))) {
+    echo "SendData Global prepare failed: (" . $conn->errno . ") " . $conn->error;
+}
+$jsonGlobals = json_decode($_jsonGlobals);
+$pageOpen = $jsonGlobals->openPageTimestamp;
+$pageClose = $jsonGlobals->closePageTimestamp;
+$zero = 0;
+
+$stmt->bind_param("iiiiii", $pageOpen, $jsonGlobals->firstCharTimestamp, $designerID, $zero, $zero, $zero);
+$stmt->execute();
+mysqli_stmt_close($stmt);
+
+$totalTime = ($pageClose - $pageOpen) / 1000;
+
+if (!($stmt = mysqli_query($conn, "UPDATE BehaviorGlobal SET total_task=total_task+".$totalTime." WHERE `DesignerID`=".$designerID))) {
+    echo "SendData global task query failed: (" . $conn->errno . ") " . $conn->error;
+}
+
+if($_POST['originPage'] == "reflection.php" || $_POST['originPage'] == "reflection_second.php") {
+    if (!($stmt = mysqli_query($conn, "UPDATE BehaviorGlobal SET total_reflection=total_reflection+".$totalTime." WHERE `DesignerID`=".$designerID))) {
+    echo "SendData Global reflection query failed: (" . $conn->errno . ") " . $conn->error;
+    }
+}
+else if($_POST['originPage'] == "explain.php" || $_POST['originPage'] == "explain_initial.php") {
+    if (!($stmt = mysqli_query($conn, "UPDATE BehaviorGlobal SET total_interpretation=total_interpretation+".$totalTime." WHERE `DesignerID`=".$designerID))) {
+        echo "SendData Global interpretation query failed: (" . $conn->errno . ") " . $conn->error;
+    }
+}
 
 
+/*****Save Text Data***********/
+$textareaInfo = json_decode($jsonTextareas);
+    
+foreach($textareaInfo as $label => $textbox) {
+    //echo "Iterating";
+ 
 
-//************Check Permission
-$sql="SELECT * FROM Design WHERE DesignID=? AND f_DesignerID=?";
-if($stmt=mysqli_prepare($conn,$sql))
-{
-	mysqli_stmt_bind_param($stmt,"ii",$design_id, $designer_id);
-	mysqli_stmt_execute($stmt);
-	$result = $stmt->get_result();
-	while ($myrow = $result->fetch_assoc()) {
-	    $checkdesign[]=$myrow;
-	 }
+    if (!($stmt = mysqli_prepare($conn, "INSERT INTO BehaviorTextarea (DesignerID, Label, FirstCharTime, LastCharTime, PauseCount, PauseTime, DeleteCount, WordCount, SentenceCount, visible_time, writing_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ON DUPLICATE KEY UPDATE
+    FirstCharTime = VALUES(FirstCharTime), LastCharTime = VALUES(LastCharTime), 
+    PauseCount = VALUES(PauseCount), PauseTime = VALUES(PauseTime), DeleteCount = VALUES(DeleteCount), 
+    WordCount = VALUES(WordCount), SentenceCount = VALUES(SentenceCount),
+    visible_time = visible_time + VALUES(visible_time),
+    writing_time = writing_time + VALUES(writing_time)"))) {
+        echo "SendData Textarea prepare failed: (" . $conn->errno . ") " . $conn->error;
+    }
 
-	if(count($checkdesign) > 0) {}
-	else{ echo "Sorry. You don't have permission to visit this page."; die();
-	} 		
+    $firstInput = $textbox->firstInputTimestamp;
+    $lastInput = $textbox->lastInputTimestamp;
+    $pauseCount = $textbox->pauseCount;
+    $pauseTime = $textbox->pauseTime;
+    $deleteCount = $textbox->deleteCount;
+    $wordCount = $textbox->wordCount;
+    $sentCount = $textbox->sentenceCount;
+    $visibleTime = $textbox->visibleTime / 1000;
+    $writingTime = $textbox->writingTime / 1000;
+
+    $stmt->bind_param("isiiiiiiidd", $designerID, $label, $firstInput, $lastInput, $pauseCount, $pauseTime, $deleteCount, $wordCount, $sentCount, $visibleTime, $writingTime);
+    $stmt->execute();
+    mysqli_stmt_close($stmt);
+
+    if($label =="reflection-feel")
+    {
+        if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, feel) VALUES (?, ?, ?)
+        ON DUPLICATE KEY UPDATE
+        feel = VALUES(feel)"))) {
+            echo "SendData Reflection prepare failed: (" . $conn->errno . ") " . $conn->error;
+        }
+        $content= $textbox->content;
+        $stmt->bind_param("iis", $designerID, $designID, $content);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+   
+    }
+    else if( $label =="reflection-strength")
+    {
+        if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, strength) VALUES (?, ?, ?)
+        ON DUPLICATE KEY UPDATE
+        strength = VALUES(strength)"))) {
+            echo "SendData Reflection prepare failed: (" . $conn->errno . ") " . $conn->error;
+        }
+        $content= $textbox->content;
+        $stmt->bind_param("iis", $designerID, $designID, $content);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+   
+    }
+    else if( $label =="reflection-action")
+    {
+        if (!($stmt = mysqli_prepare($conn, "INSERT INTO Reflection (DesignerID, DesignID, content) VALUES (?, ?, ?)
+        ON DUPLICATE KEY UPDATE
+        content = VALUES(content)"))) {
+            echo "SendData Reflection prepare failed: (" . $conn->errno . ") " . $conn->error;
+        }
+        $content= $textbox->content;
+        $stmt->bind_param("iis", $designerID, $designID, $content);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);  
+    }
+    else 
+    {
+
+        $split = explode("-",  $label);
+        $label=$split[0];
+        $feedback_id=$split[1];
+        $sql = "UPDATE `ExpertFeedback` SET `interpretation` =? WHERE `FeedbackID`=?";
+        
+         // echo $feedback_id. "=>".$textbox->content;
+        if($stmt = mysqli_prepare($conn,$sql)){
+            mysqli_stmt_bind_param($stmt, "si",$textbox->content, $feedback_id);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
+
+    }
 
 }
 
-//************ Get Designer Information
-$sql="SELECT * FROM u_Designer WHERE DesignerID=?";
-if($stmt=mysqli_prepare($conn,$sql))
-{
-	mysqli_stmt_bind_param($stmt,"i",$designer_id);
-	mysqli_stmt_execute($stmt);
-	$result = $stmt->get_result();
-	$designer=$result->fetch_assoc() ;		 		
+/*****Save Rating Data***********/
+$ratingInfo = json_decode($jsonRating);
+//var_dump($textareaInfo);
+
+foreach($ratingInfo as $label => $textbox) {
+   //echo  "feedbackid=".$label."=>".$textbox->rating;
+
+    $sql = "UPDATE `ExpertFeedback` SET `designer_rating` =? WHERE `FeedbackID`=?";
+    
+    if($stmt = mysqli_prepare($conn,$sql)){
+        mysqli_stmt_bind_param($stmt, "ii",$textbox->rating, $label);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
 
 }
-$designer_id=$designer['DesignerID'];
 
-//************ Save Ratings
-foreach ($_POST as $key => $value)
-{	
-    /*if (strpos($key,'a') !== false) {// action
-    	//echo $key."and".$value."\n";
-    	$sql = "UPDATE `Feedback` SET `action`=? WHERE `FeedbackID`=? ";
-    	if($stmt = mysqli_prepare($conn,$sql)){
-    		mysqli_stmt_bind_param($stmt, "ss",, substr($key,1));
-    		$value=htmlspecialchars($value);
-	   		mysqli_stmt_execute($stmt);
-  		}
-
-	}
-	else // perceived quality
-	{*/
-		//echo $key."and".$value."\n";
-		$sql = "UPDATE `Feedback` SET `designer_rating` =? WHERE `FeedbackID`=?";
-		if($stmt = mysqli_prepare($conn,$sql)){
-    		mysqli_stmt_bind_param($stmt, "ii",$value, $key);
-	   		mysqli_stmt_execute($stmt);
-  		}
-		
-	
-	
-} 
-
-
-
-//***************Save behavior file
-
-$sql="SELECT * FROM monitorbehavior WHERE f_DesignerID=?";
-if($stmt1=mysqli_prepare($conn,$sql))
-{
-	mysqli_stmt_bind_param($stmt1,"i",$designer_id);
-	mysqli_stmt_execute($stmt1);
-	$result = $stmt1->get_result();
-	while ($myrow = $result->fetch_assoc()) {
-	    			$record[]=$myrow;
-	 }
-
-	if(count($record) > 0) {//Update Record
-		
-		$sql2 = "UPDATE `monitorbehavior` SET `review_time` =? , `review_behavior`=? WHERE `f_DesignerID`=?";
-		if($stmt2 = mysqli_prepare($conn,$sql2)){
-			mysqli_stmt_bind_param($stmt2, "isi", $review_time, $review_behavior,$designer_id);			
-			$review_time=$_POST['taskTime'];
-			if(! is_null($current_record['review_time']))
-			{
-				$review_time=$current_record['review_time']+$review_time;
-			}				
-			//$review_behavior="../behavior/".$designer['group']."/s".$designer_id."-review.txt";
-			mysqli_stmt_execute($stmt2);
-		}
-		else
-		{ 
-			echo $stmt2 ->error;
-		}
-	
-	}
-	else///New Record
-	{	
-		
-		$stmt = $conn->prepare("INSERT INTO monitorbehavior(f_DesignerID, subject_group, review_time, review_behavior) VALUES ( ?, ?, ?, ?)");
-   	   $stmt->bind_param("isis",  $designer_id, $designer['group'], $review_time, $review_behavior);
-   	   $review_time=$_POST['taskTime'];
-	   $review_behavior="../behavior/".$designer['group']."/s".$designer_id."-review.txt";
-       $success = $stmt->execute();
-    	
-    	if(!$success){
-        	echo $stmt->error;
-     
-    	}
-	
-
-	/*	$stmt = $conn->prepare("INSERT INTO MonitorBehavior (f_DesignerID, subject_group,review_time, review_behavior) VALUES (?, ? ,?, ?)");
-		$stmt->bind_param("isis", $designer_id, $designer['group'], $review_time, $review_behavior);
-		$stmt->execute();
-		$stmt->close();
-	
-	*/	
-		
-	}
-}
-$myfile = fopen($review_behavior, "a");
-$txt = "\n New Record\n".$_POST['_behavior']."\n";
-fwrite($myfile, $txt);
-fclose($myfile);
-
-
-
-//************ Update Designer Status
-	
-	//Finished Task
-	$sql = "UPDATE `u_Designer` SET `process` =? WHERE `DesignerID`=?";
-	if($stmt = mysqli_prepare($conn,$sql)){
-		$process=5;
-		mysqli_stmt_bind_param($stmt, "ii", $process, $designer_id);
-		mysqli_stmt_execute($stmt);
-	}	
-	mysqli_stmt_close($stmt);
-	mysqli_close($conn); 
-	header('Location: second_stage.php');
-
+header('Location: '.$_POST['redirect']);
 
 
 ?>
