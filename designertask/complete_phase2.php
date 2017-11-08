@@ -280,13 +280,13 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 
 
-<div class="sub_frame" id="div-change" name="div-change">
+<div class="sub_frame" id="div-change" name="div-change" style="margin-bottom:10px">
 	<h4 class="nquestion_text"><strong> 6 Please list the main revisions between the initial and the revised design. You can click the 'Add' button to add more items.</strong> </h4>
 	<div id="myDIV" class="header">
   		
   		<input type="text" id="myInput" style="border: 1px solid #AEB6BF "  placeholder="e.g. 1. I changed the background color from yellow to pink because....">
   		<button type="button" class="btn" onclick="newElement()">Add</button>
-</div>
+	</div>
 
 
 <ul id="myUL" style='margin-top: 10px'>
