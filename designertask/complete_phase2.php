@@ -153,9 +153,11 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 
 			<div class="sub_frame" id="div-time" name="div-time">
 				<h4 class="nquestion_text"><strong> 1. How many minutes did you spend revising the flyer? </strong> </h4>			
-			      <input type="text" name="time" id="time" placeholder="e.g. 50 minutes" maxlength="30" value='<?php print htmlspecialchars($time, ENT_QUOTES); ?>'> 
+			      <input type="text" class="form-control" name="time" id="time" placeholder="e.g. 50 minutes" maxlength="30" value='<?php echo htmlspecialchars($time, ENT_QUOTES); ?>'> 
 				
 			</div>
+
+
 
 			<div class="sub_frame" id="div-effort" name="div-effort">			
 				<h4 class="nquestion_text"><strong> 2. How much effort did you invest revising the flyer? </strong> </h4>				
