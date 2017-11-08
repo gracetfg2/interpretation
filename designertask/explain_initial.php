@@ -211,6 +211,7 @@ $ok_to_use=1;
    
 
 <input type="hidden" name="next_page" id="next_page" value="<?php echo $next_page;?>">
+<input type="hidden" name="design_id" id="design_id" value="<?php echo $design_id;?>">
 
     </div><!--End Task Section-->
       <?php include("../webpage-utility/footer.php") ?>
@@ -325,13 +326,14 @@ function numPages()
 function submit() {
      var label = "explain" + current_page + "-" + $('#fid'+current_page).val();
     var contentVal = $("textarea[monitorlabel='" + label + "']").val();
-   
+       logAction("submit");
     if(countWords(contentVal) < 20) {
         window.alert("Your response is too short, please check if your response covers all the insights provided in this feedback.");
     }
     else {       
         var json = outputJSON();
-        var designId=$('#design_id').val();
+        var designId= $('#design_id').val();
+    
         post('save_task.php', {
             designIdx: designId, 
             jsonGlobals: json[0], 

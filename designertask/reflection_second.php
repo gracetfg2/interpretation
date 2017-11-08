@@ -189,7 +189,7 @@ function nextPage()
 function submit() {
 
     var isOkay=true;
-
+ logAction("submit");
 
     $('[id=monitoredtext]').each(function() {   // For each monitored text field...
         var text = $(this).val();       

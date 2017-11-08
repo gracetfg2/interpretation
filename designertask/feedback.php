@@ -206,7 +206,7 @@ var isOkay = true;
     
 function submit() {
 
- 
+        logAction("submit");
      
      $(':radio').each(function () {
         name = $(this).attr('name');
@@ -230,6 +230,7 @@ function submit() {
             jsonGlobals: json[0],
             jsonTextareas: json[1],
             jsonRating: json[2],
+            jsonLog: json[3],
             originPage: "feedback.php",
             redirect: "second_stage.php"
         });

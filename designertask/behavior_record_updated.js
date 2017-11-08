@@ -6,7 +6,7 @@ var firstCharTimestamp = INVALID_VALUE;
 
 var textboxInfo = {};
 
-var DEBUGMODE = 0;
+var DEBUGMODE = 1;
 
 class TextboxData {
     constructor(pCount, pTime, lastP, lastIn, delCount, wCount, senCount, isP, cont) {

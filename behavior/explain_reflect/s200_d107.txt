@@ -1,0 +1,15 @@
+explain_initial.php
+[[1510123657088,"opened"]]
+
+explain_initial.php
+[[1510123742297,"opened"],[1510123757523,"focus"],[1510123763668,"explain1-189","tet s a a a a a a a a s s s s s s s s a a a a a a aa a a a a aa   1"],[1510123768790,"explain2-190","e e e e ee e e e e e e e e w 1 1 1 1 1 1 1 1 2 2 3 4 2 23 3 1 2 3 12 3 1 23 3 1 2 3 1 2 3s  s s s "],[1510123768942,"explain2-190","e e e e ee e e e e e e e e w 1 1 1 1 1 1 1 1 2 2 3 4 2 23 3 1 2 3 12 3 1 23 3 1 2 3 1 2 3s  s s s 3"]]
+
+reflection_second.php
+[[1510123773459,"opened"],[1510123775515,"reflection-feel","q q w q q w q e q w e a w e q w q 3 3 3 3 3 3 33 3 3 3 3 33 3 3a a a "],[1510123775951,"reflection-feel","q q w q q w q e q w e a w e q w q 3 3 3 3 3 3 33 3 3 3 3 33 3 3a a a 1"],[1510123778959,"reflection-strength","2 2 3 1 2 3 14 2 3 12 3 1 23 1 233 3 3 3 3 3 3 3 3 3a a a "],[1510123779126,"reflection-strength","2 2 3 1 2 3 14 2 3 12 3 1 23 1 233 3 3 3 3 3 3 3 3 3a a a 3"],[1510123781162,"reflection-feel","q q w q q w q e q w e a w e q w q 3 3 3 3 3 3 33 3 3 3 3 33 3 3a a a 1Backspace"],[1510123782638,"blur"],[1510123783909,"focus"]]
+
+explain_initial.php
+[[1510126375143,"opened"],[1510126381441,"explain1-189","tet s a a a a a a a a s s s s s s s s a a a a a a aa a a a a aa   1 q q  "],[1510126387534,"explain2-190","e e e e ee e e e e e e e e w 1 1 1 1 1 1 1 1 2 2 3 4 2 23 3 1 2 3 12 3 1 23 3 1 2 3 1 2 3s  s s s 3q Backspace"],[1510126389372,"submit"]]
+
+reflection_second.php
+[[1510126391296,"opened"],[1510126393878,"submit"]]
+
