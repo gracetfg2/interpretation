@@ -323,7 +323,7 @@ if($designer_info['process']>5 ||$designer_info['process']<4)
 			?>
 
 	
-<div class="sub_frame" id="div-difficult" name="div-difficult"><h4 class="nquestion_text"><strong> (Optional) Is there any issues that you felt uncertain or not sure how to fix it? Please describe the situation, if any.  </strong> </h4>
+<div class="sub_frame" id="div-difficult" name="div-difficult"><h4 class="nquestion_text"><strong> Is there any issues that you felt uncertain or not sure how to fix it? Please describe the situation, if any.  </strong> </h4>
  <textarea id="explain_difficult" name="explain_difficult" rows="4" cols="52" style="width:100%;"><?php echo htmlspecialchars($explain_difficult, ENT_QUOTES); ?></textarea>	
 </div>		
 
