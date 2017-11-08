@@ -146,13 +146,13 @@ $_SESSION['designer_group']= $designer['group'];
          </div><!--End alert section for instruction-->
 
                      
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I feel about the feedback : </h4><textarea id="monitoredtext" placeholder='i.e. Wrtie your feeling about receiving this set of feedback.' monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
+        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do you feel about the feedback : </h4><textarea id="monitoredtext" placeholder='i.e. Wrtie your feeling about receiving this set of feedback.' monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
         <br>
 
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I think about the feedback? </h4><textarea id="monitoredtext" placeholder='i.e. Write the strength and weakness of the set of feedback.' monitorlabel="reflection-strength" rows="4"><?php echo htmlspecialchars($strength);?></textarea>
+        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do you think about the feedback? </h4><textarea id="monitoredtext" placeholder='i.e. Write the strength and weakness of the set of feedback.' monitorlabel="reflection-strength" rows="4"><?php echo htmlspecialchars($strength);?></textarea>
         <br>
 
-         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the feedback, what actions could I take to improve my design? </h4><textarea id="monitoredtext" placeholder='i.e. Make a list of what you are going to change your design.' monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the feedback, what actions could you take to improve my design? </h4><textarea id="monitoredtext" placeholder='i.e. Make a list of what you are going to change your design.' monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
         <br>
         </div>
         

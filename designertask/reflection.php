@@ -187,16 +187,16 @@ $_SESSION['designer_group']= $designer['group'];
         </div>  
         
 
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do I feel about the feedback: </h4><textarea id="monitoredtext" monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
+        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What do you feel about the feedback: </h4><textarea id="monitoredtext" monitorlabel="reflection-feel" rows="4"><?php echo htmlspecialchars($feel);?></textarea>
         <br>
 
-        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What did I do particularly well on the design? </h4><textarea id="monitoredtext" monitorlabel="reflection-strength" rows="4">
+        <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp What did you do particularly well on the design? </h4><textarea id="monitoredtext" monitorlabel="reflection-strength" rows="4">
         <?php echo htmlspecialchars($strength);?>
             
         </textarea>
         <br>
 
-         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, what actions could I take to improve my design? </h4><textarea id="monitoredtext" monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
+         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>&nbsp Based on the set of feedback received, what actions could you take to improve my design? </h4><textarea id="monitoredtext" monitorlabel="reflection-action" rows="4"><?php echo htmlspecialchars($reflection_content);?></textarea>
         <br>
 </div>
         <div style="text-align:center;margin-top:20px;" >
