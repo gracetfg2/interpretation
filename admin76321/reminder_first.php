@@ -1,12 +1,12 @@
 <?php
 session_start();
-echo "Close the reminder now";
-/*$_SESSION['admin']='gracesnehabrian';
+//echo "Close the reminder now";
+$_SESSION['admin']='gracesnehabrian';
 include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
 include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
 $conn = connect_to_db();
 
-if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM u_Designer WHERE process<3 AND DesignerID>189 ORDER BY DesignerID ASC")) {
+if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM u_Designer WHERE process<3 AND DesignerID>19 ORDER BY DesignerID ASC")) {
 	    		mysqli_stmt_execute($stmt2);
 	    		$result = $stmt2->get_result();
 	    		while ($myrow = $result->fetch_assoc()) {
@@ -30,13 +30,13 @@ foreach($designer as  $value)
 	echo "<br>";
 
     $to      = $value['email']; // Send email to our user
-    $subject = '* Reminder [Participant '.$value['DesignerID'].' ] Please complete the first phase of the UIUC Design Study by 5pm today (Central Time)'; // Give the email a subject 
+    $subject = '[Participant '.$value['DesignerID'].' ] Still interested in participating? '; // Give the email a subject 
     $message = '
     <html> 
     <body>
     <h3>
     Hi '.$value['name'].',</h3>
-<p style="font-size:14px"> Please remember to complete the first phase of the UIUC Design Study by 5 pm today (Central Time). If you need more time, please let me know.
+<p style="font-size:14px"> We are now accpeting more submissions. The deadline for completing the first phase of the study will be Since you haveIf you need more time, please let me know.
 <br>  <br>  
 To complete the first phase, please login to our design platform (http://review-my-design.org/reflection/index.php) using the following account. The platform will step you through the process. <br>
 
@@ -82,6 +82,6 @@ $sql2 = "UPDATE `u_Designer` SET `remind_first` =? WHERE `DesignerID`=?";
 
 
 }
-*/
+
 
 ?>
