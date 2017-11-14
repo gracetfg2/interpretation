@@ -82,7 +82,46 @@ else {
 							echo "<td><a href='../design/".$design['file']."' target='_blank'><img width= 200px src='../design/".$design['file']."'></img></a></td>";
                 //First Paypment       
 
+////////Add Feedback
+                if ($stmt4 = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
+                mysqli_stmt_bind_param($stmt4, "ii", $design_id, $ok_to_use);
+                $design_id=$design['DesignID'];
+                $ok_to_use=1;
+                mysqli_stmt_execute($stmt4);
+                $result = $stmt4->get_result();
+                while ($myrow = $result->fetch_assoc()) {
+                    $feedback[]=$myrow;
+                }  
+                 
+                 foreach ($feedback as $tmp)
+                  {
+                     $feedbackNum += 1;
+                     $content=htmlspecialchars($tmp['interpretation']);
+                     $original=htmlspecialchars($tmp['edited_content']);
+                     // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
 
+                      echo "<table><tr id='div-".$tmp['FeedbackID']."' >
+                              <td><strong>#".$feedbackNum."</strong></td>
+                      
+                              <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+                              <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
+
+
+                              <div class='collapse' id='collapseExample".$feedbackNum."'>  
+                                  <div class='card card-block'>
+                                  ".nl2br($original)."
+                                  </div>
+                               </div>
+
+                      </td> 
+                    </tr></table";
+
+                  }
+
+            }   
+
+
+/////End Feedback
             
             }			
             else
