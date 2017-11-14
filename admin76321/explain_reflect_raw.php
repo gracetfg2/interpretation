@@ -126,7 +126,7 @@ else {
             echo "<td>".$survey_result['explain_useful']."</td>";
             echo "<td>".$survey_result['explain_selfexplain']."</td>";
             echo "<td>".$survey_result['reflection_useful']."</td>";
-            echo "<td>".$survey_result['explain_selfexplain']."</td>";
+            echo "<td>".$survey_result['explain_reflectionuse']."</td>";
               
           }
         
