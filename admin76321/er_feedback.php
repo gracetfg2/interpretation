@@ -42,7 +42,7 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
- <title> Self Explain </title>
+ <title> Explain Reflect </title>
 
 </head>
 <body>
@@ -51,20 +51,17 @@ else {
       <tr>
       <th>DesignerID</th>
       <th>Expertise</th>
-      <th>Initial </th>   	
-  		<th>Revised </th>
-      <th>Initial Effort</th>
-      <th>Revised Effort</th> 
-      <th>Initial Confidence</th> 
-      <th>Revised Confidence</th>
-      <th>Initial Design Time</th> 
-      <th>Revised Design Time</th>  
+      <th>Initial </th>
+      <th>Feedback </th>  	
+  		<th>Revised </th>   
       <th>Usefulness of Explanation</th>
-      <th>Explain the use of Explanation</th>  
+      <th>Explain the use of Explanation</th> 
+      <th>Usefulness of Reflection</th>
+      <th>Explain the use of Reflection</th>  
            
       </tr>
       <?php
-        foreach($self_explain as $value)
+        foreach($explain_reflect as $value)
         {
           echo "<tr id='div-".$value['DesignerID']."'  style='padding-top=10px'>";
 					// echo "<tr>";
@@ -83,7 +80,44 @@ else {
 						if(mysqli_num_rows($result) > 0){
 							$design = $result->fetch_assoc();
 							echo "<td><a href='../design/".$design['file']."' target='_blank'><img width= 200px src='../design/".$design['file']."'></img></a></td>";
-                //First Paypment            
+                //First Paypment       
+
+
+              if ($stmt4 = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
+                mysqli_stmt_bind_param($stmt4, "ii", $design_id, $ok_to_use);
+                $design_id=$design['DesignID'];
+                $ok_to_use=1;
+                mysqli_stmt_execute($stmt4);
+                $result = $stmt2->get_result();
+                while ($myrow = $result->fetch_assoc()) {
+                    $feedback[]=$myrow;
+                }  
+                 
+                 foreach ($feedback as $value)
+                  {
+                     $feedbackNum += 1;
+                     $content=htmlspecialchars($value['interpretation']);
+                     $original=htmlspecialchars($value['edited_content']);
+                     // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
+
+                      echo "<table><tr id='div-".$value['FeedbackID']."' >
+                              <td><strong>#".$feedbackNum."</strong></td>
+                      
+                              <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+                              <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
+
+
+                              <div class='collapse' id='collapseExample".$feedbackNum."'>  
+                                  <div class='card card-block'>
+                                  ".nl2br($original)."
+                                  </div>
+                               </div>
+
+                      </td> 
+                    </tr></table";
+
+                  }
+
             }					
             else
             {//No feedback yet
@@ -101,10 +135,6 @@ else {
 						if(mysqli_num_rows($result) > 0){
 							$design = $result->fetch_assoc();
 							echo "<a href='../design/".$design['file']."' target='_blank'><img width= 200px src='../design/".$design['file']."'></img></a>";
-
-
-
-              
 						}
 						mysqli_stmt_close($stmt2);
 					}
@@ -127,6 +157,8 @@ else {
             echo "<td>".$survey_result['design_time_2']."</td>";
             echo "<td>".$survey_result['explain_useful']."</td>";
             echo "<td>".$survey_result['explain_selfexplain']."</td>";
+            echo "<td>".$survey_result['reflection_useful']."</td>";
+            echo "<td>".$survey_result['explain_reflectionuse']."</td>";
               
           }
         
