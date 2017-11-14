@@ -105,7 +105,7 @@ else {
       
           echo "</td>";
 
-          if ($stmt3 = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_DesignerID = ?")) {
+            if ($stmt3 = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_DesignerID = ?")) {
             
             mysqli_stmt_bind_param($stmt3, "i", $value['DesignerID']);
             mysqli_stmt_execute($stmt);
@@ -124,10 +124,6 @@ else {
           echo "<td>".$survey_result['confidence_2']."</td>";
           echo "<td>".$survey_result['design_time_1']."</td>";
           echo "<td>".$survey_result['design_time_2']."</td>";
-
-          
-  mysqli_stmt_close($stmt2);  
-}
 
 
 
