@@ -58,7 +58,9 @@ else {
       <th>Initial Confidence</th> 
       <th>Revised Confidence</th>
       <th>Initial Design Time</th> 
-      <th>Revised Design Time</th>  
+      <th>Revised Design Time</th> 
+      <th>Usefulness of Reflection</th>
+      <th>Explain the use of Reflection</th>   
            
       </tr>
       <?php
@@ -119,6 +121,9 @@ else {
             echo "<td>".$survey_result['confidence_2']."</td>";
             echo "<td>".$survey_result['design_time_1']."</td>";
             echo "<td>".$survey_result['design_time_2']."</td>";
+            echo "<td>".$survey_result['reflection_useful']."</td>";
+            echo "<td>".$survey_result['explain_reflectionuse']."</td>";
+              
               
           }
         
