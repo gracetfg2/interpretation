@@ -118,10 +118,10 @@ else {
                       echo "
                               <strong>#Feedback".$feedbackNum." interpretation</strong><br>                     
                              ".nl2br($content)."
-                              <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
+                              <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$tmp['FeedbackID']."' aria-expanded='false' aria-controls='collapseExample".$tmp['FeedbackID']."'>Read original feedback</a>
 
 
-                              <div class='collapse' id='collapseExample".$feedbackNum."'>  
+                              <div class='collapse' id='collapseExample".$tmp['FeedbackID']."'>  
                                   <div class='card card-block'>
                                   ".nl2br($original)."
                                   </div>
