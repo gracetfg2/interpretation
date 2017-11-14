@@ -6,7 +6,7 @@ $conn = connect_to_db();
 
  if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `u_Designer` WHERE `process`>? ")) {
           mysqli_stmt_bind_param($stmt2, "i", $process);
-          $process = 3;
+          $process = 5;
           mysqli_stmt_execute($stmt2);
           $result = $stmt2->get_result();
 
@@ -108,7 +108,7 @@ else {
             
             mysqli_stmt_bind_param($stmt3, "i", $did);
             $did= $value['DesignerID'];
-          
+
             mysqli_stmt_execute($stmt3);
             $result2 = $stmt3->get_result();
             $survey_result = $result2->fetch_assoc();  
