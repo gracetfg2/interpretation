@@ -22,7 +22,7 @@ $current_second_deadline='November 15th at 11:59 pm (Central Time)';
 
 
    $to      = $designer['email']; // Send email to our user
-    $subject = '[ Participant '.$designer['DesignerID'].'] Reminder of the second phase of the study. '; // Give the email a subject 
+    $subject = '[ Participant '.$designer['DesignerID'].'] Please complete the second phase of the study. '; // Give the email a subject 
     $message = '
     <html> 
     <body>
