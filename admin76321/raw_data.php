@@ -80,7 +80,6 @@ else {
 						if(mysqli_num_rows($result) > 0){
 							$design = $result->fetch_assoc();
 							echo "<td><a href='../design/".$design['file']."' target='_blank'><img width= 200px src='../design/".$design['file']."'></img></a></td>";
-              echo "<td>".$design['upload_date']."</td>";
                 //First Paypment            
             }					
             else
@@ -91,7 +90,7 @@ else {
           }
      
           echo "<td>";
-					if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM Design WHERE f_DesignerID=? AND version=? ORDER BY upload_date DESC LIMIT 1")) {
+					if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM Design WHERE f_DesignerID=? AND version=?")) {
 						$ver = 2;
 						mysqli_stmt_bind_param($stmt2, "ii", $did, $ver);
 						mysqli_stmt_execute($stmt2);
@@ -105,7 +104,23 @@ else {
       
           echo "</td>";
 
-         
+         if ($stmt3 = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_DesignerID = ?")) {
+            
+            mysqli_stmt_bind_param($stmt3, "i", $did);
+            $did=$value['DesignerID'];
+            mysqli_stmt_execute($stmt);
+            $result2 = $stmt3->get_result();
+            $survey_result = $result2->fetch_assoc();  
+            echo "<td>".$survey_result['effort_1']."</td>";          
+            echo "<td>".$survey_result['effort_2']."</td>";
+            echo "<td>".$survey_result['confidence_1']."</td>";
+            echo "<td>".$survey_result['confidence_2']."</td>";
+            echo "<td>".$survey_result['design_time_1']."</td>";
+            echo "<td>".$survey_result['design_time_2']."</td>";
+              
+          }
+        
+
 
 					echo "</tr>";
         }
