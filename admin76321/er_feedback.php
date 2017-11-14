@@ -58,7 +58,7 @@ else {
 </head>
 <body>
   <form name='control-form' id='control-form' action='control_panel_script.php' method='post'>
-    <table style='padding: 10px' border='1'>
+    <table cellpadding="10" border='1'>
       <tr>
       <th>DesignerID</th>
       <th>Expertise</th>
