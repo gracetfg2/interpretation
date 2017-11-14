@@ -105,28 +105,7 @@ else {
       
           echo "</td>";
 
-            if ($stmt3 = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_DesignerID = ?")) {
-            
-            mysqli_stmt_bind_param($stmt3, "i", $value['DesignerID']);
-            mysqli_stmt_execute($stmt);
-            $result2 = $stmt3->get_result();
-            $survey_result = $result2->fetch_assoc();  
-              
-          }else {
-        //No Designs found
-          echo "Our system encounter some problems, please contact our staff Grace at yyen4@illinois.edu with error code: SHOWFEEDBACK";
-          mysqli_stmt_close($stmt2);
-          die();
-        } 
-          echo "<td>".$survey_result['effort_1']."</td>";          
-          echo "<td>".$survey_result['effort_2']."</td>";
-          echo "<td>".$survey_result['confidence_1']."</td>";
-          echo "<td>".$survey_result['confidence_2']."</td>";
-          echo "<td>".$survey_result['design_time_1']."</td>";
-          echo "<td>".$survey_result['design_time_2']."</td>";
-
-
-
+         
 
 					echo "</tr>";
         }
