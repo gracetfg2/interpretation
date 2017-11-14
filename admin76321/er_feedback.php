@@ -83,6 +83,7 @@ else {
                 //First Paypment       
 
 ////////Add Feedback
+              echo "<td>";
                 if ($stmt4 = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
                 mysqli_stmt_bind_param($stmt4, "ii", $design_id, $ok_to_use);
                 $design_id=$design['DesignID'];
@@ -117,7 +118,7 @@ else {
                   }
 
             }   
-
+  echo "</td>";
 
 /////End Feedback
             
