@@ -130,10 +130,10 @@ else {
                       ";
 
                   }
-                   empty($feedback);
+                  unset($feedback);
 
             }   
-  echo "</td>";
+           echo "</td>";
 
 /////End Feedback
             
