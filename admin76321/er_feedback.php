@@ -90,7 +90,7 @@ else {
 
 						if(mysqli_num_rows($result) > 0){
 							$design = $result->fetch_assoc();
-							echo "<td><a href='../design/".$design['file']."' target='_blank'><img width= 300px src='../design/".$design['file']."'></img></a></td>";
+							echo "<td><a href='../design/".$design['file']."' target='_blank'><img width='300px' src='../design/".$design['file']."'></img></a></td>";
                 //First Paypment       
 
 ////////Add Feedback
@@ -145,7 +145,7 @@ else {
              mysqli_stmt_close($stmt2);
           }
      
-          echo "<td width= 300px>";
+          echo "<td>";
 					if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM Design WHERE f_DesignerID=? AND version=?")) {
 						$ver = 2;
 						mysqli_stmt_bind_param($stmt2, "ii", $did, $ver);
@@ -153,7 +153,7 @@ else {
 						$result = $stmt2->get_result();
 						if(mysqli_num_rows($result) > 0){
 							$design = $result->fetch_assoc();
-							echo "<a href='../design/".$design['file']."' target='_blank'><img width= 200px src='../design/".$design['file']."'></img></a>";
+							echo "<a href='../design/".$design['file']."' target='_blank'><img width='300px'  src='../design/".$design['file']."'></img></a>";
 						}
 						mysqli_stmt_close($stmt2);
 					}
