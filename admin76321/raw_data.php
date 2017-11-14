@@ -50,10 +50,14 @@ else {
       <tr>
       <th>DesignerID</th>
       <th>Expertise</th>
-      <th>Initial </th> 
-      <th>Self_Explain</th> 
-      <th>Reflection</th>   	
+      <th>Initial </th>   	
   		<th>Revised </th>
+      <th>Initial Effort</th>
+      <th>Revised Effort</th> 
+      <th>Initial Confidence</th> 
+      <th>Revised Confidence</th>
+      <th>Initial Design Time</th> 
+      <th>Revised Design Time</th>  
            
       </tr>
       <?php
@@ -101,8 +105,27 @@ else {
       
           echo "</td>";
 
-         
-      
+          if ($stmt = mysqli_prepare($conn, "SELECT * From monitorbehavior WHERE f_DesignerID = ?")) {
+            
+            mysqli_stmt_bind_param($stmt, "i", $value['DesignerID']);
+            mysqli_stmt_execute($stmt);
+            $result = $stmt->get_result();
+            $survey_result = $result->fetch_assoc();  
+              
+          }
+          echo "<td>".$survey_result['effort_1']."</td>";          
+          echo "<td>".$survey_result['effort_2']."</td>";
+          echo "<td>".$survey_result['confidence_1']."</td>";
+          echo "<td>".$survey_result['confidence_2']."</td>";
+          echo "<td>".$survey_result['design_time_1']."</td>";
+          echo "<td>".$survey_result['design_time_2']."</td>";
+
+          
+  mysqli_stmt_close($stmt2);  
+}
+
+
+
 
 					echo "</tr>";
         }
