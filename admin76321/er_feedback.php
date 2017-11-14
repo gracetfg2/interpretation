@@ -95,7 +95,7 @@ else {
 
 ////////Add Feedback
               echo "<td>";
-               $feedback[];
+               empty($feedback);
                $feedbackNum=0;
                 if ($stmt4 = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
                 mysqli_stmt_bind_param($stmt4, "ii", $design_id, $ok_to_use);
