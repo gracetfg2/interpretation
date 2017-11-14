@@ -63,7 +63,9 @@ else {
       <th>DesignerID</th>
       <th>Expertise</th>
       <th width= 300px>Initial </th>
-      <th>Feedback </th>  	
+      <th>Feel </th>  	
+       <th>Think </th>  
+        <th>Action pLAN </th>  
   		<th width= 300px>Revised </th>   
       <th>Usefulness of Explanation</th>
       <th>Explain the use of Explanation</th> 
@@ -94,15 +96,15 @@ else {
 ////////Add Feedback
             
               
-    if ($stmt_reflection = mysqli_prepare($conn, "SELECT * FROM `Reflection` WHERE `DesignerID`=? AND `DesignID`=?")) {
+    if ($stmt_reflection = mysqli_prepare($conn, "SELECT * FROM `Reflection` WHERE `DesignerID`=?")) {
                 mysqli_stmt_bind_param($stmt_reflection, "i", $value['DesignerID']);
                 mysqli_stmt_execute($stmt_reflection);
                 $result2 = $stmt_reflection->get_result();
                 $myrow = $result2->fetch_assoc();
                 echo "<td>".$myrow['feel']."</td>";
     
-          echo "<td>". $myrow['strength']."</td>";
-              echo "<td>".$myrow['content']."</td>";
+                echo "<td>". $myrow['strength']."</td>";
+                echo "<td>".$myrow['content']."</td>";
          
     }   
 
