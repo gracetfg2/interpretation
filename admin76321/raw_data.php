@@ -4,9 +4,10 @@ $_SESSION['admin']='gracesnehabrian';
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
- if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `u_Designer` WHERE `process`>? ")) {
-          mysqli_stmt_bind_param($stmt2, "i", $process);
+ if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `u_Designer` WHERE `process`>? AND `DesignerID`>? ")) {
+          mysqli_stmt_bind_param($stmt2, "ii", $process, $range);
           $process = 5;
+          $range=17;
           mysqli_stmt_execute($stmt2);
           $result = $stmt2->get_result();
 
@@ -29,9 +30,9 @@ $conn = connect_to_db();
 }
 else {
 //No Designers found
-	echo "Our system has no designers yet";
-	mysqli_stmt_close($stmt2);
-	die();
+  echo "Our system has no designers yet";
+  mysqli_stmt_close($stmt2);
+  die();
 }
 
 
