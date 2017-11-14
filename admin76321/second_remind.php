@@ -28,7 +28,7 @@ $current_second_deadline='November 15th at 11:59 pm (Central Time)';
     <body>
     <h3>
     Hi '.$designer['name'].',</h3>
-<p style="font-size:14px"> Thanks for submitting your initial design to our study. We noticed that you have not completed the second phase yet. Please log in to our system and finish the steps by <span style=\'color: blue\'>'.$current_second_deadline.'.</span><br><br>  
+<p style="font-size:14px"> Thanks for submitting your initial design to our study. We noticed that you have not completed the second phase yet. Please complete the study by <span style=\'color: blue\'>'.$current_second_deadline.' to receive the $30 compensation.</span><br><br>  
 
 In the second phase, we collect two pieces of feedback to help you revise your design. Please prepare your initial design in the tool and login to our design platform (http://review-my-design.org/interpretation/index.php) to finish the tasks. After completing, we will check the submission and distribute the $30 through your Paypal address. More importantly, we hope you enjoy the study! <br>
 
