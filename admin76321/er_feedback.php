@@ -100,10 +100,9 @@ else {
                      $original=htmlspecialchars($tmp['edited_content']);
                      // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
 
-                      echo "<table><tr id='div-".$tmp['FeedbackID']."' >
-                              <td><strong>#".$feedbackNum."</strong></td>
-                      
-                              <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
+                      echo "
+                              <strong>#Feedback".$feedbackNum." interpretation</strong><br>                     
+                             ".nl2br($content)."
                               <div style='margin-top:20px'><a data-toggle='collapse' href='#collapseExample".$feedbackNum."' aria-expanded='false' aria-controls='collapseExample".$feedbackNum."'>Read original feedback</a>
 
 
@@ -112,9 +111,8 @@ else {
                                   ".nl2br($original)."
                                   </div>
                                </div>
-
-                      </td> 
-                    </tr></table";
+                               <br><br>
+                      ";
 
                   }
 
