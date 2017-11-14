@@ -217,6 +217,7 @@ else {
           }
          
           echo "<td><a href='send_email198713.php?designer_id=".$value['DesignerID']."'>SentEmail</td>";
+          echo "<td><a href='second_remind.php?designer_id=".$value['DesignerID']."'>Second Reminder</td>";
         
           /* //Sent backemail
           echo "<td><select name='n".$value['DesignerID']."'>";
@@ -226,8 +227,8 @@ else {
 */
 
             echo "<td>"; 
-            if ($value['backemail']==1)
-              echo "Sent";
+            if ($value['backemail']>=1)
+              echo "Sent ".$value['backemail'] ;
             echo "</td>";
 
           echo "<td>";

@@ -71,7 +71,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 $sql2 = "UPDATE `u_Designer` SET `backemail` =?,  `second_deadline`=? WHERE `DesignerID`=?";
     if($stmt2 = mysqli_prepare($conn,$sql2)){
       mysqli_stmt_bind_param($stmt2, "isi", $tmp, $current_second_deadline,$designer_id);
-      $tmp=1;
+      $tmp=2;
       $designer_id=$designer['DesignerID'];
       mysqli_stmt_execute($stmt2);
     }
