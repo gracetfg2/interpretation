@@ -43,6 +43,17 @@ else {
 <html>
 <head>
  <title> Explain Reflect </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="behavior_record_updated.js"></script>
+    <!---->
+    <title>Prototype</title>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../css/feedback.css">
 
 </head>
 <body>
@@ -93,7 +104,7 @@ else {
                 while ($myrow = $result->fetch_assoc()) {
                     $feedback[]=$myrow;
                 }  
-                 
+                $feedbackNum=1;
                  foreach ($feedback as $tmp)
                   {
                      $feedbackNum += 1;
