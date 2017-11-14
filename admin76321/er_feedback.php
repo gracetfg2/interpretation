@@ -62,9 +62,9 @@ else {
       <tr>
       <th>DesignerID</th>
       <th>Expertise</th>
-      <th>Initial </th>
+      <th width= 300px>Initial </th>
       <th>Feedback </th>  	
-  		<th>Revised </th>   
+  		<th width= 300px>Revised </th>   
       <th>Usefulness of Explanation</th>
       <th>Explain the use of Explanation</th> 
       <th>Usefulness of Reflection</th>
@@ -90,7 +90,7 @@ else {
 
 						if(mysqli_num_rows($result) > 0){
 							$design = $result->fetch_assoc();
-							echo "<td><a href='../design/".$design['file']."' target='_blank'><img width= 200px src='../design/".$design['file']."'></img></a></td>";
+							echo "<td><a href='../design/".$design['file']."' target='_blank'><img width= 300px src='../design/".$design['file']."'></img></a></td>";
                 //First Paypment       
 
 ////////Add Feedback
@@ -104,7 +104,7 @@ else {
                 while ($myrow = $result->fetch_assoc()) {
                     $feedback[]=$myrow;
                 }  
-                $feedbackNum=1;
+                $feedbackNum=0;
                  foreach ($feedback as $tmp)
                   {
                      $feedbackNum += 1;
@@ -141,7 +141,7 @@ else {
              mysqli_stmt_close($stmt2);
           }
      
-          echo "<td>";
+          echo "<td width= 300px>";
 					if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM Design WHERE f_DesignerID=? AND version=?")) {
 						$ver = 2;
 						mysqli_stmt_bind_param($stmt2, "ii", $did, $ver);
