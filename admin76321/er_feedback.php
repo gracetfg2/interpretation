@@ -95,16 +95,19 @@ else {
 
 ////////Add Feedback
               echo "<td>";
+               $feedback[];
+               $feedbackNum=0;
                 if ($stmt4 = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID`=? AND `ok_to_use`=? ORDER BY FeedbackID ASC")) {
                 mysqli_stmt_bind_param($stmt4, "ii", $design_id, $ok_to_use);
                 $design_id=$design['DesignID'];
                 $ok_to_use=1;
                 mysqli_stmt_execute($stmt4);
                 $result = $stmt4->get_result();
+
                 while ($myrow = $result->fetch_assoc()) {
                     $feedback[]=$myrow;
                 }  
-                $feedbackNum=0;
+                
                  foreach ($feedback as $tmp)
                   {
                      $feedbackNum += 1;
