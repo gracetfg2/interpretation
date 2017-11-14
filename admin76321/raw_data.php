@@ -41,7 +41,7 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
- <title> Design </title>
+ <title> Control </title>
 
 </head>
 <body>
