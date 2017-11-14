@@ -93,14 +93,14 @@ else {
                     $feedback[]=$myrow;
                 }  
                  
-                 foreach ($feedback as $value)
+                 foreach ($feedback as $tmp)
                   {
                      $feedbackNum += 1;
-                     $content=htmlspecialchars($value['interpretation']);
-                     $original=htmlspecialchars($value['edited_content']);
+                     $content=htmlspecialchars($tmp['interpretation']);
+                     $original=htmlspecialchars($tmp['edited_content']);
                      // $content=preg_replace('#&lt;(/?(?:br /))&gt;#', '<\1>', $content);
 
-                      echo "<table><tr id='div-".$value['FeedbackID']."' >
+                      echo "<table><tr id='div-".$tmp['FeedbackID']."' >
                               <td><strong>#".$feedbackNum."</strong></td>
                       
                               <td style='text-align: justify; padding-bottom:10px; padding-right:25px;' class='table-text'>".nl2br($content)."
@@ -118,7 +118,8 @@ else {
 
                   }
 
-            }					
+            }		
+          }			
             else
             {//No feedback yet
               echo "<td></td><td></td><td></td><td></td><td></td><td></td>";
