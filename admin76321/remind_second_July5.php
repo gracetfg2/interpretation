@@ -3,8 +3,8 @@ session_start();
 //echo "close to reminder 7/5";
 
 $_SESSION['admin']='gracesnehabrian';
-include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
-include($_SERVER['DOCUMENT_ROOT'].'/reflection/general_information.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
+include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
 $conn = connect_to_db();
 
 if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM u_Designer WHERE process>3 AND process<6 AND second_deadline='July 7th at 5 pm (Central Time)' ORDER BY DesignerID ASC")) {

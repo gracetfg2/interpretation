@@ -7,7 +7,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
 include_once('../webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
-$current_second_deadline='November 10th at 11:59 pm (Central Time)';
+$current_second_deadline='November 15th at 11:59 pm (Central Time)';
 
 	$sql="SELECT * FROM u_Designer WHERE DesignerID=?";
 	if($stmt=mysqli_prepare($conn,$sql))
@@ -22,13 +22,15 @@ $current_second_deadline='November 10th at 11:59 pm (Central Time)';
 
 
    $to      = $designer['email']; // Send email to our user
-    $subject = '[ Participant '.$designer['DesignerID'].'] Your Second Phase of the Study is Ready!'; // Give the email a subject 
+    $subject = '[ Participant '.$designer['DesignerID'].'] Reminder of the second phase of the study. '; // Give the email a subject 
     $message = '
     <html> 
     <body>
     <h3>
     Hi '.$designer['name'].',</h3>
-<p style="font-size:14px"> In the second phase, you have to revise your initial design to better achieve the stated design goal. Please prepare your initial design in the tool and login to our design platform (http://review-my-design.org/interpretation/index.php). You should complete the second phase by '.$current_second_deadline.'. After completing this phase, we will check the submission and distribute the $30 through your Paypal address. Please block out 1.5 hour to finish the stage. More importantly, we hope you enjoy the study! <br>
+<p style="font-size:14px"> Thanks for submitting your initial design to our study. We noticed that you have not completed the second phase yet. Please log in to our system and finish the steps by '.$current_second_deadline.'. 
+
+In the second phase, you have to revise your initial design to better achieve the stated design goal. Please prepare your initial design in the tool and login to our design platform (http://review-my-design.org/interpretation/index.php). After completing this phase, we will check the submission and distribute the $30 through your Paypal address. Please block out 1.5 hour to finish the stage. More importantly, we hope you enjoy the study! <br>
 
      <br>
     -------------------------------------------<br>
