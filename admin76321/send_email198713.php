@@ -7,7 +7,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
 include_once('../webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
-$current_second_deadline='November 10th at 11:59 pm (Central Time)';
+$current_second_deadline='November 17th at 11:59 pm (Central Time)';
 
 	$sql="SELECT * FROM u_Designer WHERE DesignerID=?";
 	if($stmt=mysqli_prepare($conn,$sql))
