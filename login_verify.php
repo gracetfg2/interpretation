@@ -49,7 +49,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From u_Designer WHERE email = ?")) {
     else
     {
         //Check Group
-        if($designer['DesignerID']>300)
+       /* if($designer['DesignerID']>300)
         {
          
                 $isOkay=0;
@@ -58,7 +58,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT * From u_Designer WHERE email = ?")) {
                 echo "remove";
                  die();
         }
-
+      */
         if($designer['process'] == 6 ){
         $isOkay=0;
         mysqli_close($conn);
