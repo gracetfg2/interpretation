@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['admin']='gracesnehabrian';
+$_SESSION['set']=300;
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();

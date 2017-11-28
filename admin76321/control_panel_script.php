@@ -62,6 +62,22 @@ foreach ($_POST as $key => $value)
 }
 
 mysqli_close($conn);
-header("Refresh:0");
+$current_set=$_SESSION['set'];
+switch($current_set)
+{
+	case 100:
+		header('Location: control_panel_100.php');
+		break;
+	case 200:
+		header('Location: control_panel_200.php');
+		break;
+	case 300:
+		header('Location: control_panel_300.php');
+		break;
+	default:
+			header('Location: control_panel.php');
+		break;
+}
+
 
 ?>
