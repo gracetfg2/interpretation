@@ -79,6 +79,20 @@ $sql2 = "UPDATE `u_Designer` SET `backemail` =?,  `second_deadline`=? WHERE `Des
 
 
 mysqli_close($conn);
-header('Location: control_panel.php');
+switch($current_set)
+{
+  case 100:
+    header('Location: control_panel_100.php');
+    break;
+  case 200:
+    header('Location: control_panel_200.php');
+    break;
+  case 300:
+    header('Location: control_panel_300.php');
+    break;
+  default:
+      header('Location: control_panel.php');
+    break;
+}
 
 ?>
