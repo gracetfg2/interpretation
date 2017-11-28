@@ -62,6 +62,6 @@ foreach ($_POST as $key => $value)
 }
 
 mysqli_close($conn);
-header('Location: control_panel.php');
+header("Refresh:0");
 
 ?>
