@@ -19,6 +19,7 @@ foreach ($_POST as $key => $value)
 
   if (strpos($key,'p') !== false) {// process
 		$sql2 = "UPDATE u_Designer SET `process` ='".htmlspecialchars($value)."' WHERE DesignerID=".substr($key,1);
+		
 		if (mysqli_query($conn, $sql2)) {
 		    //echo $sql2."</br>";
 		} else {
@@ -27,6 +28,7 @@ foreach ($_POST as $key => $value)
 	}
   else if (strpos($key,'g') !== false) {// group
 		$sql2 = "UPDATE u_Designer SET `group` ='".htmlspecialchars($value)."' WHERE DesignerID=".substr($key,1);
+		
 		if (mysqli_query($conn, $sql2)) {
 		    //echo $sql2."</br>";
 		} else {

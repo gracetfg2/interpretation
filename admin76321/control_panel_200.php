@@ -5,7 +5,7 @@ $_SESSION['admin']='gracesnehabrian';
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
-if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM u_Designer WHERE DesignerID >200 ORDER BY DesignerID ASC")) {
+if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM u_Designer WHERE DesignerID BETWEEN 100 AND 201 ORDER BY DesignerID ASC")) {
 	    		mysqli_stmt_execute($stmt2);
 	    		$result = $stmt2->get_result();
 	    		while ($myrow = $result->fetch_assoc()) {
