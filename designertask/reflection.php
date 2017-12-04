@@ -183,7 +183,7 @@ $_SESSION['designer_group']= $designer['group'];
         <hr>
 
         <div class="alert alert-warning" role="alert" style="width:90%;margin:0px auto;padding-right:70px;">
-        <h4><strong> Now, please consider the design choices you made and plan how you are going to revise the design by responding to the following questions. After that, please click "Next" to go to the next step.</h4></strong>
+        <h4><strong> Now, please consider the design choices you made and plan how you are going to revise the design by responding to the following questions. After that, please click "Submit" to go to the next step.</h4></strong>
         </div>  
         
 
