@@ -6,7 +6,7 @@ $conn = connect_to_db();
 
  if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `u_Designer` WHERE `process`>? AND `DesignerID`>? ")) {
           mysqli_stmt_bind_param($stmt2, "ii", $process, $range);
-          $process = 5;
+          $process = 4;
           $range=17;
           mysqli_stmt_execute($stmt2);
           $result = $stmt2->get_result();
