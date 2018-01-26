@@ -67,8 +67,9 @@
             $feedbackContent = $entry['edited_content'];
             $feedbackRating = $entry['designer_rating'];
             $response = $entry['interpretation'];
+            $f_id = $entry['FeedbackID'];
             $imagePath = "/interpretation/design/". $image;
-            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$response]);
+            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$response, $f_id]);
             //echo "<img src=\"". $imagePath ."\">\n";
             //echo $feedbackText;
         }
@@ -79,11 +80,13 @@
                         echo "   
                         <div class='row'>
                         <div class='col-md-1'>#".$count."</div>
+                        <div class='col-md-1'>ID-".$res[4] ."</div>
                             <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
                             <div class='col-md-4'><p>". $res[1] ."</p></div>
                             <div class='col-md-4'><p>". $res[3] ."</p></div>
 
                         </div>
+ 
                         <hr>
                         ";
                     }
