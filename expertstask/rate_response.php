@@ -22,7 +22,8 @@
 </head>
     
 <body>
-
+ 
+<div class="container"> 
  <div class='well' style='padding: 20px'>  
     <h4>Below is the list of feedback and the self-explanation response written by the feedback receiver.</h4> 
 </div>
@@ -66,14 +67,15 @@
             $feedbackRating = $entry['designer_rating'];
             $response = $entry['interpretation'];
             $f_id = $entry['FeedbackID'];
+            $provider = $entry['f_ProviderID'];
             $imagePath = "/interpretation/design/". $image;
-            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$response, $f_id]);
+            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$response, $f_id, $provider]);
             //echo "<img src=\"". $imagePath ."\">\n";
             //echo $feedbackText;
         }
          $count=0;
                 foreach($results as $res) {
-                       if($res[3]!=null){
+                       if($res[3]!=null || $res[5]!= 'Desiree Escobedo' || $res[5]!= 'Isaac Morillo'){
                         $count++;
                         echo "   
                         <div class='row'>
