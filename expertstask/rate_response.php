@@ -22,8 +22,7 @@
 </head>
     
 <body>
- 
-<div class="container"> 
+
  <div class='well' style='padding: 20px'>  
     <h4>Below is the list of feedback and the self-explanation response written by the feedback receiver.</h4> 
 </div>
