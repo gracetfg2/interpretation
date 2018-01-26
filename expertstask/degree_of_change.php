@@ -128,24 +128,17 @@ else {
 
 		   	echo "<div style='padding-top:10px'></div>";
 		   
-		    echo "<div style='padding-top:50px'></div>";
 		   
 		    echo "<form>";
 		   
 
 		     echo "<table style='text-align:center;'>
-		       
-
 		          <tr>
 		            <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
 		            <td width=40%></td>
 		            <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
-		          </tr>
-		         
-		        </table>";
-
-
- 			echo "<div style='padding-top:20px'></div>
+		          </tr>		         
+		        </table>
  			<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>";
  			echo "
 		  	 	<div class='form-group'>
