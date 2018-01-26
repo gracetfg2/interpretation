@@ -248,8 +248,6 @@ else {
 
 	?>
 
-	
-<hr>
 
 <div id='check-result' name='check-result'> </div>
 
