@@ -130,7 +130,6 @@ else {
 		   
 		    echo "<div style='padding-top:50px'></div>";
 		   
-		    echo "<hr>";
 		    echo "<form>";
 		    echo "<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>
 		  	 	<div class='form-group'>
