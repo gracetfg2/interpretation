@@ -132,53 +132,57 @@ else {
 		    echo "<form>";
 		   
 
-		     echo "<table style='text-align:center;'>
-		          <tr>
-		            <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
-		            <td width=40%></td>
-		            <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
-		          </tr>		         
+		     echo "
+		     	<table style='text-align:center;'>
+			          <tr>
+			            <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
+			            <td width=40%></td>
+			            <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+			          </tr>		         
 		        </table>
 
 		        <div style='margin-top:30px;'>
- 				<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):
- 				</h4>
+ 					<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):
+ 					</h4>
+ 				</div>
 
 		  	 	<div class='form-group'>
 					<label class='radio-inline'>
-		  	 	&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
+		  	 			&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
 		              if($current_better==$left['DesignID']) 
 		              {
 		              	echo 'checked';
 		              } 
 		              echo "> The design on the left.
-		        </label>
-		        <label class='radio-inline'>
-		      	<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
+		        	</label>
+		        	<label class='radio-inline'>
+		      		<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
 		              if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
-		        </label>
+		        	</label>
 		        </div>";
 
- 			echo "
- 			  <div style='margin-top:30px;'>
- 			  <h4>2. Please rate the degree of difference between the two designs in terms of the following three aspects:</h4>
- 			<table>
- 				<tr>
- 				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Concept </span><br><small>The overall direction of the design including the tone and the theme of the design. </small></td>
- 				<td><td width='5%'></td> 
- 				<td>
-	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
-						<tr aria-hidden='true'>
-							<td  class='radio-label'></td>
-							<td><label class='radio-cell'>1</label></td> 
-							<td><label class='radio-cell'>2</label></td> 
-							<td><label class='radio-cell'>3</label></td> 
-							<td><label class='radio-cell'>4</label></td>
-							<td><label class='radio-cell'>5</label></td> 
-							<td><label class='radio-cell'>6</label></td>
-							<td><label class='radio-cell'>7</label></td> 
-							<td  class='radio-label' ></td>
+ 			echo " <div style='margin-top:30px;'>
+ 				<h4>
+ 					2. Please rate the degree of difference between the two designs in terms of the following three aspects:
+ 				</h4>
+ 				
+ 				<table>
+	 				<tr>
+	 				<td width='5%'></td>
+	 				<td width='25%'><span class='tablelabel'>Concept </span><br><small>The overall direction of the design including the tone and the theme of the design. </small></td>
+	 				<td><td width='5%'></td> 
+	 				<td>
+		 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+							<tr aria-hidden='true'>
+								<td  class='radio-label'></td>
+								<td><label class='radio-cell'>1</label></td> 
+								<td><label class='radio-cell'>2</label></td> 
+								<td><label class='radio-cell'>3</label></td> 
+								<td><label class='radio-cell'>4</label></td>
+								<td><label class='radio-cell'>5</label></td> 
+								<td><label class='radio-cell'>6</label></td>
+								<td><label class='radio-cell'>7</label></td> 
+								<td  class='radio-label' ></td>
 						</tr>
 					
 						<tr>
