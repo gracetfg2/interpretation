@@ -40,7 +40,7 @@
         $feedback = array();
         $results = array();
 
-        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 20")) {
+        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 22")) {
             mysqli_stmt_bind_param($stmt, "s", $providerName);
             mysqli_stmt_execute($stmt);
             $result = $stmt->get_result();
@@ -63,10 +63,11 @@
             else {
                 echo "Image query prepare failed: (" . $conn->errno . ") " . $conn->error;
             }
-            $feedbackContent = $entry['content'];
+            $feedbackContent = $entry['edited_content'];
             $feedbackRating = $entry['designer_rating'];
+            $interpretation = $entry['interpretation'];
             $imagePath = "/interpretation/design/". $image;
-            array_push($results, [$imagePath, $feedbackContent, $feedbackRating]);
+            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,],$interpretation);
             //echo "<img src=\"". $imagePath ."\">\n";
             //echo $feedbackText;
         }
@@ -74,7 +75,8 @@
                         echo "   
                         <div class='row'>
                             <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
-                            <div class='col-md-9'><p>". $res[1] ."</p></div>
+                            <div class='col-md-4'><p>". $res[1] ."</p></div>
+                            <div class='col-md-4'><p>". $res[3] ."</p></div>
 
                         </div>
                         <hr>
