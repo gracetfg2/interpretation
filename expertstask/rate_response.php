@@ -25,9 +25,9 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    <h4>Below is the list of feedback given to the designers. The designers were asked to rewrite the content of the feedback using their own words. Their response should cover all the content and keep its original meaning. 
+    <h4>Below is a list of feedback collected for our designers. The designers were asked to rewrite the content of the feedback using their own words, and the response should cover all the content and keep the feedback's original meaning. 
     <br><br>
-    Your task is to rate to what degree do you think the response cover the important messages in the feedback content. 
+    Your task is to rate to what degree do you think each response covers the meaning of its original feedback. 
     </h4> 
 </div>
 <hr>
