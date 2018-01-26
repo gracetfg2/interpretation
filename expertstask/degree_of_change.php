@@ -240,7 +240,7 @@ else {
  			<table>
  				<tr>
  				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Aesthetic</span><br><small>The choices of font, size, or color of surface-level elements in the design. </small></td>
+ 				<td width='25%'><span class='tablelabel'>Aesthetic</span><br><small>The font, size, or color choices of surface-level elements in the design. </small></td>
  				<td><td width='5%'></td> 
  				<td >
 	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
