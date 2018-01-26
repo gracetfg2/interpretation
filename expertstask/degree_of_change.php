@@ -165,7 +165,7 @@ else {
  				<h4>
  					2. Please rate the degree of difference between the two designs in terms of the following three aspects:
  				</h4>
- 				
+ 				</div>
  				<table>
 	 				<tr>
 	 				<td width='5%'></td>
