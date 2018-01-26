@@ -73,11 +73,12 @@ else {
 
 
   <?php 
+  		echo "<form>";
 		$initial_msg=0;
+
 		foreach($projects as $value)
 		{
-			$project_id=$value['ProjectID'];
-			
+			$project_id=$value['ProjectID'];			
 		
 			echo "<div id='p".$value['ProjectID']."' class='pagecontent' style='display:none;'>";
 			
@@ -126,7 +127,7 @@ else {
 		    }
 		    //Display
 		   
-		    echo "<form>";
+
 		    echo "
 
 	<div class='row'>
@@ -190,8 +191,8 @@ else {
 							<td class='radio-label' width='200px'><strong>Significant difference</strong></td>		
 						</tr>
 					</table>		         
-			<div>
-		<div>";
+			</div>
+		</div>";
 
 		   
 
