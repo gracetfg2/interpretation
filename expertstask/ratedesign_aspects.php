@@ -132,13 +132,9 @@ else {
 
 				<img  width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'>
 
-				<table>
- 				<tr>
- 				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Concept </span><br><small>The overall direction of the design including the tone and the theme of the design. </small></td>
- 				<td><td width='5%'></td> 
- 				<td>
-	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+				The overall direction of the design including the tone and the theme of the design. 
+
+	 				<table style='text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
@@ -163,15 +159,13 @@ else {
 							<td class='radio-label' width='200px'><strong>Significant difference</strong></td>		
 						</tr>
 					</table>
-				</td>
-				</tr>
-			</table>
-
+			
 		</div>
 
 		<div class='col-md-6'>
 			<img width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'>
-			<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+			
+			<table style='text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
@@ -195,23 +189,20 @@ else {
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."7'  value='7' "; if ($current_aes==7){echo "checked ";} echo "onclick='rate(".$id.",7,1);'></td>
 							<td class='radio-label' width='200px'><strong>Significant difference</strong></td>		
 						</tr>
-					</table>
-				</td>
-				</tr>
-			</table>
-		         
-		<div>
-	<div>";
+					</table>		         
+			<div>
+		<div>";
 
 
 		   
 
-			echo "</div>";
+		
 
 						
 		}
 		
 		echo "</form>";
+			echo "</div>";
 
 	?>
 
