@@ -166,7 +166,7 @@ else {
  			<table>
  				<tr>
  				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Conceptual (Imagery, Theme)</span></td>
+ 				<td width='25%'><span class='tablelabel'>Concept </span><br><small>The overall direction of the design including the tone and the theme of the design. </small></td>
  				<td><td width='5%'></td> 
  				<td>
 	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
@@ -202,7 +202,7 @@ else {
  			<table>
  				<tr>
  				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Aesthetic (Color, Font, Layout)</span></td>
+ 				<td width='25%'><span class='tablelabel'>Aesthetic</span><br><small>The design choices for the surface-level elements, for example, the size and font of those objects. </small></td>
  				<td><td width='5%'></td> 
  				<td >
 	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
