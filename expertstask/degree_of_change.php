@@ -202,7 +202,7 @@ else {
  			<table>
  				<tr>
  				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Aesthetic</span><br><small>The design choices of surface-level elements, for example, the size, color or font choices. </small></td>
+ 				<td width='25%'><span class='tablelabel'>Layout</span><br><small>The layout and composition of the design. </small></td>
  				<td><td width='5%'></td> 
  				<td >
 	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
