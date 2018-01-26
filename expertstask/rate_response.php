@@ -72,6 +72,7 @@
             //echo $feedbackText;
         }
                 foreach($results as $res) {
+                       if($res[3]!=null){
                         echo "   
                         <div class='row'>
                             <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
@@ -81,6 +82,7 @@
                         </div>
                         <hr>
                         ";
+                    }
                     
                 }
         echo"
