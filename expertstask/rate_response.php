@@ -40,7 +40,7 @@
         $feedback = array();
         $results = array();
 
-        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 25")) {
+        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 26")) {
             mysqli_stmt_bind_param($stmt, "s", $providerName);
             mysqli_stmt_execute($stmt);
             $result = $stmt->get_result();
