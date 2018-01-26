@@ -39,7 +39,7 @@
         $feedback = array();
         $results = array();
 
-        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 26")) {
+        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 26 AND `ok_to_use` = 1")) {
             mysqli_stmt_bind_param($stmt, "s", $providerName);
             mysqli_stmt_execute($stmt);
             $result = $stmt->get_result();
@@ -75,7 +75,7 @@
         }
          $count=0;
                 foreach($results as $res) {
-                       if($res[3]!=null || $res[5]!= 'Desiree Escobedo' || $res[5]!= 'Isaac Morillo'){
+                       if($res[3]!=null){
                         $count++;
                         echo "   
                         <div class='row'>
