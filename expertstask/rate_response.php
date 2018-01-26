@@ -31,9 +31,9 @@
     <br><br>
  
     - 0%  : The response was not restating the meaning of the feedback. #124 <br>
-    - 25% : The response addressed very few points in the feedback, missing a majority of the content in the feedback. See #1<br>
-    - 50% : The response covered almost a half of the critical points in the feedback. #10<br>
-    - 75% : The response addressed a majority of critical points in the feedback, but missing at least one or two criticle points. <br>
+    - 25% : The response addressed some points in the feedback, but missed a majority of the content in the feedback. See #1<br>
+    - 50% : The response covered about a half of the critical points in the feedback. #10<br>
+    - 75% : The response addressed a majority but not all of the critical points in the feedback. <br>
     - 100% : The response restated and covered all the critical points in the feedback. See #3 and #5.<br>
     
 
