@@ -70,7 +70,7 @@ else {
 
 <div class="container">
 
-
+<h4> Please rate the quality of each design based on the goals stated in the design brief.</h4>
 
   <?php 
   		echo "<form>";
@@ -134,8 +134,7 @@ else {
 		<div class='col-md-6'>
 
 				<img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'>
-				<h4>The overall direction of the design including the tone and the theme of the design. <h4>
-
+				
 	 				<table style='width:400px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
@@ -166,8 +165,7 @@ else {
 
 		<div class='col-md-6'>
 		<img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'>	
-			<h4>The overall direction of the design including the tone and the theme of the design. <h4>
-
+		
 
 	 		<table style='width:400px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
