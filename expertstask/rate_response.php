@@ -30,13 +30,11 @@
     Your task is to rate to what degree do you think each response covers the meaning of its original feedback.
     <br><br>
    <ul>
-    <li>0%  -- The response did not address any critical insights in the feedback. </li>
-
-    <li>25% -- The response convered only few insights in the feedback, missing a majority of critical points in the feedback.</li>
-    <li>50% -- The response covered half of the critical insights in the feedback. </li>
-    <li>75% -- The response covered a majority of critical insights in the feedback, but missing at least one or two criticle points. </li>
-
-      <li>100% -- The response covered all the critical insights in the feedback. </li>
+    - 0%  : The response did not address any critical insights in the feedback. <br>
+    - 25% : The response convered only few insights in the feedback, missing a majority of critical points in the feedback.<br>
+    - 50% : The response covered half of the critical insights in the feedback. <br>
+    - 75% : The response covered a majority of critical insights in the feedback, but missing at least one or two criticle points. <br>
+    - 100% : The response covered all the critical insights in the feedback. <br>
     
 
 
