@@ -131,7 +131,7 @@ else {
 		    echo "<div style='padding-top:50px'></div>";
 		   
 		    echo "<form>";
-		    echo "<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>
+		    echo "
 		  	 	<div class='form-group'>
 				<label class='radio-inline'>
 		  	 	&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
@@ -160,7 +160,8 @@ else {
 		        </table>";
 
 
- 			echo "<div style='padding-top:20px'></div>";
+ 			echo "<div style='padding-top:20px'></div>
+ 			<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>";
 
  			echo "<h4>2. Please rate the degree of difference between the two designs in terms of the following three aspects:</h4>
  			<table>
