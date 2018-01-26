@@ -40,7 +40,7 @@
         $feedback = array();
         $results = array();
 
-        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 22")) {
+        if ($stmt = mysqli_prepare($conn, "SELECT * FROM `ExpertFeedback` WHERE `f_DesignID` > 25")) {
             mysqli_stmt_bind_param($stmt, "s", $providerName);
             mysqli_stmt_execute($stmt);
             $result = $stmt->get_result();
@@ -48,6 +48,7 @@
                 array_push($feedback, $row);
             }
         }
+
         foreach($feedback as $entry) {
             $designID = $entry['f_DesignID'];
             
@@ -71,10 +72,13 @@
             //echo "<img src=\"". $imagePath ."\">\n";
             //echo $feedbackText;
         }
+         $count=0;
                 foreach($results as $res) {
                        if($res[3]!=null){
+                        $count++;
                         echo "   
                         <div class='row'>
+                        <div class='col-md-1'>#".$count."</div>
                             <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
                             <div class='col-md-4'><p>". $res[1] ."</p></div>
                             <div class='col-md-4'><p>". $res[3] ."</p></div>
