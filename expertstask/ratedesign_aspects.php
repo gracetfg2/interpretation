@@ -180,7 +180,7 @@ else {
 						</tr>
 					
 						<tr>
-							<td class='radio-label' width='150px'><strong>Minor difference</strong></td>
+							<td class='radio-label' width='150px'><strong>Low</strong></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."1'  value='1' "; if ($current_aes==1){echo "checked ";} echo "onclick='rate(".$id.",1,1)'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."2'  value='2' "; if ($current_aes==2){echo "checked ";} echo "onclick='rate(".$id.",2,1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."3'  value='3' "; if ($current_aes==3){echo "checked ";} echo "onclick='rate(".$id.",3,1);'></td>
@@ -188,7 +188,7 @@ else {
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."5'  value='5' "; if ($current_aes==5){echo "checked ";} echo "onclick='rate(".$id.",5,1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."6'  value='6' "; if ($current_aes==6){echo "checked ";} echo "onclick='rate(".$id.",6,1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."7'  value='7' "; if ($current_aes==7){echo "checked ";} echo "onclick='rate(".$id.",7,1);'></td>
-							<td class='radio-label' width='200px'><strong>Significant difference</strong></td>		
+							<td class='radio-label' width='200px'><strong>High</strong></td>		
 						</tr>
 					</table>		         
 			</div>
