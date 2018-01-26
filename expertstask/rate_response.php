@@ -29,7 +29,7 @@
     <br><br>
     Your task is to rate to what degree do you think each response covers the meaning of its original feedback.
     <br><br>
-   <ul>
+ 
     - 0%  : The response did not address any critical insights in the feedback. <br>
     - 25% : The response convered only few insights in the feedback, missing a majority of critical points in the feedback.<br>
     - 50% : The response covered half of the critical insights in the feedback. <br>
@@ -37,8 +37,6 @@
     - 100% : The response covered all the critical insights in the feedback. <br>
     
 
-
-    </ul>
     
 </div>
 <hr>
