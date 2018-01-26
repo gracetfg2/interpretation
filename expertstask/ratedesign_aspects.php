@@ -69,9 +69,9 @@ else {
 <body>
 
 <div class="container">
-
+<div style='margin-bottom: 20px'>
 <h4> Please rate the quality of each design based on the goals stated in the design brief.</h4>
-
+</div>
   <?php 
   		echo "<form>";
 		$initial_msg=0;
