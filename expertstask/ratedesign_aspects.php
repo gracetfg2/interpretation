@@ -136,7 +136,7 @@ else {
 				<img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'>
 				<h4>The overall direction of the design including the tone and the theme of the design. <h4>
 
-	 				<table style='width:600px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+	 				<table style='width:400px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
@@ -166,7 +166,7 @@ else {
 
 		<div class='col-md-6'>
 		<img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'>	
-			<table style='width:600px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+			<table style='width:400px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
