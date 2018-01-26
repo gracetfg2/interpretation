@@ -136,7 +136,7 @@ else {
 				<img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'>
 				<h4>The overall direction of the design including the tone and the theme of the design. <h4>
 
-	 				<table style='text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+	 				<table style='width= 500px text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
@@ -150,7 +150,7 @@ else {
 						</tr>
 					
 						<tr>
-							<td class='radio-label' width='150px'><strong>Low</strong></td>
+							<td class='radio-label'><strong>Low</strong></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$id."' id='".$id."1'  value='1' "; if ($current_concept==1){echo "checked ";} echo "onclick='rate(".$id.",1,2);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$id."' id='".$id."2'  value='2' "; if ($current_concept==2){echo "checked ";} echo "onclick='rate(".$id.",2,2);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$id."' id='".$id."3'  value='3' "; if ($current_concept==3){echo "checked ";} echo "onclick='rate(".$id.",3,2);'></td>
@@ -158,7 +158,7 @@ else {
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$id."' id='".$id."5'  value='5' "; if ($current_concept==5){echo "checked ";} echo "onclick='rate(".$id.",5,2);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$id."' id='".$id."6'  value='6' "; if ($current_concept==6){echo "checked ";} echo "onclick='rate(".$id.",6,2);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$id."' id='".$id."7'  value='7' "; if ($current_concept==7){echo "checked ";} echo "onclick='rate(".$id.",7,2);'></td>
-							<td class='radio-label' width='200px'><strong>High</strong></td>		
+							<td class='radio-label'><strong>High</strong></td>		
 						</tr>
 					</table>
 			
@@ -166,7 +166,7 @@ else {
 
 		<div class='col-md-6'>
 		<img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'>	
-			<table style='width=100% text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+			<table style='width=500px text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
@@ -180,7 +180,7 @@ else {
 						</tr>
 					
 						<tr>
-							<td class='radio-label' width='150px'><strong>Low</strong></td>
+							<td class='radio-label'><strong>Low</strong></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."1'  value='1' "; if ($current_aes==1){echo "checked ";} echo "onclick='rate(".$id.",1,1)'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."2'  value='2' "; if ($current_aes==2){echo "checked ";} echo "onclick='rate(".$id.",2,1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."3'  value='3' "; if ($current_aes==3){echo "checked ";} echo "onclick='rate(".$id.",3,1);'></td>
@@ -188,7 +188,7 @@ else {
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."5'  value='5' "; if ($current_aes==5){echo "checked ";} echo "onclick='rate(".$id.",5,1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."6'  value='6' "; if ($current_aes==6){echo "checked ";} echo "onclick='rate(".$id.",6,1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."7'  value='7' "; if ($current_aes==7){echo "checked ";} echo "onclick='rate(".$id.",7,1);'></td>
-							<td class='radio-label' width='200px'><strong>High</strong></td>		
+							<td class='radio-label'><strong>High</strong></td>		
 						</tr>
 					</table>		         
 			</div>
