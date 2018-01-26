@@ -169,7 +169,7 @@ else {
  				<table>
 	 				<tr>
 	 				<td width='5%'></td>
-	 				<td width='25%'><span class='tablelabel'>Concept </span><br><small>The overall direction of the design including the tone and the theme of the design. </small></td>
+	 				<td width='25%'><span class='tablelabel'>Concept </span><br><small>The overall direction of the design such as the theme or the tone of the design. </small></td>
 	 				<td><td width='5%'></td> 
 	 				<td>
 		 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
@@ -240,7 +240,7 @@ else {
  			<table>
  				<tr>
  				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Aesthetic</span><br><small>The design choices of surface-level elements, for example, the size, color or font choices. </small></td>
+ 				<td width='25%'><span class='tablelabel'>Aesthetic</span><br><small>The choices of font, size, or color of surface-level elements in the design. </small></td>
  				<td><td width='5%'></td> 
  				<td >
 	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
