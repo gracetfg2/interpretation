@@ -133,7 +133,7 @@ else {
 	<div class='row'>
 		<div class='col-md-6'>
 
-				<img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'>
+				<img class='left' width=300px height=450px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'>
 				
 	 				<table style='width:400px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
@@ -164,7 +164,7 @@ else {
 		</div>
 
 		<div class='col-md-6'>
-		<img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'>	
+		<img class='right' width=300px height=450px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'>	
 		
 
 	 		<table style='width:400px; text-align:center;' border='0' cellpadding='5' cellspacing='0'>
