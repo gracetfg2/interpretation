@@ -131,22 +131,7 @@ else {
 		    echo "<div style='padding-top:50px'></div>";
 		   
 		    echo "<form>";
-		    echo "
-		  	 	<div class='form-group'>
-				<label class='radio-inline'>
-		  	 	&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
-		              if($current_better==$left['DesignID']) 
-		              {
-		              	echo 'checked';
-		              } 
-		              echo "> The design on the left.
-		        </label>
-		        <label class='radio-inline'>
-		      	<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
-		              if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
-		        </label>
-		        </div>";
-
+		   
 
 		     echo "<table style='text-align:center;'>
 		       
@@ -162,6 +147,21 @@ else {
 
  			echo "<div style='padding-top:20px'></div>
  			<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>";
+ 			echo "
+		  	 	<div class='form-group'>
+				<label class='radio-inline'>
+		  	 	&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
+		              if($current_better==$left['DesignID']) 
+		              {
+		              	echo 'checked';
+		              } 
+		              echo "> The design on the left.
+		        </label>
+		        <label class='radio-inline'>
+		      	<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
+		              if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
+		        </label>
+		        </div>";
 
  			echo "<h4>2. Please rate the degree of difference between the two designs in terms of the following three aspects:</h4>
  			<table>
