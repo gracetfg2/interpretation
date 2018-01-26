@@ -25,13 +25,13 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    <h4>Below is a list of feedback collected for our designers. The designers were asked to rewrite the content of the feedback using their own words, and the response should cover all the content and keep the feedback's original meaning. 
+    Below is a list of feedback collected for our designers. The designers were asked to rewrite the content of the feedback using their own words, and the response should cover all the content and keep the feedback's original meaning. 
     <br><br>
     Your task is to rate to what degree do you think each response covers the meaning of its original feedback.
     <br><br>
    <ul>
     <li>0%  -- The response did not address any critical insights in the feedback. </li>
-    
+
     <li>25% -- The response convered only few insights in the feedback, missing a majority of critical points in the feedback.</li>
     <li>50% -- The response covered half of the critical insights in the feedback. </li>
     <li>75% -- The response covered a majority of critical insights in the feedback, but missing at least one or two criticle points. </li>
@@ -41,7 +41,7 @@
 
 
     </ul>
-    </h4> 
+    
 </div>
 <hr>
 <div class='row'>
