@@ -34,9 +34,9 @@
 <div class='row'>
     <strong>
         <div class='col-md-1'>#</div>
-        <div class='col-md-1'>ID</div>
+        
         <div class='col-md-3'>Design Image</div>
-        <div class='col-md-4'>Feedback Content</div>
+        <div class='col-md-5'>Feedback Content</div>
         <div class='col-md-3'>Designer's Response</div>
     </strong>
 </div>
@@ -86,9 +86,8 @@
                         echo "   
                         <div class='row'>
                         <div class='col-md-1'>#".$count."</div>
-                        <div class='col-md-1'>ID-".$res[4] ."</div>
                             <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
-                            <div class='col-md-4'><p>". $res[1] ."</p></div>
+                            <div class='col-md-5'><p>". $res[1] ."</p></div>
                             <div class='col-md-3'><p>". $res[3] ."</p></div>
 
                         </div>
