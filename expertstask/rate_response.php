@@ -67,7 +67,7 @@
             $feedbackRating = $entry['designer_rating'];
             $response = $entry['interpretation'];
             $imagePath = "/interpretation/design/". $image;
-            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$interpretation]);
+            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$response]);
             //echo "<img src=\"". $imagePath ."\">\n";
             //echo $feedbackText;
         }
