@@ -139,10 +139,13 @@ else {
 		            <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
 		          </tr>		         
 		        </table>
- 			<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>";
- 			echo "
+
+		        <div style='margin-top:30px;'>
+ 				<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):
+ 				</h4>
+
 		  	 	<div class='form-group'>
-				<label class='radio-inline'>
+					<label class='radio-inline'>
 		  	 	&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
 		              if($current_better==$left['DesignID']) 
 		              {
@@ -156,7 +159,9 @@ else {
 		        </label>
 		        </div>";
 
- 			echo "<h4>2. Please rate the degree of difference between the two designs in terms of the following three aspects:</h4>
+ 			echo "
+ 			  <div style='margin-top:30px;'>
+ 			  <h4>2. Please rate the degree of difference between the two designs in terms of the following three aspects:</h4>
  			<table>
  				<tr>
  				<td width='5%'></td>
