@@ -152,9 +152,9 @@ else {
 		       
 
 		          <tr>
-		            <td><img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
+		            <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
 		            <td width=40%></td>
-		            <td><img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+		            <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
 		          </tr>
 		         
 		        </table>";
