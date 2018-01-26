@@ -196,13 +196,13 @@ else {
 
 		   
 
-		
+		echo "</div>";
 
 						
 		}
 		
 		echo "</form>";
-			echo "</div>";
+
 
 	?>
 
