@@ -25,7 +25,10 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    <h4>Below is the list of feedback and the self-explanation response written by the feedback receiver.</h4> 
+    <h4>Below is the list of feedback given to the designers. The designers were asked to rewrite the content of the feedback using their own words. Their response should cover all the content and keep its original meaning. 
+    <br><br>
+    Your task is to rate to what degree do you think the response cover the important messages in the feedback content. 
+    </h4> 
 </div>
 <hr>
 <div class='row'>
