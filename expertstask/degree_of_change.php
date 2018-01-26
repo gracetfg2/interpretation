@@ -10,8 +10,7 @@ if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Project` WHERE `total_version
 	    		while ($myrow = $result->fetch_assoc()) {
 	    			$projects[]=$myrow;
 	    			
-	    		}  
-	    		
+	    		}  	    		
 	mysqli_stmt_close($stmt2);	
 }
 else {
@@ -51,7 +50,6 @@ else {
 
     color: white;
 }
-
 
 
 .pagination .incomplete a{
@@ -131,17 +129,7 @@ else {
 		   	echo "<div style='padding-top:10px'></div>";
 		   
 		    echo "<div style='padding-top:50px'></div>";
-		    echo "<table style='text-align:center;'>
-		       
-
-		          <tr>
-		            <td><img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
-		            <td width=40%></td>
-		            <td><img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
-		          </tr>
-		         
-		        </table>";
-
+		   
 		    echo "<hr>";
 		    echo "<form>";
 		    echo "<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>
@@ -159,6 +147,18 @@ else {
 		              if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
 		        </label>
 		        </div>";
+
+
+		     echo "<table style='text-align:center;'>
+		       
+
+		          <tr>
+		            <td><img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
+		            <td width=40%></td>
+		            <td><img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+		          </tr>
+		         
+		        </table>";
 
 
  			echo "<div style='padding-top:20px'></div>";
