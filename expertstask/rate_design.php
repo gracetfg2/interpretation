@@ -4,7 +4,7 @@ session_start();
 include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
-if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Project` WHERE `total_version`=2 AND `ok`=1 ORDER BY ProjectID ASC")) {
+if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Project` WHERE `total_version`=2 AND `ok`=1 AND `f_DesignerId`>20 ORDER BY ProjectID ASC")) {
 		mysqli_stmt_execute($stmt2);
 		$result = $stmt2->get_result();
 		while ($myrow = $result->fetch_assoc()) {
