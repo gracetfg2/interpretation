@@ -34,7 +34,7 @@
 <div class='row'>
     <strong>
         <div class='col-md-1'>#</div>
-        <div class='col-md-1'>FeedbackID</div>
+        <div class='col-md-1'>ID</div>
         <div class='col-md-3'>Design Image</div>
         <div class='col-md-4'>Feedback Content</div>
         <div class='col-md-3'>Designer's Response</div>
