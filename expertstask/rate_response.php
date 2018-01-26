@@ -83,7 +83,7 @@
                         <div class='col-md-1'>ID-".$res[4] ."</div>
                             <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
                             <div class='col-md-4'><p>". $res[1] ."</p></div>
-                            <div class='col-md-4'><p>". $res[3] ."</p></div>
+                            <div class='col-md-3'><p>". $res[3] ."</p></div>
 
                         </div>
  
