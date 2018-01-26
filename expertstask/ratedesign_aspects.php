@@ -126,44 +126,19 @@ else {
 		    }
 		    //Display
 
-		   	echo "<div style='padding-top:10px'></div>";
 		   
 		    echo "<div style='padding-top:50px'></div>";
 		   
 		    echo "<form>";
 		    echo "<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>
 		  	 	<div class='form-group'>
-				<label class='radio-inline'>
-		  	 	&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
-		              if($current_better==$left['DesignID']) 
-		              {
-		              	echo 'checked';
-		              } 
-		              echo "> The design on the left.
-		        </label>
-		        <label class='radio-inline'>
-		      	<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
-		              if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
-		        </label>
-		        </div>";
 
+	<div class='row'>
+		<div class='col-md-6'>
 
-		     echo "<table style='text-align:center;'>
-		       
+				<img  width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'>
 
-		          <tr>
-		            <td><img class='left' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
-		            <td width=40%></td>
-		            <td><img class='right' width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
-		          </tr>
-		         
-		        </table>";
-
-
- 			echo "<div style='padding-top:20px'></div>";
-
- 			echo "<h4>2. Please rate the degree of difference between the two designs in terms of the following three aspects:</h4>
- 			<table>
+				<table>
  				<tr>
  				<td width='5%'></td>
  				<td width='25%'><span class='tablelabel'>Concept </span><br><small>The overall direction of the design including the tone and the theme of the design. </small></td>
@@ -198,14 +173,11 @@ else {
 				</tr>
 			</table>
 
- 			<hr>
- 			<table>
- 				<tr>
- 				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Layout</span><br><small>The layout and composition of the design. </small></td>
- 				<td><td width='5%'></td> 
- 				<td >
-	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+		</div>
+
+		<div class='col-md-6'>
+			<img width=400px height=600px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'>
+			<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
@@ -233,45 +205,9 @@ else {
 				</td>
 				</tr>
 			</table>
-	 			<hr>
- 			<table>
- 				<tr>
- 				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Aesthetic</span><br><small>The design choices of surface-level elements, for example, the size, color or font choices. </small></td>
- 				<td><td width='5%'></td> 
- 				<td >
-	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
-						<tr aria-hidden='true'>
-							<td  class='radio-label'></td>
-							<td><label class='radio-cell'>1</label></td> 
-							<td><label class='radio-cell'>2</label></td> 
-							<td><label class='radio-cell'>3</label></td> 
-							<td><label class='radio-cell'>4</label></td>
-							<td><label class='radio-cell'>5</label></td> 
-							<td><label class='radio-cell'>6</label></td>
-							<td><label class='radio-cell'>7</label></td> 
-							<td  class='radio-label' ></td>
-						</tr>
-					
-						<tr>
-							<td class='radio-label' width='150px'><strong>Minor difference</strong></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."1'  value='1' "; if ($current_aes==1){echo "checked ";} echo "onclick='rate(".$id.",1,1)'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."2'  value='2' "; if ($current_aes==2){echo "checked ";} echo "onclick='rate(".$id.",2,1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."3'  value='3' "; if ($current_aes==3){echo "checked ";} echo "onclick='rate(".$id.",3,1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."4'  value='4' "; if ($current_aes==4){echo "checked ";} echo "onclick='rate(".$id.",4,1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."5'  value='5' "; if ($current_aes==5){echo "checked ";} echo "onclick='rate(".$id.",5,1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."6'  value='6' "; if ($current_aes==6){echo "checked ";} echo "onclick='rate(".$id.",6,1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."7'  value='7' "; if ($current_aes==7){echo "checked ";} echo "onclick='rate(".$id.",7,1);'></td>
-							<td class='radio-label' width='200px'><strong>Significant difference</strong></td>		
-						</tr>
-					</table>
-				</td>
-				</tr>
-			</table>
-
-
-
-";
+		         
+		<div>
+	<div>";
 
 
 		   
