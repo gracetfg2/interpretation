@@ -205,7 +205,7 @@ else {
  			<table>
  				<tr>
  				<td width='5%'></td>
- 				<td width='25%'><span class='tablelabel'>Layout</span><br><small>The layout and composition of the design. </small></td>
+ 				<td width='25%'><span class='tablelabel'>Layout</span><br><small>The layout and composition of the elements in the design. </small></td>
  				<td><td width='5%'></td> 
  				<td >
 	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
