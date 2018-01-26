@@ -70,9 +70,7 @@ else {
 
 <div class="container">
 
-
-
-  <?php 
+<?php 
 		$initial_msg=0;
 		foreach($projects as $value)
 		{
@@ -125,13 +123,9 @@ else {
 		        $left = $tmp;
 		    }
 		    //Display
-
-		   
-		    echo "<div style='padding-top:50px'></div>";
 		   
 		    echo "<form>";
-		    echo "<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):</h4>
-		  	 	<div class='form-group'>
+		    echo "
 
 	<div class='row'>
 		<div class='col-md-6'>
