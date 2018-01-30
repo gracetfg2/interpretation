@@ -21,8 +21,6 @@ else {
 }
 
 
-
-
 ?>
 
 
@@ -133,33 +131,41 @@ else {
 		   
 
 		     echo "
-		     	<table style='text-align:center;'>
-			          <tr>
-			            <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>
-			            <td width=40%></td>
-			            <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
-			          </tr>		         
-		        </table>
-
-		        <div style='margin-top:30px;'>
+		     	<div style='margin-top:30px;'>
  					<h4>1. Please select which design you believe more effectively achieves the design goals ( the order is randomized):
  					</h4>
  				</div>
 
-		  	 	<div class='form-group'>
-					<label class='radio-inline'>
-		  	 			&nbsp&nbsp&nbsp<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
-		              if($current_better==$left['DesignID']) 
-		              {
-		              	echo 'checked';
-		              } 
-		              echo "> The design on the left.
-		        	</label>
-		        	<label class='radio-inline'>
-		      		<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
-		              if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
-		        	</label>
-		        </div>";
+		     	<table style='text-align:center;'>
+			        <tr>
+			            <td>
+
+			            <div><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></div>		            	
+			            <label class='radio-inline'>
+		  	 			<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
+				              if($current_better==$left['DesignID']) 
+				              {
+				              	echo 'checked';
+				              } 
+				              echo "> The design on the left.
+		        		</label>
+
+			            </td>
+			            <td width=40%></td>
+			            <td>
+			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></div>
+
+			            <label class='radio-inline'>
+		      			<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
+		              		if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
+		        		</label>
+			            </td>
+			        </tr>		         
+		        </table>
+
+		        
+
+		  	 ";
 
  			echo " <div style='margin-top:30px;'>
  				<h4>
