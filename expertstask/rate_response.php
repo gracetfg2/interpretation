@@ -25,7 +25,12 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    Below is a list of data we collected from our experiment. It contains ()
+    Below is a list of data we collected from our experiment. It contains <br>
+    First column: graphic designs addressing the design brief. <br>
+    Second column: a piece of feedback given to the design in the first column.<br>
+    Third column: a restatement from a designer given to the feedback in the second column. <br>
+
+
     The designers were asked to restate the content of the feedback using their own words, and the response should cover all the content and keep the feedback's original meaning. 
     <br><br>
     Your task is to rate to what degree do you think each response covers the meaning of its original feedback.
