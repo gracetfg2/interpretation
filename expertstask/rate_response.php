@@ -89,48 +89,49 @@
             if($response !=null){
                     $count++;
                     $response_quality=1;
-            echo "<div id='f".$f_id."' class='pagecontent'>";
+    echo "<div id='f".$f_id."' class='pagecontent'>";
             
-            echo "   
-                    <div class='row'>
-                        <div class='col-md-1'>#".$count."</div>
-                            <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $imagePath ."\" class=\"img-responsive\"></div>
-                            <div class='col-md-5'><p>".  $feedbackContent."</p></div>
-                            <div class='col-md-3'><p>". $response ."</p></div>
-
-                        </div>
-                       <div class='row'> ";
-
-            echo "<h4>2. Please rate the quality of the designer's restating of the feedback:</h4>
-            
-           <table>
-                <tr>
-                <td>
-                    <table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
-                        <tr aria-hidden='true'>
-                            <td  class='radio-label'></td>
-                            <td><label class='radio-cell'>1</label></td> 
-                            <td><label class='radio-cell'>2</label></td> 
-                            <td><label class='radio-cell'>3</label></td> 
-                            <td><label class='radio-cell'>4</label></td>
-                            <td><label class='radio-cell'>5</label></td> 
-                            <td  class='radio-label' ></td>
-                        </tr>
-                
+            echo "<div class='row'>
+                <div class='col-md-1'>#".$count."</div>
+                <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $imagePath ."\" class=\"img-responsive\"></div>
+                <div class='col-md-5'><p>".  $feedbackContent."</p></div>
+                <div class='col-md-3'>
+                    <p>". $response ."</p>
+                    <h4>2. Please rate the quality of the designer's restating of the feedback:</h4> 
+                    <table>
                         <tr>
-                            <td class='radio-label' width='150px'><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."1'  value='1' "; if ($response_quality==1){echo "checked ";} echo "onclick='rate(".$id.",1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."2'  value='2' "; if ($response_quality==2){echo "checked ";} echo "onclick='rate(".$id.",2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."3'  value='3' "; if ($response_quality==3){echo "checked ";} echo "onclick='rate(".$id.",3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."4'  value='4' "; if ($response_quality==4){echo "checked ";} echo "onclick='rate(".$id.",4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."5'  value='5' "; if ($response_quality==5){echo "checked ";} echo "onclick='rate(".$id.",5);'></td>
-                            <td class='radio-label' width='200px'><strong>High</strong></td>      
+                        <td>
+                            <table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+                            <tr aria-hidden='true'>
+                                <td  class='radio-label'></td>
+                                <td><label class='radio-cell'>1</label></td> 
+                                <td><label class='radio-cell'>2</label></td> 
+                                <td><label class='radio-cell'>3</label></td> 
+                                <td><label class='radio-cell'>4</label></td>
+                                <td><label class='radio-cell'>5</label></td> 
+                                <td  class='radio-label' ></td>
+                            </tr>
+                    
+                            <tr>
+                                <td class='radio-label' width='150px'><strong>Low</strong></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."1'  value='1' "; if ($response_quality==1){echo "checked ";} echo "onclick='rate(".$id.",1);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."2'  value='2' "; if ($response_quality==2){echo "checked ";} echo "onclick='rate(".$id.",2);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."3'  value='3' "; if ($response_quality==3){echo "checked ";} echo "onclick='rate(".$id.",3);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."4'  value='4' "; if ($response_quality==4){echo "checked ";} echo "onclick='rate(".$id.",4);'></td>
+                                <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."5'  value='5' "; if ($response_quality==5){echo "checked ";} echo "onclick='rate(".$id.",5);'></td>
+                                <td class='radio-label' width='200px'><strong>High</strong></td>      
+                            </tr>
+                            </table>
+                        </td>
                         </tr>
-
                     </table>
-                </td>
-                </tr>
-            </table>
+                </div>
+
+                </div>
+                </div>
+                      ";
+
+            echo "
 
 
 
