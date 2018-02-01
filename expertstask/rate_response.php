@@ -233,9 +233,11 @@
       
         $.ajax({
             type: "POST",
-            url:'save_response_rating.php',
+            url:"save_response_rating.php",
             data: {feedbackid: _idx},
-            success: function (data) {}
+            success: function (data) {
+                alert('ok!');
+            }
 
                 
 
