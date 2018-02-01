@@ -25,16 +25,16 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    Below is a list of feedback collected for our designers. The designers were asked to restate the content of the feedback using their own words, and the response should cover all the content and keep the feedback's original meaning. 
-    <br><br>
-    Your task is to rate to what degree do you think each response covers the meaning of its original feedback.
+    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the design brief. In the second column, you can see a piece of feedback given to the design (first column). <b>The designers' task is to restate the content of the feedback in the second column using their own words, and the response should cover all the content and keep the feedback's original meaning. </b><br><br>
+
+    Your task is to read the feedback (second column) and the designers' response to the feedback (third column), and decide the quality of the designers' restatement from low (1) to high (5). You may review the rubrics before assigning the scores. 
     <br><br>
  
-    - 0%   : The response was not restating the meaning of the feedback. #124 <br>
-    - 25% : The response restated some points in the feedback, but missed a majority of the content in the feedback. See #1<br>
-    - 50% : The response restated about a half of the critical points in the feedback. #10<br>
-    - 75% : The response restated a majority but not all of the critical points in the feedback. <br>
-    - 100% : The response restated and covered all the critical points in the feedback. See #3 and #5.<br>
+    - 1  : The response was not restating the meaning of the feedback. See #124 <br>
+    - 2 : The response restated some points in the feedback, but missed a majority of the content in the feedback. See #1<br>
+    - 3 : The response restated almost a half of the critical points in the feedback. See #10<br>
+    - 4 : The response restated a majority but not all of the critical points in the feedback. <br>
+    - 5 : The response restated all the critical points in the feedback. See #3 and #5.<br>
     
 
     
@@ -46,7 +46,7 @@
         
         <div class='col-md-3'>Design Image</div>
         <div class='col-md-5'>Feedback Content</div>
-        <div class='col-md-3'>Designer's Response</div>
+        <div class='col-md-3'>Designer's Restatement of the feedback</div>
     </strong>
 </div>
 <hr>
@@ -62,10 +62,10 @@
                 array_push($feedback, $row);
             }
         }
-
+        
+        $count=0;
         foreach($feedback as $entry) {
-            $designID = $entry['f_DesignID'];
-            
+            $designID = $entry['f_DesignID'];        
             $image = "";
             if ($stmt = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `DesignID`=?")) {
                 mysqli_stmt_bind_param($stmt, "i", $designID);
@@ -84,7 +84,6 @@
             $f_id = $entry['FeedbackID'];
             $provider = $entry['f_ProviderID'];
             $imagePath = "/interpretation/design/". $image;
-
 
             if($response !=null){
                     $count++;
@@ -145,29 +144,7 @@
             //echo "<img src=\"". $imagePath ."\">\n";
             //echo $feedbackText;
         }
-         $count=0;
-                foreach($results as $res) {
-                       if($res[3]!=null){
-                        $count++;
-                        echo "   
-                        <div class='row'>
-                        <div class='col-md-1'>#".$count."</div>
-                            <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
-                            <div class='col-md-5'><p>". $res[1] ."</p></div>
-                            <div class='col-md-3'><p>". $res[3] ."</p></div>
 
-                        </div>
- 
-                        <hr>
-                        ";
-                    }
-                    
-                }
-        echo"
-   
-
-        ";
-        
         CloseConnection_Util($conn);
         ?>
 </div>
