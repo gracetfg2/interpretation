@@ -25,7 +25,7 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the design brief. In the second column, you can see a piece of feedback given to the design shown in the first column. <b>The designers' task is to restate the content of the feedback in the second column using their own words, and the response should cover all the content and keep the feedback's original meaning. </b><br><br>
+    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the design brief. In the second column, you can see a piece of feedback given to the design (first column). <b>The designers' task is to restate the content of the feedback in the second column using their own words, and the response should cover all the content and keep the feedback's original meaning. </b><br><br>
 
     Your task is to read the feedback (second column) and the designers' response to the feedback (third column), and decide the quality of the designers' restatement from low (1) to high (5). You may review the rubrics before assigning the scores. 
     <br><br>
