@@ -97,6 +97,7 @@
         $count=0;
 
         foreach($feedback as $entry) {
+            $result_rating=null;
             $designID = $entry['f_DesignID'];        
             $image = "";
             if ($stmt = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `DesignID`=?")) {
