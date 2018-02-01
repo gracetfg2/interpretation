@@ -34,6 +34,14 @@ if($action=='update_rating')
         mysqli_stmt_close($stmt);
 
 
+    }else {
+        $sql="INSERT INTO ResponseRating (raterID, f_FeedbackID, rating) VALUES (?, ?, ?)";
+
+        $stmt=$conn->prepare($sql); 
+        $stmt->bind_param("isi", $provider, $feedback_id, $rating);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+
     }
 
 
