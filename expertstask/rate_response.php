@@ -18,6 +18,33 @@
         padding: 5px;
         margin: 5px;
     }
+
+    .pagination  li{   
+    cursor: pointer;
+}
+.pagination .finish a{
+    background-color: #ccffcc;
+  
+    color:#336600;
+}
+
+.pagination li.active a{
+    background-color: rgb(51,122,183);
+
+    color: white;
+}
+
+
+.pagination .incomplete a{
+    background-color: #ffcccc;
+
+     color:#993333;
+}
+.tablelabel{
+    font-weight: bold;
+    font-size:16px;
+    color:#154360;
+}
 </style>
 </head>
     
