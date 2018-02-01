@@ -236,7 +236,7 @@
             url:"save_response_rating.php",
             data: {feedbackid: _idx},
             success: function (data) {
-                alert('ok!');
+                alert(data);
             }
 
                 
