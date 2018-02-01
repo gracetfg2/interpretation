@@ -218,6 +218,13 @@
 <div id='check-result' name='check-result'> </div>
 </div>
 <script>
+
+
+$( document ).ready(function() {
+        showUI(39);
+});
+
+
     function showUI(_id){
         $('#check-result').html();  
 
