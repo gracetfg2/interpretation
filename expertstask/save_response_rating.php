@@ -3,6 +3,7 @@ session_start();
 $feedback_id= $_POST['feedbackid'];
 $action= $_POST['action'];
 $provider=  $_POST['provider'];
+echo $provider;
 $rating=  $_POST['selected'];
 
 
