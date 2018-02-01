@@ -140,7 +140,7 @@
                             <div class='col-md-3'><p>". $response ."</p></div>
 
                         </div>
-                       <div class='row'> ";
+                       <div class='row' style='margin-top:20px; margin-left:30px'> ";
 
             echo "<h4>2. Please rate the quality of the designer's restating of the feedback:</h4>
             
