@@ -12,20 +12,65 @@ $conn = connect_to_db();
 if($action=='update_rating')
 {
 
-if (!($stmt = mysqli_prepare($conn, "INSERT INTO ResponseRating (raterID, f_FeedbackID, rating) VALUES (?, ?, ?)
+  $sql="SELECT * FROM ResponseRating WHERE raterID =? AND f_FeedbackID=?";
 
-  ON DUPLICATE KEY UPDATE
-  rating = ?"))) {
-    echo "SendData Global prepare failed: (" . $conn->errno . ") " . $conn->error;
+  if($stmt=mysqli_prepare($conn,$sql))
+  {
+    mysqli_stmt_bind_param($stmt,"si",$provider, $feedback_id);
+    mysqli_stmt_execute($stmt);
+    $result = $stmt->get_result();
+    while ($myrow = $result->fetch_assoc()) {
+      $record[]=$myrow;
+    }
+    mysqli_stmt_close($stmt1);
+
+    if(count($record) > 0){
+
+        $sql="UPDATE ResponseRating SET rating= ? WHERE raterID =? AND f_FeedbackID=?";
+
+        $stmt=$conn->prepare($sql); 
+        $stmt->bind_param("isi",  $rating, $provider, $feedback_id);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+
+
+    }else {
+
+        $sql="INSERT INTO ResponseRating (raterID, f_FeedbackID, rating) VALUES (?, ?, ?)";
+
+        $stmt=$conn->prepare($sql); 
+        $stmt->bind_param("isi",  $provider, $feedback_id, $rating);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+
+
+
+
+    }
+
+
+  }else{
+  echo "something went wrong 1";
   }
 
-$stmt->bind_param("siii", $raterID, $f_FeedbackID, $_rating, $_rating);
-$stmt->execute();
-mysqli_stmt_close($stmt);
 
-}else{
-  echo "something went wrong";
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ?>  
