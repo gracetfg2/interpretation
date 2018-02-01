@@ -102,7 +102,6 @@
                        <div class='row'> ";
 
             echo "<h4>2. Please rate the quality of the designer's restating of the feedback:</h4>
-            <div class='sub_frame'> 
             
            <table>
                 <tr>
@@ -131,7 +130,7 @@
                     </table>
                 </td>
                 </tr>
-            </table>";
+            </table>
 
 
 
