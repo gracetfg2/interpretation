@@ -236,7 +236,7 @@
             url:'save_response_rating.php',
             data: {feedbackid: _idx ,action:'update_rating',  selected: number , provider: $('#provider').val() },
             success: function (data) {
-
+                alert('go through');
                 $('#li'+_idx).removeClass('active');
                 $('#li'+_idx).removeClass('incomplete');    
                 $('#check-result').html('Rating is saved!');         
