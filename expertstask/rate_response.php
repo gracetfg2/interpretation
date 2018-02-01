@@ -230,11 +230,11 @@
 
 
     function rate(_idx, number){
-        alert('come');
+      
         $.ajax({
             type: "POST",
             url:'save_response_rating.php',
-            data: {feedbackid: _idx ,action:'update_rating',  selected: number , provider: $('#provider').value },
+            data: {feedbackid: _idx ,action:'update_rating',  selected: number , provider: $('#provider').value() },
             success: function (data) {
 
                 $('#li'+_idx).removeClass('active');
