@@ -1,6 +1,6 @@
 <?php 
 	session_start();		
-    $providerName = $_GET['designer'];
+    $providerName = 'grace';
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
 	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
@@ -84,9 +84,10 @@
                 mysqli_stmt_bind_param($stmt2, "si",$providerName,  $entry['FeedbackID']);
                 mysqli_stmt_execute($stmt2);
                 $result_rating = $stmt2->get_result();
-                $response_quality = $result_rating->fetch_assoc();
-            }
-            else {
+                while ($row = $result_rating->fetch_assoc()) {
+                   $response_quality= $row['rating'];
+                }
+            }else {
                 echo "Response Rating query prepare failed: (" . $conn->errno . ") " . $conn->error;
             }
 
