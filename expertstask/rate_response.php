@@ -62,10 +62,10 @@
                 array_push($feedback, $row);
             }
         }
-
+        
+        $count=0;
         foreach($feedback as $entry) {
-            $designID = $entry['f_DesignID'];
-            
+            $designID = $entry['f_DesignID'];        
             $image = "";
             if ($stmt = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `DesignID`=?")) {
                 mysqli_stmt_bind_param($stmt, "i", $designID);
@@ -78,41 +78,64 @@
             else {
                 echo "Image query prepare failed: (" . $conn->errno . ") " . $conn->error;
             }
+
             $feedbackContent = $entry['edited_content'];
             $feedbackRating = $entry['designer_rating'];
             $response = $entry['interpretation'];
             $f_id = $entry['FeedbackID'];
             $provider = $entry['f_ProviderID'];
             $imagePath = "/interpretation/design/". $image;
-            array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$response, $f_id, $provider]);
-            //echo "<img src=\"". $imagePath ."\">\n";
-            //echo $feedbackText;
-        }
-         $count=0;
-                foreach($results as $res) {
-                       if($res[3]!=null){
-                        $count++;
-                        echo "   
-                        <div class='row'>
+
+            if($response !=null){
+                    $count++;
+            echo "<div id='f".$f_id."' class='pagecontent' style='display:none;'>";
+            
+            echo "   
+                    <div class='row'>
                         <div class='col-md-1'>#".$count."</div>
-                            <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $res[0] ."\" class=\"img-responsive\"></div>
-                            <div class='col-md-5'><p>". $res[1] ."</p></div>
-                            <div class='col-md-3'><p>". $res[3] ."</p></div>
+                            <div class='col-md-3'><img width='200px' border=\"2\" src=\"". $imagePath ."\" class=\"img-responsive\"></div>
+                            <div class='col-md-5'><p>".  $feedbackContent."</p></div>
+                            <div class='col-md-3'><p>". $response ."</p></div>
 
                         </div>
  
                         <hr>
+                        </div>
                         ";
-                    }
-                    
-                }
-        echo"
-   
 
-        ";
-        
+
+            }
+
+            //array_push($results, [$imagePath, $feedbackContent, $feedbackRating,$response, $f_id, $provider]);
+            //echo "<img src=\"". $imagePath ."\">\n";
+            //echo $feedbackText;
+        }
+
         CloseConnection_Util($conn);
         ?>
+
+ <nav>
+  <ul class="pagination">
+    
+
+     <?php 
+        $index=1;
+        foreach($projects as $value)
+        {
+            $current_class='indicator incomplete';
+
+            //Both not selected
+            if( !$value['better_rate1'] && !$value['doc_aes_1'] && !$value['doc_concept_1']) $current_class='indicator';
+            //Both selected
+            if( $value['better_rate1'] && $value['doc_aes_1'] && $value['doc_concept_1'] )$current_class='indicator finish';
+
+            echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
+            $index++;
+        }
+    ?>
+
+  </ul>
+</nav> 
 </div>
 </body>
 
