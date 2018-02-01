@@ -88,6 +88,7 @@
 
             if($response !=null){
                     $count++;
+                    $response_quality=1;
             echo "<div id='f".$f_id."' class='pagecontent'>";
             
             echo "   
