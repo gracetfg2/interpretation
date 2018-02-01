@@ -3,7 +3,7 @@ session_start();
 $feedback_id= $_POST['feedbackid'];
 $action= $_POST['action'];
 $provider=  $_POST['provider'];
-$rating=  $_POST['rating'];
+$rating=  $_POST['selected'];
 
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
