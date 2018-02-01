@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo '$feedback_id'.$feedback_id.'$task'.$task.'$provider'.'$rating'.$rating;
 $feedback_id= $_POST['feedbackid'];
 $task= $_POST['action'];
 $provider=  $_POST['provider'];

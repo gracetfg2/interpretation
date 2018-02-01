@@ -72,7 +72,7 @@
         <div class='col-md-1'>#</div>
         
         <div class='col-md-3'>Design Image</div>
-        <div class='col-md-5'>Feedback Content</div>
+        <div class='col-md-5'>Feedback</div>
         <div class='col-md-3'>Designer's Restatement of the feedback</div>
     </strong>
 </div>
@@ -142,7 +142,7 @@
                         </div>
                        <div class='row' style='margin-top:20px; margin-left:30px'> ";
 
-            echo "<h4>2. Please rate the quality of the designer's restating of the feedback:</h4>
+            echo "<h4> Please rate the quality of the designer's restating of the feedback:</h4>
             
            <table>
                 <tr>
