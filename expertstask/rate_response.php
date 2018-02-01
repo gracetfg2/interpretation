@@ -64,6 +64,7 @@
         }
         
         $count=0;
+
         foreach($feedback as $entry) {
             $designID = $entry['f_DesignID'];        
             $image = "";
@@ -78,6 +79,17 @@
             else {
                 echo "Image query prepare failed: (" . $conn->errno . ") " . $conn->error;
             }
+
+            if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `ResponseRating` WHERE `raterID`=? AND `f_FeedbackID`=?")) {
+                mysqli_stmt_bind_param($stmt2, "si",$providerName,  $entry['FeedbackID']);
+                mysqli_stmt_execute($stmt2);
+                $result_rating = $stmt2->get_result();
+                $response_quality = $result_rating->fetch_assoc();
+            }
+            else {
+                echo "Response Rating query prepare failed: (" . $conn->errno . ") " . $conn->error;
+            }
+
             $feedbackContent = $entry['edited_content'];
             $feedbackRating = $entry['designer_rating'];
             $response = $entry['interpretation'];
@@ -89,7 +101,7 @@
                    
                     array_push( $results, $f_id);
                     $count++;
-                    $response_quality=1;
+                   
             echo "<div id='p".$f_id."' class='pagecontent' style='display:none'>";
             
             echo "   
@@ -120,11 +132,11 @@
                 
                         <tr>
                             <td class='radio-label' width='150px'><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."1'  value='1' "; if ($response_quality==1){echo "checked ";} echo "onclick='rate(".$id.",1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."2'  value='2' "; if ($response_quality==2){echo "checked ";} echo "onclick='rate(".$id.",2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."3'  value='3' "; if ($response_quality==3){echo "checked ";} echo "onclick='rate(".$id.",3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."4'  value='4' "; if ($response_quality==4){echo "checked ";} echo "onclick='rate(".$id.",4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='doc".$id."' id='".$id."5'  value='5' "; if ($response_quality==5){echo "checked ";} echo "onclick='rate(".$id.",5);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."1'  value='1' "; if ($response_quality==1){echo "checked ";} echo "onclick='rate(".$id.",1);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."2'  value='2' "; if ($response_quality==2){echo "checked ";} echo "onclick='rate(".$id.",2);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."3'  value='3' "; if ($response_quality==3){echo "checked ";} echo "onclick='rate(".$id.",3);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."4'  value='4' "; if ($response_quality==4){echo "checked ";} echo "onclick='rate(".$id.",4);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."5'  value='5' "; if ($response_quality==5){echo "checked ";} echo "onclick='rate(".$id.",5);'></td>
                             <td class='radio-label' width='200px'><strong>High</strong></td>      
                         </tr>
 
@@ -150,7 +162,7 @@
         CloseConnection_Util($conn);
         ?>
 
-
+<input type='hidden' name='provider' id='provider' value='<?php  echo $providerName; ?>'>
 <div style='padding-top:20px'></div>
 <nav>
   <ul class="pagination">
@@ -174,7 +186,7 @@
 
   </ul>
 </nav>
-
+<div id='check-result' name='check-result'> </div>
 </div>
 <script>
     function showUI(_id){
@@ -186,6 +198,53 @@
         $('.pagecontent').hide();
         $('#p'+_id).show();         
     }
+
+
+    function rate(_idx, number){
+    
+        $.ajax({
+            type: "POST",
+            url:'save_response_rating.php',
+            data: {feedbackid: _idx ,action:'update_rating',  selected: number , provider: $('#provider').value },
+            success: function (data) {
+
+                $('#li'+_idx).removeClass('active');
+                $('#li'+_idx).removeClass('incomplete');    
+                $('#check-result').html('Rating is saved!');         
+                if ($('input[name=response'+_idx+']:checked').size() == 0 )
+                {               
+                    $('#li'+_idx).addClass('incomplete');
+                    $('#li'+_idx).addClass('active');
+
+                }
+                else
+                {
+                    $('#li'+_idx).addClass('finish');
+                    //$('#li'+_idx).addClass('active');
+                    if(!$('#li'+_idx).is(':last-child'))
+                    {
+                        $('#li'+_idx).next().addClass('active');
+                        $('#check-result').html();  
+                        $('.pagecontent').hide();
+                        $('#p'+_idx).next().show();
+
+                    }
+                    else
+                    {
+                        $('#li'+_idx).addClass('active');
+                        $('#check-result').html('Selection saved! This is the last project!');
+                    }
+                    
+                }
+                        
+            },
+            error: function () {
+            }
+
+    
+        });
+    }
+
 </script>
 
 </body>
