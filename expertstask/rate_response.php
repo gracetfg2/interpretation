@@ -234,7 +234,7 @@
         $.ajax({
             type: "POST",
             url:'save_response_rating.php',
-            data: {feedbackid: _idx ,action:'update_rating',  selected: number , provider: $('#provider').value() },
+            data: {feedbackid: _idx ,action:'update_rating',  selected: number , provider: $('#provider').val() },
             success: function (data) {
 
                 $('#li'+_idx).removeClass('active');
