@@ -86,7 +86,8 @@
             $imagePath = "/interpretation/design/". $image;
 
             if($response !=null){
-                     $results=$entry;
+                   
+                    array_push( $results, $f_id);
                     $count++;
                     $response_quality=1;
             echo "<div id='p".$f_id."' class='pagecontent' style='display:none'>";
@@ -166,7 +167,7 @@
             //Both selected
             if( $value['response_quality'])$current_class='indicator finish';
 
-            echo " <li class='".$current_class."' id='li".$value['FeedbackID']."' name='li".$value['FeedbackID']."'><a onclick='showUI(".$value['FeedbackID'].")';>".$index."</a></li>";
+            echo " <li class='".$current_class."' id='li".$value."' name='li".$value."'><a onclick='showUI(".$value.")';>".$index."</a></li>";
             $index++;
         }
     ?>
