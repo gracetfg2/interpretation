@@ -88,7 +88,7 @@
 
             if($response !=null){
                     $count++;
-            echo "<div id='f".$f_id."' class='pagecontent' style='display:none;'>";
+            echo "<div id='f".$f_id."' class='pagecontent'>";
             
             echo "   
                     <div class='row'>
