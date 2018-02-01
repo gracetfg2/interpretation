@@ -78,7 +78,6 @@
             else {
                 echo "Image query prepare failed: (" . $conn->errno . ") " . $conn->error;
             }
-
             $feedbackContent = $entry['edited_content'];
             $feedbackRating = $entry['designer_rating'];
             $response = $entry['interpretation'];
@@ -114,29 +113,6 @@
         
         CloseConnection_Util($conn);
         ?>
-
- <nav>
-  <ul class="pagination">
-    
-
-     <?php 
-        $index=1;
-        foreach($projects as $value)
-        {
-            $current_class='indicator incomplete';
-
-            //Both not selected
-            if( !$value['better_rate1'] && !$value['doc_aes_1'] && !$value['doc_concept_1']) $current_class='indicator';
-            //Both selected
-            if( $value['better_rate1'] && $value['doc_aes_1'] && $value['doc_concept_1'] )$current_class='indicator finish';
-
-            echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
-            $index++;
-        }
-    ?>
-
-  </ul>
-</nav> 
 </div>
 </body>
 
