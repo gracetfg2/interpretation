@@ -9,9 +9,10 @@
 <html lang="en">
 <head>
 <title>Review Feedback </title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <link rel="stylesheet" type="text/css" href="/interpretation/dist/css/bootstrap.min.css">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 <style>
     .box {
         border: 2px solid black;
