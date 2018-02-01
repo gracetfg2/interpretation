@@ -234,41 +234,10 @@
         $.ajax({
             type: "POST",
             url:'save_response_rating.php',
-            data: {feedbackid: _idx ,action:'update_rating',  selected: number , provider: $('#provider').val() },
+            data: {feedbackid: _idx},
             success: function (data) {
+
                 
-                $('#li'+_idx).removeClass('active');
-                $('#li'+_idx).removeClass('incomplete');    
-                $('#check-result').html('Rating is saved!');         
-                if ($('input[name=response'+_idx+']:checked').size() == 0 )
-                {               
-                    $('#li'+_idx).addClass('incomplete');
-                    $('#li'+_idx).addClass('active');
-
-                }
-                else
-                {
-                    $('#li'+_idx).addClass('finish');
-                    //$('#li'+_idx).addClass('active');
-                    if(!$('#li'+_idx).is(':last-child'))
-                    {
-                        $('#li'+_idx).next().addClass('active');
-                        $('#check-result').html();  
-                        $('.pagecontent').hide();
-                        $('#p'+_idx).next().show();
-
-                    }
-                    else
-                    {
-                        $('#li'+_idx).addClass('active');
-                        $('#check-result').html('Selection saved! This is the last project!');
-                    }
-                    
-                }
-                        
-            },
-            error: function () {
-            }
 
     
         });
