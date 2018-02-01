@@ -1,6 +1,6 @@
 <?php 
 	session_start();		
-    $providerName = 'grace';
+    $providerName = $_GET['ID'];
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
 	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
