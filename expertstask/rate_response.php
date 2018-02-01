@@ -1,6 +1,9 @@
 <?php 
 	session_start();		
     $providerName = $_GET['ID'];
+    if(!$providerName){
+         die("Ask for your ID before performing the task");
+    }
 	include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
    	$conn = connect_to_db();
 	include($_SERVER['DOCUMENT_ROOT'].'/interpretation/general_information.php');
