@@ -25,9 +25,9 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the design brief. In the second column, you can see a piece of feedback given to the design (first column). <b>The designers' task is to restate the content of the feedback in the second column using their own words, and the response should cover all the content and keep the feedback's original meaning. </b><br><br>
+    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the design brief. In the second column, you can see a piece of feedback given to the design (first column). <b>The designer was asked to restate the content of the feedback (second column) using their own words, and the response(third column) should cover all the content and keep the feedback's original meaning. </b><br><br>
 
-    Your task is to read the feedback (second column) and the designers' response to the feedback (third column), and decide the quality of the designers' restatement from low (1) to high (5). You may review the rubrics before assigning the scores. 
+    Your task is to read the feedback (second column) and the designer's response to the feedback (third column), and decide the quality of the response from low (1) to high (5). You may use the following rubrics for this task. 
     <br><br>
  
     - 1  : The response was not restating the meaning of the feedback. See #124 <br>
@@ -86,9 +86,10 @@
             $imagePath = "/interpretation/design/". $image;
 
             if($response !=null){
+                     $results=$entry;
                     $count++;
                     $response_quality=1;
-            echo "<div id='f".$f_id."' class='pagecontent'>";
+            echo "<div id='p".$f_id."' class='pagecontent' style='display:none'>";
             
             echo "   
                     <div class='row'>
@@ -147,7 +148,45 @@
 
         CloseConnection_Util($conn);
         ?>
+
+
+<div style='padding-top:20px'></div>
+<nav>
+  <ul class="pagination">
+    
+
+     <?php 
+        $index=1;
+        foreach($results as $value)
+        {
+            $current_class='indicator incomplete';
+
+            //Both not selected
+            if( !$value['response_quality'] ) $current_class='indicator';
+            //Both selected
+            if( $value['response_quality'])$current_class='indicator finish';
+
+            echo " <li class='".$current_class."' id='li".$value['FeedbackID']."' name='li".$value['FeedbackID']."'><a onclick='showUI(".$value['FeedbackID'].")';>".$index."</a></li>";
+            $index++;
+        }
+    ?>
+
+  </ul>
+</nav>
+
 </div>
+<script>
+    function showUI(_id){
+        $('#check-result').html();  
+
+        $('.indicator').removeClass('active');
+        
+        $('#li'+_id).addClass('active');
+        $('.pagecontent').hide();
+        $('#p'+_id).show();         
+    }
+</script>
+
 </body>
 
 </html>
