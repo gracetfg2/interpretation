@@ -133,11 +133,11 @@
                 
                         <tr>
                             <td class='radio-label' width='150px'><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."1'  value='1' "; if ($response_quality==1){echo "checked ";} echo "onclick='rate(".$id.",1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."2'  value='2' "; if ($response_quality==2){echo "checked ";} echo "onclick='rate(".$id.",2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."3'  value='3' "; if ($response_quality==3){echo "checked ";} echo "onclick='rate(".$id.",3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."4'  value='4' "; if ($response_quality==4){echo "checked ";} echo "onclick='rate(".$id.",4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$id."' id='".$id."5'  value='5' "; if ($response_quality==5){echo "checked ";} echo "onclick='rate(".$id.",5);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."1'  value='1' "; if ($response_quality==1){echo "checked ";} echo "onclick='rate(".$f_id.",1);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."2'  value='2' "; if ($response_quality==2){echo "checked ";} echo "onclick='rate(".$f_id.",2);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."3'  value='3' "; if ($response_quality==3){echo "checked ";} echo "onclick='rate(".$f_id.",3);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."4'  value='4' "; if ($response_quality==4){echo "checked ";} echo "onclick='rate(".$f_id.",4);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."5'  value='5' "; if ($response_quality==5){echo "checked ";} echo "onclick='rate(".$f_id.",5);'></td>
                             <td class='radio-label' width='200px'><strong>High</strong></td>      
                         </tr>
 
