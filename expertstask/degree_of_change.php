@@ -268,7 +268,6 @@ else {
 
 
 		   
-
 			echo "</div>";
 
 						
