@@ -11,16 +11,52 @@ $conn = connect_to_db();
 
 if($action=='update_rating')
 {
-  $sql="REPLACE INTO ResponseRating (raterID, f_FeedbackID, rating) VALUES (?, ?, ?)";
 
-  $stmt=$conn->prepare($sql); 
-  $stmt->bind_param("sii", $provider, $feedback_id, $rating);
-  $stmt->execute();
-  mysqli_stmt_close($stmt);
+  $sql="SELECT * FROM ResponseRating WHERE raterID =? AND f_FeedbackID=?";
 
-}else{
-  echo "something went wrong";
+  if($stmt=mysqli_prepare($conn,$sql))
+  {
+    mysqli_stmt_bind_param($stmt,"si",$provider, $feedback_id);
+    mysqli_stmt_execute($stmt);
+    $result = $stmt->get_result();
+    while ($myrow = $result->fetch_assoc()) {
+      $record[]=$myrow;
+    }
+    mysqli_stmt_close($stmt1);
+
+    if(count($record) > 0){
+
+        $sql="UPDATE ResponseRating SET rating= ? WHERE raterID =? AND f_FeedbackID=?";
+
+        $stmt=$conn->prepare($sql); 
+        $stmt->bind_param("isi",  $rating, $provider, $feedback_id);
+        $stmt->execute();
+        mysqli_stmt_close($stmt);
+
+
+    }
+
+
+  }else{
+  echo "something went wrong 1";
+  }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
