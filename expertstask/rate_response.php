@@ -25,22 +25,16 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    Below is a list of data we collected from our experiment. It contains <br>
-    First column: graphic designs addressing the design brief. <br>
-    Second column: a piece of feedback given to the design in the first column.<br>
-    Third column: a restatement from a designer given to the feedback in the second column. <br>
+    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the design brief. In the second column, you can see a piece of feedback given to the design shown in the first column. <b>The designers' task is to restate the content of the feedback in the second column using their own words, and the response should cover all the content and keep the feedback's original meaning. </b><br><br>
 
-
-    The designers were asked to restate the content of the feedback using their own words, and the response should cover all the content and keep the feedback's original meaning. 
-    <br><br>
-    Your task is to rate to what degree do you think each response covers the meaning of its original feedback.
+    Your task is to read the feedback (second column) and the designers' response to the feedback (third column), and decide the quality of the designers' restatement from low (1) to high (5). You may review the rubrics before assigning the scores. 
     <br><br>
  
-    - 1  : The response was not restating the meaning of the feedback. #124 <br>
+    - 1  : The response was not restating the meaning of the feedback. See #124 <br>
     - 2 : The response restated some points in the feedback, but missed a majority of the content in the feedback. See #1<br>
-    - 3 : The response restated about a half of the critical points in the feedback. #10<br>
+    - 3 : The response restated almost a half of the critical points in the feedback. See #10<br>
     - 4 : The response restated a majority but not all of the critical points in the feedback. <br>
-    - 5 : The response restated and covered all the critical points in the feedback. See #3 and #5.<br>
+    - 5 : The response restated all the critical points in the feedback. See #3 and #5.<br>
     
 
     
