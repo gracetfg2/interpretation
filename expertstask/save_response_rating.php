@@ -15,7 +15,7 @@ if($action=='update_rating')
   ON DUPLICATE KEY 
   UPDATE rating = ? ";
 
-  $conn->prepare($sql); 
+  $stmt=$conn->prepare($sql); 
   $stmt->bind_param("siii", $provider, $feedback_id, $rating, $rating);
   $stmt->execute();
   mysqli_stmt_close($stmt);
