@@ -15,7 +15,7 @@ if($action=='update_rating')
 if (!($stmt = mysqli_prepare($conn, "INSERT INTO ResponseRating (raterID, f_FeedbackID, rating) VALUES (?, ?, ?)
 
   ON DUPLICATE KEY UPDATE
-  rating = VALUES(?)"))) {
+  rating = ? "))) {
     echo "SendData Global prepare failed: (" . $conn->errno . ") " . $conn->error;
   }
 
