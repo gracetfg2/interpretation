@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <title>Review Feedback </title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/interpretation/dist/css/bootstrap.min.css">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_header.php');?>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <style>
@@ -229,7 +229,7 @@
 
 
     function rate(_idx, number){
-    
+        alert('come');
         $.ajax({
             type: "POST",
             url:'save_response_rating.php',
