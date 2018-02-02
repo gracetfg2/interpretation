@@ -97,7 +97,7 @@
         $count=0;
 
         foreach($feedback as $entry) {
-            global $response_quality='';
+
             $designID = $entry['f_DesignID'];        
             $image = "";
             if ($stmt = mysqli_prepare($conn, "SELECT * FROM `Design` WHERE `DesignID`=?")) {
@@ -116,8 +116,8 @@
                 mysqli_stmt_bind_param($stmt2, "si",$providerName,  $entry['FeedbackID']);
                 mysqli_stmt_execute($stmt2);
                 $result_rating = $stmt2->get_result();
-                while ($row = $result_rating->fetch_assoc()) {
-                   $response_quality= $row['rating'];
+                while ($rating = $result_rating->fetch_assoc()) {
+                   $response_quality= $rating['rating'];
                 }
             }else {
                 echo "Response Rating query prepare failed: (" . $conn->errno . ") " . $conn->error;
@@ -165,11 +165,11 @@
                 
                         <tr>
                             <td class='radio-label' width='150px'><strong>Low</strong></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."1'  value='1' "; if ($response_quality==1){echo "checked ";} echo "onclick='rate(".$f_id.",1);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."2'  value='2' "; if ($response_quality==2){echo "checked ";} echo "onclick='rate(".$f_id.",2);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."3'  value='3' "; if ($response_quality==3){echo "checked ";} echo "onclick='rate(".$f_id.",3);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."4'  value='4' "; if ($response_quality==4){echo "checked ";} echo "onclick='rate(".$f_id.",4);'></td>
-                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."5'  value='5' "; if ($response_quality==5){echo "checked ";} echo "onclick='rate(".$f_id.",5);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."1'  value='1' "; if ($rating['rating']==1){echo "checked ";} echo "onclick='rate(".$f_id.",1);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."2'  value='2' "; if ($rating['rating']==2){echo "checked ";} echo "onclick='rate(".$f_id.",2);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."3'  value='3' "; if ($rating['rating']==3){echo "checked ";} echo "onclick='rate(".$f_id.",3);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."4'  value='4' "; if ($rating['rating']==4){echo "checked ";} echo "onclick='rate(".$f_id.",4);'></td>
+                            <td class='radio-cell'><input type='radio' class='radio-inline' name='response".$f_id."' id='".$f_id."5'  value='5' "; if ($rating['rating']==5){echo "checked ";} echo "onclick='rate(".$f_id.",5);'></td>
                             <td class='radio-label' width='200px'><strong>High</strong></td>      
                         </tr>
 
