@@ -149,7 +149,7 @@
                         </div>
                        <div class='row' style='margin-top:20px; margin-left:30px'> ";
 
-            echo "<h4> Please rate the quality of the designer's restating of the feedback:</h4>
+            echo "<h4> Please rate the quality of the designer's restatement of the feedback:</h4>
             
            <table>
                 <tr>
