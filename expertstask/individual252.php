@@ -122,7 +122,7 @@ array_multisort($order, $designs);
 		        <img width=450px style='border: 1px solid #A4A4A4;float:left;cursor: pointer;' src='../design/".$design['file']."' onclick=\"viewPic('".$design['mid']."')\";>
 					<div class='col-md-6' >
 					<div style='padding-left:20px'>
-						<h4>  Please rate the quality of the design based on the goals stated in the <a href='design_brief.php' target='_blank'>design brief</a>. </h4>
+						<h4>  Please rate the quality of the design based on the goals stated in the following design brief</a>. </h4>
 						<span  style='text-align: justify;'>
 			    <ol>
 			    The designers were creating a poster for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>, one of the most famous American singer-songwriter. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
