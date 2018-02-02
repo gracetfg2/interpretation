@@ -169,7 +169,7 @@ else {
 
  			echo " <div style='margin-top:30px;'>
  				<h4>
- 					2. Please rate the degree of change between the two designs in terms of the  overall direction of the design such as the theme or the tone of the design:
+ 					2. Please rate the degree of change between the two designs in terms of the theme of the design :
  				</h4>
  				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 							<tr aria-hidden='true'>
