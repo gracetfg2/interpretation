@@ -138,9 +138,7 @@ else {
 		     	<table style='text-align:center;'>
 			        <tr>
 			            <td>
-
-			            <div><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></div>		            	
-			            <label class='radio-inline'>
+			            	<label class='radio-inline'>
 		  	 			<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
 				              if($current_better==$left['DesignID']) 
 				              {
@@ -148,16 +146,19 @@ else {
 				              } 
 				              echo "> The design on the left.
 		        		</label>
+			            <div><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></div>		            	
+			            
 
 			            </td>
 			            <td width=40%></td>
 			            <td>
-			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></div>
-
 			            <label class='radio-inline'>
 		      			<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
 		              		if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
 		        		</label>
+			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></div>
+
+			            
 			            </td>
 			        </tr>		         
 		        </table>
