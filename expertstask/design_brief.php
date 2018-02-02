@@ -100,18 +100,16 @@ em{
     <h4 class="title">Design Brief</h4>
     <span class="statement" style="text-align: justify;">
 			    <ol>
-			    <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/design_brief.php'); ?>
-
+			    The designers were creating a poster for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>, one of the most famous American singer-songwriter. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
 				</ol>
 	</span>
 
 	<h4 class="title">Rules / Requirements</h4>
     <span class="statement">
  <ol>
- <li>You should use your favorite software to design the flyer. No paper sketch allowed.</li>
  <li>The flyer size should be 8.5" x 11" (US Letter size) and in portrait orientation.</li>
  <li>The flyer must be created from scratch. No templates allowed.</li>
- <li>You may use images from the public domain, but not profanity, obscenity, or nudity.</li>
+ <li>They may use images from the public domain, but not profanity, obscenity, or nudity.</li>
  </ol>
 
  </span>
