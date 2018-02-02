@@ -5,15 +5,16 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utili
 $conn = connect_to_db();
 
 if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Project` WHERE `total_version`=2 AND `ok`=1 AND `f_DesignerId`>20 ORDER BY ProjectID ASC")) {
-		mysqli_stmt_execute($stmt2);
-		$result = $stmt2->get_result();
-		while ($myrow = $result->fetch_assoc()) {
-			$projects[]=$myrow;    			
-		}  		
-		mysqli_stmt_close($stmt2);	
+	    		mysqli_stmt_execute($stmt2);
+	    		$result = $stmt2->get_result();
+	    		while ($myrow = $result->fetch_assoc()) {
+	    			$projects[]=$myrow;
+	    			
+	    		}  	    		
+	mysqli_stmt_close($stmt2);	
 }
 else {
-	//No Designs found
+//No Designs found
 	echo "Our system encounter some problems, please contact our staff Grace at yyen4@illinois.edu with error code: SHOWFEEDBACK";
 	mysqli_stmt_close($stmt2);
 	die();
