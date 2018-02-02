@@ -88,8 +88,6 @@ em{
  </head>
 
  <body>
- <?php include($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/ele_nav.php');?>
-
 
 
 
