@@ -119,7 +119,7 @@ shuffle($designs);
 		        <img width=450px style='border: 1px solid #A4A4A4;float:left;cursor: pointer;' src='../design/".$design['file']."' onclick=\"viewPic('".$design['mid']."')\";>
 					<div class='col-md-6' >
 					<div style='padding-left:20px'>
-						<h4>  How would you rate the quality of the design based on the goals stated in the design brief? </h4>
+						<h4>  Please rate the quality of the design based on the goals stated in the design brief? </h4>
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
