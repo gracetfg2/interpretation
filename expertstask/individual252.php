@@ -34,8 +34,10 @@ foreach($projects as $value)
 			      }
 			}
 }
-
-shuffle($designs);
+mt_srand('214');
+$order = array_map(create_function('$val', 'return mt_rand();'), range(1, count($designs)));
+array_multisort($order, $designs);
+//shuffle($designs);
 
 ?>
 
