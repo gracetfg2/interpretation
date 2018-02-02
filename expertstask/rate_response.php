@@ -60,7 +60,7 @@
 
    <br><br>
 
-    Your task is to read both the feedback (second column) and the designer's response to the feedback (third column), and <b>rate the quality of the restatement </b>from low (1) to high (5).  An ideal restatement (third column) should cover all the content of the feedback (second column), keep the original meaning but with the use of the designer's own words.<br><br>You may use the following rubrics: 
+    Your task is to read both the feedback (second column) and the designer's response to the feedback (third column), and <b>rate the quality of the restatement </b>from low (1) to high (5).  An ideal restatement (third column) should cover all the content of the feedback (second column), keep the original meaning but use the designer's own words.<br><br>You may use the following rubrics: 
     <br><br>
  
     - 1  : The response was not restating the meaning of the feedback. See #124 <br>
