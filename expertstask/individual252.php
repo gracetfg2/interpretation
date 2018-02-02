@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/reflection/webpage-utility/db_utility.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
 
-if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Project` WHERE `total_version`=2 AND `ok`=1 ORDER BY ProjectID ASC")) {
+if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Project` WHERE `total_version`=2 AND `ok`=1 AND `f_DesignerId`>20 ORDER BY ProjectID ASC")) {
 		mysqli_stmt_execute($stmt2);
 		$result = $stmt2->get_result();
 		while ($myrow = $result->fetch_assoc()) {
@@ -43,12 +43,12 @@ shuffle($designs);
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="/reflection/js/jquery-1.11.3.min.js"></script>
+	<script src="/interpretation/js/jquery-1.11.3.min.js"></script>
 	<?php include('../webpage-utility/ele_header.php'); ?>
 	<title> Review My Design </title>
 
 
-	<link rel="stylesheet" type="text/css" href="/reflection/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/interpretation/dist/css/bootstrap.min.css">
 <style>
 .pagination  li{   
   	cursor: pointer;
