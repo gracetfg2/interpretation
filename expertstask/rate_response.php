@@ -56,9 +56,11 @@
  
 <div class="container"> 
  <div class='well' style='padding: 20px'>  
-    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the <a href='design_brief.php'>design brief</a>. In the second column, you can see a piece of feedback given to the design (first column). <b>The designer was asked to restate the content of the feedback (second column) using their own words, and the response(third column) should cover all the content and keep the feedback's original meaning. </b><br><br>
+    Below is a list of data we collected from our experiment. In the first column, you can see a graphic design addressing the <a href='design_brief.php'>design brief</a>. In the second column, you can see a piece of feedback given to the design (first column). In the third column, you can see the designer's restatement of the feedback (second column). 
 
-    Your task is to read the feedback (second column) and the designer's response to the feedback (third column), and decide the quality of the response from low (1) to high (5). You may use the following rubrics for this task. 
+   <br><br>
+
+    Your task is to read both the feedback (second column) and the designer's response to the feedback (third column), and <b>rate the quality of the restatement </b>from low (1) to high (5).  An ideal restatement (third column) should cover all the content of the feedback (second column), keep the original meaning but use the designer's own words.<br><br>You may use the following rubrics: 
     <br><br>
  
     - 1  : The response was not restating the meaning of the feedback. See #124 <br>
@@ -147,7 +149,7 @@
                         </div>
                        <div class='row' style='margin-top:20px; margin-left:30px'> ";
 
-            echo "<h4> Please rate the quality of the designer's restating of the feedback:</h4>
+            echo "<h4> Please rate the quality of the designer's restatement of the feedback:</h4>
             
            <table>
                 <tr>

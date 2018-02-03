@@ -131,7 +131,7 @@ else {
 
 		     echo "
 		     	<div style='margin-top:30px;'>
- 					<h4>1. Please select which design you believe more effectively achieves the design goals:
+ 					<h4>1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
  					</h4>
  				</div>
 
@@ -150,7 +150,7 @@ else {
 			            
 
 			            </td>
-			            <td width=40%></td>
+			            <td width=20%></td>
 			            <td>
 			            <label class='radio-inline'>
 		      			<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
