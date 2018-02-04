@@ -133,7 +133,8 @@
             $imagePath = "/interpretation/design/". $image;
 
             if($response !=null){
-                   
+                   if( $feedbackRating>0){}else{ $feedbackRating=null;}
+
                     array_push( $results,[ $f_id, $feedbackRating ] );
                     $count++;
                    
