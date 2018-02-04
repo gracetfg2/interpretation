@@ -133,9 +133,8 @@
             $imagePath = "/interpretation/design/". $image;
 
             if($response !=null){
-                   if( $feedbackRating>0){}else{ $feedbackRating=null;}
-
-                    array_push( $results,[ $f_id, $feedbackRating ] );
+                  
+                    array_push( $results,$entry );
                     $count++;
                    
             echo "<div id='p".$f_id."' class='pagecontent' style='display:none'>";
@@ -210,11 +209,11 @@
             $current_class='indicator incomplete';
 
             //Both not selected
-            if( ! $value[1] ) $current_class='indicator';
+            if( ! $value['rating'] ) $current_class='indicator';
             //Both selected
-            if($value[1])$current_class='indicator finish';
+            if($value['rating'])$current_class='indicator finish';
 
-            echo " <li class='".$current_class."' id='li".$value[0]."' name='li".$value[0]."'><a onclick='showUI(".$value[0].")';>".$index."</a></li>";
+            echo " <li class='".$current_class."' id='li".$value['FeedbackID']."' name='li".$value['FeedbackID']."'><a onclick='showUI(".$value['FeedbackID'].")';>".$index."</a></li>";
             $index++;
         }
     ?>
