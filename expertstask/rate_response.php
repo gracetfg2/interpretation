@@ -134,7 +134,7 @@
 
             if($response !=null){
                   
-                    array_push( $results,$entry );
+                    array_push( $results,[  $f_id,$response_quality] );
                     $count++;
                    
             echo "<div id='p".$f_id."' class='pagecontent' style='display:none'>";
@@ -209,11 +209,11 @@
             $current_class='indicator incomplete';
 
             //Both not selected
-            if( ! $value['rating'] ) $current_class='indicator';
+            if( ! $value[1] ) $current_class='indicator';
             //Both selected
-            if($value['rating'])$current_class='indicator finish';
+            if($value[1] && $value[1] >0)$current_class='indicator finish';
 
-            echo " <li class='".$current_class."' id='li".$value['FeedbackID']."' name='li".$value['FeedbackID']."'><a onclick='showUI(".$value['FeedbackID'].")';>".$index."</a></li>";
+            echo " <li class='".$current_class."' id='li".$value[0]."' name='li".$value[0]."'><a onclick='showUI(".$value[0].")';>".$index."</a></li>";
             $index++;
         }
     ?>
