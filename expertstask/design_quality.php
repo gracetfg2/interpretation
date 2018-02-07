@@ -2,6 +2,7 @@
 session_start();
 	
 $providerName = "grace";
+
 if(!$providerName){
      die("Ask for your ID before performing the task");
 }
@@ -93,8 +94,6 @@ array_multisort($order, $designs);
 
   <?php 
 		$initial_msg=0;
-		$indicators=[];
-
 		foreach($designs as $design)
 		{
 			$design_id=$design['DesignID'];		
