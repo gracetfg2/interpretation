@@ -36,10 +36,6 @@ switch($aspect){
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/interpretation/webpage-utility/db_utility.php');
 $conn = connect_to_db();
- 
-global $initial;
-global $revised;
-global $better_iteration;
 
 if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DesignQualityEvaluate` WHERE `f_ProjectID`=? AND `raterID` = ?")) {
           

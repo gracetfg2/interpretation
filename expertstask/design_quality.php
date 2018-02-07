@@ -114,11 +114,11 @@ array_multisort($order, $designs);
 				switch($design['version']){
 
 					case 1: 
-							$rate_concept=$record['initial_concept'];
+							$rate_concept=$record['initial_concept']; 
 							$rate_layout=$record['initial_layout'];
 							$rate_aes=$record['initial_aes'];
 							break;
-					case 2: $rate_concept=$record['revised_concept'];
+					case 2: $rate_concept=$record['revised_concept']; echo $rate_concept;
 							$rate_layout=$record['revised_layout'];
 							$rate_aes=$record['revised_aes'];
 							break;
