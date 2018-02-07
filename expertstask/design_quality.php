@@ -353,13 +353,13 @@ window.open("../viewpic.php?image="+mid);
             
             success: function (data) {
             	
-            	$('#li'+_idx).removeClass('active');
+            	
    
             	$('#check-result').html('Rating saved!');  
 
             	if ($('input[name=concept'+_idx+']:checked').size() > 0 && $('input[name=layout'+_idx+']:checked').size() > 0 && $('input[name=aes'+_idx+']:checked').size() > 0 )
 				{				
-					
+					$('#li'+_idx).removeClass('active');
 					$('#li'+_idx).addClass('finish');
 					if(!$('#li'+_idx).is(':last-child'))
             		{
