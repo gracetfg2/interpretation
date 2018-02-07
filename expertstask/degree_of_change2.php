@@ -85,20 +85,19 @@ else {
 			echo "<div id='p".$value['ProjectID']."' class='pagecontent' style='display:none;'>";
 			
 			//Get current rating
-			if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `Project` WHERE `ProjectID`=? AND `raterID`=?")) {
+			if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DegreeOfChangeEvaluate` WHERE `f_ProjectID`=? AND `raterID`=?")) {
 				mysqli_stmt_bind_param($stmt2, "is", $project_id, $providerName);
 				mysqli_stmt_execute($stmt2);
 				$result = $stmt2->get_result();
 				while ($current_project = $result->fetch_assoc()) {
-					global $id;
 					global $current_better;
 					global $current_aes;
 					global $current_concept;
-					$current_better= $current_project['better_rate1'];
+					global $current_layout;
+					$current_better= $current_project['better_version'];
 					$current_aes= $current_project['doc_aes'];
 					$current_concept= $current_project['doc_concept'];
 					$current_layout= $current_project['doc_layout'];
-					$id=$current_project['ProjectID'];
 				}
 
    		 	}
@@ -146,8 +145,8 @@ else {
 			        <tr>
 			            <td>
 			            	<label class='radio-inline'>
-		  	 			<input type='radio' name='project".$id."' value='".$left['DesignID']."' onclick='save(".$id.")'"; 
-				              if($current_better==$left['DesignID']) 
+		  	 			<input type='radio' name='better".$id."' value='".$left['DesignID']."' onclick='save(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
+				              if($current_better==$left['version']) 
 				              {
 				              	echo 'checked';
 				              } 
@@ -160,7 +159,7 @@ else {
 			            <td width=20%></td>
 			            <td>
 			            <label class='radio-inline'>
-		      			<input type='radio' name='project".$id."' value='".$right['DesignID']."' onclick='save(".$id.")'"; 
+		      			<input type='radio' name='better".$id."' value='".$right['DesignID']."' onclick='save(0,".$right['f_ProjectID'].",".$right['f_DesignerID'].",".$right['version'].")'"; 
 		              		if($current_better==$right['DesignID']) {echo 'checked';}echo "> The design on the right.
 		        		</label>
 			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></div>
@@ -313,6 +312,8 @@ else {
 </nav>
 <!--<a class="btn btn-warning" onclick="check()">Check Complete</a>-->
 
+<input type='hidden' name='provider' id='provider' value='<?php  echo $providerName; ?>'>
+
 
 </div>
 
@@ -324,13 +325,13 @@ else {
 	<script type="text/javascript">
 
 
-
 $(document).ready(function() {
   // var task_params = document.getElementById("survey").href.substring(56).toString();
   // (new Image).src = 'http://128.174.241.28:8080/?' + task_params;
-	showUI(3);
-});
+	$('.pagecontent:first').show();
+	$('li:first').addClass('active');
 
+});
 
 	function showUI(_id){
 		$('#check-result').html();  
@@ -343,58 +344,13 @@ $(document).ready(function() {
     }
 
 
-    function save(_idx){
-    	$.ajax({
-        	type: "POST",
-            url:'get_project.php',
-            data: {projectid: _idx ,action:'update_record',  selected: $('input[name=project'+_idx+']:checked').val() },
-            success: function (data) {
 
-            	$('#li'+_idx).removeClass('active');
-            	$('#li'+_idx).removeClass('incomplete');
-            	$('#check-result').html('Selection saved!');   
-            	if ( $('input[name=project'+_idx+']:checked').size() > 0 && $('input[name=aes'+_idx+']:checked').size() > 0 && $('input[name=concept'+_idx+']:checked').size() > 0 )
-				{	
-					$('#li'+_idx).addClass('finish');
-            		//$('#li'+_idx).addClass('active');
-            		if(!$('#li'+_idx).is(':last-child'))
-            		{
-            			$('#li'+_idx).next().addClass('active');
-	            		$('#check-result').html();  
-						$('.pagecontent').hide();
-						$('#p'+_idx).next().show();
-
-            		}
-            		else
-            		{
-            			$('#li'+_idx).addClass('active');
-            			$('#check-result').html('Selection saved! This is the last project!');
-            		}			
-					
-
-				}
-				else
-            	{
-            		$('#li'+_idx).addClass('incomplete');
-					$('#li'+_idx).addClass('active');            		
-            		
-            	}
-            	
-            	     	
-        	},
-            error: function () {
-            }
-        });
-    }
-
-
-
-    function rate(_idx, number,_type){
+    function rate(_aspect, _project,_designerID, number){
 	
     	$.ajax({
         	type: "POST",
-            url:'degree_of_change_script.php',
-            data: {projectid: _idx ,action:'update_doc',  selected: number ,type: _type},
+            url:'degree_of_change_script2.php',
+            data: { aspect:_aspect, projectID: _project , designerID:_designerID,  selected: number, provider: $('#provider').val()},
             success: function (data) {
 
             	$('#li'+_idx).removeClass('active');
