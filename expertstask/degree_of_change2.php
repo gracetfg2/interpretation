@@ -147,7 +147,7 @@ else {
 			        <tr>
 			            <td>
 			            	<label class='radio-inline'>
-		  	 			<input type='radio' name='better".$id."' value='".$left['version']."' onclick='save(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
+		  	 			<input type='radio' name='better".$project_id."' value='".$left['version']."' onclick='save(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
 				              if($current_better==$left['version']) 
 				              {
 				              	echo 'checked';
@@ -161,7 +161,7 @@ else {
 			            <td width=20%></td>
 			            <td>
 			            <label class='radio-inline'>
-		      			<input type='radio' name='better".$id."' value='".$right['version']."' onclick='save(0,".$right['f_ProjectID'].",".$right['f_DesignerID'].",".$right['version'].")'"; 
+		      			<input type='radio' name='better".$project_id."' value='".$right['version']."' onclick='save(0,".$right['f_ProjectID'].",".$right['f_DesignerID'].",".$right['version'].")'"; 
 		              		if($current_better==$right['version']) {echo 'checked';}echo "> The design on the right.
 		        		</label>
 			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></div>
@@ -224,13 +224,13 @@ else {
 					</tr>
 				
 					<tr>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$id."' id='".$id."1'  value='1' "; if ($current_layout==1){echo "checked ";} echo "onclick='rate(2, ".$id.",".$value['f_DesignerID'].",1);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$id."' id='".$id."2'  value='2' "; if ($current_layout==2){echo "checked ";} echo "onclick='rate(2, ".$id.",".$value['f_DesignerID'].",2);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$id."' id='".$id."3'  value='3' "; if ($current_layout==3){echo "checked ";} echo "onclick='rate(2, ".$id.",".$value['f_DesignerID'].",3);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$id."' id='".$id."4'  value='4' "; if ($current_layout==4){echo "checked ";} echo "onclick='rate(2, ".$id.",".$value['f_DesignerID'].",4);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$id."' id='".$id."5'  value='5' "; if ($current_layout==5){echo "checked ";} echo "onclick='rate(2, ".$id.",".$value['f_DesignerID'].",5);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$id."' id='".$id."6'  value='6' "; if ($current_layout==6){echo "checked ";} echo "onclick='rate(2, ".$id.",".$value['f_DesignerID'].",6);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$id."' id='".$id."7'  value='7' "; if ($current_layout==7){echo "checked ";} echo "onclick='rate(2, ".$id.",".$value['f_DesignerID'].",7);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."1'  value='1' "; if ($current_layout==1){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",1);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."2'  value='2' "; if ($current_layout==2){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",2);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."3'  value='3' "; if ($current_layout==3){echo "checked ";} echo "onclick='rate(2, ".$id.",".$designer_id.",3);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."4'  value='4' "; if ($current_layout==4){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",4);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."5'  value='5' "; if ($current_layout==5){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",5);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."6'  value='6' "; if ($current_layout==6){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",6);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."7'  value='7' "; if ($current_layout==7){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",7);'></td>
 						<td class='radio-label' width='200px'><strong>Significant difference</strong></td>	
 					 	</tr>
 				</table>
@@ -257,13 +257,13 @@ else {
 					
 						<tr>
 							<td class='radio-label' width='150px'><strong>Minor difference</strong></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."1'  value='1' "; if ($current_aes==1){echo "checked ";} echo "onclick='rate(3, ".$id.",".$value['f_DesignerID'].",1);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."2'  value='2' "; if ($current_aes==2){echo "checked ";} echo "onclick='rate(3, ".$id.",".$value['f_DesignerID'].",2);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."3'  value='3' "; if ($current_aes==3){echo "checked ";} echo "onclick='rate(3, ".$id.",".$value['f_DesignerID'].",3);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."4'  value='4' "; if ($current_aes==4){echo "checked ";} echo "onclick='rate(3, ".$id.",".$value['f_DesignerID'].",4);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."5'  value='5' "; if ($current_aes==5){echo "checked ";} echo "onclick='rate(3, ".$id.",".$value['f_DesignerID'].",5);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."6'  value='6' "; if ($current_aes==6){echo "checked ";} echo "onclick='rate(3, ".$id.",".$value['f_DesignerID'].",6);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$id."' id='".$id."7'  value='7' "; if ($current_aes==7){echo "checked ";} echo "onclick='rate(3, ".$id.",".$value['f_DesignerID'].",7);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$project_id."' id='".$project_id."1'  value='1' "; if ($current_aes==1){echo "checked ";} echo "onclick='rate(3, ".$project_id.",".$designer_id.",1);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$project_id."' id='".$project_id."2'  value='2' "; if ($current_aes==2){echo "checked ";} echo "onclick='rate(3, ".$project_id.",".$designer_id.",2);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$project_id."' id='".$project_id."3'  value='3' "; if ($current_aes==3){echo "checked ";} echo "onclick='rate(3, ".$project_id.",".$designer_id.",3);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$project_id."' id='".$project_id."4'  value='4' "; if ($current_aes==4){echo "checked ";} echo "onclick='rate(3, ".$project_id.",".$designer_id.",4);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$project_id."' id='".$project_id."5'  value='5' "; if ($current_aes==5){echo "checked ";} echo "onclick='rate(3, ".$project_id.",".$designer_id.",5);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$project_id."' id='".$project_id."6'  value='6' "; if ($current_aes==6){echo "checked ";} echo "onclick='rate(3, ".$project_id.",".$designer_id.",6);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$project_id."' id='".$project_id."7'  value='7' "; if ($current_aes==7){echo "checked ";} echo "onclick='rate(3, ".$project_id.",".$designer_id.",7);'></td>
 						<td class='radio-label' width='200px'><strong>Significant difference</strong></td>
 						</tr>					
 			</table>
