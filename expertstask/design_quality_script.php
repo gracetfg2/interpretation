@@ -7,14 +7,30 @@ $selected= $_POST['selected'];
 $current_rater=$_POST['provider'];
 $aspect=$_POST['aspect'];
 
-$field='';
+$version_result=['initial','revised'];
+$aspect_result=['concept','layout',''];
+
+$field1='';
+$field2='';
 
 switch($version){
   case 1: 
-        $field='initial';
+        $field1='initial';
         break;
   case 2: 
-        $field='revised';
+        $field1='revised';
+        break;
+} 
+
+switch($aspect){
+  case 1: 
+        $field2='concept';
+        break;
+  case 2: 
+        $field2='layout';
+        break;
+  case 3: 
+        $field2='aes';
         break;
 } 
 
@@ -35,7 +51,7 @@ if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DesignQualityEvaluate` WHERE 
 
 if(!$record){
 
-   $sql2 = "INSERT INTO `DesignQualityEvaluate` (f_ProjectID,  f_DesignerID, raterID ,  ".$field."_".$aspect.") VALUES(?,?,?,?) ";
+   $sql2 = "INSERT INTO `DesignQualityEvaluate` (f_ProjectID,  f_DesignerID, raterID ,  ".$field1."_".$field2.") VALUES(?,?,?,?) ";
     if($stmt2 = mysqli_prepare($conn,$sql2)){
       mysqli_stmt_bind_param($stmt2, "iisi",  $project_id, $designer_id, $current_rater, $selected);       
       mysqli_stmt_execute($stmt2);
@@ -44,7 +60,7 @@ if(!$record){
 
 }
 else{
-   $sql2 = "UPDATE `DesignQualityEvaluate` SET `".$field."_".$aspect."` =?  WHERE `f_ProjectID`=? AND `raterID` =?";
+   $sql2 = "UPDATE `DesignQualityEvaluate` SET `".$field1."_".$field2."` =?  WHERE `f_ProjectID`=? AND `raterID` =?";
     if($stmt2 = mysqli_prepare($conn,$sql2)){
       mysqli_stmt_bind_param($stmt2, "iis",  $selected, $project_id,  $current_rater);       
       mysqli_stmt_execute($stmt2);
