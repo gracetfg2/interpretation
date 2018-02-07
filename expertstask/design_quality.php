@@ -1,7 +1,6 @@
 <?php
-session_start();
-$providerName = "grace";
-
+session_start();		
+$providerName = $_GET['ID'];
 if(!$providerName){
      die("Ask for your ID before performing the task");
 }
