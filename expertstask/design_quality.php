@@ -143,7 +143,7 @@ array_multisort($order, $designs);
 					</div>
 
 					<div style='padding-left:10px'>
-					 1. Please rate the quality of the design in terms of the <b><span style='color:#003399'>overall direction/concept</span> </b> of the design. 
+					 1. Please rate how well the <b><span style='color:#003399'>overall direction/concept</span> </b> of the design addresses the design brief. 
 					</div>
 					<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
