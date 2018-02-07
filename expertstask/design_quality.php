@@ -200,7 +200,7 @@ array_multisort($order, $designs);
 <hr>
 
 				<div style='margin-top:20px; padding-left:10px'>
-					3. Please rate the quality of the design in terms of the font type, size, or color choices <b><span style='color:#003399'>(aesthetics)</span></b> of surface-level elements in the design. 
+					3. Please rate the quality of the design in terms of the font type, size, and color choices <b><span style='color:#003399'>(aesthetics)</span></b> of surface-level elements in the design. 
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
@@ -353,7 +353,7 @@ window.open("../viewpic.php?image="+mid);
    
             	$('#check-result').html('Rating saved!');  
 
-            	if ($('input[name=concpet'+_idx+']:checked').size() > 0 )
+            	if ($('input[name=concpet'+_idx+']:checked').size() > 0 && $('input[name=layout'+_idx+']:checked').size() > 0 && $('input[name=aes'+_idx+']:checked').size() > 0 )
 				{				
 					$('#li'+_idx).addClass('finish');
 					if(!$('#li'+_idx).is(':last-child'))
