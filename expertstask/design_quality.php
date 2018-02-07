@@ -170,7 +170,7 @@ array_multisort($order, $designs);
 
 <hr>
 					<div style='margin-top:30px; padding-left:10px'>
-					2. Please rate the quality of the design in terms of the <b>layout and composition </b>of the elements in the design. 
+					2. Please rate the quality of the design in terms of the <b><span style='color:blue'>layout and composition</span> </b>of the elements in the design. 
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
