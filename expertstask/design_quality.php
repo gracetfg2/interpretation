@@ -139,7 +139,7 @@ array_multisort($order, $designs);
 
 				<div class='col-md-6' >
 					<div style='padding-left:10px'>
-					 1. Please rate the quality of the design in terms of the <b>overall direction/concept of the design. </b> 
+					 1. Please rate the quality of the design in terms of the <b><span style='color:#003399'>overall direction/concept</span> </b> of the design. 
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
@@ -170,7 +170,7 @@ array_multisort($order, $designs);
 
 <hr>
 					<div style='margin-top:30px; padding-left:10px'>
-					2. Please rate the quality of the design in terms of the <b><span style='color:blue'>layout and composition</span> </b>of the elements in the design. 
+					2. Please rate the quality of the design in terms of the <b><span style='color:#003399'>layout and composition</span> </b>of the elements in the design. 
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
@@ -200,7 +200,7 @@ array_multisort($order, $designs);
 <hr>
 
 				<div style='margin-top:20px; padding-left:10px'>
-					3. Please rate the quality of the design in terms of the font type, size, or color choices <b>(aesthetics)</b> of surface-level elements in the design. 
+					3. Please rate the quality of the design in terms of the font type, size, or color choices <b><span style='color:#003399'>(aesthetics)</span></b> of surface-level elements in the design. 
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
