@@ -138,8 +138,8 @@ array_multisort($order, $designs);
 		        <img width=450px style='border: 1px solid #A4A4A4;float:left;cursor: pointer;' src='../design/".$design['file']."' onclick=\"viewPic('".$design['mid']."')\";>
 
 				<div class='col-md-6' >
-					<div style='padding-left:20px'>
-					<h4>  Please rate the quality of the overall direction/concept of the design. </h4>
+					<div style='padding-left:10px'>
+					<h4> 1. Please rate the quality of the design in terms of the <b>overall direction/concept of the design. </b> </h4>
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
@@ -169,8 +169,8 @@ array_multisort($order, $designs);
 
 
 
-				<div style='padding-left:20px'>
-					<h4>  Please rate the quality of the <b>layout and composition </b>of the elements in the design. </h4>
+					<div style='margin-top:20px; padding-left:10px'>
+					<h4>2. Please rate the quality of the design in terms of the <b>layout and composition </b>of the elements in the design. </h4>
 					</div>
 					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
@@ -194,6 +194,36 @@ array_multisort($order, $designs);
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."5'  value='5' "; if ($rate_layout==5){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",5);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."6'  value='6' "; if ($rate_layout==6){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",6);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."7'  value='7' "; if ($rate_layout==7){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",7);'></td>
+							<td class='radio-label' width='100px'><strong>Very High</strong></td>		
+						</tr>
+						</table>
+
+
+				<div style='margin-top:20px; padding-left:10px'>
+					<h4> 3. Please rate the quality of the design in terms of the font type, size, or color choices <b>(aesthetics)</b> of surface-level elements in the design. </h4>
+					</div>
+					<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+						<tr aria-hidden='true'>
+							<td  class='radio-label'></td>
+							<td><label class='radio-cell'>1</label></td> 
+							<td><label class='radio-cell'>2</label></td> 
+							<td><label class='radio-cell'>3</label></td> 
+							<td><label class='radio-cell'>4</label></td>
+							<td><label class='radio-cell'>5</label></td> 
+							<td><label class='radio-cell'>6</label></td>
+							<td><label class='radio-cell'>7</label></td> 
+							<td  class='radio-label' ></td>
+						</tr>
+				
+						<tr>
+							<td class='radio-label' width='100px'><strong>Very Low</strong></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$design['DesignID']."' id='".$design['DesignID']."1'  value='1' "; if ($rate_aes==1){echo "checked ";} echo "onclick='rate(3,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",1);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$design['DesignID']."' id='".$design['DesignID']."2'  value='2' "; if ($rate_aes==2){echo "checked ";} echo "onclick='rate(3,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",2);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$design['DesignID']."' id='".$design['DesignID']."3'  value='3' "; if ($rate_aes==3){echo "checked ";} echo "onclick='rate(3,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",3);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$design['DesignID']."' id='".$design['DesignID']."4'  value='4' "; if ($rate_aes==4){echo "checked ";} echo "onclick='rate(3,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",4);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$design['DesignID']."' id='".$design['DesignID']."5'  value='5' "; if ($rate_aes==5){echo "checked ";} echo "onclick='rate(3,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",5);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$design['DesignID']."' id='".$design['DesignID']."6'  value='6' "; if ($rate_aes==6){echo "checked ";} echo "onclick='rate(3,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",6);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='aes".$design['DesignID']."' id='".$design['DesignID']."7'  value='7' "; if ($rate_aes==7){echo "checked ";} echo "onclick='rate(3,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",7);'></td>
 							<td class='radio-label' width='100px'><strong>Very High</strong></td>		
 						</tr>
 						</table>
