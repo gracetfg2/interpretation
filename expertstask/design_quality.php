@@ -168,7 +168,7 @@ array_multisort($order, $designs);
 						</table>
 
 
-
+<hr>
 					<div style='margin-top:30px; padding-left:10px'>
 					2. Please rate the quality of the design in terms of the <b>layout and composition </b>of the elements in the design. 
 					</div>
@@ -197,7 +197,7 @@ array_multisort($order, $designs);
 							<td class='radio-label' width='100px'><strong>Very High</strong></td>		
 						</tr>
 						</table>
-
+<hr>
 
 				<div style='margin-top:20px; padding-left:10px'>
 					3. Please rate the quality of the design in terms of the font type, size, or color choices <b>(aesthetics)</b> of surface-level elements in the design. 
