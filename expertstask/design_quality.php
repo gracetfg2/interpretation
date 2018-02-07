@@ -353,9 +353,9 @@ window.open("../viewpic.php?image="+mid);
    
             	$('#check-result').html('Rating saved!');  
 
-            	if ($('input[name=concpet'+_idx+']:checked').size() > 0 && $('input[name=layout'+_idx+']:checked').size() > 0 && $('input[name=aes'+_idx+']:checked').size() > 0 )
+            	if ($('input[name=concept'+_idx+']:checked').size() > 0 && $('input[name=layout'+_idx+']:checked').size() > 0 && $('input[name=aes'+_idx+']:checked').size() > 0 )
 				{				
-					alert("all done");
+					
 					$('#li'+_idx).addClass('finish');
 					if(!$('#li'+_idx).is(':last-child'))
             		{
@@ -372,7 +372,7 @@ window.open("../viewpic.php?image="+mid);
             		}
 
 				}else{
-					alert("not done");
+					
 				}
 				
             	      	
