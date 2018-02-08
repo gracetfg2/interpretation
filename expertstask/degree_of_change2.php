@@ -137,7 +137,13 @@ else {
 		   
 		  
 		     echo "
-		     	<h2>Please review the two designs and answer four questions:</h2>
+		     	<div class='well' >
+					<div><span>
+					The following two graphic designs are for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.</span></div>
+					<div>Please</div>
+
+					
+				</div>
 		     	 
 		     	 <table>
 		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
