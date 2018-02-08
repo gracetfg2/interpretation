@@ -38,7 +38,7 @@ else {
 	<title> Review My Design </title>
 
 
-	<link rel="stylesheet" type="text/css" href="/interpretation/dist2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/interpretation/dist/css/bootstrap.min.css">
 <style>
 .pagination  li{   
   	cursor: pointer;
