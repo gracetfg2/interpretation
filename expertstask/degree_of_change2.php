@@ -336,7 +336,7 @@ else {
 			//Both not selected
 			//if( !$value['better_rate'] && !$value['doc_aes'] && !$value['doc_concept']) $current_class='indicator';
 			//Both selected
-			if( $current_better && $current_aes && $current_concept&& $current_layout)
+			if( $current_better>0 && $current_aes>0 && $current_concept>0 && $current_layout>0)
 			$current_class='finish';
 
 			echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
