@@ -133,10 +133,7 @@ else {
 
 		   	echo "<div style='padding-top:10px'></div>";
 		   
-		   
-		    echo "<form>";
-		   
-
+		  
 		     echo "
 		     	<div style='margin-top:30px;'>
  					<h4>1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
@@ -224,6 +221,8 @@ else {
 					</tr>
 				
 					<tr>
+					<td class='radio-label' width='150px'><strong>Minor difference</strong></td>
+							
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."1'  value='1' "; if ($current_layout==1){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",1);'></td>
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."2'  value='2' "; if ($current_layout==2){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",2);'></td>
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."3'  value='3' "; if ($current_layout==3){echo "checked ";} echo "onclick='rate(2, ".$id.",".$designer_id.",3);'></td>
