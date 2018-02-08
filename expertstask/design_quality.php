@@ -117,7 +117,7 @@ array_multisort($order, $designs);
 							$rate_layout=$record['initial_layout'];
 							$rate_aes=$record['initial_aes'];
 							break;
-					case 2: $rate_concept=$record['revised_concept']; echo $rate_concept;
+					case 2: $rate_concept=$record['revised_concept']; 
 							$rate_layout=$record['revised_layout'];
 							$rate_aes=$record['revised_aes'];
 							break;
