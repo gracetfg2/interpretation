@@ -338,6 +338,7 @@ else {
 			//Both selected
 			if( $current_better>0 && $current_aes>0 && $current_concept>0 && $current_layout>0)
 			$current_class='finish';
+		   echo $current_better."result";
 
 			echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
 			$index++;
