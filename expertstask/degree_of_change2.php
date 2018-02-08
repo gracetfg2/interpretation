@@ -80,6 +80,11 @@ else {
 		$initial_msg=0;
 		foreach($projects as $value)
 		{
+			 $current_better='';
+			 $current_aes='';
+			 $current_concept='';
+			 $current_layout='';
+			 
 			$project_id=$value['ProjectID'];
 			$designer_id=$value['f_DesignerID'];
 			
@@ -92,10 +97,7 @@ else {
 				mysqli_stmt_execute($stmt2);
 				$result = $stmt2->get_result();
 				while ($current_project = $result->fetch_assoc()) {
-					global $current_better;
-					global $current_aes;
-					global $current_concept;
-					global $current_layout;
+					
 					$current_better= $current_project['better_version'];
 					$current_aes= $current_project['doc_aes'];
 					$current_concept= $current_project['doc_concept'];
