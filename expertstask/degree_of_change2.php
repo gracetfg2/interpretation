@@ -313,6 +313,11 @@ else {
 		{
 			$current_class='indicator';
 
+			 $current_better='';
+			 $current_aes='';
+			 $current_concept='';
+			 $current_layout='';
+
 
 			if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DegreeOfChangeEvaluate` WHERE `f_ProjectID`=? AND `raterID`=?")) {
 				mysqli_stmt_bind_param($stmt2, "is", $project_id, $providerName);
