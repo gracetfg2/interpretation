@@ -146,7 +146,7 @@ else {
 			        <tr>
 			            <td>
 			            	<label class='radio-inline'>
-		  	 			<input type='radio' name='better".$project_id."' value='".$left['version']."' onclick='save(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
+		  	 			<input type='radio' name='better".$project_id."' value='".$left['version']."' onclick='rate(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
 				              if($current_better==$left['version']) 
 				              {
 				              	echo 'checked';
@@ -160,7 +160,7 @@ else {
 			            <td width=20%></td>
 			            <td>
 			            <label class='radio-inline'>
-		      			<input type='radio' name='better".$project_id."' value='".$right['version']."' onclick='save(0,".$right['f_ProjectID'].",".$right['f_DesignerID'].",".$right['version'].")'"; 
+		      			<input type='radio' name='better".$project_id."' value='".$right['version']."' onclick='rate(0,".$right['f_ProjectID'].",".$right['f_DesignerID'].",".$right['version'].")'"; 
 		              		if($current_better==$right['version']) {echo 'checked';}echo "> The design on the right.
 		        		</label>
 			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></div>
