@@ -138,13 +138,8 @@ else {
 		  
 		     echo "
 		     	<div class='well' >
-					<span>we had 105 participants generate an initial and revised design for the following design brief. We need your help evaluating the degree of revision and selecting which design better meets the design goals stated in the brief. On this interface, you can navigate through all the design projects using the indicators on the bottom of the page. Or the interface will automatically direct you to the next project once you finish ratings for the current one. For each design project, you will be presented with both the initial and revised design. The order of the iteration presented is randomized. The total rating time should be about 45 minutes.</span> <br>
- 				
-					<span>The flyers are for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.</span></div>
-					</span>
-
-					
-				</div>
+						<span>The following two poster is for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.</span>
+					</div>
 		     	 
 		     	 <table>
 		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
