@@ -137,7 +137,7 @@ else {
 		   
 		  
 		     echo "
-		     	Please review the two designs and answer four questions:
+		     	<h2>Please review the two designs and answer four questions:</h2>
 		     	 
 		     	 <table>
 		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
@@ -147,11 +147,12 @@ else {
            
 
 		     	<div style='margin-top:30px;'>
- 				1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
+ 				<h4>1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:</h4>
  				</div>
 
 		     	<table style='text-align:center;'>
 			        <tr>
+			        <td width='5%'></td>
 			            <td>
 			            	<label class='radio-inline'>
 		  	 			<input type='radio' name='better".$project_id."' value='".$left['version']."' onclick='rate(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
@@ -179,7 +180,7 @@ else {
  			echo " <hr>
  			<div style='margin-top:30px;'>
  				
- 				2. Please rate the degree of change between the two designs in terms of the theme of the design :
+ 				<h4>2. Please rate the degree of change between the two designs in terms of the theme of the design :</h4>
  				
  				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 							<tr aria-hidden='true'>
@@ -210,7 +211,7 @@ else {
  			<hr>	
  			<div style='margin-top:30px;'>
  			
- 					3. Please rate the degree of change between the two designs in terms of the layout and composition of the elements in the design:
+ 				<h4>	3. Please rate the degree of change between the two designs in terms of the layout and composition of the elements in the design:</h4>
  			
  				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 					<tr aria-hidden='true'>
@@ -243,7 +244,7 @@ else {
 			<hr>
 			<div style='margin-top:30px;'>
  			
- 					4. Please rate the degree of change between the two designs in terms of the font, size, or color choices of surface-level elements in the design:
+ 					<h4>4. Please rate the degree of change between the two designs in terms of the font, size, or color choices of surface-level elements in the design:</h4>
 	
 	 				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
