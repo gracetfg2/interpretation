@@ -137,9 +137,17 @@ else {
 		   
 		  
 		     echo "
+		     	Please review the two designs and answer four questions:
+		     	 
+		     	 <table>
+		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
+			     <td width='20%'></td>       
+				 <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+				 </table>
+           
+
 		     	<div style='margin-top:30px;'>
- 					<h4>1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
- 					</h4>
+ 				1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
  				</div>
 
 		     	<table style='text-align:center;'>
@@ -153,9 +161,7 @@ else {
 				              } 
 				              echo "> The design on the left.
 		        		</label>
-			            <div><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></div>		            	
-			            
-
+			           
 			            </td>
 			            <td width=20%></td>
 			            <td>
@@ -163,22 +169,19 @@ else {
 		      			<input type='radio' name='better".$project_id."' value='".$right['version']."' onclick='rate(0,".$right['f_ProjectID'].",".$right['f_DesignerID'].",".$right['version'].")'"; 
 		              		if($current_better==$right['version']) {echo 'checked';}echo "> The design on the right.
 		        		</label>
-			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></div>
-
 			            
 			            </td>
 			        </tr>		         
-		        </table>
-
-		        
+		        </table>	        
 
 		  	 ";
 
- 			echo " <div style='margin-top:30px;'>
- 				<h4>
- 					2. Please rate the degree of change between the two designs in terms of the theme of the design :
- 				</h4>
- 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+ 			echo " <hr>
+ 			<div style='margin-top:30px;'>
+ 				
+ 				2. Please rate the degree of change between the two designs in terms of the theme of the design :
+ 				
+ 				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 							<tr aria-hidden='true'>
 								<td  class='radio-label'></td>
 								<td><label class='radio-cell'>1</label></td> 
@@ -204,12 +207,12 @@ else {
 						</tr>
 					</table>
  				</div>
- 				
+ 			<hr>	
  			<div style='margin-top:30px;'>
- 				<h4>
+ 			
  					3. Please rate the degree of change between the two designs in terms of the layout and composition of the elements in the design:
- 				</h4>
- 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+ 			
+ 				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 					<tr aria-hidden='true'>
 						<td  class='radio-label'></td>
 						<td><label class='radio-cell'>1</label></td> 
@@ -237,13 +240,12 @@ else {
 				</table>
 				
 			</div>
-			
+			<hr>
 			<div style='margin-top:30px;'>
- 				<h4>
- 					4. Please rate the degree of change between the two designs in terms of the font, size, or color choices of surface-level elements in the design:
- 				</h4>
  			
-	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+ 					4. Please rate the degree of change between the two designs in terms of the font, size, or color choices of surface-level elements in the design:
+	
+	 				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
