@@ -320,7 +320,7 @@ else {
 
 
 			if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DegreeOfChangeEvaluate` WHERE `f_ProjectID`=? AND `raterID`=?")) {
-				mysqli_stmt_bind_param($stmt2, "is", $project_id, $providerName);
+				mysqli_stmt_bind_param($stmt2, "is", $value['ProjectID'], $providerName);
 				mysqli_stmt_execute($stmt2);
 				$result = $stmt2->get_result();
 				while ($current_project = $result->fetch_assoc()) {
@@ -338,7 +338,7 @@ else {
 			//Both selected
 			if( $current_better>0 && $current_aes>0 && $current_concept>0 && $current_layout>0)
 			$current_class='finish';
-		   echo $current_better."result";
+		 
 
 			echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
 			$index++;
