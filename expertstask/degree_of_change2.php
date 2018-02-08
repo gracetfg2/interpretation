@@ -355,7 +355,7 @@ $(document).ready(function() {
             data: { aspect:_aspect, projectID: _idx , designerID:_designerID,  selected: number, provider: $('#provider').val()},
             success: function (data) {
 
-            	   alert(data);
+            	  // alert(data);
             	$('#check-result').html('Degree of differences is saved!');         
             	
             	//complete

@@ -33,7 +33,7 @@ if(!$record){
 
 }
 else{
-   $sql2 = "UPDATE `DesignQualityEvaluate` SET `".$aspect_result["{$aspect}"]."` =?  WHERE `f_ProjectID`=? AND `raterID` =?";
+   $sql2 = "UPDATE `DegreeOfChangeEvaluate` SET `".$aspect_result["{$aspect}"]."` =?  WHERE `f_ProjectID`=? AND `raterID` =?";
     if($stmt2 = mysqli_prepare($conn,$sql2)){
       mysqli_stmt_bind_param($stmt2, "iis",  $selected, $project_id,  $current_rater);       
       mysqli_stmt_execute($stmt2);
