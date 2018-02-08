@@ -40,5 +40,5 @@ else{
     }
     else{ echo 'Update went wrong';}
 }
-echo "success";
+echo  $sql2 ;
    ?>  

@@ -84,7 +84,7 @@ else {
 			 $current_aes='';
 			 $current_concept='';
 			 $current_layout='';
-			 
+
 			$project_id=$value['ProjectID'];
 			$designer_id=$value['f_DesignerID'];
 			
@@ -355,7 +355,7 @@ $(document).ready(function() {
             data: { aspect:_aspect, projectID: _idx , designerID:_designerID,  selected: number, provider: $('#provider').val()},
             success: function (data) {
 
-            	   
+            	   alert(data);
             	$('#check-result').html('Degree of differences is saved!');         
             	
             	//complete
