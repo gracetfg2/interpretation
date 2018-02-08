@@ -1,6 +1,6 @@
 <?php
 session_start();		
-$providerName = 'grace';
+$providerName = $_GET['ID'];
 
 if(!$providerName){
      die("Ask for your ID before performing the task");
@@ -313,10 +313,26 @@ else {
 		{
 			$current_class='indicator';
 
+
+			if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DegreeOfChangeEvaluate` WHERE `f_ProjectID`=? AND `raterID`=?")) {
+				mysqli_stmt_bind_param($stmt2, "is", $project_id, $providerName);
+				mysqli_stmt_execute($stmt2);
+				$result = $stmt2->get_result();
+				while ($current_project = $result->fetch_assoc()) {
+					
+					$current_better= $current_project['better_version'];
+					$current_aes= $current_project['doc_aes'];
+					$current_concept= $current_project['doc_concept'];
+					$current_layout= $current_project['doc_layout'];
+				}
+
+   		 	}
+
 			//Both not selected
 			//if( !$value['better_rate'] && !$value['doc_aes'] && !$value['doc_concept']) $current_class='indicator';
 			//Both selected
-			if( $value['better_version'] && $value['doc_aes'] && $value['doc_concept'] && $value['doc_layout'] )$current_class='finish';
+			if( $current_better && $current_aes && $current_concept&& $current_layout)
+			$current_class='finish';
 
 			echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
 			$index++;
