@@ -138,17 +138,17 @@ else {
 		  
 		     echo "
 		     <div class='row'>
-		     	<div class='col-md-6'>
+		     	<div class='col-md-8'>
 			     	<h4>Please review the two designs and answer four questions:</h4>
 			     	 
 			     	 <table>
-			     	 <td width='40%'><img class='left' width='100%' style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
-				           <td width='20%'></td>
-					 <td width='40%'><img class='right' width='100%' style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+			     	 <td width='45%'><img class='left' width='100%' style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
+				           <td width='10%'></td>
+					 <td width='45%'><img class='right' width='100%' style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
 					 </table>
            		</div>
 
-		     <div class='col-md-6'>
+		     <div class='col-md-4'>
  				1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
  				
 
