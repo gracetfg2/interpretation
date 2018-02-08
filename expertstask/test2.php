@@ -1,6 +1,6 @@
 
 
-  <div id='p16' class='pagecontent' style='display:none;'><div style='padding-top:10px'></div><form>
+  <div id='p16' class='pagecontent' style='display:none;'><div style='padding-top:10px'></div>
 		     	<div style='margin-top:30px;'>
  					<h4>1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
  					</h4>
@@ -10,18 +10,18 @@
 			        <tr>
 			            <td>
 			            	<label class='radio-inline'>
-		  	 			<input type='radio' name='better' value='2' onclick='save(0,16,21,2)'> The design on the left.
+		  	 			<input type='radio' name='better16' value='1' onclick='save(0,16,21,1)'> The design on the left.
 		        		</label>
-			            <div><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/s21_p16_v2_d118_part.jpg'></div>		            	
+			            <div><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/s21_p16_v1_d27_part.jpg'></div>		            	
 			            
 
 			            </td>
 			            <td width=20%></td>
 			            <td>
 			            <label class='radio-inline'>
-		      			<input type='radio' name='better' value='1' onclick='save(0,16,21,1)'> The design on the right.
+		      			<input type='radio' name='better16' value='2' onclick='save(0,16,21,2)'> The design on the right.
 		        		</label>
-			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/s21_p16_v1_d27_part.jpg'></div>
+			            <div><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/s21_p16_v2_d118_part.jpg'></div>
 
 			            
 			            </td>
@@ -49,13 +49,13 @@
 					
 						<tr>
 							<td class='radio-label' width='150px'><strong>Minor difference</strong></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept' id='1'  value='1' onclick='rate(1, ,,1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept' id='2'  value='2' onclick='rate(1, ,,2);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept' id='3'  value='3' onclick='rate(1, ,,3);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept' id='4'  value='4' onclick='rate(1, ,,4);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept' id='5'  value='5' onclick='rate(1, ,,5);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept' id='6'  value='6' onclick='rate(1, ,,6);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept' id='7'  value='7' onclick='rate(1, ,,7);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept16' id='161'  value='1' onclick='rate(1, 16,21,1);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept16' id='162'  value='2' onclick='rate(1, 16,21,2);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept16' id='163'  value='3' onclick='rate(1, 16,21,3);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept16' id='164'  value='4' onclick='rate(1, 16,21,4);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept16' id='165'  value='5' onclick='rate(1, 16,21,5);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept16' id='166'  value='6' onclick='rate(1, 16,21,6);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept16' id='167'  value='7' onclick='rate(1, 16,21,7);'></td>
 							<td class='radio-label' width='200px'><strong>Significant difference</strong></td>		
 						</tr>
 					</table>
@@ -79,13 +79,15 @@
 					</tr>
 				
 					<tr>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout' id='1'  value='1' onclick='rate(2, ,,1);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout' id='2'  value='2' onclick='rate(2, ,,2);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout' id='3'  value='3' onclick='rate(2, ,,3);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout' id='4'  value='4' onclick='rate(2, ,,4);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout' id='5'  value='5' onclick='rate(2, ,,5);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout' id='6'  value='6' onclick='rate(2, ,,6);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout' id='7'  value='7' onclick='rate(2, ,,7);'></td>
+					<td class='radio-label' width='150px'><strong>Minor difference</strong></td>
+							
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout16' id='161'  value='1' onclick='rate(2, 16,21,1);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout16' id='162'  value='2' onclick='rate(2, 16,21,2);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout16' id='163'  value='3' onclick='rate(2, ,21,3);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout16' id='164'  value='4' onclick='rate(2, 16,21,4);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout16' id='165'  value='5' onclick='rate(2, 16,21,5);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout16' id='166'  value='6' onclick='rate(2, 16,21,6);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout16' id='167'  value='7' onclick='rate(2, 16,21,7);'></td>
 						<td class='radio-label' width='200px'><strong>Significant difference</strong></td>	
 					 	</tr>
 				</table>
@@ -112,13 +114,13 @@
 					
 						<tr>
 							<td class='radio-label' width='150px'><strong>Minor difference</strong></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes' id='1'  value='1' onclick='rate(3, ,,1);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes' id='2'  value='2' onclick='rate(3, ,,2);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes' id='3'  value='3' onclick='rate(3, ,,3);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes' id='4'  value='4' onclick='rate(3, ,,4);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes' id='5'  value='5' onclick='rate(3, ,,5);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes' id='6'  value='6' onclick='rate(3, ,,6);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes' id='7'  value='7' onclick='rate(3, ,,7);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes16' id='161'  value='1' onclick='rate(3, 16,21,1);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes16' id='162'  value='2' onclick='rate(3, 16,21,2);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes16' id='163'  value='3' onclick='rate(3, 16,21,3);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes16' id='164'  value='4' onclick='rate(3, 16,21,4);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes16' id='165'  value='5' onclick='rate(3, 16,21,5);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes16' id='166'  value='6' onclick='rate(3, 16,21,6);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='aes16' id='167'  value='7' onclick='rate(3, 16,21,7);'></td>
 						<td class='radio-label' width='200px'><strong>Significant difference</strong></td>
 						</tr>					
 			</table>

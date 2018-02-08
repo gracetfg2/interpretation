@@ -225,7 +225,7 @@ else {
 							
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."1'  value='1' "; if ($current_layout==1){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",1);'></td>
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."2'  value='2' "; if ($current_layout==2){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",2);'></td>
-						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."3'  value='3' "; if ($current_layout==3){echo "checked ";} echo "onclick='rate(2, ".$id.",".$designer_id.",3);'></td>
+						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."3'  value='3' "; if ($current_layout==3){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",3);'></td>
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."4'  value='4' "; if ($current_layout==4){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",4);'></td>
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."5'  value='5' "; if ($current_layout==5){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",5);'></td>
 						<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$project_id."' id='".$project_id."6'  value='6' "; if ($current_layout==6){echo "checked ";} echo "onclick='rate(2, ".$project_id.",".$designer_id.",6);'></td>
