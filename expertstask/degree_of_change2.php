@@ -345,7 +345,7 @@ $(document).ready(function() {
 
 
 
-    function rate(_aspect, _project,_designerID, number){
+    function rate(_aspect, _idx,_designerID, number){
 	
     	$.ajax({
         	type: "POST",
