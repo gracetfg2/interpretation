@@ -350,7 +350,7 @@ $(document).ready(function() {
     	$.ajax({
         	type: "POST",
             url:'degree_of_change2_script.php',
-            data: { aspect:_aspect, projectID: _project , designerID:_designerID,  selected: number, provider: $('#provider').val()},
+            data: { aspect:_aspect, projectID: _idx , designerID:_designerID,  selected: number, provider: $('#provider').val()},
             success: function (data) {
 
             	   
