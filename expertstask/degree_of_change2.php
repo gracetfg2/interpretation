@@ -137,24 +137,25 @@ else {
 		   
 		  
 		     echo "
-		     	Please review the two designs and answer four questions:
-		     	 
-		     	 <table>
-		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
-			     <td width='20%'></td>       
-				 <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
-				 </table>
-           
+		     <div class='row'>
+		     	<div class='col-md-6'>
+			     	<h4>Please review the two designs and answer four questions:</h4>
+			     	 
+			     	 <table>
+			     	 <td><img class='left' width=150px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
+				           
+					 <td><img class='right' width=150px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+					 </table>
+           		</div>
 
-		     	<div style='margin-top:30px;'>
+		     <div class='col-md-6'>
  				1. Please select which design you believe more effectively achieves the <a href='design_brief.php'>design goals</a>:
- 				</div>
+ 				
 
 		     	<table style='text-align:center;'>
 			        <tr>
 			            <td>
-			            	<label class='radio-inline'>
-		  	 			<input type='radio' name='better".$project_id."' value='".$left['version']."' onclick='rate(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
+			            <label class='radio-inline'><input type='radio' name='better".$project_id."' value='".$left['version']."' onclick='rate(0,".$left['f_ProjectID'].",".$left['f_DesignerID'].",".$left['version'].")'"; 
 				              if($current_better==$left['version']) 
 				              {
 				              	echo 'checked';
@@ -273,7 +274,7 @@ else {
 			</div>
 
 
-
+			</div>
 ";
 
 
