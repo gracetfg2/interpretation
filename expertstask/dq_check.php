@@ -136,8 +136,8 @@ array_multisort($order, $designs);
 							$layout_distance=abs($erin['initial_layout']-$teresa['initial_layout']); 
 							$aes_distance=abs($erin['initial_aes']-$teresa['initial_aes']); 
 							$rate_concept_t=$teresa['initial_concept']; echo $teresa['initial_concept'];
-							$rate_layout_t=$teresa['initial_layout'];echo $teresa['initial_layout']
-							$rate_aes_t=$teresa['initial_aes'];echo $teresa['initial_aes']
+							$rate_layout_t=$teresa['initial_layout'];echo $teresa['initial_layout'];
+							$rate_aes_t=$teresa['initial_aes'];echo $teresa['initial_aes'];
 							$rate_concept_e=$erin['initial_concept'];
 							$rate_layout_e=$erin['initial_layout'];
 							$rate_aes_e=$erin['initial_aes'];
