@@ -112,9 +112,10 @@ array_multisort($order, $designs);
 
 			    mysqli_stmt_bind_param($stmt2, "i", $project_id);
 			    mysqli_stmt_execute($stmt2);
-			  	 $result = $stmt2->get_result();
+			  	$result = $stmt2->get_result();
 
-			      while ($myrow = $result->fetch_assoc()) {
+			    while ($myrow = $result->fetch_assoc()) 
+			    {
 			      	 switch($myrow['raterID']){
 			      	 	case 'erinupwork': 
 			          		$erin=$myrow;
@@ -122,13 +123,11 @@ array_multisort($order, $designs);
 			          	case 'teresaqpal': 
 			          		$teresa=$myrow;
 			          		break;
-			          	case default:break;
+			  
 
 			      }
  
-				
-
-				
+							
 
 				switch($design['version']){
 
@@ -381,10 +380,6 @@ window.open("../viewpic.php?image="+mid);
 
 
 
-
-function rate(){
-	
-}
 
 
 	</script>
