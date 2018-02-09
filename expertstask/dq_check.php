@@ -321,7 +321,7 @@ array_multisort($order, $designs);
      <?php 
 		$index=1;
 		
-		foreach($distances as $value)
+		foreach($distance as $value)
 		{
 			echo "$project_id".$project_id;
 			$project_id=$value['design_id'];
