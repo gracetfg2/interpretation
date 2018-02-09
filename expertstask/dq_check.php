@@ -186,7 +186,7 @@ array_multisort($order, $designs);
 						</tr>
 					
 						<tr>
-							<td class='radio-label' width='100px'><strong>Rater 1: Very Bad</strong> </td>
+							<td class='radio-label' width='100px'><strong> Very Bad</strong> </td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept1".$design['DesignID']."' id='".$design['DesignID']."1'  value='1' "; if ($rate_concept_t==1){echo "checked ";} echo "onclick='rate( 1,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept1".$design['DesignID']."' id='".$design['DesignID']."2'  value='2' "; if ($rate_concept_t==2){echo "checked ";} echo "onclick='rate(1,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",2);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept1".$design['DesignID']."' id='".$design['DesignID']."3'  value='3' "; if ($rate_concept_t==3){echo "checked ";} echo "onclick='rate(1,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",3);'></td>
@@ -198,7 +198,7 @@ array_multisort($order, $designs);
 						</tr>
 						<tr>Erin</tr>
 						<tr>
-							<td class='radio-label' width='100px'><strong>Rater 2: Very Bad</strong></td>
+							<td class='radio-label' width='100px'><strong>Very Bad</strong></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$design['DesignID']."' id='".$design['DesignID']."1'  value='1' "; if ($rate_concept_e==1){echo "checked ";} echo "onclick='rate( 1,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",1);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$design['DesignID']."' id='".$design['DesignID']."2'  value='2' "; if ($rate_concept_e==2){echo "checked ";} echo "onclick='rate(1,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",2);'></td>
 							<td class='radio-cell'><input type='radio' class='radio-inline' name='concept".$design['DesignID']."' id='".$design['DesignID']."3'  value='3' "; if ($rate_concept_e==3){echo "checked ";} echo "onclick='rate(1,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",3);'></td>
@@ -230,25 +230,25 @@ array_multisort($order, $designs);
 				
 						<tr>
 							<td class='radio-label' width='100px'><strong>Rater 1: Very Low</strong></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."1'  value='1' "; if ($rate_concept_t==1){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."2'  value='2' "; if ($rate_concept_t==2){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",2);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."3'  value='3' "; if ($rate_concept_t==3){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",3);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."4'  value='4' "; if ($rate_concept_t==4){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",4);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."5'  value='5' "; if ($rate_concept_t==5){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",5);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."6'  value='6' "; if ($rate_concept_t==6){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",6);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."7'  value='7' "; if ($rate_concept_t==7){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",7);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."1'  value='1' "; if ($rate_layout_t==1){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",1);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."2'  value='2' "; if ($rate_layout_t==2){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",2);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."3'  value='3' "; if ($rate_layout_t==3){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",3);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."4'  value='4' "; if ($rate_layout_t==4){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",4);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."5'  value='5' "; if ($rate_layout_t==5){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",5);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."6'  value='6' "; if ($rate_layout_t==6){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",6);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout1".$design['DesignID']."' id='".$design['DesignID']."7'  value='7' "; if ($rate_layout_t==7){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",7);'></td>
 							<td class='radio-label' width='100px'><strong>Very High</strong></td>		
 						</tr>
 
 						<tr>
 							<td class='radio-label' width='100px'><strong>Rater 2: Very Low</strong></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."1'  value='1' "; if ($rate_concept_e==1){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",1);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."2'  value='2' "; if ($rate_concept_e==2){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",2);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."3'  value='3' "; if ($rate_concept_e==3){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",3);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."4'  value='4' "; if ($rate_concept_e==4){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",4);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."5'  value='5' "; if ($rate_concept_e==5){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",5);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."6'  value='6' "; if ($rate_concept_e==6){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",6);'></td>
-							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."7'  value='7' "; if ($rate_concept_e==7){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",7);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."1'  value='1' "; if ($rate_layout_e==1){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",1);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."2'  value='2' "; if ($rate_layout_e==2){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",2);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."3'  value='3' "; if ($rate_layout_e==3){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",3);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."4'  value='4' "; if ($rate_layout_e==4){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",4);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."5'  value='5' "; if ($rate_layout_e==5){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",5);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."6'  value='6' "; if ($rate_layout_e==6){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",6);'></td>
+							<td class='radio-cell'><input type='radio' class='radio-inline' name='layout".$design['DesignID']."' id='".$design['DesignID']."7'  value='7' "; if ($rate_layout_e==7){echo "checked ";} echo "onclick='rate(2,".$design['DesignID'].",".$design['f_ProjectID'].",".$design['version'].",".$design['f_DesignerID'].",7);'></td>
 							<td class='radio-label' width='100px'><strong>Very High</strong></td>		
 						</tr>
 						</table>
@@ -320,6 +320,7 @@ array_multisort($order, $designs);
   	
 
      <?php 
+     	$index=1;
 		foreach($designs as $value)
 		{
 			$project_id=$value['f_ProjectID'];
@@ -365,6 +366,7 @@ array_multisort($order, $designs);
 				} //en 
 				
 				$current_class='indicator';
+
 				if( ($concept_distance + $layout_distance + $aes_distance)>3) 
 					$current_class='indicator incomplete';
 		
