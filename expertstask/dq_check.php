@@ -320,9 +320,61 @@ array_multisort($order, $designs);
   	
 
      <?php 
-		$index=1;
+		foreach($designs as $value)
+		{
+			$project_id=$value['f_ProjectID'];
+
+			if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DesignQualityEvaluate` WHERE `f_ProjectID`=? ")) {
+
+				global $concept_distance;
+				global $layout_distance;
+				global $aes_distance;
+
+			    mysqli_stmt_bind_param($stmt2, "i", $project_id);
+			    mysqli_stmt_execute($stmt2);
+			  	$result = $stmt2->get_result();
+
+			    while ($myrow = $result->fetch_assoc()) 
+			    {
+			      	 switch($myrow['raterID']){
+			      	 	case 'erinupwork': 
+			          		$erin=$myrow;
+			          		break;
+			          	case 'teresaqpal': 
+			          		$teresa=$myrow;
+			          		break;
+			  			}
+
+			     }//end while
+ 
+							
+
+				switch($design['version']){
+
+					case 1: 
+							$concept_distance=abs($erin['initial_concept']-$teresa['initial_concept']); 
+							$layout_distance=abs($erin['initial_layout']-$teresa['initial_layout']); 
+							$aes_distance=abs($erin['initial_aes']-$teresa['initial_aes']); 
+
+							break;
+					case 2: $concept_distance=abs($erin['revised_concept']-$teresa['revised_concept']); 
+							$layout_distance=abs($erin['revised_layout']-$teresa['revised_layout']); 
+							$aes_distance=abs($erin['revised_aes']-$teresa['revised_aes']); 
+
+							break;			  
+				} //en 
+				
+				$current_class='indicator';
+				if( ($concept_distance + $layout_distance + $aes_distance)>3) 
+					$current_class='indicator incomplete';
 		
-		
+	
+				echo " <li class='".$current_class."' id='li".$value['DesignID']."' name='li".$value['DesignID']."'><a onclick='showUI(".$value['DesignID'].")';>".$index."</a></li>";
+				$index++;
+	
+			}
+			
+		}
 	?>
 
   </ul>
