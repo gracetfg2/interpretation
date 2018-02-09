@@ -158,6 +158,7 @@ array_multisort($order, $designs);
 			$object->layout_distance = $layout_distance;
 			$object->aes_distance = $aes_distance;
 			$object->design_id = $design['DesignID'];
+			
 			$distance[] = $object;
 			//array_push( $distance, [ $concept_distance, $layout_distance, $aes_distance ]);
 		    //Display
@@ -323,7 +324,6 @@ array_multisort($order, $designs);
 		
 		foreach($distance as $value)
 		{
-			echo "$project_id".$project_id;
 			$project_id=$value['design_id'];
 			$concept_distance=$value['concept_distance'];
 			$concept_layout=$value['concept_layout'];
