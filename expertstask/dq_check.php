@@ -141,16 +141,18 @@ array_multisort($order, $designs);
 							$rate_layout_t=$teresa['initial_layout'];
 							$rate_aes_t=$teresa['initial_aes'];
 
-							$rate_concept_e=$teresa['initial_concept'];							
+							$rate_concept_e=$erin['initial_concept'];							
 							$rate_layout_e=$erin['initial_layout'];
 							$rate_aes_e=$erin['initial_aes'];
 							break;
 					case 2: $concept_distance=abs($erin['revised_concept']-$teresa['revised_concept']); 
 							$layout_distance=abs($erin['revised_layout']-$teresa['revised_layout']); 
 							$aes_distance=abs($erin['revised_aes']-$teresa['revised_aes']); 
+
 							$rate_concept_t=$teresa['revised_concept']; 
 							$rate_layout_t=$teresa['revised_layout']; 
 							$rate_aes_t=$teresa['revised_aes']; 
+							
 							$rate_concept_e=$erin['revised_concept'];
 							$rate_layout_e=$erin['revised_layout'];
 							$rate_aes_e=$erin['revised_aes'];
