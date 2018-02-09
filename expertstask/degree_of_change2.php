@@ -1,6 +1,7 @@
 <?php
 session_start();		
 $providerName = 'grace';
+$providerName = $_GET['ID'];
 
 if(!$providerName){
      die("Ask for your ID before performing the task");
@@ -137,12 +138,22 @@ else {
 		   
 		  
 		     echo "
-		     	<h2>Please review the two designs and answer four questions:</h2>
+		     	<div class='well'>
+					<h4>You can navigate through all the design projects using the indicators on the bottom of the page. Or the interface will automatically direct you to the next project once you finish ratings for the current one.For each design project, you will be presented with both the initial and revised design. The order of the iteration presented is randomized. The total rating time should be about 45 minutes.
+
+					<br><br>The flyers are for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+					</h4>
+ 				
+				
+
+					
+				</div>
 		     	 
 		     	 <table>
 		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
-			     <td width='20%'></td>       
+			     <td width='10%'></td>       
 				 <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+				 
 				 </table>
            
 
@@ -303,11 +314,33 @@ else {
 		{
 			$current_class='indicator';
 
+			 $current_better='';
+			 $current_aes='';
+			 $current_concept='';
+			 $current_layout='';
+
+
+			if ($stmt2 = mysqli_prepare($conn, "SELECT * FROM `DegreeOfChangeEvaluate` WHERE `f_ProjectID`=? AND `raterID`=?")) {
+				mysqli_stmt_bind_param($stmt2, "is", $value['ProjectID'], $providerName);
+				mysqli_stmt_execute($stmt2);
+				$result = $stmt2->get_result();
+				while ($current_project = $result->fetch_assoc()) {
+					
+					$current_better= $current_project['better_version'];
+					$current_aes= $current_project['doc_aes'];
+					$current_concept= $current_project['doc_concept'];
+					$current_layout= $current_project['doc_layout'];
+				}
+
+   		 	}
+
 			//Both not selected
 			//if( !$value['better_rate'] && !$value['doc_aes'] && !$value['doc_concept']) $current_class='indicator';
 			//Both selected
-			if( $value['better_version'] && $value['doc_aes'] && $value['doc_concept'] && $value['doc_layout'] )
-				$current_class='finish';
+
+			if( $current_better>0 && $current_aes>0 && $current_concept>0 && $current_layout>0)
+			$current_class='finish';
+		 
 
 			echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
 			$index++;
