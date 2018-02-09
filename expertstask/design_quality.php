@@ -44,13 +44,13 @@ foreach($projects as $value)
 }
 switch($seed){
 
-	case 1: //jason
+	case '1qpwoei': //jason
 		mt_srand('397');break;
-	case 2: 
+	case '2qpwoei': 
 		mt_srand('384');break;
-	case 3: 
+	case '3qpwoei': 
 		mt_srand('198');break;
-	case 4: //teresa, erin
+	case '4qpwoei': //teresa, erin
 		mt_srand('214');break;
 }
 
