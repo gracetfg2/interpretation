@@ -87,7 +87,7 @@ array_multisort($order, $designs);
 
   <?php 
 		$initial_msg=0;
-		$distance[];
+		
 		foreach($designs as $design)
 		{
 			$design_id=$design['DesignID'];		
