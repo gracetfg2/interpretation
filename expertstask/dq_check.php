@@ -322,27 +322,7 @@ array_multisort($order, $designs);
      <?php 
 		$index=1;
 		
-		foreach($distance as $value)
-		{
-			$project_id=$value['design_id'];
-			$concept_distance=$value['concept_distance'];
-			$concept_layout=$value['concept_layout'];
-			$concept_aes=$value['concept_aes'];
-			
-			$current_class='indicator';
-
-			if (($concept_distance+$concept_layout+$concept_aes)>3) 	
-				$current_class='incomplete';
-			
-			//if( $rate_concept && $rate_layout && $rate_aes) $current_class='indicator finish';
 		
-	
-				echo " <li class='".$current_class."' id='li".$project_id."' name='li".$project_id."'><a onclick='showUI(".$project_id.")';>".$index."</a></li>";
-				$index++;
-	
-			// End getting design quality evaluate results
-			
-		}
 	?>
 
   </ul>
