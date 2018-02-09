@@ -157,6 +157,7 @@ array_multisort($order, $designs);
 			$object->concept_distance = $concept_distance;
 			$object->layout_distance = $layout_distance;
 			$object->aes_distance = $aes_distance;
+			$object->design_id = $design['DesignID'];
 			$distance[] = $object;
 			//array_push( $distance, [ $concept_distance, $layout_distance, $aes_distance ]);
 		    //Display
@@ -322,16 +323,20 @@ array_multisort($order, $designs);
 		
 		foreach($distances as $value)
 		{
-			$project_id=$value['f_ProjectID'];
+			$project_id=$value['design_id'];
+			$concept_distance=$value['concept_distance'];
+			$concept_layout=$value['concept_layout'];
+			$concept_aes=$value['concept_aes'];
+			
 			$current_class='indicator';
 
-			if (($value[0]+$value[1]+$value[2])>3) 	
+			if (($concept_distance+$concept_layout+$concept_aes)>3) 	
 				$current_class='incomplete';
 			
 			//if( $rate_concept && $rate_layout && $rate_aes) $current_class='indicator finish';
 		
 	
-				echo " <li class='".$current_class."' id='li".$value['DesignID']."' name='li".$value['DesignID']."'><a onclick='showUI(".$value['DesignID'].")';>".$index."</a></li>";
+				echo " <li class='".$current_class."' id='li".$project_id."' name='li".$project_id."'><a onclick='showUI(".$project_id.")';>".$index."</a></li>";
 				$index++;
 	
 			// End getting design quality evaluate results
