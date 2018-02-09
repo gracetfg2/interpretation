@@ -320,16 +320,16 @@ array_multisort($order, $designs);
 			$project_id=$value['f_ProjectID'];
 			$current_class='indicator';
 
-			if (($value[0]+$value[1]+$value[2])>3) {	
+			if (($value[0]+$value[1]+$value[2])>3) 	
 				$current_class='incomplete';
-			}
+			
 			//if( $rate_concept && $rate_layout && $rate_aes) $current_class='indicator finish';
 		
 	
 				echo " <li class='".$current_class."' id='li".$value['DesignID']."' name='li".$value['DesignID']."'><a onclick='showUI(".$value['DesignID'].")';>".$index."</a></li>";
 				$index++;
 	
-			}// End getting design quality evaluate results
+			// End getting design quality evaluate results
 			
 		}
 	?>
