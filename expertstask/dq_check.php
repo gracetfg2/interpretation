@@ -372,7 +372,7 @@ array_multisort($order, $designs);
 				$current_class='indicator';
 
 				if( ($concept_distance + $layout_distance + $aes_distance)>3) 
-					$current_class='indicator incomplete';
+					$current_class='incomplete';
 		
 	
 				echo " <li class='".$current_class."' id='li".$value['DesignID']."' name='li".$value['DesignID']."'><a onclick='showUI(".$value['DesignID'].")';>".$index."</a></li>";
