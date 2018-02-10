@@ -1,6 +1,5 @@
 <?php
 session_start();		
-$providerName = 'grace';
 $providerName = $_GET['ID'];
 
 if(!$providerName){
