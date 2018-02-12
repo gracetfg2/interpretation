@@ -212,7 +212,7 @@ array_multisort($order, $projects);
  				
  				<h4>2. Please rate the degree of change between the two designs in terms of the theme of the design :</h4>
  				
- 				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+ 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 							<tr aria-hidden='true'>
 								<td  class='radio-label'></td>
 								<td><label class='radio-cell'>1</label></td> 
@@ -243,7 +243,7 @@ array_multisort($order, $projects);
  			
  				<h4>	3. Please rate the degree of change between the two designs in terms of the layout and composition of the elements in the design:</h4>
  			
- 				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+ 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 					<tr aria-hidden='true'>
 						<td  class='radio-label'></td>
 						<td><label class='radio-cell'>1</label></td> 
@@ -276,7 +276,7 @@ array_multisort($order, $projects);
  			
  					<h4>4. Please rate the degree of change between the two designs in terms of the font, size, or color choices of surface-level elements in the design:</h4>
 	
-	 				<table style='width:500px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
+	 				<table style='width:600px;text-align:center;' border='0' cellpadding='5' cellspacing='0'>
 						<tr aria-hidden='true'>
 							<td  class='radio-label'></td>
 							<td><label class='radio-cell'>1</label></td> 
