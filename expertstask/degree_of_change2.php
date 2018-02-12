@@ -357,7 +357,7 @@ array_multisort($order, $projects);
 			//Both selected
 			$current_class='indicator';
 			if( $current_better>0 && $current_aes>0 && $current_concept>0 && $current_layout>0)
-			$current_class='finish';
+			$current_class='indicator finish';
 		 
 
 			echo " <li class='".$current_class."' id='li".$value['ProjectID']."' name='li".$value['ProjectID']."'><a onclick='showUI(".$value['ProjectID'].")';>".$index."</a></li>";
