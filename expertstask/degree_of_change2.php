@@ -158,9 +158,13 @@ array_multisort($order, $projects);
 		  
 		     echo "
 		     	<div class='well' width='80%'>
-					<h4>
-					The flyers are for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
-					</h4>
+					<h4>Task instructions: </h4>
+<span>1. You can navigate through all the design projects using the indicators on the bottom of the page. Or the interface will automatically direct you to the next project once you finish ratings for the current design.<br><br>
+ 
+2. For each design project, you will be presented with both the initial and revised design. The order of the iteration presented is randomized. </span>
+					<h4>Design Brief: </h4>
+					<span>The flyers are for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
+					</span><br><br>
 					<h4>You can click the image to enlarge. </h4>
  				
 				
