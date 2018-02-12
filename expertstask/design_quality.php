@@ -1,6 +1,7 @@
 <?php
 session_start();		
 $providerName = $_GET['ID'];
+$seed = $_GET['seed'];
 if(!$providerName){
      die("Ask for your ID before performing the task");
 }
@@ -41,7 +42,19 @@ foreach($projects as $value)
 			      }
 			}
 }
-mt_srand('214');
+switch($seed){
+
+	case '1qpwoei': //jason
+		mt_srand('397');break;
+	case '2qpwoei': 
+		mt_srand('384');break;
+	case '3qpwoei': 
+		mt_srand('198');break;
+	case '4qpwoei': //teresa, erin
+		mt_srand('214');break;
+		
+}
+
 $order = array_map(create_function('$val', 'return mt_rand();'), range(1, count($designs)));
 array_multisort($order, $designs);
 //shuffle($designs);
