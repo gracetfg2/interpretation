@@ -160,7 +160,7 @@ array_multisort($order, $projects);
 		     	<div class='well' width='80%'>
 					<h4>Task instructions: </h4>
 <span>For each design project, you need to answer four questions. The first question asks you to select which design better addresses the design brief. The remaining three questions ask you to rate the degree of change between the two iterations.<br><br>
-1. You can navigate through all the design projects using the indicators on the bottom of the page. Or the interface will automatically direct you to the next project once you finish ratings for the current design.<br><br>
+1. You can navigate through all the design projects using the indicators on the bottom of the page. Or the interface will automatically direct you to the next project once you finish ratings for the current design. <br><br>
  
 2. For each design project, you will be presented with both the initial and revised design. The order of the iteration presented is randomized. </span>
 					<h4>Design Brief: </h4>
