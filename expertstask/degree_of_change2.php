@@ -161,6 +161,7 @@ array_multisort($order, $projects);
 					<h4>
 					The flyers are for a charity concert featuring <a href='https://taylorswift.com/' target='_blank'>Taylor Swift</a>. The concert will take place on November 29th from 6:00 PM - 9:00 PM at <a href='https://krannertcenter.com/' target='_blank'>Krannert Center </a>at University of Illinois at Urbana-Champaign. Tickets are $40 per person, and food and drink will also be available for purchase. All proceeds will be used to support music programs at local elementary schools. Tickets can be purchased in the Illini Union Building in Room 208. The goal of the flyer is to encourage participation, be visually appealing, and convey the event details.
 					</h4>
+					<h4>You can click the image to enlarge. </h4>
  				
 				
 
@@ -168,9 +169,9 @@ array_multisort($order, $projects);
 				</div>
 		     	 
 		     	 <table>
-		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'></td>		            	
-			     <td width='10%'></td>       
-				 <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."'></td>
+		     	 <td><img class='left' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$left['file']."'  onclick=\"viewPic('".$design['mid']."')\";></td>		            	
+			     <td width='40%'></td>       
+				 <td><img class='right' width=300px height=480px style='border: 1px solid #A4A4A4;' src='../design/".$right['file']."' onclick=\"viewPic('".$design['mid']."')\";></td>
 				 
 				 </table>
            
@@ -401,6 +402,13 @@ $(document).ready(function() {
     }
 
 
+
+function viewPic(mid) {
+
+window.open("../viewpic.php?image="+mid);
+
+//viewwin = window.open(imgsrc.src,'viewwin', 'width=1000,height=auto'); 
+}
 
     function rate(_aspect, _idx,_designerID, number){
 	
