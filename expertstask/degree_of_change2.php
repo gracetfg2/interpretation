@@ -174,9 +174,9 @@ array_multisort($order, $projects);
 				</div>
 		     	 
 		     	 <table>
-		     	 <td><img class='left' width=300px height=480px  style='solid #A4A4A4;float:left;cursor: pointer;' src='../design/".$left['file']."'  onclick=\"viewPic('".$left['mid']."')\";></td>		            	
+		     	 <td><img class='left' width=300px height=480px  style='border: 1px solid #A4A4A4;float:left;cursor: pointer;' src='../design/".$left['file']."'  onclick=\"viewPic('".$left['mid']."')\";></td>		            	
 			     <td width='40%'></td>       
-				 <td><img class='right' width=300px height=480px  style='solid #A4A4A4;float:left;cursor: pointer;' src='../design/".$right['file']."' onclick=\"viewPic('".$right['mid']."')\";></td>
+				 <td><img class='right' width=300px height=480px  style='border: 1px solid #A4A4A4;float:left;cursor: pointer;' src='../design/".$right['file']."' onclick=\"viewPic('".$right['mid']."')\";></td>
 				 
 				 </table>
            
