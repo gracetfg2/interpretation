@@ -330,7 +330,7 @@ array_multisort($order, $projects);
 		$index=1;
 		foreach($projects as $value)
 		{
-			$current_class='indicator';
+			//$current_class='indicator';
 
 			 $current_better='';
 			 $current_aes='';
@@ -355,7 +355,7 @@ array_multisort($order, $projects);
 			//Both not selected
 			//if( !$value['better_rate'] && !$value['doc_aes'] && !$value['doc_concept']) $current_class='indicator';
 			//Both selected
-
+			$current_class='indicator';
 			if( $current_better>0 && $current_aes>0 && $current_concept>0 && $current_layout>0)
 			$current_class='finish';
 		 
@@ -434,9 +434,6 @@ $(document).ready(function() {
             		}			
 					
 
-				}else{
-					$('#li'+_idx).removeClass('active');
-					
 				}
 				
             	      	
