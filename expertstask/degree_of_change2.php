@@ -34,7 +34,7 @@ switch($seed){
 
 	case '1qpwoei': //jason
 		mt_srand('397');break;
-	case '2qpwoei': 
+	case '2qpwoei': //jennifer
 		mt_srand('384');break;
 	case '3qpwoei': 
 		mt_srand('198');break;
@@ -434,6 +434,9 @@ $(document).ready(function() {
             		}			
 					
 
+				}else{
+					$('#li'+_idx).removeClass('active');
+					
 				}
 				
             	      	
