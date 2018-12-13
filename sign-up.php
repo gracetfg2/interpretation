@@ -134,13 +134,14 @@ session_start();
                 </div>
             </div>
 
-            <div class="form-group required" id="form-group-paypal" >
+ <!--           <div class="form-group required" id="form-group-paypal" >
                 <label for="paypal" class="col-sm-4 control-label" >Paypal Address<em>*</em></label>
                 <div class="col-sm-8">                
                   <input type="text" name="paypal" id="paypal"  class="form-control input-sm" placeholder="Your Paypal Account (e.g. mypaypal@gmail.com)" value=" ">
                    <p name="paypal-text" id="paypal-text" class="help-block"><em>This paypal address will be used to receive the compensation.</em></p>
                 </div>
             </div>
+          -->
 <hr>
             
 
@@ -156,8 +157,9 @@ session_start();
                     </div>
             </div>
 -->
+        
          <div class="form-group required" id="form-group-expertise">
-            <label for="expertise" class="col-sm-4 control-label">Design Expertise<em>*</em></label>
+            <label for="expertise" class="col-sm-4 control-label">What is the highest level of education you have received or are pursuing?<em>*</em></label>
                 <div class="col-sm-8" >
                       To be considered as an expert, you should have more than five years of professional experience in design, and have an advanced degree or have received external awards. </p>
                       <label class="radio-inline" style="text-align: left">
